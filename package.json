@@ -1,0 +1,21 @@
+{
+  "name": "noxel360-root",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "preview": "npm --prefix frontend run preview",
+    "backend:dev": "npm --prefix backend run dev",
+    "backend:start": "npm --prefix backend run start",
+    "generate:languages": "npm --prefix frontend run generate:languages",
+    "install:all": "npm install && npm --prefix frontend install && npm --prefix backend install"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "vite": "^8.0.0"
+  }
+}

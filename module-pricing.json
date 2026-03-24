@@ -1,0 +1,412 @@
+[
+  {
+    "Id": "core",
+    "Name": "Noxel360 Core",
+    "Tag": "Core Platform",
+    "PriceUSD": 59,
+    "Unit": "per month",
+    "Subtitle": "The unified dashboard that hosts every NOXEL module.",
+    "Description": "Noxel360 Core is the foundation layer: the app shell, navigation, permissions-ready structure, audit history, and export systems that keep every module consistent and upgradeable.",
+    "AppRoute": "/app",
+    "Highlights": [
+      "Unified dashboard + global navigation",
+      "Permissions-ready architecture (roles, workspaces, audit trail)",
+      "Exports, history, and shared UI tokens"
+    ],
+    "Features": [
+      { "Title": "App shell & routing", "Text": "A single, cohesive framework that standardizes navigation, layouts, and module entry points." },
+      { "Title": "Permissions-ready structure", "Text": "Designed for roles and workspace separation, with auditability in mind." },
+      { "Title": "Export foundation", "Text": "Shared export utilities and report templates used by all modules." }
+    ],
+    "UseCases": [
+      { "Title": "Agency multi-client ops", "Text": "Keep every client's workflow consistent with predictable dashboards and exports." },
+      { "Title": "In-house standardization", "Text": "Centralize tools, history, and reporting into one operational hub." }
+    ],
+    "Tiers": [
+      { "Name": "Bronze", "PriceUSD": 0, "Note": "Starter / limited" },
+      { "Name": "Silver", "PriceUSD": 29, "Note": "Small teams" },
+      { "Name": "Gold", "PriceUSD": 59, "Note": "Growing businesses" },
+      { "Name": "Platinum", "PriceUSD": 99, "Note": "Advanced workflows" },
+      { "Name": "Diamond", "PriceUSD": 149, "Note": "Unlimited / premium" }
+    ],
+    "Faq": [
+      { "Q": "Do I need Core to use modules?", "A": "Yes. Core hosts the dashboard, navigation, and shared services." },
+      { "Q": "Can I activate modules later?", "A": "Yes. Noxel360 is modular by design. Start small and scale up." }
+    ],
+    "Cta": {
+      "PrimaryLabel": "Open the app",
+      "PrimaryHref": "/app",
+      "SecondaryLabel": "Back to pricing",
+      "SecondaryHref": "../index.html"
+    }
+  },
+
+  {
+    "Id": "MAESTRO",
+    "Name": "NOXEL MAESTRO",
+    "Tag": "Identity & Preferences",
+    "PriceUSD": 49,
+    "Unit": "per month",
+    "Subtitle": "Login + unified preferences that power future Morph personalization.",
+    "Description": "NOXEL MAESTRO is the backbone for identity, consent-first preferences, and cross-site continuity. It enables a user to carry visual and language preferences across all Noxel-powered experiences, only when explicitly provided.",
+    "AppRoute": "/app/Maestro",
+    "Highlights": [
+      "Unified login and preference storage",
+      "Consent-first personalization foundation",
+      "Designed for cross-site adaptation (Morph-ready)"
+    ],
+    "Features": [
+      { "Title": "Unified identity layer", "Text": "Central account plus future SSO across NOXEL modules." },
+      { "Title": "Preference store", "Text": "Language, UI choices, and settings stored for continuity across experiences." },
+      { "Title": "Consent by design", "Text": "Preferences are user-provided. Easy reset and transparency built in." }
+    ],
+    "UseCases": [
+      { "Title": "Multi-site clients", "Text": "Offer a consistent, personalized UX across NOXEL-powered properties." },
+      { "Title": "Bilingual-first businesses", "Text": "Store language preference and reduce friction for returning users." }
+    ],
+    "Tiers": [
+      { "Name": "Silver", "PriceUSD": 19, "Note": "Basic identity" },
+      { "Name": "Gold", "PriceUSD": 49, "Note": "Preferences + exports" },
+      { "Name": "Platinum", "PriceUSD": 79, "Note": "Advanced options" },
+      { "Name": "Diamond", "PriceUSD": 129, "Note": "Unlimited / premium" }
+    ],
+    "Faq": [
+      { "Q": "Does MAESTRO collect data automatically?", "A": "No. Preferences are voluntary and consent-first by design." },
+      { "Q": "Can users reset everything?", "A": "Yes. A simple reset is part of the Maestro/Morph design." }
+    ],
+    "Cta": {
+      "PrimaryLabel": "Activate MAESTRO",
+      "PrimaryHref": "/app/Maestro",
+      "SecondaryLabel": "Back to pricing",
+      "SecondaryHref": "../index.html"
+    }
+  },
+
+  {
+    "Id": "atlas",
+    "Name": "NOXEL ATLAS",
+    "Tag": "Audience Intelligence Map",
+    "PriceUSD": 99,
+    "Unit": "per month",
+    "Subtitle": "Multi-level world map with overlays, segmentation, and insight layers.",
+    "Description": "NOXEL ATLAS is your geographic intelligence engine: hierarchical map navigation (continent -> country -> region -> city) with overlays for audience reach, language, and future behavior signals, built for analysis and storytelling.",
+    "AppRoute": "/app/atlas",
+    "Highlights": [
+      "Hierarchical multi-level map structure",
+      "Overlay system (compare / filter / highlight)",
+      "Built to integrate with SEO and Audience Intelligence"
+    ],
+    "Features": [
+      { "Title": "Progressive zoom", "Text": "Continent -> country -> province/region -> city navigation." },
+      { "Title": "Overlay engine", "Text": "Stackable overlays for audience, language, and future intelligence signals." },
+      { "Title": "Analysis mode", "Text": "Compare, filter, and export insights for reporting and planning." }
+    ],
+    "UseCases": [
+      { "Title": "Market selection", "Text": "Choose where to expand based on data layers and reachable audience." },
+      { "Title": "Local SEO planning", "Text": "Connect geography to performance and opportunities." }
+    ],
+    "Tiers": [
+      { "Name": "Silver", "PriceUSD": 39, "Note": "Base map + basic overlays" },
+      { "Name": "Gold", "PriceUSD": 99, "Note": "Advanced overlays + exports" },
+      { "Name": "Platinum", "PriceUSD": 149, "Note": "Compare mode + richer layers" },
+      { "Name": "Diamond", "PriceUSD": 229, "Note": "Unlimited / premium" }
+    ],
+    "Faq": [
+      { "Q": "Is Atlas only for SEO?", "A": "No. It's broader: audience mapping, segmentation, and insight overlays." },
+      { "Q": "Will Atlas integrate with other modules?", "A": "Yes. It's designed to plug into SEO and future Audience Intelligence." }
+    ],
+    "Cta": {
+      "PrimaryLabel": "Activate Atlas",
+      "PrimaryHref": "/app/atlas",
+      "SecondaryLabel": "Back to pricing",
+      "SecondaryHref": "../index.html"
+    }
+  },
+
+  {
+    "Id": "links",
+    "Name": "NOXEL LINKS",
+    "Tag": "Link Intelligence",
+    "PriceUSD": 79,
+    "Unit": "per month",
+    "Subtitle": "Backlinks, internal links, broken links, and opportunity signals.",
+    "Description": "NOXEL LINKS analyzes link structure and quality signals across your site and beyond. It helps you find broken links, weak internal pathways, and backlink opportunities, with outputs designed for action and reporting.",
+    "AppRoute": "/app/links",
+    "Highlights": [
+      "Broken link detection and remediation",
+      "Internal link mapping and anchor analysis",
+      "Backlink opportunity signals (future expansion)"
+    ],
+    "Features": [
+      { "Title": "Broken link auditing", "Text": "Detect broken internal/external links and prioritize fixes." },
+      { "Title": "Internal linking map", "Text": "Identify orphan pages and strengthen topical clusters." },
+      { "Title": "Anchor analysis", "Text": "Understand anchor patterns and improve relevance and clarity." }
+    ],
+    "UseCases": [
+      { "Title": "Technical cleanup", "Text": "Fix 404s, reduce crawl waste, and improve user navigation." },
+      { "Title": "SEO architecture", "Text": "Strengthen topical clusters with internal link strategy." }
+    ],
+    "Tiers": [
+      { "Name": "Silver", "PriceUSD": 29, "Note": "Broken links + basic internal map" },
+      { "Name": "Gold", "PriceUSD": 79, "Note": "Full internal mapping + exports" },
+      { "Name": "Platinum", "PriceUSD": 119, "Note": "Advanced analysis + workflows" },
+      { "Name": "Diamond", "PriceUSD": 179, "Note": "Unlimited / premium" }
+    ],
+    "Faq": [
+      { "Q": "Does Links replace Ahrefs/Semrush?", "A": "Not necessarily. It's built to be actionable and integrated with NOXEL workflows." },
+      { "Q": "Will it include competitor backlinks?", "A": "That's planned as an advanced layer once the base workflow is stable." }
+    ],
+    "Cta": {
+      "PrimaryLabel": "Activate Links",
+      "PrimaryHref": "/app/links",
+      "SecondaryLabel": "Back to pricing",
+      "SecondaryHref": "../index.html"
+    }
+  },
+
+  {
+    "Id": "seo",
+    "Name": "NOXEL SEO",
+    "Tag": "SEO Suite",
+    "PriceUSD": 89,
+    "Unit": "per month",
+    "Subtitle": "Audits, issues, scoring, and fix workflows built for action.",
+    "Description": "NOXEL SEO scans pages, produces structured issues, explains impact, and recommends fixes. It's designed to pair naturally with SERP and Vitals add-ons without changing your workflow.",
+    "AppRoute": "/app/seo",
+    "Highlights": [
+      "Structured issues with explainable why",
+      "Actionable fix guidance + exports",
+      "Designed for SERP + Vitals add-ons"
+    ],
+    "Features": [
+      { "Title": "Audit engine", "Text": "Crawl + checks produce consistent issues and scoring." },
+      { "Title": "Fix guidance", "Text": "Impact-aware fixes that focus on outcomes, not noise." },
+      { "Title": "History & comparisons", "Text": "Track progress over time and compare scans." }
+    ],
+    "UseCases": [
+      { "Title": "Client reporting", "Text": "Generate clear, client-ready reports and next actions." },
+      { "Title": "Continuous improvement", "Text": "Keep SEO work steady with scanning + history." }
+    ],
+    "Tiers": [
+      { "Name": "Silver", "PriceUSD": 39, "Note": "Basic audits" },
+      { "Name": "Gold", "PriceUSD": 89, "Note": "Full audits + exports" },
+      { "Name": "Platinum", "PriceUSD": 129, "Note": "Advanced workflows" },
+      { "Name": "Diamond", "PriceUSD": 199, "Note": "Unlimited / premium" }
+    ],
+    "Faq": [
+      { "Q": "Is SERP included?", "A": "SERP is a separate add-on module. SEO is the base layer." },
+      { "Q": "Does it work for any site?", "A": "Yes. You can scan public URLs and generate issues." }
+    ],
+    "Cta": {
+      "PrimaryLabel": "Activate SEO",
+      "PrimaryHref": "/app/seo",
+      "SecondaryLabel": "Back to pricing",
+      "SecondaryHref": "../index.html"
+    }
+  },
+
+  {
+    "Id": "serp",
+    "Name": "NOXEL SERP",
+    "Tag": "Rank & Visibility",
+    "PriceUSD": 59,
+    "Unit": "per month",
+    "Subtitle": "Track rankings, queries, and search visibility over time.",
+    "Description": "NOXEL SERP focuses on visibility: keywords, ranking movement, and performance signals. Designed as a companion to NOXEL SEO so you can connect issues to results.",
+    "AppRoute": "/app/seo/serp",
+    "Highlights": [
+      "Rank tracking and movement insights",
+      "Connect visibility to SEO actions",
+      "Exportable reporting for clients"
+    ],
+    "Features": [
+      { "Title": "Ranking movement", "Text": "Track progress and detect drops early." },
+      { "Title": "Query grouping", "Text": "Organize keywords by intent and topic clusters." },
+      { "Title": "Reporting views", "Text": "Create snapshots and exports for sharing." }
+    ],
+    "UseCases": [
+      { "Title": "Prove impact", "Text": "Show how fixes correlate with ranking movement." },
+      { "Title": "Early warning system", "Text": "Spot visibility drops before revenue is affected." }
+    ],
+    "Tiers": [
+      { "Name": "Silver", "PriceUSD": 19, "Note": "Basic tracking" },
+      { "Name": "Gold", "PriceUSD": 59, "Note": "Expanded tracking + exports" },
+      { "Name": "Platinum", "PriceUSD": 99, "Note": "Advanced insights" },
+      { "Name": "Diamond", "PriceUSD": 149, "Note": "Unlimited / premium" }
+    ],
+    "Faq": [
+      { "Q": "Do I need NOXEL SEO first?", "A": "Recommended. SEO provides the fix workflow, SERP validates the outcome." },
+      { "Q": "Is this a replacement for paid rank tools?", "A": "It can be complementary. Noxel's value is workflow integration." }
+    ],
+    "Cta": {
+      "PrimaryLabel": "Activate SERP",
+      "PrimaryHref": "/app/seo/serp",
+      "SecondaryLabel": "Back to pricing",
+      "SecondaryHref": "../index.html"
+    }
+  },
+
+  {
+    "Id": "vitals",
+    "Name": "NOXEL VITALS",
+    "Tag": "Performance & UX",
+    "PriceUSD": 59,
+    "Unit": "per month",
+    "Subtitle": "Vitals-style insights: performance, UX, and reliability signals.",
+    "Description": "NOXEL VITALS focuses on performance and user experience signals. It complements NOXEL SEO by bringing speed, UX, and reliability into a single fixable workflow.",
+    "AppRoute": "/app/seo/vitals",
+    "Highlights": [
+      "UX performance signals (Vitals-style)",
+      "Connect performance to SEO outcomes",
+      "Export-ready client reporting"
+    ],
+    "Features": [
+      { "Title": "Vitals-style scoring", "Text": "Track key performance signals over time." },
+      { "Title": "Actionable fixes", "Text": "Translate metrics into clear next steps." },
+      { "Title": "History & monitoring", "Text": "Spot regressions early and keep performance stable." }
+    ],
+    "UseCases": [
+      { "Title": "E-commerce speed wins", "Text": "Improve conversion by reducing friction and delays." },
+      { "Title": "Audit + fix cadence", "Text": "Keep performance from degrading after releases." }
+    ],
+    "Tiers": [
+      { "Name": "Silver", "PriceUSD": 19, "Note": "Basic vitals" },
+      { "Name": "Gold", "PriceUSD": 59, "Note": "Full insights + exports" },
+      { "Name": "Platinum", "PriceUSD": 99, "Note": "Advanced monitoring" },
+      { "Name": "Diamond", "PriceUSD": 149, "Note": "Unlimited / premium" }
+    ],
+    "Faq": [
+      { "Q": "Does Vitals replace PageSpeed tools?", "A": "It complements them. Noxel's goal is actionable workflow inside your platform." },
+      { "Q": "Is it useful without SEO?", "A": "Yes, but best results come from pairing performance + SEO together." }
+    ],
+    "Cta": {
+      "PrimaryLabel": "Activate Vitals",
+      "PrimaryHref": "/app/seo/vitals",
+      "SecondaryLabel": "Back to pricing",
+      "SecondaryHref": "../index.html"
+    }
+  },
+
+  {
+    "Id": "webp",
+    "Name": "NOXEL OPTIMA",
+    "Tag": "Image Optimization",
+    "PriceUSD": 39,
+    "Unit": "per month",
+    "Subtitle": "WebP conversion, compression, and cleanup workflows (TinyPNG-style direction).",
+    "Description": "NOXEL OPTIMA focuses on image optimization: convert, compress, and clean assets for performance and quality. Designed to support future SVG tooling and bulk workflows.",
+    "AppRoute": "/app/webp",
+    "Highlights": [
+      "WebP conversion and optimization workflows",
+      "Compression / cleanup direction (TinyPNG-style)",
+      "Built for bulk operations and exports"
+    ],
+    "Features": [
+      { "Title": "WebP conversion", "Text": "Convert PNG/JPG to WebP for performance gains." },
+      { "Title": "Compression workflow", "Text": "Reduce file size while preserving visual quality." },
+      { "Title": "Bulk processing", "Text": "Handle multiple files and export results cleanly." }
+    ],
+    "UseCases": [
+      { "Title": "Performance improvements", "Text": "Shrink images to improve speed and UX." },
+      { "Title": "Asset pipeline", "Text": "Standardize image output across teams and clients." }
+    ],
+    "Tiers": [
+      { "Name": "Bronze", "PriceUSD": 0, "Note": "5 images/month (starter idea)" },
+      { "Name": "Silver", "PriceUSD": 9, "Note": "25 images/month" },
+      { "Name": "Gold", "PriceUSD": 19, "Note": "50 images/month" },
+      { "Name": "Platinum", "PriceUSD": 39, "Note": "100 images/month" },
+      { "Name": "Diamond", "PriceUSD": 99, "Note": "Unlimited" }
+    ],
+    "Faq": [
+      { "Q": "Is SVG conversion included?", "A": "Not yet. Planned as an advanced tool once workflows are stable." },
+      { "Q": "Can it run in bulk?", "A": "Yes. Bulk processing is a core direction for this module." }
+    ],
+    "Cta": {
+      "PrimaryLabel": "Activate Visual Tools",
+      "PrimaryHref": "/app/webp",
+      "SecondaryLabel": "Back to pricing",
+      "SecondaryHref": "../index.html"
+    }
+  },
+
+  {
+    "Id": "flow",
+    "Name": "NOXEL FLOW",
+    "Tag": "Themes & Distribution",
+    "PriceUSD": 69,
+    "Unit": "per month",
+    "Subtitle": "Theme distribution and modular storefront experiences (Simplexity by NOXEL FLOW).",
+    "Description": "NOXEL FLOW is the distribution layer for themes and layouts. It standardizes how design systems, templates, and future Morph adaptation ship across projects.",
+    "AppRoute": "/app/flow",
+    "Highlights": [
+      "Theme distribution pipeline",
+      "Reusable layout and token systems",
+      "Designed to integrate with Morph adaptation"
+    ],
+    "Features": [
+      { "Title": "Theme packaging", "Text": "Ship consistent templates and UI building blocks." },
+      { "Title": "Tokenized UI system", "Text": "Colors, typography, spacing, standardized and portable." },
+      { "Title": "Module-ready layout zones", "Text": "Layouts built to host modules cleanly as they arrive." }
+    ],
+    "UseCases": [
+      { "Title": "Launch faster", "Text": "Deploy consistent experiences across clients without rebuilding." },
+      { "Title": "Boutique styling", "Text": "Deliver premium visual identity with reliable structure." }
+    ],
+    "Tiers": [
+      { "Name": "Silver", "PriceUSD": 29, "Note": "Base themes" },
+      { "Name": "Gold", "PriceUSD": 69, "Note": "Full theme distribution + updates" },
+      { "Name": "Platinum", "PriceUSD": 109, "Note": "Advanced layouts + library" },
+      { "Name": "Diamond", "PriceUSD": 179, "Note": "Unlimited / premium" }
+    ],
+    "Faq": [
+      { "Q": "Is Simplexity included?", "A": "Simplexity is a flagship theme distributed through NOXEL FLOW." },
+      { "Q": "Does Flow handle i18n tokens?", "A": "Flow is designed to work with Maestro/translation layers as you expand." }
+    ],
+    "Cta": {
+      "PrimaryLabel": "Activate Flow",
+      "PrimaryHref": "/app/flow",
+      "SecondaryLabel": "Back to pricing",
+      "SecondaryHref": "../index.html"
+    }
+  },
+
+  {
+    "Id": "morph",
+    "Name": "NOXEL MORPH",
+    "Tag": "Adaptive UX",
+    "PriceUSD": 129,
+    "Unit": "per month",
+    "Subtitle": "Consent-first visual adaptation across NOXEL FLOW themes (future-forward).",
+    "Description": "NOXEL MORPH applies user-provided preferences (colors, fonts, language, background choices) to NOXEL FLOW themes, without changing site structure or images. Built on consent and transparent preference control.",
+    "AppRoute": "/app/morph",
+    "Highlights": [
+      "Consent-first personalization (no forced collection)",
+      "Cross-site preference continuity via Maestro",
+      "Adaptive UI without breaking structure"
+    ],
+    "Features": [
+      { "Title": "Preference application engine", "Text": "Apply color/typography/background tokens across themes safely." },
+      { "Title": "Morph consent controls", "Text": "User-defined preferences with clear reset and transparency." },
+      { "Title": "Cross-site continuity", "Text": "Carry preferences across Noxel-powered experiences (opt-in)." }
+    ],
+    "UseCases": [
+      { "Title": "Personalized boutique UX", "Text": "Let users choose the visual vibe that fits them, consent-first." },
+      { "Title": "Accessibility and comfort", "Text": "Enable readable fonts, contrast, and language choices." }
+    ],
+    "Tiers": [
+      { "Name": "Gold", "PriceUSD": 129, "Note": "Base Morph adaptation" },
+      { "Name": "Platinum", "PriceUSD": 199, "Note": "Advanced adaptation + presets" },
+      { "Name": "Diamond", "PriceUSD": 299, "Note": "Unlimited / premium" }
+    ],
+    "Faq": [
+      { "Q": "Does Morph change images or layout?", "A": "No. It adapts tokens (colors, text, fonts, backgrounds) without structural disruption." },
+      { "Q": "Is it automatic personalization?", "A": "Only if the user explicitly provides preferences (consent-first)." }
+    ],
+    "Cta": {
+      "PrimaryLabel": "Explore Morph",
+      "PrimaryHref": "/app/morph",
+      "SecondaryLabel": "Back to pricing",
+      "SecondaryHref": "../index.html"
+    }
+  }
+]
