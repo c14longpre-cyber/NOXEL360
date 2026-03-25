@@ -163,7 +163,9 @@ export async function handleOAuthCallback(req: Request, res: Response) {
     setSessionCookie(res, result.sessionId);
 
     const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
-    return res.redirect(`${frontendUrl}/app/account`);
+    res.setHeader("Cache-Control", "no-store");
+    res.setHeader("Pragma", "no-cache");
+    return res.redirect(302, `${frontendUrl}/app/account`);
   } catch (error) {
     const message =
       error instanceof Error ? error.message : "OAuth callback failed";
