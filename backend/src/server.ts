@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-import express from "express";
+import express, { type NextFunction, type Request, type Response } from "express";
 import cors from "cors";
 import path from "path";
 import cookieParser from "cookie-parser";
@@ -24,38 +24,41 @@ const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
 
 const allowedOrigins = [
   "http://localhost:5173",
+  "http://127.0.0.1:5173",
   FRONTEND_URL,
   "https://noxel360.vercel.app",
   "https://noxel360.com",
   "https://www.noxel360.com",
-].filter(Boolean);
+].filter((value, index, array): value is string => Boolean(value) && array.indexOf(value) === index);
 
 app.set("trust proxy", 1);
 
-app.use(
-  cors({
-    origin(origin, callback) {
-      if (!origin) {
-        return callback(null, true);
-      }
+const corsOptions: cors.CorsOptions = {
+  origin(origin, callback) {
+    // Allow server-to-server requests, curl, health checks, etc.
+    if (!origin) {
+      return callback(null, true);
+    }
 
-      if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      }
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
 
-      return callback(new Error(`CORS blocked for origin: ${origin}`));
-    },
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
+    return callback(new Error(`CORS blocked for origin: ${origin}`));
+  },
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-app.get("/", (_req, res) => {
+app.get("/", (_req: Request, res: Response) => {
   res.json({
     ok: true,
     app: "Noxel360 API",
@@ -63,7 +66,7 @@ app.get("/", (_req, res) => {
   });
 });
 
-app.get("/health", (_req, res) => {
+app.get("/health", (_req: Request, res: Response) => {
   res.json({
     ok: true,
     service: "noxel360-backend",
@@ -95,9 +98,11 @@ app.use("/api", apiRouter);
 app.use("/api", performanceRouter);
 app.use("/api", scriptsRouter);
 
+// Static public files
 app.use(express.static(path.join(__dirname, "../public")));
 
-app.use((req, res) => {
+// 404
+app.use((req: Request, res: Response) => {
   res.status(404).json({
     ok: false,
     error: "Not found",
@@ -105,21 +110,15 @@ app.use((req, res) => {
   });
 });
 
-app.use(
-  (
-    err: unknown,
-    _req: express.Request,
-    res: express.Response,
-    _next: express.NextFunction
-  ) => {
-    console.error("Unhandled server error:", err);
+// Error handler
+app.use((err: unknown, _req: Request, res: Response, _next: NextFunction) => {
+  console.error("Unhandled server error:", err);
 
-    return res.status(500).json({
-      ok: false,
-      error: err instanceof Error ? err.message : "Internal server error",
-    });
-  }
-);
+  res.status(500).json({
+    ok: false,
+    error: err instanceof Error ? err.message : "Internal server error",
+  });
+});
 
 app.listen(PORT, () => {
   console.log(`Noxel360 backend running on port ${PORT}`);

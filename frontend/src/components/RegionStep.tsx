@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import RegionMap, { RegionId } from "./RegionMap";
+import RegionMap, { type RegionId } from "./RegionMap";
 
 type RegionStepProps = {
   onNext: (regionId: RegionId | null) => void;
@@ -22,7 +22,6 @@ export default function RegionStep({ onNext, onCancel }: RegionStepProps) {
         paddingRight: 24,
       }}
     >
-      {/* Titre + sous-titre */}
       <div>
         <h2 style={{ fontSize: "1.6rem", marginBottom: 4 }}>
           Choisissez votre région
@@ -32,7 +31,6 @@ export default function RegionStep({ onNext, onCancel }: RegionStepProps) {
         </p>
       </div>
 
-      {/* MAP — centrée horizontalement */}
       <div
         style={{
           marginTop: 32,
@@ -45,11 +43,10 @@ export default function RegionStep({ onNext, onCancel }: RegionStepProps) {
       >
         <RegionMap
           selectedRegion={selectedRegion}
-          onSelectRegion={(region) => setSelectedRegion(region)}
+          onSelectRegion={(region: RegionId) => setSelectedRegion(region)}
         />
       </div>
 
-      {/* Footer boutons */}
       <div
         style={{
           marginTop: 32,
@@ -62,6 +59,7 @@ export default function RegionStep({ onNext, onCancel }: RegionStepProps) {
         <button type="button" onClick={onCancel}>
           Annuler
         </button>
+
         <button
           type="button"
           disabled={!selectedRegion}
