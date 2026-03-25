@@ -1,4 +1,4 @@
-import { apiGet } from "../lib/api";
+const API_BASE = import.meta.env.VITE_API_URL;
 
 export type AccountSummary = {
   profile: {
@@ -27,12 +27,24 @@ export type AccountSummary = {
   };
 };
 
-export async function fetchAccountSummary(): Promise<AccountSummary> {
-  const res = await apiGet<{ ok: boolean; data: AccountSummary }>("/api/account/summary");
+export async function fetchAccountSummary(
+  signal?: AbortSignal
+): Promise<AccountSummary> {
+  const res = await fetch(`${API_BASE}/api/account/summary`, {
+    method: "GET",
+    credentials: "include",
+    signal,
+  });
 
-  if (!res.ok || !res.data) {
-    throw new Error("Account summary request failed");
+  if (!res.ok) {
+    throw new Error(`Account summary request failed (${res.status})`);
   }
 
-  return res.data;
+  const json = await res.json();
+
+  if (!json?.ok || !json?.data) {
+    throw new Error("Account summary response is invalid");
+  }
+
+  return json.data as AccountSummary;
 }
