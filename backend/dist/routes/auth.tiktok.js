@@ -47,7 +47,7 @@ router.get("/tiktok", (_req, res) => {
 router.get("/tiktok/callback", async (req, res) => {
     try {
         const code = String(req.query.code || "");
-        const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
+        const frontendUrl = getFrontendUrl();
         if (!code) {
             return res.status(400).json({
                 ok: false,

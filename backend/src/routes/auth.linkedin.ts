@@ -60,7 +60,7 @@ router.get("/linkedin/callback", async (req, res) => {
     const savedState = String(req.cookies?.linkedin_oauth_state || "");
     const errorParam = String(req.query.error || "");
     const errorDescription = String(req.query.error_description || "");
-    const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
+    const frontendUrl = getFrontendUrl();
 
     if (errorParam || errorDescription) {
       const redirectParams = new URLSearchParams({
@@ -179,7 +179,7 @@ router.get("/linkedin/callback", async (req, res) => {
 
     return res.redirect(`${frontendUrl}/auth/callback?${redirectParams.toString()}`);
   } catch (error) {
-    const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
+    const frontendUrl = getFrontendUrl();
 
     const redirectParams = new URLSearchParams({
       provider: "linkedin",

@@ -5,6 +5,7 @@ const express_1 = require("express");
 const auth_controller_1 = require("./auth.controller");
 exports.authRouter = (0, express_1.Router)();
 exports.authRouter.get("/session", auth_controller_1.getSession);
+exports.authRouter.get("/me", auth_controller_1.getSession);
 exports.authRouter.post("/logout", auth_controller_1.postLogout);
 exports.authRouter.post("/resolve-existing-email", auth_controller_1.postResolveExistingEmail);
 exports.authRouter.get("/:provider/start", auth_controller_1.startOAuth);

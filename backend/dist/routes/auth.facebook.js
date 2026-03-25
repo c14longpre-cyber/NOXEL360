@@ -77,7 +77,7 @@ router.get("/facebook/callback", async (req, res) => {
         const savedState = String(req.cookies?.fb_oauth_state || "");
         const errorReason = String(req.query.error_reason || "");
         const errorDescription = String(req.query.error_description || "");
-        const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
+        const frontendUrl = getFrontendUrl();
         if (errorReason || errorDescription) {
             const redirectParams = new URLSearchParams({
                 provider: "facebook",
@@ -168,7 +168,7 @@ router.get("/facebook/callback", async (req, res) => {
         return res.redirect(`${frontendUrl}/auth/callback?${redirectParams.toString()}`);
     }
     catch (error) {
-        const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
+        const frontendUrl = getFrontendUrl();
         const redirectParams = new URLSearchParams({
             provider: "facebook",
             error: "server_error",

@@ -114,7 +114,7 @@ async function handleOAuthCallback(req, res) {
             identity,
         });
         if (result.kind === "link_required") {
-            const frontendBase = process.env.FRONTEND_URL || "http://localhost:5173";
+            const frontendBase = getFrontendUrl();
             const linkUrl = new URL("/auth/link-account", frontendBase);
             linkUrl.searchParams.set("ticketId", result.ticketId);
             if (result.email) {
@@ -123,8 +123,10 @@ async function handleOAuthCallback(req, res) {
             return res.redirect(linkUrl.toString());
         }
         (0, auth_cookies_1.setSessionCookie)(res, result.sessionId);
-        const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
-        return res.redirect(`${frontendUrl}/app/account`);
+        const frontendUrl = getFrontendUrl();
+        res.setHeader("Cache-Control", "no-store");
+        res.setHeader("Pragma", "no-cache");
+        return res.redirect(302, `${frontendUrl}/app/account`);
     }
     catch (error) {
         const message = error instanceof Error ? error.message : "OAuth callback failed";
@@ -133,6 +135,9 @@ async function handleOAuthCallback(req, res) {
 }
 async function getSession(req, res) {
     try {
+        console.log("Session check:", {
+            cookies: req.cookies,
+        });
         const current = await getCurrentUser(req);
         if (!current?.user) {
             return res.status(200).json({

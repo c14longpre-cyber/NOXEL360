@@ -1,30 +1,38 @@
-import type {
-  AccountSummary,
-  AccountSummaryResponse,
-} from "./accountTypes";
+import { apiGet } from "../lib/api";
 
-const ACCOUNT_SUMMARY_ENDPOINT = "/api/account/summary";
+export type AccountSummary = {
+  profile: {
+    name: string;
+    email: string;
+    language: string;
+    workspace: string;
+  };
+  billing: {
+    tier: string;
+    status: string;
+    renewalDate: string;
+    plan: string;
+  };
+  preferences: {
+    theme: string;
+    notifications: string;
+    interfaceMode: string;
+    morphProfile: string;
+  };
+  security: {
+    password: string;
+    twoFactor: string;
+    lastLogin: string;
+    sessionProtection: string;
+  };
+};
 
-export async function fetchAccountSummary(
-  signal?: AbortSignal
-): Promise<AccountSummary> {
-  const res = await fetch(ACCOUNT_SUMMARY_ENDPOINT, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    signal,
-  });
+export async function fetchAccountSummary(): Promise<AccountSummary> {
+  const res = await apiGet<{ ok: boolean; data: AccountSummary }>("/api/account/summary");
 
-  if (!res.ok) {
-    throw new Error(`Account summary request failed (${res.status})`);
+  if (!res.ok || !res.data) {
+    throw new Error("Account summary request failed");
   }
 
-  const json = (await res.json()) as AccountSummaryResponse;
-
-  if (!json?.ok || !json?.data) {
-    throw new Error("Invalid account summary payload");
-  }
-
-  return json.data;
+  return res.data;
 }

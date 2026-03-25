@@ -149,7 +149,7 @@ export async function handleOAuthCallback(req: Request, res: Response) {
     });
 
     if (result.kind === "link_required") {
-      const frontendBase = process.env.FRONTEND_URL || "http://localhost:5173";
+      const frontendBase = getFrontendUrl();
       const linkUrl = new URL("/auth/link-account", frontendBase);
 
       linkUrl.searchParams.set("ticketId", result.ticketId);
@@ -162,7 +162,7 @@ export async function handleOAuthCallback(req: Request, res: Response) {
 
     setSessionCookie(res, result.sessionId);
 
-    const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
+    const frontendUrl = getFrontendUrl();
     res.setHeader("Cache-Control", "no-store");
     res.setHeader("Pragma", "no-cache");
     return res.redirect(302, `${frontendUrl}/app/account`);
