@@ -1,25 +1,24 @@
-import type { CookieOptions, Response } from "express";
+import type { Response } from "express";
 
-export const SESSION_COOKIE_NAME = "noxel_sid";
+const isProd =
+  process.env.NODE_ENV === "production" ||
+  process.env.RAILWAY_ENVIRONMENT === "production";
 
-export function getSessionCookieOptions(): CookieOptions {
-  const isProd = process.env.NODE_ENV === "production";
-
-  return {
+export function setSessionCookie(res: Response, sessionId: string) {
+  res.cookie("noxel_session", sessionId, {
     httpOnly: true,
     secure: isProd,
-    sameSite: "lax",
+    sameSite: isProd ? "none" : "lax",
     path: "/",
-    maxAge: 1000 * 60 * 60 * 24 * 30,
-  };
+    maxAge: 1000 * 60 * 60 * 24 * 7,
+  });
 }
 
-export function setSessionCookie(res: Response, sessionId: string): void {
-  res.cookie(SESSION_COOKIE_NAME, sessionId, getSessionCookieOptions());
-}
-
-export function clearSessionCookie(res: Response): void {
-  res.clearCookie(SESSION_COOKIE_NAME, {
+export function clearSessionCookie(res: Response) {
+  res.clearCookie("noxel_session", {
+    httpOnly: true,
+    secure: isProd,
+    sameSite: isProd ? "none" : "lax",
     path: "/",
   });
 }
