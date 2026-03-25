@@ -148,17 +148,17 @@ export async function handleOAuthCallback(req: Request, res: Response) {
       identity,
     });
 
- if (result.kind === "link_required") {
-  const frontendBase = process.env.FRONTEND_URL || "http://localhost:5173";
-  const linkUrl = new URL("/auth/link-account", frontendBase);
+    if (result.kind === "link_required") {
+      const frontendBase = process.env.FRONTEND_URL || "http://localhost:5173";
+      const linkUrl = new URL("/auth/link-account", frontendBase);
 
-  linkUrl.searchParams.set("ticketId", result.ticketId);
-  if (result.email) {
-    linkUrl.searchParams.set("email", result.email);
-  }
+      linkUrl.searchParams.set("ticketId", result.ticketId);
+      if (result.email) {
+        linkUrl.searchParams.set("email", result.email);
+      }
 
-  return res.redirect(linkUrl.toString());
-}
+      return res.redirect(linkUrl.toString());
+    }
 
     setSessionCookie(res, result.sessionId);
 
@@ -173,6 +173,10 @@ export async function handleOAuthCallback(req: Request, res: Response) {
 
 export async function getSession(req: Request, res: Response) {
   try {
+    console.log("Session check:", {
+      cookies: req.cookies,
+    });
+
     const current = await getCurrentUser(req);
 
     if (!current?.user) {
