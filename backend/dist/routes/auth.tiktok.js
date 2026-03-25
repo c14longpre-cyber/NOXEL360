@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const crypto_1 = __importDefault(require("crypto"));
+const auth_frontend_url_1 = require("../auth/auth.frontend-url");
 const router = (0, express_1.Router)();
 function buildTikTokAuthorizeUrl() {
     const clientKey = process.env.TIKTOK_CLIENT_KEY;
@@ -47,7 +48,7 @@ router.get("/tiktok", (_req, res) => {
 router.get("/tiktok/callback", async (req, res) => {
     try {
         const code = String(req.query.code || "");
-        const frontendUrl = getFrontendUrl();
+        const frontendUrl = (0, auth_frontend_url_1.getFrontendUrl)();
         if (!code) {
             return res.status(400).json({
                 ok: false,

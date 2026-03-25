@@ -1,7 +1,7 @@
 import { Router } from "express";
 import crypto from "crypto";
 import { buildLinkedInAuthorizeUrl } from "../services/linkedinAuth";
-
+import { getFrontendUrl } from "../auth/auth.frontend-url";
 const router = Router();
 
 async function readJsonSafe(res: globalThis.Response) {

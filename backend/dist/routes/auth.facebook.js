@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const crypto_1 = __importDefault(require("crypto"));
+const auth_frontend_url_1 = require("../auth/auth.frontend-url");
 const router = (0, express_1.Router)();
 function buildFacebookAuthorizeUrl() {
     const clientId = process.env.FACEBOOK_CLIENT_ID;
@@ -77,7 +78,7 @@ router.get("/facebook/callback", async (req, res) => {
         const savedState = String(req.cookies?.fb_oauth_state || "");
         const errorReason = String(req.query.error_reason || "");
         const errorDescription = String(req.query.error_description || "");
-        const frontendUrl = getFrontendUrl();
+        const frontendUrl = (0, auth_frontend_url_1.getFrontendUrl)();
         if (errorReason || errorDescription) {
             const redirectParams = new URLSearchParams({
                 provider: "facebook",
@@ -168,7 +169,7 @@ router.get("/facebook/callback", async (req, res) => {
         return res.redirect(`${frontendUrl}/auth/callback?${redirectParams.toString()}`);
     }
     catch (error) {
-        const frontendUrl = getFrontendUrl();
+        const frontendUrl = (0, auth_frontend_url_1.getFrontendUrl)();
         const redirectParams = new URLSearchParams({
             provider: "facebook",
             error: "server_error",

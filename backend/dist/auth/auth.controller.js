@@ -10,6 +10,7 @@ const auth_service_1 = require("./auth.service");
 const auth_cookies_1 = require("./auth.cookies");
 const auth_session_1 = require("./auth.session");
 const user_repo_1 = require("./repos/user.repo");
+const auth_frontend_url_1 = require("./auth.frontend-url");
 function isAuthIntent(value) {
     return value === "signin" || value === "link";
 }
@@ -114,7 +115,7 @@ async function handleOAuthCallback(req, res) {
             identity,
         });
         if (result.kind === "link_required") {
-            const frontendBase = getFrontendUrl();
+            const frontendBase = (0, auth_frontend_url_1.getFrontendUrl)();
             const linkUrl = new URL("/auth/link-account", frontendBase);
             linkUrl.searchParams.set("ticketId", result.ticketId);
             if (result.email) {
@@ -123,7 +124,7 @@ async function handleOAuthCallback(req, res) {
             return res.redirect(linkUrl.toString());
         }
         (0, auth_cookies_1.setSessionCookie)(res, result.sessionId);
-        const frontendUrl = getFrontendUrl();
+        const frontendUrl = (0, auth_frontend_url_1.getFrontendUrl)();
         res.setHeader("Cache-Control", "no-store");
         res.setHeader("Pragma", "no-cache");
         return res.redirect(302, `${frontendUrl}/app/account`);

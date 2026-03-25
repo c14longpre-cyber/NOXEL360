@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const crypto_1 = __importDefault(require("crypto"));
 const linkedinAuth_1 = require("../services/linkedinAuth");
+const auth_frontend_url_1 = require("../auth/auth.frontend-url");
 const router = (0, express_1.Router)();
 async function readJsonSafe(res) {
     const raw = await res.text();
@@ -58,7 +59,7 @@ router.get("/linkedin/callback", async (req, res) => {
         const savedState = String(req.cookies?.linkedin_oauth_state || "");
         const errorParam = String(req.query.error || "");
         const errorDescription = String(req.query.error_description || "");
-        const frontendUrl = getFrontendUrl();
+        const frontendUrl = (0, auth_frontend_url_1.getFrontendUrl)();
         if (errorParam || errorDescription) {
             const redirectParams = new URLSearchParams({
                 provider: "linkedin",
@@ -153,7 +154,7 @@ router.get("/linkedin/callback", async (req, res) => {
         return res.redirect(`${frontendUrl}/auth/callback?${redirectParams.toString()}`);
     }
     catch (error) {
-        const frontendUrl = getFrontendUrl();
+        const frontendUrl = (0, auth_frontend_url_1.getFrontendUrl)();
         const redirectParams = new URLSearchParams({
             provider: "linkedin",
             error: "server_error",
