@@ -2,6 +2,7 @@
   "name": "noxel360-backend",
   "version": "1.0.0",
   "main": "dist/server.js",
+  "packageManager": "npm@10.8.2",
   "scripts": {
     "dev": "ts-node src/server.ts",
     "build": "tsc",
