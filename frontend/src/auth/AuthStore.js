@@ -1,7 +1,7 @@
 import { jsx as _jsx } from "react/jsx-runtime";
 import { createContext, useContext, useEffect, useMemo, useState, } from "react";
 const AuthContext = createContext(undefined);
-const API_BASE = "http://localhost:4000";
+const API_BASE = import.meta.env.VITE_API_URL;
 const OAUTH_USER_STORAGE_KEY = "noxel_oauth_user";
 const OAUTH_PROVIDERS_STORAGE_KEY = "noxel_oauth_providers";
 function mapBackendUser(user) {
