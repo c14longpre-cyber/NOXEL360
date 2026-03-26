@@ -15,10 +15,6 @@ const scripts_routes_1 = require("./routes/scripts.routes");
 const account_routes_1 = __importDefault(require("./routes/account.routes"));
 const auth_routes_1 = require("./auth/auth.routes");
 // Social auth providers
-const auth_apple_1 = __importDefault(require("./routes/auth.apple"));
-const auth_facebook_1 = __importDefault(require("./routes/auth.facebook"));
-const auth_linkedin_1 = __importDefault(require("./routes/auth.linkedin"));
-const auth_tiktok_1 = __importDefault(require("./routes/auth.tiktok"));
 const app = (0, express_1.default)();
 const PORT = Number(process.env.PORT) || 4000;
 const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
@@ -75,10 +71,6 @@ app.get("/health", (_req, res) => {
 });
 app.use("/api/account", account_routes_1.default);
 // Social auth routes
-app.use("/api/auth", auth_apple_1.default);
-app.use("/api/auth", auth_facebook_1.default);
-app.use("/api/auth", auth_linkedin_1.default);
-app.use("/api/auth", auth_tiktok_1.default);
 // Main auth routes
 app.use("/api/auth", auth_routes_1.authRouter);
 // Existing API routes

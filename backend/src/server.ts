@@ -13,10 +13,7 @@ import accountRoutes from "./routes/account.routes";
 import { authRouter } from "./auth/auth.routes";
 
 // Social auth providers
-import appleAuthRouter from "./routes/auth.apple";
-import facebookAuthRouter from "./routes/auth.facebook";
-import linkedinAuthRouter from "./routes/auth.linkedin";
-import tiktokAuthRouter from "./routes/auth.tiktok";
+
 
 const app = express();
 const PORT = Number(process.env.PORT) || 4000;
@@ -85,10 +82,7 @@ app.get("/health", (_req: Request, res: Response) => {
 app.use("/api/account", accountRoutes);
 
 // Social auth routes
-app.use("/api/auth", appleAuthRouter);
-app.use("/api/auth", facebookAuthRouter);
-app.use("/api/auth", linkedinAuthRouter);
-app.use("/api/auth", tiktokAuthRouter);
+
 
 // Main auth routes
 app.use("/api/auth", authRouter);
