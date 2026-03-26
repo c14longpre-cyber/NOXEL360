@@ -1,6 +1,7 @@
 import { Router } from "express";
 import crypto from "crypto";
 import { getFrontendUrl } from "../auth/auth.frontend-url";
+
 const router = Router();
 
 function buildFacebookAuthorizeUrl() {
@@ -43,75 +44,46 @@ function startFacebookAuth(res: import("express").Response) {
   res.cookie("fb_oauth_state", state, {
     httpOnly: true,
     sameSite: "lax",
-    secure: false,
+    secure: true, // 🔥 IMPORTANT en prod
     maxAge: 10 * 60 * 1000,
   });
 
   return res.redirect(url);
 }
 
+// ================= START =================
+
 router.get("/facebook", (_req, res) => {
-  try {
-    return startFacebookAuth(res);
-  } catch (error) {
-    return res.status(500).json({
-      ok: false,
-      provider: "facebook",
-      error: error instanceof Error ? error.message : "Unknown error",
-    });
-  }
+  return startFacebookAuth(res);
 });
 
 router.get("/facebook/start", (_req, res) => {
-  try {
-    return startFacebookAuth(res);
-  } catch (error) {
-    return res.status(500).json({
-      ok: false,
-      provider: "facebook",
-      error: error instanceof Error ? error.message : "Unknown error",
-    });
-  }
+  return startFacebookAuth(res);
 });
 
+// ================= CALLBACK =================
+
 router.get("/facebook/callback", async (req, res) => {
+  const frontendUrl = getFrontendUrl();
+
   try {
     const code = String(req.query.code || "");
     const returnedState = String(req.query.state || "");
     const savedState = String(req.cookies?.fb_oauth_state || "");
-    const errorReason = String(req.query.error_reason || "");
-    const errorDescription = String(req.query.error_description || "");
-    const frontendUrl = getFrontendUrl();
 
-    if (errorReason || errorDescription) {
-      const redirectParams = new URLSearchParams({
-        provider: "facebook",
-        error: errorReason || "facebook_login_failed",
-        description:
-          errorDescription || "User cancelled or provider returned an error.",
-      });
-
-      return res.redirect(`${frontendUrl}/auth/callback?${redirectParams.toString()}`);
+    // ❌ erreur Facebook
+    if (req.query.error) {
+      return res.redirect(`${frontendUrl}/app/account?error=facebook_cancelled`);
     }
 
+    // ❌ pas de code
     if (!code) {
-      const redirectParams = new URLSearchParams({
-        provider: "facebook",
-        error: "missing_code",
-        description: "Missing Facebook code.",
-      });
-
-      return res.redirect(`${frontendUrl}/auth/callback?${redirectParams.toString()}`);
+      return res.redirect(`${frontendUrl}/app/account?error=missing_code`);
     }
 
-    if (!returnedState || !savedState || returnedState !== savedState) {
-      const redirectParams = new URLSearchParams({
-        provider: "facebook",
-        error: "invalid_state",
-        description: "Facebook state validation failed.",
-      });
-
-      return res.redirect(`${frontendUrl}/auth/callback?${redirectParams.toString()}`);
+    // ❌ state invalide
+    if (!returnedState || returnedState !== savedState) {
+      return res.redirect(`${frontendUrl}/app/account?error=invalid_state`);
     }
 
     res.clearCookie("fb_oauth_state");
@@ -121,14 +93,10 @@ router.get("/facebook/callback", async (req, res) => {
     const redirectUri = process.env.FACEBOOK_REDIRECT_URI;
 
     if (!clientId || !clientSecret || !redirectUri) {
-      const redirectParams = new URLSearchParams({
-        provider: "facebook",
-        error: "missing_env",
-        description: "Missing Facebook environment variables.",
-      });
-
-      return res.redirect(`${frontendUrl}/auth/callback?${redirectParams.toString()}`);
+      return res.redirect(`${frontendUrl}/app/account?error=missing_env`);
     }
+
+    // ================= TOKEN =================
 
     const tokenParams = new URLSearchParams({
       client_id: clientId,
@@ -138,24 +106,16 @@ router.get("/facebook/callback", async (req, res) => {
     });
 
     const tokenRes = await fetch(
-      `https://graph.facebook.com/v25.0/oauth/access_token?${tokenParams.toString()}`,
-      {
-        method: "GET",
-        headers: { Accept: "application/json" },
-      }
+      `https://graph.facebook.com/v25.0/oauth/access_token?${tokenParams.toString()}`
     );
 
     const tokenJson = await readJsonSafe(tokenRes);
 
     if (!tokenRes.ok || !("access_token" in tokenJson)) {
-      const redirectParams = new URLSearchParams({
-        provider: "facebook",
-        error: "token_exchange_failed",
-        description: JSON.stringify(tokenJson),
-      });
-
-      return res.redirect(`${frontendUrl}/auth/callback?${redirectParams.toString()}`);
+      return res.redirect(`${frontendUrl}/app/account?error=token_failed`);
     }
+
+    // ================= USER =================
 
     const meParams = new URLSearchParams({
       fields: "id,name,email,picture.type(large)",
@@ -163,53 +123,30 @@ router.get("/facebook/callback", async (req, res) => {
     });
 
     const meRes = await fetch(
-      `https://graph.facebook.com/me?${meParams.toString()}`,
-      {
-        method: "GET",
-        headers: { Accept: "application/json" },
-      }
+      `https://graph.facebook.com/me?${meParams.toString()}`
     );
 
     const meJson = await readJsonSafe(meRes);
 
     if (!meRes.ok || !("id" in meJson)) {
-      const redirectParams = new URLSearchParams({
-        provider: "facebook",
-        error: "profile_fetch_failed",
-        description: JSON.stringify(meJson),
-      });
-
-      return res.redirect(`${frontendUrl}/auth/callback?${redirectParams.toString()}`);
+      return res.redirect(`${frontendUrl}/app/account?error=profile_failed`);
     }
+
+    // ================= SUCCESS =================
 
     const redirectParams = new URLSearchParams({
       provider: "facebook",
       providerUserId: String(meJson.id || ""),
-      name: "name" in meJson ? String(meJson.name || "") : "",
-      email: "email" in meJson ? String(meJson.email || "") : "",
+      name: String(meJson.name || ""),
+      email: String(meJson.email || ""),
       avatarUrl:
-        "picture" in meJson &&
-        meJson.picture &&
-        typeof meJson.picture === "object" &&
-        "data" in meJson.picture &&
-        meJson.picture.data &&
-        typeof meJson.picture.data === "object" &&
-        "url" in meJson.picture.data
-          ? String(meJson.picture.data.url || "")
-          : "",
+        meJson?.picture?.data?.url || "",
     });
 
-    return res.redirect(`${frontendUrl}/auth/callback?${redirectParams.toString()}`);
+    return res.redirect(`${frontendUrl}/app/account?${redirectParams.toString()}`);
+
   } catch (error) {
-    const frontendUrl = getFrontendUrl();
-
-    const redirectParams = new URLSearchParams({
-      provider: "facebook",
-      error: "server_error",
-      description: error instanceof Error ? error.message : "Unknown error",
-    });
-
-    return res.redirect(`${frontendUrl}/auth/callback?${redirectParams.toString()}`);
+    return res.redirect(`${frontendUrl}/app/account?error=server_error`);
   }
 });
 

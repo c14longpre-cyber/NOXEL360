@@ -9,6 +9,28 @@ function useQuery() {
   return useMemo(() => new URLSearchParams(search), [search]);
 }
 
+type ResolveExistingEmailResponse = {
+  ok: boolean;
+  error?: string;
+};
+
+async function parseJsonResponse<T>(res: Response): Promise<T> {
+  const contentType = res.headers.get("content-type") || "";
+  const raw = await res.text();
+
+  if (!contentType.includes("application/json")) {
+    throw new Error(
+      `Expected JSON but received ${contentType || "unknown content type"}`
+    );
+  }
+
+  try {
+    return JSON.parse(raw) as T;
+  } catch {
+    throw new Error("Server returned invalid JSON");
+  }
+}
+
 export default function LinkAccountPage() {
   const query = useQuery();
   const navigate = useNavigate();
@@ -26,6 +48,11 @@ export default function LinkAccountPage() {
       return;
     }
 
+    if (!API_BASE) {
+      setError("Missing VITE_API_URL.");
+      return;
+    }
+
     setLoading(true);
     setError(null);
 
@@ -35,11 +62,13 @@ export default function LinkAccountPage() {
         credentials: "include",
         headers: {
           "Content-Type": "application/json",
+          Accept: "application/json",
         },
         body: JSON.stringify({ ticketId }),
       });
 
-      const json = await res.json();
+      const json =
+        await parseJsonResponse<ResolveExistingEmailResponse>(res);
 
       if (!res.ok || !json.ok) {
         throw new Error(json?.error || "Failed to link account.");
@@ -48,7 +77,8 @@ export default function LinkAccountPage() {
       await refreshAuth();
       navigate("/app/account?tab=accounts");
     } catch (err) {
-      const message = err instanceof Error ? err.message : "Failed to link account.";
+      const message =
+        err instanceof Error ? err.message : "Failed to link account.";
       setError(message);
     } finally {
       setLoading(false);
@@ -80,9 +110,11 @@ export default function LinkAccountPage() {
           <h1 className="nx-card__title" style={{ margin: 0 }}>
             Account already exists
           </h1>
+
           <p className="nx-card__text" style={{ margin: 0 }}>
             A Noxel360 account already exists
-            {email ? ` for ${email}` : ""}. Sign in to your existing account, then confirm the link.
+            {email ? ` for ${email}` : ""}. Sign in to your existing account,
+            then confirm the link.
           </p>
         </div>
 
@@ -113,7 +145,8 @@ export default function LinkAccountPage() {
         ) : (
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <div style={{ fontSize: 14, opacity: 0.8 }}>
-              Signed in as <strong>{user?.email || user?.name || "current user"}</strong>
+              Signed in as{" "}
+              <strong>{user?.email || user?.name || "current user"}</strong>
             </div>
 
             <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>

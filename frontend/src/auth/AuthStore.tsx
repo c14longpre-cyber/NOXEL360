@@ -151,7 +151,6 @@ function readStoredOAuthUser(): AuthUser | null {
     if (!raw) return null;
 
     const parsed = JSON.parse(raw) as AuthUser;
-
     if (!parsed || typeof parsed !== "object") return null;
 
     return parsed;
@@ -183,7 +182,6 @@ function readStoredOAuthProviders(): ConnectedProvider[] {
     if (!raw) return [];
 
     const parsed = JSON.parse(raw) as ConnectedProvider[];
-
     if (!Array.isArray(parsed)) return [];
 
     return parsed;
@@ -229,6 +227,23 @@ function mergeProviders(
   return Array.from(map.values());
 }
 
+async function parseJsonResponse<T>(res: Response): Promise<T> {
+  const contentType = res.headers.get("content-type") || "";
+  const raw = await res.text();
+
+  if (!contentType.includes("application/json")) {
+    throw new Error(
+      `Expected JSON but received ${contentType || "unknown content type"}`
+    );
+  }
+
+  try {
+    return JSON.parse(raw) as T;
+  } catch {
+    throw new Error("Server returned invalid JSON");
+  }
+}
+
 export function AuthProvider({ children }: AuthProviderProps) {
   const [user, setUser] = useState<AuthUser | null>(null);
   const [providers, setProviders] = useState<ConnectedProvider[]>([]);
@@ -238,15 +253,19 @@ export function AuthProvider({ children }: AuthProviderProps) {
     setLoading(true);
 
     try {
+      if (!API_BASE) {
+        throw new Error("Missing VITE_API_URL");
+      }
+
       const res = await fetch(`${API_BASE}/api/auth/session`, {
         method: "GET",
         credentials: "include",
         headers: {
-          "Content-Type": "application/json",
+          Accept: "application/json",
         },
       });
 
-      const json = (await res.json()) as AuthSessionResponse;
+      const json = await parseJsonResponse<AuthSessionResponse>(res);
 
       console.log("auth/session status:", res.status);
       console.log("auth/session payload:", json);
@@ -323,21 +342,26 @@ export function AuthProvider({ children }: AuthProviderProps) {
   }
 
   function loginWithProvider(
-  provider: AuthProviderName,
-  intent: "signin" | "link" = "signin"
-) {
-  if (provider === "facebook") {
-    window.location.href = `${API_BASE}/api/auth/facebook`;
-    return;
-  }
+    provider: AuthProviderName,
+    intent: "signin" | "link" = "signin"
+  ) {
+    if (!API_BASE) {
+      console.error("Missing VITE_API_URL");
+      return;
+    }
 
-  if (provider === "linkedin") {
-    window.location.href = `${API_BASE}/api/auth/linkedin`;
-    return;
-  }
+    if (provider === "facebook") {
+      window.location.href = `${API_BASE}/api/auth/facebook`;
+      return;
+    }
 
-  window.location.href = `${API_BASE}/api/auth/${provider}/start?intent=${intent}`;
-}
+    if (provider === "linkedin") {
+      window.location.href = `${API_BASE}/api/auth/linkedin`;
+      return;
+    }
+
+    window.location.href = `${API_BASE}/api/auth/${provider}/start?intent=${intent}`;
+  }
 
   function setOAuthUser(oauthUser: OAuthUserPayload) {
     const normalizedUser = mapOAuthUserToAuthUser(oauthUser);
@@ -379,11 +403,15 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
       logout: async () => {
         try {
+          if (!API_BASE) {
+            throw new Error("Missing VITE_API_URL");
+          }
+
           await fetch(`${API_BASE}/api/auth/logout`, {
             method: "POST",
             credentials: "include",
             headers: {
-              "Content-Type": "application/json",
+              Accept: "application/json",
             },
           });
         } catch (error) {

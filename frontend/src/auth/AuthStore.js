@@ -120,6 +120,19 @@ function mergeProviders(baseProviders, extraProviders) {
     }
     return Array.from(map.values());
 }
+async function parseJsonResponse(res) {
+    const contentType = res.headers.get("content-type") || "";
+    const raw = await res.text();
+    if (!contentType.includes("application/json")) {
+        throw new Error(`Expected JSON but received ${contentType || "unknown content type"}`);
+    }
+    try {
+        return JSON.parse(raw);
+    }
+    catch {
+        throw new Error("Server returned invalid JSON");
+    }
+}
 export function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
     const [providers, setProviders] = useState([]);
@@ -127,14 +140,17 @@ export function AuthProvider({ children }) {
     async function refreshAuth() {
         setLoading(true);
         try {
+            if (!API_BASE) {
+                throw new Error("Missing VITE_API_URL");
+            }
             const res = await fetch(`${API_BASE}/api/auth/session`, {
                 method: "GET",
                 credentials: "include",
                 headers: {
-                    "Content-Type": "application/json",
+                    Accept: "application/json",
                 },
             });
-            const json = (await res.json());
+            const json = await parseJsonResponse(res);
             console.log("auth/session status:", res.status);
             console.log("auth/session payload:", json);
             if (res.ok && json.ok && json.authenticated && json.user) {
@@ -183,6 +199,10 @@ export function AuthProvider({ children }) {
         }
     }
     function loginWithProvider(provider, intent = "signin") {
+        if (!API_BASE) {
+            console.error("Missing VITE_API_URL");
+            return;
+        }
         if (provider === "facebook") {
             window.location.href = `${API_BASE}/api/auth/facebook`;
             return;
@@ -218,11 +238,14 @@ export function AuthProvider({ children }) {
         loginWithProvider,
         logout: async () => {
             try {
+                if (!API_BASE) {
+                    throw new Error("Missing VITE_API_URL");
+                }
                 await fetch(`${API_BASE}/api/auth/logout`, {
                     method: "POST",
                     credentials: "include",
                     headers: {
-                        "Content-Type": "application/json",
+                        Accept: "application/json",
                     },
                 });
             }
