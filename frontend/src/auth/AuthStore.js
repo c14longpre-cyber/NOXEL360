@@ -203,14 +203,6 @@ export function AuthProvider({ children }) {
             console.error("Missing VITE_API_URL");
             return;
         }
-        if (provider === "facebook") {
-            window.location.href = `${API_BASE}/api/auth/facebook`;
-            return;
-        }
-        if (provider === "linkedin") {
-            window.location.href = `${API_BASE}/api/auth/linkedin`;
-            return;
-        }
         window.location.href = `${API_BASE}/api/auth/${provider}/start?intent=${intent}`;
     }
     function setOAuthUser(oauthUser) {

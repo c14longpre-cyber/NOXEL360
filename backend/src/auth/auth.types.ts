@@ -1,4 +1,9 @@
-export type AuthProvider = "google" | "microsoft" | "facebook" | "apple";
+export type AuthProvider =
+  | "google"
+  | "microsoft"
+  | "facebook"
+  | "apple"
+  | "linkedin";
 
 export type AuthIntent = "signin" | "link";
 

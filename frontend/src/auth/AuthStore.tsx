@@ -341,27 +341,19 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }
   }
 
-  function loginWithProvider(
-    provider: AuthProviderName,
-    intent: "signin" | "link" = "signin"
-  ) {
-    if (!API_BASE) {
-      console.error("Missing VITE_API_URL");
-      return;
-    }
-
-    if (provider === "facebook") {
-      window.location.href = `${API_BASE}/api/auth/facebook`;
-      return;
-    }
-
-    if (provider === "linkedin") {
-      window.location.href = `${API_BASE}/api/auth/linkedin`;
-      return;
-    }
-
-    window.location.href = `${API_BASE}/api/auth/${provider}/start?intent=${intent}`;
+function loginWithProvider(
+  provider: AuthProviderName,
+  intent: "signin" | "link" = "signin"
+) {
+  if (!API_BASE) {
+    console.error("Missing VITE_API_URL");
+    return;
   }
+
+  window.location.href = `${API_BASE}/api/auth/${provider}/start?intent=${intent}`;
+}
+
+    
 
   function setOAuthUser(oauthUser: OAuthUserPayload) {
     const normalizedUser = mapOAuthUserToAuthUser(oauthUser);
