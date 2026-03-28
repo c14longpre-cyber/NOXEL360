@@ -37,25 +37,39 @@ function getApiBaseUrl(req: Request): string {
   return origin.replace(/\/+$/, "");
 }
 
-function buildRedirectUri(req: Request, provider: AuthProvider): string {
-  if (provider === "google" && process.env.GOOGLE_REDIRECT_URI?.trim()) {
-    return process.env.GOOGLE_REDIRECT_URI.trim();
+function buildRedirectUri(_req: Request, provider: AuthProvider): string {
+  if (provider === "google") {
+    if (!process.env.GOOGLE_REDIRECT_URI) {
+      throw new Error("GOOGLE_REDIRECT_URI is missing in environment");
+    }
+    return process.env.GOOGLE_REDIRECT_URI;
   }
 
-  if (provider === "microsoft" && process.env.MICROSOFT_REDIRECT_URI?.trim()) {
-    return process.env.MICROSOFT_REDIRECT_URI.trim();
+  if (provider === "microsoft") {
+    if (!process.env.MICROSOFT_REDIRECT_URI) {
+      throw new Error("MICROSOFT_REDIRECT_URI is missing in environment");
+    }
+    return process.env.MICROSOFT_REDIRECT_URI;
   }
 
-  if (provider === "facebook" && process.env.FACEBOOK_REDIRECT_URI?.trim()) {
-    return process.env.FACEBOOK_REDIRECT_URI.trim();
+  if (provider === "facebook") {
+    if (!process.env.FACEBOOK_REDIRECT_URI) {
+      throw new Error("FACEBOOK_REDIRECT_URI is missing in environment");
+    }
+    return process.env.FACEBOOK_REDIRECT_URI;
   }
 
-  if (provider === "apple" && process.env.APPLE_REDIRECT_URI?.trim()) {
-    return process.env.APPLE_REDIRECT_URI.trim();
+  if (provider === "apple") {
+    if (!process.env.APPLE_REDIRECT_URI) {
+      throw new Error("APPLE_REDIRECT_URI is missing in environment");
+    }
+    return process.env.APPLE_REDIRECT_URI;
   }
 
-  return `${getApiBaseUrl(req)}/api/auth/${provider}/callback`;
+  throw new Error(`No redirect URI configured for provider: ${provider}`);
 }
+
+
 
 function encodeState(payload: Record<string, string>): string {
   return Buffer.from(JSON.stringify(payload), "utf8").toString("base64url");
