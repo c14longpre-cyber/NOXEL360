@@ -12,27 +12,35 @@ import { scriptsRouter } from "./routes/scripts.routes";
 import accountRoutes from "./routes/account.routes";
 import { authRouter } from "./auth/auth.routes";
 
-// Social auth providers
-
-
 const app = express();
+
 const PORT = Number(process.env.PORT) || 4000;
+const NODE_ENV = process.env.NODE_ENV || "development";
+const isProd =
+  NODE_ENV === "production" || process.env.RAILWAY_ENVIRONMENT === "production";
+
 const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
+const APP_URL = process.env.APP_URL || FRONTEND_URL;
+const API_URL = process.env.API_URL || `http://localhost:${PORT}`;
 
 const allowedOrigins = [
   "http://localhost:5173",
   "http://127.0.0.1:5173",
   FRONTEND_URL,
-  "https://noxel360.vercel.app",
+  APP_URL,
+  "https://app.noxel360.com",
   "https://noxel360.com",
   "https://www.noxel360.com",
-].filter((value, index, array): value is string => Boolean(value) && array.indexOf(value) === index);
+].filter(
+  (value, index, array): value is string =>
+    Boolean(value) && array.indexOf(value) === index
+);
 
 app.set("trust proxy", 1);
 
 const corsOptions: cors.CorsOptions = {
   origin(origin, callback) {
-    // Allow server-to-server requests, curl, health checks, etc.
+    // Autorise curl, health checks, server-to-server, etc.
     if (!origin) {
       return callback(null, true);
     }
@@ -55,47 +63,55 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+// ===== Root =====
 app.get("/", (_req: Request, res: Response) => {
   res.json({
     ok: true,
     app: "Noxel360 API",
     version: "1.0.0",
+    env: NODE_ENV,
+    apiUrl: API_URL,
+    frontendUrl: FRONTEND_URL,
   });
 });
 
-app.get("/health", (_req: Request, res: Response) => {
+// ===== Health =====
+const healthHandler = (_req: Request, res: Response) => {
   res.json({
     ok: true,
     service: "noxel360-backend",
+    env: NODE_ENV,
+    isProd,
     port: PORT,
+    apiUrl: API_URL,
     frontend: FRONTEND_URL,
+    appUrl: APP_URL,
     allowedOrigins,
     oauth: {
-      apple: true,
-      facebook: true,
-      linkedin: true,
-      tiktok: true,
+      google: Boolean(process.env.GOOGLE_CLIENT_ID),
+      microsoft: Boolean(process.env.MICROSOFT_CLIENT_ID),
+      apple: Boolean(process.env.APPLE_CLIENT_ID),
+      facebook: Boolean(process.env.FACEBOOK_CLIENT_ID),
+      linkedin: Boolean(process.env.LINKEDIN_CLIENT_ID),
+      tiktok: Boolean(process.env.TIKTOK_CLIENT_KEY),
     },
   });
-});
+};
 
+app.get("/health", healthHandler);
+app.get("/api/health", healthHandler);
+
+// ===== Main routes =====
 app.use("/api/account", accountRoutes);
-
-// Social auth routes
-
-
-// Main auth routes
 app.use("/api/auth", authRouter);
-
-// Existing API routes
 app.use("/api", apiRouter);
 app.use("/api", performanceRouter);
 app.use("/api", scriptsRouter);
 
-// Static public files
+// ===== Static public files =====
 app.use(express.static(path.join(__dirname, "../public")));
 
-// 404
+// ===== 404 =====
 app.use((req: Request, res: Response) => {
   res.status(404).json({
     ok: false,
@@ -104,7 +120,7 @@ app.use((req: Request, res: Response) => {
   });
 });
 
-// Error handler
+// ===== Error handler =====
 app.use((err: unknown, _req: Request, res: Response, _next: NextFunction) => {
   console.error("Unhandled server error:", err);
 
@@ -116,8 +132,16 @@ app.use((err: unknown, _req: Request, res: Response, _next: NextFunction) => {
 
 app.listen(PORT, () => {
   console.log(`Noxel360 backend running on port ${PORT}`);
+  console.log(`Environment: ${NODE_ENV}`);
+  console.log(`API URL: ${API_URL}`);
   console.log(`Primary frontend URL: ${FRONTEND_URL}`);
+  console.log(`App URL: ${APP_URL}`);
   console.log(`Allowed CORS origins: ${allowedOrigins.join(", ")}`);
   console.log(`OAuth base: /api/auth`);
+  console.log(`Google callback: ${process.env.GOOGLE_REDIRECT_URI || "not set"}`);
+  console.log(`Microsoft callback: ${process.env.MICROSOFT_REDIRECT_URI || "not set"}`);
+  console.log(`Apple callback: ${process.env.APPLE_REDIRECT_URI || "not set"}`);
   console.log(`Facebook callback: ${process.env.FACEBOOK_REDIRECT_URI || "not set"}`);
+  console.log(`LinkedIn callback: ${process.env.LINKEDIN_REDIRECT_URI || "not set"}`);
+  console.log(`TikTok callback: ${process.env.TIKTOK_REDIRECT_URI || "not set"}`);
 });
