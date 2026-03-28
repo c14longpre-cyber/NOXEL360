@@ -15,6 +15,7 @@ import {
 } from "./auth.session";
 import { findUserById } from "./repos/user.repo";
 import { getFrontendUrl } from "./auth.frontend-url";
+
 function isAuthIntent(value: string): value is AuthIntent {
   return value === "signin" || value === "link";
 }
@@ -28,9 +29,32 @@ function isAuthProvider(value: string): value is AuthProvider {
   );
 }
 
-function buildRedirectUri(req: Request, provider: AuthProvider): string {
+function getApiBaseUrl(req: Request): string {
+  const envApiUrl = process.env.API_URL?.trim();
+  if (envApiUrl) return envApiUrl.replace(/\/+$/, "");
+
   const origin = `${req.protocol}://${req.get("host")}`;
-  return `${origin}/api/auth/${provider}/callback`;
+  return origin.replace(/\/+$/, "");
+}
+
+function buildRedirectUri(req: Request, provider: AuthProvider): string {
+  if (provider === "google" && process.env.GOOGLE_REDIRECT_URI?.trim()) {
+    return process.env.GOOGLE_REDIRECT_URI.trim();
+  }
+
+  if (provider === "microsoft" && process.env.MICROSOFT_REDIRECT_URI?.trim()) {
+    return process.env.MICROSOFT_REDIRECT_URI.trim();
+  }
+
+  if (provider === "facebook" && process.env.FACEBOOK_REDIRECT_URI?.trim()) {
+    return process.env.FACEBOOK_REDIRECT_URI.trim();
+  }
+
+  if (provider === "apple" && process.env.APPLE_REDIRECT_URI?.trim()) {
+    return process.env.APPLE_REDIRECT_URI.trim();
+  }
+
+  return `${getApiBaseUrl(req)}/api/auth/${provider}/callback`;
 }
 
 function encodeState(payload: Record<string, string>): string {
@@ -175,10 +199,6 @@ export async function handleOAuthCallback(req: Request, res: Response) {
 
 export async function getSession(req: Request, res: Response) {
   try {
-    console.log("Session check:", {
-      cookies: req.cookies,
-    });
-
     const current = await getCurrentUser(req);
 
     if (!current?.user) {
