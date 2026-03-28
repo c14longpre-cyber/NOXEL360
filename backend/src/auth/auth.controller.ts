@@ -25,7 +25,8 @@ function isAuthProvider(value: string): value is AuthProvider {
     value === "google" ||
     value === "microsoft" ||
     value === "facebook" ||
-    value === "apple"
+    value === "apple" ||
+    value === "linkedin"
   );
 }
 
@@ -66,10 +67,15 @@ function buildRedirectUri(_req: Request, provider: AuthProvider): string {
     return process.env.APPLE_REDIRECT_URI;
   }
 
+  if (provider === "linkedin") {
+    if (!process.env.LINKEDIN_REDIRECT_URI) {
+      throw new Error("LINKEDIN_REDIRECT_URI is missing in environment");
+    }
+    return process.env.LINKEDIN_REDIRECT_URI;
+  }
+
   throw new Error(`No redirect URI configured for provider: ${provider}`);
 }
-
-
 
 function encodeState(payload: Record<string, string>): string {
   return Buffer.from(JSON.stringify(payload), "utf8").toString("base64url");
