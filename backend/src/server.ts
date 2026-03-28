@@ -129,7 +129,23 @@ app.use((err: unknown, _req: Request, res: Response, _next: NextFunction) => {
     error: err instanceof Error ? err.message : "Internal server error",
   });
 });
-
+app.get("/api/debug/oauth-config", (_req: Request, res: Response) => {
+  res.json({
+    ok: true,
+    apiUrl: process.env.API_URL || null,
+    frontendUrl: process.env.FRONTEND_URL || null,
+    googleRedirectUri: process.env.GOOGLE_REDIRECT_URI || null,
+    microsoftRedirectUri: process.env.MICROSOFT_REDIRECT_URI || null,
+    facebookRedirectUri: process.env.FACEBOOK_REDIRECT_URI || null,
+    linkedinRedirectUri: process.env.LINKEDIN_REDIRECT_URI || null,
+    appleRedirectUri: process.env.APPLE_REDIRECT_URI || null,
+    googleClientIdSet: Boolean(process.env.GOOGLE_CLIENT_ID),
+    microsoftClientIdSet: Boolean(process.env.MICROSOFT_CLIENT_ID),
+    facebookClientIdSet: Boolean(process.env.FACEBOOK_CLIENT_ID),
+    facebookClientSecretSet: Boolean(process.env.FACEBOOK_CLIENT_SECRET),
+    linkedinClientIdSet: Boolean(process.env.LINKEDIN_CLIENT_ID),
+  });
+});
 app.listen(PORT, () => {
   console.log(`Noxel360 backend running on port ${PORT}`);
   console.log(`Environment: ${NODE_ENV}`);
