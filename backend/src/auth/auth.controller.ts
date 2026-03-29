@@ -25,17 +25,9 @@ function isAuthProvider(value: string): value is AuthProvider {
     value === "google" ||
     value === "microsoft" ||
     value === "facebook" ||
-    value === "apple" ||
-    value === "linkedin"
+    value === "linkedin" ||
+    value === "tiktok"
   );
-}
-
-function getApiBaseUrl(req: Request): string {
-  const envApiUrl = process.env.API_URL?.trim();
-  if (envApiUrl) return envApiUrl.replace(/\/+$/, "");
-
-  const origin = `${req.protocol}://${req.get("host")}`;
-  return origin.replace(/\/+$/, "");
 }
 
 function buildRedirectUri(_req: Request, provider: AuthProvider): string {
@@ -60,18 +52,18 @@ function buildRedirectUri(_req: Request, provider: AuthProvider): string {
     return process.env.FACEBOOK_REDIRECT_URI;
   }
 
-  if (provider === "apple") {
-    if (!process.env.APPLE_REDIRECT_URI) {
-      throw new Error("APPLE_REDIRECT_URI is missing in environment");
-    }
-    return process.env.APPLE_REDIRECT_URI;
-  }
-
   if (provider === "linkedin") {
     if (!process.env.LINKEDIN_REDIRECT_URI) {
       throw new Error("LINKEDIN_REDIRECT_URI is missing in environment");
     }
     return process.env.LINKEDIN_REDIRECT_URI;
+  }
+
+  if (provider === "tiktok") {
+    if (!process.env.TIKTOK_REDIRECT_URI) {
+      throw new Error("TIKTOK_REDIRECT_URI is missing in environment");
+    }
+    return process.env.TIKTOK_REDIRECT_URI;
   }
 
   throw new Error(`No redirect URI configured for provider: ${provider}`);
@@ -209,6 +201,7 @@ export async function handleOAuthCallback(req: Request, res: Response) {
     const frontendUrl = getFrontendUrl();
     res.setHeader("Cache-Control", "no-store");
     res.setHeader("Pragma", "no-cache");
+
     return res.redirect(302, `${frontendUrl}/app/account`);
   } catch (error) {
     const message =

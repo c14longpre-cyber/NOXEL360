@@ -45,9 +45,9 @@ export default function NoxelAccessModal({ open, onClose }) {
             key: "tiktok",
             label: "TikTok",
             icon: "♪",
-            enabled: false,
-            accent: "neutral",
-            note: "Coming soon",
+            enabled: true,
+            accent: "green",
+            
         },
     ], []);
     if (!open)

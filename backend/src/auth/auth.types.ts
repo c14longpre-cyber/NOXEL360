@@ -2,30 +2,39 @@ export type AuthProvider =
   | "google"
   | "microsoft"
   | "facebook"
-  | "apple"
-  | "linkedin";
+  | "linkedin"
+  | "tiktok";
+
+export type AuthProviderName = AuthProvider;
 
 export type AuthIntent = "signin" | "link";
 
-export type NormalizedOAuthIdentity = {
+export type OAuthIdentity = {
   provider: AuthProvider;
   providerUserId: string;
   email: string | null;
-  emailVerified: boolean | null;
+  emailVerified: boolean;
   displayName: string | null;
-  givenName: string | null;
-  familyName: string | null;
   avatarUrl: string | null;
   accessToken?: string | null;
   refreshToken?: string | null;
-  expiresAt?: string | null;
-  rawProfile?: unknown;
+  raw?: unknown;
 };
 
-export type AuthStatePayload = {
-  provider: AuthProvider;
-  intent: AuthIntent;
-  returnTo?: string;
-  userId?: string;
-  codeVerifier?: string;
+export type OAuthProviderAdapter = {
+  getAuthorizationUrl(args: {
+    intent: AuthIntent;
+    state: string;
+    redirectUri: string;
+  }): string;
+  exchangeCode(args: {
+    code: string;
+    redirectUri: string;
+    codeVerifier?: string;
+  }): Promise<OAuthIdentity>;
 };
+
+export type OAuthProvider = {
+  name: AuthProvider;
+  enabled: boolean;
+} & OAuthProviderAdapter;

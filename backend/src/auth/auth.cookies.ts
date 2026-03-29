@@ -9,7 +9,7 @@ const isProd =
 
 const COOKIE_DOMAIN = isProd ? ".noxel360.com" : undefined;
 const COOKIE_SECURE = isProd;
-const COOKIE_SAMESITE: "lax" | "strict" | "none" = "lax";
+const COOKIE_SAMESITE = "none";
 
 export function setSessionCookie(res: Response, sessionId: string) {
   res.cookie(SESSION_COOKIE_NAME, sessionId, {

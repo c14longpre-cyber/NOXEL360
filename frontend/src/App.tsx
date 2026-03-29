@@ -6,6 +6,8 @@ import DashboardHome from "./app/pages/DashboardHome";
 import AccountPage from "./app/pages/AccountPage";
 import LinkAccountPage from "./auth/LinkAccountPage";
 import OAuthCallbackPage from "./auth/OAuthCallbackPage";
+import PrivacyPage from "./legal/PrivacyPage";
+import TermsPage from "./legal/TermsPage";
 
 function PricingRedirect() {
   useEffect(() => {
@@ -21,6 +23,9 @@ export default function App() {
       <Route path="/" element={<Navigate to="/dashboard" replace />} />
 
       <Route path="/dashboard" element={<DashboardHome />} />
+
+      <Route path="/privacy" element={<PrivacyPage />} />
+      <Route path="/terms" element={<TermsPage />} />
 
       <Route path="/auth/link-account" element={<LinkAccountPage />} />
       <Route path="/auth/callback" element={<OAuthCallbackPage />} />

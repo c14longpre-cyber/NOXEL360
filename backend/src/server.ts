@@ -40,7 +40,6 @@ app.set("trust proxy", 1);
 
 const corsOptions: cors.CorsOptions = {
   origin(origin, callback) {
-    // Autorise curl, health checks, server-to-server, etc.
     if (!origin) {
       return callback(null, true);
     }
@@ -90,7 +89,6 @@ const healthHandler = (_req: Request, res: Response) => {
     oauth: {
       google: Boolean(process.env.GOOGLE_CLIENT_ID),
       microsoft: Boolean(process.env.MICROSOFT_CLIENT_ID),
-      apple: Boolean(process.env.APPLE_CLIENT_ID),
       facebook: Boolean(process.env.FACEBOOK_CLIENT_ID),
       linkedin: Boolean(process.env.LINKEDIN_CLIENT_ID),
       tiktok: Boolean(process.env.TIKTOK_CLIENT_KEY),
@@ -100,6 +98,30 @@ const healthHandler = (_req: Request, res: Response) => {
 
 app.get("/health", healthHandler);
 app.get("/api/health", healthHandler);
+
+// ===== OAuth debug =====
+app.get("/api/debug/oauth-config", (_req: Request, res: Response) => {
+  res.json({
+    ok: true,
+    apiUrl: process.env.API_URL || null,
+    frontendUrl: process.env.FRONTEND_URL || null,
+
+    googleRedirectUri: process.env.GOOGLE_REDIRECT_URI || null,
+    microsoftRedirectUri: process.env.MICROSOFT_REDIRECT_URI || null,
+    facebookRedirectUri: process.env.FACEBOOK_REDIRECT_URI || null,
+    linkedinRedirectUri: process.env.LINKEDIN_REDIRECT_URI || null,
+    tiktokRedirectUri: process.env.TIKTOK_REDIRECT_URI || null,
+
+    googleClientIdSet: Boolean(process.env.GOOGLE_CLIENT_ID),
+    microsoftClientIdSet: Boolean(process.env.MICROSOFT_CLIENT_ID),
+    facebookClientIdSet: Boolean(process.env.FACEBOOK_CLIENT_ID),
+    facebookClientSecretSet: Boolean(process.env.FACEBOOK_CLIENT_SECRET),
+    linkedinClientIdSet: Boolean(process.env.LINKEDIN_CLIENT_ID),
+    linkedinClientSecretSet: Boolean(process.env.LINKEDIN_CLIENT_SECRET),
+    tiktokClientKeySet: Boolean(process.env.TIKTOK_CLIENT_KEY),
+    tiktokClientSecretSet: Boolean(process.env.TIKTOK_CLIENT_SECRET),
+  });
+});
 
 // ===== Main routes =====
 app.use("/api/account", accountRoutes);
@@ -129,23 +151,7 @@ app.use((err: unknown, _req: Request, res: Response, _next: NextFunction) => {
     error: err instanceof Error ? err.message : "Internal server error",
   });
 });
-app.get("/api/debug/oauth-config", (_req: Request, res: Response) => {
-  res.json({
-    ok: true,
-    apiUrl: process.env.API_URL || null,
-    frontendUrl: process.env.FRONTEND_URL || null,
-    googleRedirectUri: process.env.GOOGLE_REDIRECT_URI || null,
-    microsoftRedirectUri: process.env.MICROSOFT_REDIRECT_URI || null,
-    facebookRedirectUri: process.env.FACEBOOK_REDIRECT_URI || null,
-    linkedinRedirectUri: process.env.LINKEDIN_REDIRECT_URI || null,
-    appleRedirectUri: process.env.APPLE_REDIRECT_URI || null,
-    googleClientIdSet: Boolean(process.env.GOOGLE_CLIENT_ID),
-    microsoftClientIdSet: Boolean(process.env.MICROSOFT_CLIENT_ID),
-    facebookClientIdSet: Boolean(process.env.FACEBOOK_CLIENT_ID),
-    facebookClientSecretSet: Boolean(process.env.FACEBOOK_CLIENT_SECRET),
-    linkedinClientIdSet: Boolean(process.env.LINKEDIN_CLIENT_ID),
-  });
-});
+
 app.listen(PORT, () => {
   console.log(`Noxel360 backend running on port ${PORT}`);
   console.log(`Environment: ${NODE_ENV}`);
@@ -156,7 +162,6 @@ app.listen(PORT, () => {
   console.log(`OAuth base: /api/auth`);
   console.log(`Google callback: ${process.env.GOOGLE_REDIRECT_URI || "not set"}`);
   console.log(`Microsoft callback: ${process.env.MICROSOFT_REDIRECT_URI || "not set"}`);
-  console.log(`Apple callback: ${process.env.APPLE_REDIRECT_URI || "not set"}`);
   console.log(`Facebook callback: ${process.env.FACEBOOK_REDIRECT_URI || "not set"}`);
   console.log(`LinkedIn callback: ${process.env.LINKEDIN_REDIRECT_URI || "not set"}`);
   console.log(`TikTok callback: ${process.env.TIKTOK_REDIRECT_URI || "not set"}`);
