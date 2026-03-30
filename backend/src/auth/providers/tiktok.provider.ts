@@ -1,8 +1,9 @@
+import type { NormalizedOAuthIdentity } from "../auth.types";
 import type {
-  AuthIntent,
-  OAuthIdentity,
+  ExchangeCodeParams,
   OAuthProviderAdapter,
-} from "../auth.types";
+  StartAuthParams,
+} from "./provider.types";
 
 const TIKTOK_CLIENT_KEY = process.env.TIKTOK_CLIENT_KEY || "";
 const TIKTOK_CLIENT_SECRET = process.env.TIKTOK_CLIENT_SECRET || "";
@@ -33,7 +34,10 @@ type TikTokUserResponse = {
   };
 };
 
-async function fetchJson<T>(input: RequestInfo | URL, init?: RequestInit): Promise<T> {
+async function fetchJson<T>(
+  input: RequestInfo | URL,
+  init?: RequestInit
+): Promise<T> {
   const response = await fetch(input, init);
   const text = await response.text();
 
@@ -46,22 +50,18 @@ async function fetchJson<T>(input: RequestInfo | URL, init?: RequestInit): Promi
   }
 
   if (!response.ok) {
-    throw new Error(`TikTok API error (${response.status}): ${JSON.stringify(data)}`);
+    throw new Error(
+      `TikTok API error (${response.status}): ${JSON.stringify(data)}`
+    );
   }
 
   return data as T;
 }
 
 export const tiktokProvider: OAuthProviderAdapter = {
-  getAuthorizationUrl({
-    intent: _intent,
-    state,
-    redirectUri,
-  }: {
-    intent: AuthIntent;
-    state: string;
-    redirectUri: string;
-  }): string {
+  provider: "tiktok",
+
+  getAuthorizationUrl(params: StartAuthParams): string {
     if (!TIKTOK_CLIENT_KEY) {
       throw new Error("TIKTOK_CLIENT_KEY is missing in environment");
     }
@@ -71,20 +71,15 @@ export const tiktokProvider: OAuthProviderAdapter = {
     url.searchParams.set("client_key", TIKTOK_CLIENT_KEY);
     url.searchParams.set("response_type", "code");
     url.searchParams.set("scope", "user.info.basic");
-    url.searchParams.set("redirect_uri", redirectUri);
-    url.searchParams.set("state", state);
+    url.searchParams.set("redirect_uri", params.redirectUri);
+    url.searchParams.set("state", params.state);
 
     return url.toString();
   },
 
-  async exchangeCode({
-    code,
-    redirectUri,
-  }: {
-    code: string;
-    redirectUri: string;
-    codeVerifier?: string;
-  }): Promise<OAuthIdentity> {
+  async exchangeCode(
+    params: ExchangeCodeParams
+  ): Promise<NormalizedOAuthIdentity> {
     if (!TIKTOK_CLIENT_KEY) {
       throw new Error("TIKTOK_CLIENT_KEY is missing in environment");
     }
@@ -96,9 +91,9 @@ export const tiktokProvider: OAuthProviderAdapter = {
     const tokenBody = new URLSearchParams({
       client_key: TIKTOK_CLIENT_KEY,
       client_secret: TIKTOK_CLIENT_SECRET,
-      code,
+      code: params.code,
       grant_type: "authorization_code",
-      redirect_uri: redirectUri,
+      redirect_uri: params.redirectUri,
     });
 
     const token = await fetchJson<TikTokTokenResponse>(
@@ -129,16 +124,26 @@ export const tiktokProvider: OAuthProviderAdapter = {
       throw new Error("TikTok did not return an open_id");
     }
 
+    let expiresAt: string | null = null;
+    if (typeof token.expires_in === "number") {
+      expiresAt = new Date(
+        Date.now() + token.expires_in * 1000
+      ).toISOString();
+    }
+
     return {
       provider: "tiktok",
       providerUserId,
       email: null,
       emailVerified: false,
       displayName: user?.display_name || null,
+      givenName: null,
+      familyName: null,
       avatarUrl: user?.avatar_url || null,
       accessToken: token.access_token || null,
       refreshToken: token.refresh_token || null,
-      raw: {
+      expiresAt,
+      rawProfile: {
         token,
         userInfo,
       },

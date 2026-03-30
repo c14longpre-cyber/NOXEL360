@@ -1,4 +1,5 @@
-import type { AuthProvider, OAuthProviderAdapter } from "../auth.types";
+import type { AuthProvider } from "../auth.types";
+import type { OAuthProviderAdapter } from "./provider.types";
 
 import { googleProvider } from "./google.provider";
 import { microsoftProvider } from "./microsoft.provider";
@@ -6,7 +7,9 @@ import { facebookProvider } from "./facebook.provider";
 import { linkedinProvider } from "./linkedin.provider";
 import { tiktokProvider } from "./tiktok.provider";
 
-export const providerRegistry: Record<AuthProvider, OAuthProviderAdapter> = {
+export const providerRegistry: Partial<
+  Record<AuthProvider, OAuthProviderAdapter>
+> = {
   google: googleProvider,
   microsoft: microsoftProvider,
   facebook: facebookProvider,
@@ -14,14 +17,16 @@ export const providerRegistry: Record<AuthProvider, OAuthProviderAdapter> = {
   tiktok: tiktokProvider,
 };
 
-export function getProviderAdapter(name: AuthProvider): OAuthProviderAdapter {
-  const provider = providerRegistry[name];
+export function getProviderAdapter(
+  provider: AuthProvider
+): OAuthProviderAdapter {
+  const adapter = providerRegistry[provider];
 
-  if (!provider) {
-    throw new Error(`Unsupported provider adapter: ${name}`);
+  if (!adapter) {
+    throw new Error(`Provider not configured: ${provider}`);
   }
 
-  return provider;
+  return adapter;
 }
 
 export function getProvider(name: string): OAuthProviderAdapter | null {

@@ -1,4 +1,8 @@
-import type { AuthIntent, AuthProvider, NormalizedOAuthIdentity } from "../auth.types";
+import type {
+  AuthIntent,
+  AuthProvider,
+  NormalizedOAuthIdentity,
+} from "../auth.types";
 
 export type StartAuthParams = {
   intent: AuthIntent;

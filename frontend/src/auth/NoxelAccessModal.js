@@ -47,7 +47,6 @@ export default function NoxelAccessModal({ open, onClose }) {
             icon: "♪",
             enabled: true,
             accent: "green",
-            
         },
     ], []);
     if (!open)

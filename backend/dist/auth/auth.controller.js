@@ -18,11 +18,41 @@ function isAuthProvider(value) {
     return (value === "google" ||
         value === "microsoft" ||
         value === "facebook" ||
-        value === "apple");
+        value === "linkedin" ||
+        value === "tiktok");
 }
-function buildRedirectUri(req, provider) {
-    const origin = `${req.protocol}://${req.get("host")}`;
-    return `${origin}/api/auth/${provider}/callback`;
+function buildRedirectUri(_req, provider) {
+    if (provider === "google") {
+        if (!process.env.GOOGLE_REDIRECT_URI) {
+            throw new Error("GOOGLE_REDIRECT_URI is missing in environment");
+        }
+        return process.env.GOOGLE_REDIRECT_URI;
+    }
+    if (provider === "microsoft") {
+        if (!process.env.MICROSOFT_REDIRECT_URI) {
+            throw new Error("MICROSOFT_REDIRECT_URI is missing in environment");
+        }
+        return process.env.MICROSOFT_REDIRECT_URI;
+    }
+    if (provider === "facebook") {
+        if (!process.env.FACEBOOK_REDIRECT_URI) {
+            throw new Error("FACEBOOK_REDIRECT_URI is missing in environment");
+        }
+        return process.env.FACEBOOK_REDIRECT_URI;
+    }
+    if (provider === "linkedin") {
+        if (!process.env.LINKEDIN_REDIRECT_URI) {
+            throw new Error("LINKEDIN_REDIRECT_URI is missing in environment");
+        }
+        return process.env.LINKEDIN_REDIRECT_URI;
+    }
+    if (provider === "tiktok") {
+        if (!process.env.TIKTOK_REDIRECT_URI) {
+            throw new Error("TIKTOK_REDIRECT_URI is missing in environment");
+        }
+        return process.env.TIKTOK_REDIRECT_URI;
+    }
+    throw new Error(`No redirect URI configured for provider: ${provider}`);
 }
 function encodeState(payload) {
     return Buffer.from(JSON.stringify(payload), "utf8").toString("base64url");
@@ -136,9 +166,6 @@ async function handleOAuthCallback(req, res) {
 }
 async function getSession(req, res) {
     try {
-        console.log("Session check:", {
-            cookies: req.cookies,
-        });
         const current = await getCurrentUser(req);
         if (!current?.user) {
             return res.status(200).json({
