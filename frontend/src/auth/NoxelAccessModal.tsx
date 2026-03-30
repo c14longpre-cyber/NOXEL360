@@ -65,13 +65,14 @@ export default function NoxelAccessModal({ open, onClose }: Props) {
   enabled: true,
   accent: "green",
 },
-      {
-        key: "tiktok",
-        label: "TikTok",
-        icon: "♪",
-        enabled: true,
-  accent: "green",
-      },
+    {
+  key: "tiktok",
+  label: "TikTok",
+  icon: "♪",
+  enabled: false,
+  accent: "neutral",
+  note: "Coming soon",
+}
     ],
     []
   );
