@@ -2,25 +2,24 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { GoogleOAuthProvider } from "@react-oauth/google";
-
 import App from "./App";
 import { AccountProvider } from "./account/AccountStore";
 import { AuthProvider } from "./auth/AuthStore";
+import { LanguageProvider } from "./language/LanguageStore";
 import "./index.css";
+import "./styles/noxel-standard.css";
 
-const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+const googleClientId = import.meta.env.VITE_GOOGLE_CLIENT_ID || "";
 
-if (!GOOGLE_CLIENT_ID) {
-  throw new Error("Missing VITE_GOOGLE_CLIENT_ID");
-}
-
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
-      <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
+      <GoogleOAuthProvider clientId={googleClientId}>
         <AuthProvider>
           <AccountProvider>
-            <App />
+            <LanguageProvider>
+              <App />
+            </LanguageProvider>
           </AccountProvider>
         </AuthProvider>
       </GoogleOAuthProvider>

@@ -9,8 +9,8 @@
    CSS VARIABLES / TOKENS
    ========================= */
 :root {
-  --g: #3cde6a00;
-  --p: #702aa500;
+  --g: #3cde6a;
+  --p: #702aa5;
 
   --bg: #05070d;
   --surface: #0b1220;
@@ -49,27 +49,35 @@
 /* =========================
    GLOBAL RESET
    ========================= */
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 html,
 body,
 #root {
+  min-height: 100%;
   height: 100%;
 }
 
 body {
   margin: 0;
-  overflow: visible;
+  overflow: hidden;
   background: var(--bg);
   color: var(--text);
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+body.modal-open {
+  overflow: hidden;
 }
 
 #root {
   position: relative;
   z-index: 1;
+  isolation: isolate;
 }
 
 #overlay-root {
@@ -81,6 +89,22 @@ body {
 
 #overlay-root > * {
   pointer-events: auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
 }
 
 .nx-module-text {
@@ -97,6 +121,7 @@ body {
    ========================= */
 .noxel-app {
   height: 100%;
+  min-height: 100%;
   background:
     radial-gradient(
       900px 600px at 12% 10%,
@@ -152,14 +177,17 @@ body {
    HEADER
    ========================= */
 .noxel-header {
-  height: 175px;
+  min-height: 175px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
   padding: 12px 18px;
   border-bottom: 1px solid var(--line);
   background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 10;
 }
 
 .hdr-left {
@@ -167,12 +195,22 @@ body {
   align-items: center;
   gap: 14px;
   min-width: 0;
+  flex: 1 1 auto;
 }
 
 .hdr-right {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  min-width: fit-content;
+  position: relative;
+  z-index: 20;
+}
+
+.hdr-right > * {
+  flex: 0 0 auto;
 }
 
 .logo-slot {
@@ -213,7 +251,8 @@ body {
   box-shadow: 0 0 18px rgba(16, 218, 218, 0.08);
 }
 
-.account-btn {
+.account-btn,
+.nx-pill {
   font-size: 20px;
   padding: 8px 25px;
   border-radius: 999px;
@@ -228,11 +267,18 @@ body {
     transform 0.12s ease;
 }
 
-.account-btn:hover {
+.account-btn:hover,
+.nx-pill:hover {
   background: rgba(255, 255, 255, 0.09);
   border-color: rgba(16, 218, 218, 0.42);
-  box-shadow: 0 0 18px rgba(16, 218, 218, 0.1);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
   transform: translateY(-1px);
+}
+
+.account-btn:focus-visible,
+.nx-pill:focus-visible {
+  outline: 2px solid rgba(60, 222, 106, 0.9);
+  outline-offset: 2px;
 }
 
 /* =========================
@@ -245,6 +291,7 @@ body {
   gap: 14px;
   padding: 10px;
   min-height: 0;
+  overflow: hidden;
 }
 
 /* =========================
@@ -260,7 +307,9 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 0;
-  overflow: visible;
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
 }
 
 .nav-group {
@@ -360,12 +409,12 @@ body {
   min-height: 0;
   overflow: auto;
   padding: 0;
+  position: relative;
 }
 
 /* =========================
    SHARED CONTAINERS
    ========================= */
-.noxel-sidenav,
 .nx-hero,
 .nx-card {
   position: relative;
@@ -386,8 +435,7 @@ body {
     color-mix(in srgb, var(--tier) 70%, transparent),
     transparent 60%
   );
-  -webkit-mask: radial-gradient(circle, #000 60%, transparent 61%);
-  mask: radial-gradient(circle, #000 60%, transparent 61%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   opacity: 0.5;
@@ -525,7 +573,7 @@ body {
 .nx-hero__text {
   width: 100%;
   max-width: none;
-  min-width: 10;
+  min-width: 0;
 }
 
 .nx-logo {
@@ -533,7 +581,7 @@ body {
   height: 200px;
   position: relative;
   flex: 0 0 auto;
-  border-radius: 0px;
+  border-radius: 0;
   overflow: visible;
   transform: translateZ(0);
 }
@@ -546,7 +594,7 @@ body {
 
 .nx-title {
   letter-spacing: 2.6px;
-  line-height: 2.15;
+  line-height: 1.3;
   margin: 0 0 8px;
 }
 
@@ -555,7 +603,7 @@ body {
   line-height: 1.5;
   opacity: 0.9;
   max-width: 760px;
-  margin: 0 auto;
+  margin: 0;
   color: rgba(255, 255, 255, 0.78);
 }
 
@@ -631,13 +679,17 @@ body {
    GRID / CARDS
    ========================= */
 .nx-grid {
-  margin-top: 0px;
+  margin-top: 0;
   display: grid;
   gap: 7px;
 }
 
 .nx-grid--5 {
   grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.nx-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .nx-card {
@@ -749,6 +801,14 @@ body {
 
 .nx-card__link:hover {
   text-decoration: underline;
+}
+
+.nx-kpi-grid .nx-card {
+  min-height: unset;
+}
+
+.nx-kpi-grid .nx-card:hover {
+  transform: translateY(-2px);
 }
 
 /* =========================
@@ -1002,6 +1062,72 @@ body {
 }
 
 /* =========================
+   LANDING PAGE / MARKDOWN
+   ========================= */
+#countries path {
+  pointer-events: auto;
+}
+
+.nx-landing-page {
+  width: 100%;
+  padding: 40px 60px;
+}
+
+.nx-landing-hero {
+  margin-bottom: 32px;
+}
+
+.nx-md {
+  width: 100%;
+  max-width: none;
+  font-size: 18px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.nx-md h1 {
+  font-size: 44px;
+  margin: 0 0 18px;
+}
+
+.nx-md h2 {
+  font-size: 30px;
+  margin: 34px 0 14px;
+  color: var(--g);
+}
+
+.nx-md h3 {
+  font-size: 22px;
+  margin: 24px 0 10px;
+  color: #fff;
+}
+
+.nx-md p {
+  margin: 0 0 14px;
+}
+
+.nx-md ul {
+  margin: 12px 0 18px 20px;
+  padding: 0;
+}
+
+.nx-md li {
+  margin-bottom: 8px;
+}
+
+.nx-md strong {
+  color: #fff;
+}
+
+.nx-md blockquote {
+  margin: 18px 0;
+  padding: 14px 18px;
+  border-left: 3px solid var(--g);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+}
+
+/* =========================
    RESPONSIVE
    ========================= */
 @media (max-width: 1550px) {
@@ -1014,6 +1140,16 @@ body {
   }
 }
 
+@media (max-width: 1280px) {
+  .nx-grid--3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nx-kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 1180px) {
   body {
     overflow: auto;
@@ -1021,6 +1157,10 @@ body {
 
   .noxel-main {
     overflow: auto;
+  }
+
+  .noxel-body {
+    overflow: visible;
   }
 
   .nx-grid--5 {
@@ -1060,7 +1200,28 @@ body {
   }
 }
 
+@media (max-width: 760px) {
+  .nx-grid--3 {
+    grid-template-columns: 1fr;
+  }
+
+  .nx-kpi-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 720px) {
+  .noxel-header {
+    min-height: auto;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hdr-left,
+  .hdr-right {
+    width: 100%;
+  }
+
   .noxel-body {
     grid-template-columns: 1fr;
     height: auto;
@@ -1094,4 +1255,141 @@ body {
     width: 24px;
     height: 24px;
   }
+}
+/* =========================
+   KPI CARDS
+   ========================= */
+.nx-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.nx-kpi-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 138px;
+  border-radius: 22px;
+  padding: 16px 16px 14px;
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(circle at top right, rgba(112, 42, 165, 0.12), transparent 34%),
+    radial-gradient(circle at bottom left, rgba(60, 222, 106, 0.12), transparent 34%),
+    rgba(255, 255, 255, 0.045);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition:
+    transform 0.14s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.nx-kpi-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06),
+    transparent 38%,
+    transparent 100%
+  );
+}
+
+.nx-kpi-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(60, 222, 106, 0.34);
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.28),
+    0 0 20px rgba(60, 222, 106, 0.08);
+}
+
+.nx-kpi-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.nx-kpi-card__eyebrow {
+  font-size: 11px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.48);
+  font-weight: 800;
+}
+
+.nx-kpi-card__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #3cde6a;
+  box-shadow:
+    0 0 0 4px rgba(60, 222, 106, 0.12),
+    0 0 16px rgba(60, 222, 106, 0.45);
+  flex: 0 0 auto;
+}
+
+.nx-kpi-card__dot[data-alt="true"] {
+  background: #b68cff;
+  box-shadow:
+    0 0 0 4px rgba(112, 42, 165, 0.14),
+    0 0 16px rgba(112, 42, 165, 0.45);
+}
+
+.nx-kpi-card__value {
+  font-size: clamp(28px, 2.2vw, 40px);
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  color: #f5f7fb;
+}
+
+.nx-kpi-card__hint {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.62);
+}
+.nx-logo__fallback {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  border-radius: 24px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+/* =========================
+   REMOVE LOGO BACKGROUND (FINAL)
+   ========================= */
+
+.nx-logo {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+/* 🔴 enlève le gradient vert/mauve */
+.nx-logo__color {
+  display: none !important;
+}
+
+/* 🔴 enlève le glow + effets */
+.nx-logo__img {
+  filter: none !important;
+  opacity: 1 !important;
 }

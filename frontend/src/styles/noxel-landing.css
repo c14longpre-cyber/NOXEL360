@@ -1,0 +1,44 @@
+.nx-landing-page {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 24px 32px;
+}
+
+.nx-landing-hero {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.nx-landing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.nx-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 18px;
+  backdrop-filter: blur(6px);
+  transition: all 0.25s ease;
+}
+
+.nx-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(60,222,106,0.4);
+  box-shadow: 0 0 20px rgba(60,222,106,0.15);
+}
+
+.nx-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.nx-card p {
+  opacity: 0.85;
+  line-height: 1.5;
+}

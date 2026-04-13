@@ -1,0 +1,32 @@
+[
+  {
+    "code": "CA",
+    "name": "Canada",
+    "languages": ["en", "fr"],
+    "defaultLanguage": "en"
+  },
+  {
+    "code": "US",
+    "name": "United States",
+    "languages": ["en"],
+    "defaultLanguage": "en"
+  },
+  {
+    "code": "FR",
+    "name": "France",
+    "languages": ["fr"],
+    "defaultLanguage": "fr"
+  },
+  {
+    "code": "DE",
+    "name": "Germany",
+    "languages": ["de"],
+    "defaultLanguage": "de"
+  },
+  {
+    "code": "IT",
+    "name": "Italy",
+    "languages": ["it"],
+    "defaultLanguage": "it"
+  }
+]

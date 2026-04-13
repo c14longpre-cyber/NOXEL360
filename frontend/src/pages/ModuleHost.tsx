@@ -5,6 +5,7 @@ import {
   type Tier,
   type ModuleStatus,
 } from "../modules/modules.registry";
+import { MODULE_COMPONENTS } from "@/app/modules/modules.runtime";
 
 /* ======================================================
    NOXEL360 — Module Host
@@ -204,84 +205,68 @@ export default function ModuleHost() {
     );
   }
 
-  /* =========================
-     Placeholder / Active
-     ========================= */
-  return (
-    <div className="noxel-landing">
-      <div className="nx-wrap">
-        <header className="nx-hero">
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "220px minmax(0, 1fr)",
-              gap: 36,
-              alignItems: "start",
-            }}
-          >
-            <div>
-              <img
-                src={logoSrc}
-                alt={mod.name}
-                className="module-landing-logo"
-                loading="lazy"
-                style={{
-                  width: 220,
-                  height: "auto",
-                  display: "block",
-                  objectFit: "contain",
-                }}
-              />
-            </div>
 
-            <div style={{ minWidth: 0, width: "100%" }}>
-              <div className="nx-kicker">NOXEL360</div>
 
-              <p className="nx-subtitle" style={{ marginTop: 8 }}>
-                Module interne — prêt à être branché.
-              </p>
+/* =========================
+   Module runtime injection
+   ========================= */
 
-              <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 12 }}>
-                <Link to="/dashboard" className="nav-cta" style={{ marginTop: 0 }}>
-                  ← Retour dashboard
-                </Link>
+const Component = MODULE_COMPONENTS[mod.id];
 
-                <span className="pill">
-                  {effectiveStatus === "active" ? "ACTIF" : "BIENTÔT"}
-                </span>
-              </div>
+if (Component) {
+  return <Component />;
+}
 
-              <div style={{ marginTop: 24, width: "100%" }}>
-                <div className="nx-card" style={{ margin: 0 }}>
-                  <div className="nx-card__title" style={{ marginTop: 0 }}>
-                    Placeholder
-                  </div>
+/* =========================
+   Fallback placeholder
+   ========================= */
+return (
+  <div className="noxel-landing">
+    <div className="nx-wrap">
+      <header className="nx-hero">
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "220px minmax(0, 1fr)",
+            gap: 36,
+            alignItems: "start",
+          }}
+        >
+          <div>
+            <img
+              src={logoSrc}
+              alt={mod.name}
+              className="module-landing-logo"
+              loading="lazy"
+              style={{
+                width: 220,
+                height: "auto",
+                display: "block",
+                objectFit: "contain",
+              }}
+            />
+          </div>
 
-                  <div style={{ width: "100%", maxWidth: "none" }}>
-                    <p className="nx-card__text">
-                      Cette page sert de point d’entrée stable. Quand le module sera prêt,
-                      on remplacera ce contenu par la vraie interface, sans toucher aux
-                      routes existantes.
-                    </p>
+          <div style={{ minWidth: 0 }}>
+            <div className="nx-kicker">NOXEL360</div>
 
-                    <ul className="nx-card__list">
-                      <li>
-                        <strong>Route :</strong> {mod.route}
-                      </li>
-                      <li>
-                        <strong>Tier minimum :</strong> {mod.minTier}
-                      </li>
-                      <li>
-                        <strong>ID :</strong> {mod.id}
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+            <p className="nx-subtitle" style={{ marginTop: 8 }}>
+              Module interne — prêt à être branché.
+            </p>
+
+            <div style={{ marginTop: 24 }}>
+              <div className="nx-card">
+                <div className="nx-card__title">Placeholder</div>
+
+                <p className="nx-card__text">
+                  Ce module n’est pas encore connecté.
+                </p>
               </div>
             </div>
           </div>
-        </header>
-      </div>
+        </div>
+      </header>
     </div>
-  );
+  </div>
+);
 }

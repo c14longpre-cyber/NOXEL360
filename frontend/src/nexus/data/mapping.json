@@ -1,0 +1,7 @@
+{
+  "CA": { "languages": ["en", "fr"], "priority": ["en", "fr"] },
+  "US": { "languages": ["en"], "priority": ["en"] },
+  "FR": { "languages": ["fr"], "priority": ["fr"] },
+  "DE": { "languages": ["de"], "priority": ["de"] },
+  "IT": { "languages": ["it"], "priority": ["it"] }
+}
