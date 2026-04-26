@@ -1,0 +1,106 @@
+.language-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.language-modal-card {
+  width: min(1320px, 94vw);
+  max-width: 1320px;
+  min-height: 720px;
+  max-height: 88vh;
+  border-radius: 28px;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 16, 22, 0.98),
+    rgba(10, 12, 18, 0.96)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  padding: 28px;
+  color: rgba(255, 255, 255, 0.95);
+  overflow: hidden;
+}
+
+.language-modal-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: 24px;
+  height: 100%;
+}
+
+.language-modal-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.language-modal-item {
+  width: 100%;
+  text-align: left;
+}
+
+.language-modal-item--active {
+  border-color: rgba(73, 60, 222, 0.45);
+  box-shadow: 0 0 0 1px rgba(60, 222, 106, 0.2);
+}
+
+.language-modal-close {
+  margin-top: 18px;
+}
+
+@media (max-width: 13200px) {
+.language-modal-card {
+  width: min(1320px, 94vw);
+  max-width: 1320px;
+  min-height: 720px;
+  max-height: 88vh;
+  border-radius: 28px;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 16, 22, 0.98),
+    rgba(10, 12, 18, 0.96)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  padding: 28px;
+  color: rgba(255, 255, 255, 0.95);
+  overflow: hidden;
+}
+
+  .language-modal-content {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .language-modal-backdrop {
+    padding: 12px;
+  }
+
+.language-modal-card {
+  width: min(1320px, 94vw);
+  max-width: 1320px;
+  min-height: 720px;
+  max-height: 88vh;
+  border-radius: 28px;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 16, 22, 0.98),
+    rgba(10, 12, 18, 0.96)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  padding: 28px;
+  color: rgba(255, 255, 255, 0.95);
+  overflow: hidden;
+}
+}

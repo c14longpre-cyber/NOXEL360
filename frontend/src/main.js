@@ -1,0 +1,14 @@
+import { jsx as _jsx } from "react/jsx-runtime";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+import App from "./App";
+import { AccountProvider } from "./account/AccountStore";
+import { AuthProvider } from "./auth/AuthStore";
+import { LanguageProvider } from "./language/LanguageStore";
+import { RegionProvider } from "./region/RegionStore";
+import "./index.css";
+import "./styles/noxel-standard.css";
+const googleClientId = import.meta.env.VITE_GOOGLE_CLIENT_ID || "";
+ReactDOM.createRoot(document.getElementById("root")).render(_jsx(React.StrictMode, { children: _jsx(BrowserRouter, { children: _jsx(GoogleOAuthProvider, { clientId: googleClientId, children: _jsx(AuthProvider, { children: _jsx(AccountProvider, { children: _jsx(LanguageProvider, { children: _jsx(RegionProvider, { children: _jsx(App, {}) }) }) }) }) }) }) }));

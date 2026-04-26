@@ -1,0 +1,73 @@
+import React, { useState } from "react";
+import RegionMap, { type RegionId } from "./RegionMap";
+
+type RegionStepProps = {
+  onNext: (regionId: RegionId | null) => void;
+  onCancel: () => void;
+};
+
+export default function RegionStep({ onNext, onCancel }: RegionStepProps) {
+  const [selectedRegion, setSelectedRegion] = useState<RegionId | null>(null);
+
+  const handleNext = () => {
+    onNext(selectedRegion);
+  };
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        height: "100%",
+        paddingRight: 24,
+      }}
+    >
+      <div>
+        <h2 style={{ fontSize: "1.6rem", marginBottom: 4 }}>
+          Choisissez votre région
+        </h2>
+        <p style={{ opacity: 0.8 }}>
+          Sélectionnez une région du monde pour continuer.
+        </p>
+      </div>
+
+      <div
+        style={{
+          marginTop: 32,
+          flex: 1,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          overflow: "hidden",
+        }}
+      >
+        <RegionMap
+          selectedRegion={selectedRegion}
+          onSelectRegion={(region: RegionId) => setSelectedRegion(region)}
+        />
+      </div>
+
+      <div
+        style={{
+          marginTop: 32,
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          gap: 16,
+        }}
+      >
+        <button type="button" onClick={onCancel}>
+          Annuler
+        </button>
+
+        <button
+          type="button"
+          disabled={!selectedRegion}
+          onClick={handleNext}
+        >
+          Continuer →
+        </button>
+      </div>
+    </div>
+  );
+}
