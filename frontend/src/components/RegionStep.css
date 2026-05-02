@@ -1,0 +1,62 @@
+:root {
+  --midnight-ocean: radial-gradient(
+      ellipse at 20% 30%,
+      #0b1220 0%,
+      #020617 40%,
+      #00010a 100%
+    );
+}
+
+.region-step-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 32px;
+  background: var(--midnight-ocean);
+  color: #e5e7eb;
+}
+
+.region-step-header h2 {
+  font-size: 1.8rem;
+  margin-bottom: 4px;
+}
+
+.region-step-header p {
+  opacity: 0.8;
+}
+
+.region-step-map-container {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.region-step-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 24px;
+}
+
+.btn-cancel {
+  background: transparent;
+  border: 1px solid #4b5563;
+  border-radius: 12px;
+  padding: 10px 22px;
+  color: #d1d5db;
+  cursor: pointer;
+}
+
+.btn-continue {
+  background: linear-gradient(90deg, #10b981, #8b5cf6);
+  border: none;
+  border-radius: 12px;
+  padding: 10px 22px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-continue:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

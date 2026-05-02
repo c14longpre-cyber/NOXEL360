@@ -1,0 +1,86 @@
+{
+  "generatedAtUtc": "2026-02-02T19:36:35.9209991Z",
+  "baseRoute": "/app",
+  "modules": [
+    {
+      "key": "seo",
+      "name": "NOXEL SEO",
+      "route": "/app/seo",
+      "landingFile": "src/modules/seo/landing.md",
+      "promise": "Improving website SEO performance.",
+      "status": "ready"
+    },
+    {
+      "key": "atlas",
+      "name": "NOXEL ATLAS",
+      "route": "/app/atlas",
+      "landingFile": "src/modules/atlas/landing.md",
+      "promise": "Compare markets and opportunities.",
+      "status": "missing"
+    },
+    {
+      "key": "links",
+      "name": "NOXEL LINKS",
+      "route": "/app/links",
+      "landingFile": "src/modules/links/landing.md",
+      "promise": "Link hygiene: breaks, redirects, clarity.",
+      "status": "missing"
+    },
+    {
+      "key": "maestro",
+      "name": "NOXEL MAESTRO",
+      "route": "/app/maestro",
+      "landingFile": "src/modules/maestro/landing.md",
+      "promise": "Unified identity & data core.",
+      "status": "missing"
+    },
+    {
+      "key": "morph",
+      "name": "NOXEL MORPH™",
+      "route": "/app/morph",
+      "landingFile": "src/modules/morph/landing.md",
+      "promise": "User‑adaptive theming: colors, typography.",
+      "status": "missing"
+    },
+    {
+      "key": "flow",
+      "name": "NOXEL FLOW",
+      "route": "/app/flow",
+      "landingFile": "src/modules/flow/landing.md",
+      "promise": "Themes and components distribution.",
+      "status": "missing"
+    },
+{
+  "key": "optima",
+  "name": "NOXEL OPTIMA",
+  "route": "/app/optima",
+  "landingFile": "src/modules/optima/landing.md",
+  "promise": "Convert & optimize images.",
+  "status": "missing"
+},
+    {
+      "key": "analytics",
+      "name": "NOXEL ANALYTICS",
+      "route": "/app/analytics",
+      "landingFile": "src/modules/analytics/landing.md",
+      "promise": "Unified insights: performance & behavior.",
+      "status": "missing"
+    },
+    {
+      "key": "social",
+      "name": "NOXEL SOCIAL",
+      "route": "/app/social",
+      "landingFile": "src/modules/social/landing.md",
+      "promise": "Unified brand content workflow.",
+      "status": "missing"
+    },
+    {
+      "key": "crm",
+      "name": "NOXEL CRM",
+      "route": "/app/crm",
+      "landingFile": "src/modules/crm/landing.md",
+      "promise": "Two‑sided CRM automation.",
+      "status": "missing"
+    }
+  ]
+}

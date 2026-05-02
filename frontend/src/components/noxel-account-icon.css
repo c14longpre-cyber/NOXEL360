@@ -1,0 +1,80 @@
+.noxel-account-icon {
+  --g: #3CDE6A;
+  --p: #702AA5;
+  --line: rgba(14, 171, 142, 0.46);
+  --bronze: #CD7F32;
+  --silver: #C0C0C0;
+  --gold: #FFD700;
+  --platinum: #E5E4E2;
+  --diamondA: #4fd1ff;
+  --diamondB: #a855f7;
+  --center-fill: #7b8394;
+  --ring-fill: var(--p);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.28));
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.noxel-account-icon:hover {
+  transform: translateY(-1px);
+  filter: drop-shadow(0 0 14px rgba(60, 222, 106, 0.18));
+}
+
+.noxel-account-icon__svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.noxel-account-icon__ring,
+.noxel-account-icon__arrow {
+  stroke: var(--ring-fill);
+  transition: stroke 180ms ease, filter 180ms ease;
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--ring-fill) 55%, transparent));
+}
+
+.noxel-account-icon__head,
+.noxel-account-icon__body {
+  transition: fill 180ms ease, filter 180ms ease;
+  fill: var(--center-fill);
+  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--center-fill) 28%, transparent));
+}
+
+.noxel-account-icon.is-disconnected {
+  --ring-fill: var(--p);
+  --center-fill: #8e95a3;
+}
+
+.noxel-account-icon.is-connected {
+  --ring-fill: var(--g);
+}
+
+.noxel-account-icon.tier-off {
+  --center-fill: #8e95a3;
+}
+
+.noxel-account-icon.tier-bronze {
+  --center-fill: var(--bronze);
+}
+
+.noxel-account-icon.tier-silver {
+  --center-fill: var(--silver);
+}
+
+.noxel-account-icon.tier-gold {
+  --center-fill: var(--gold);
+}
+
+.noxel-account-icon.tier-platinum {
+  --center-fill: var(--platinum);
+}
+
+.noxel-account-icon.tier-diamond .noxel-account-icon__head,
+.noxel-account-icon.tier-diamond .noxel-account-icon__body {
+  fill: url(#noxelRefreshGradient);
+  filter: drop-shadow(0 0 10px rgba(79, 209, 255, 0.22));
+}

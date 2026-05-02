@@ -1,0 +1,344 @@
+[
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Alabama",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Alaska",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "American Samoa",
+    "type": "outlying area"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Arizona",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Arkansas",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "California",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Colorado",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Connecticut",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Delaware",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "District of Columbia",
+    "type": "district"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Florida",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Georgia",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Guam",
+    "type": "outlying area"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Hawaii",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Idaho",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Illinois",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Indiana",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Iowa",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Kansas",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Kentucky",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Louisiana",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Maine",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Maryland",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Massachusetts",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Michigan",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Minnesota",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Mississippi",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Missouri",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Montana",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Nebraska",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Nevada",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "New Hampshire",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "New Jersey",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "New Mexico",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "New York",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "North Carolina",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "North Dakota",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Northern Mariana Islands",
+    "type": "outlying area"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Ohio",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Oklahoma",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Oregon",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Pennsylvania",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Puerto Rico",
+    "type": "outlying area"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Rhode Island",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "South Carolina",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "South Dakota",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Tennessee",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Texas",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "United States Minor Outlying Islands",
+    "type": "outlying area"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "United States Virgin Islands",
+    "type": "outlying area"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Utah",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Vermont",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Virginia",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Washington",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "West Virginia",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Wisconsin",
+    "type": "state"
+  },
+  {
+    "iso": "US-",
+    "code": "",
+    "name": "Wyoming",
+    "type": "state"
+  }
+]

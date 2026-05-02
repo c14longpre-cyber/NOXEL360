@@ -1,0 +1,4 @@
+// ADD THIS TO YOUR ROUTER:
+//
+// <Route path="/app/:moduleKey" element={<ModuleLandingPage />} />
+<Route path="/app/:moduleKey" element={<ModuleLandingPage />} />

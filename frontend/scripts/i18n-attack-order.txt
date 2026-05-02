@@ -1,0 +1,12 @@
+1. src\pages\DashboardHome.tsx
+2. src\pages\NexusPage.tsx
+3. src\app\pages\DashboardHome.tsx
+4. src\components\LanguageModal.tsx
+5. src\components\HeaderLanguage.tsx
+6. src\app\pages\AccountPage.tsx
+7. src\auth\NoxelAccessModal.tsx
+8. src\pages\ModuleHost.tsx
+9. src\components\GlobalScore.tsx
+10. src\components\WorldMap.tsx
+11. src\components\Sidebar.tsx
+12. src\components\UserMenu.tsx

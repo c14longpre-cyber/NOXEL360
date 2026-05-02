@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://noxel360.com/sitemap.xml
