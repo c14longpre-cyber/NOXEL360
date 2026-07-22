@@ -1,4 +1,5 @@
 import express from "express";
+import { authRouter } from "./auth/auth.routes";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import { seoModuleRouter } from "./seo/seo.module";
@@ -53,6 +54,17 @@ app.get("/api/health", (_req, res) => {
     uptimeSec: Math.floor(process.uptime()),
   });
 });
+
+// Auth — Google/Microsoft/Facebook/LinkedIn/TikTok OAuth (redirect-based)
+// GET  /api/auth/:provider/start
+// GET  /api/auth/:provider/callback
+// GET  /api/auth/session (also aliased as /api/auth/me)
+// POST /api/auth/logout
+// POST /api/auth/resolve-existing-email
+app.use("/api/auth", authRouter);
+
+// Auth — Google/Microsoft/Facebook/LinkedIn/TikTok OAuth (redirect-based)
+app.use("/api/auth", authRouter);
 
 // NOXEL SEO — vrai moteur (seo.module.ts)
 // GET /api/seo/health

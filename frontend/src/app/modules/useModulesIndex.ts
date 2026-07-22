@@ -1,105 +1,56 @@
 import { useMemo } from "react";
-import { orderedLandingKeys } from "../host/landingRegistry";
 
 export type ModuleStatus = "ready" | "core" | "pro" | "missing";
 
 export type ModuleIndexItem = {
   key: string;
-  nameKey: string;
+  name: string;
   route: string;
-  promiseKey: string;
+  promise: string;
   status: ModuleStatus;
+  /** True if this module lives on its own domain (opens in a new tab, not an internal route). */
+  external?: boolean;
 };
 
-const MODULE_META: Record<string, Omit<ModuleIndexItem, "key">> = {
-  analytics: {
-    nameKey: "modules.analytics.name",
-    route: "/app/analytics",
-    promiseKey: "modules.analytics.promise",
-    status: "pro",
-  },
-  atlas: {
-    nameKey: "modules.atlas.name",
-    route: "/app/atlas",
-    promiseKey: "modules.atlas.promise",
-    status: "pro",
-  },
-  crm: {
-    nameKey: "modules.crm.name",
-    route: "/app/crm",
-    promiseKey: "modules.crm.promise",
-    status: "pro",
-  },
-  flow: {
-    nameKey: "modules.flow.name",
-    route: "/app/flow",
-    promiseKey: "modules.flow.promise",
-    status: "pro",
-  },
-  links: {
-    nameKey: "modules.links.name",
-    route: "/app/links",
-    promiseKey: "modules.links.promise",
-    status: "pro",
-  },
-  maestro: {
-    nameKey: "modules.maestro.name",
-    route: "/app/maestro",
-    promiseKey: "modules.maestro.promise",
-    status: "core",
-  },
-  morph: {
-    nameKey: "modules.morph.name",
-    route: "/app/morph",
-    promiseKey: "modules.morph.promise",
-    status: "pro",
-  },
-  nexus: {
-    nameKey: "modules.nexus.name",
-    route: "/nexus",
-    promiseKey: "modules.nexus.promise",
-    status: "core",
-  },
-  optima: {
-    nameKey: "modules.optima.name",
-    route: "/app/optima",
-    promiseKey: "modules.optima.promise",
-    status: "pro",
-  },
-  seo: {
-    nameKey: "modules.seo.name",
-    route: "/app/seo",
-    promiseKey: "modules.seo.promise",
+/**
+ * NOXEL360 — Module Index
+ *
+ * Simplified on purpose: NOXEL360 now links out to the real, live products
+ * (NOXEL SEO, NOXEL Forge) instead of hosting internal duplicate clones.
+ * NOXEL NEXUS is the only module with real functional code still living
+ * inside this app, so it stays as an internal route.
+ *
+ * To add a future internal module: add an entry with external:false and a
+ * real internal route. To add a future external product: external:true and
+ * the full https:// URL as the route.
+ */
+const MODULE_ITEMS: ModuleIndexItem[] = [
+  {
+    key: "seo",
+    name: "NOXEL SEO",
+    route: "https://noxelseo.com",
+    promise: "Search visibility, audits, and optimization intelligence.",
     status: "ready",
+    external: true,
   },
-  social: {
-    nameKey: "modules.social.name",
-    route: "/app/social",
-    promiseKey: "modules.social.promise",
-    status: "pro",
+  {
+    key: "forge",
+    name: "NOXEL FORGE",
+    route: "https://noxelforge.com",
+    promise: "Verified backlink exchange network for real, trusted sites.",
+    status: "ready",
+    external: true,
   },
-};
+  {
+    key: "nexus",
+    name: "NOXEL NEXUS",
+    route: "/nexus",
+    promise: "Language, region, and cultural intelligence engine.",
+    status: "core",
+    external: false,
+  },
+];
 
 export function useModulesIndex(): ModuleIndexItem[] {
-  return useMemo(() => {
-    return orderedLandingKeys.map((key) => {
-      const meta = MODULE_META[key];
-
-      if (!meta) {
-        return {
-          key,
-          nameKey: `modules.${key}.name`,
-          route: `/app/${key}`,
-          promiseKey: "modules.common.comingSoon",
-          status: "missing" as const,
-        };
-      }
-
-      return {
-        key,
-        ...meta,
-      };
-    });
-  }, []);
+  return useMemo(() => MODULE_ITEMS, []);
 }
-

@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { LOGO_BY_ID } from "@/app/modules/logos";
 import { useModulesIndex } from "../modules/useModulesIndex";
@@ -7,154 +7,32 @@ import HeaderLanguage from "@/components/HeaderLanguage";
 import TranslationStatusBanner from "@/components/TranslationStatusBanner";
 import { useI18n } from "@/useI18n";
 
-type Badge = "PRO" | "CORE" | "LIVE";
-
-type DashboardModule = {
-  key: string;
-  name: string;
-  short: string;
-  badge: Badge;
-  description: string;
-  bullets: string[];
-  href: string;
-  highlight?: boolean;
-  ico: string;
-};
-
-function toBadge(status?: string): Badge {
-  const value = (status || "").toLowerCase();
-  if (value === "ready") return "LIVE";
-  if (value === "core") return "CORE";
-  return "PRO";
-}
-
 export default function DashboardHome() {
   const tier: "bronze" | "silver" | "gold" | "platinum" | "diamond" = "diamond";
   const nav = useNavigate();
-  const indexItems = useModulesIndex();
+  const modules = useModulesIndex();
   const { t } = useI18n();
-
-  const modules = useMemo<DashboardModule[]>(() => {
-    const bulletKeysByModule: Record<string, string[]> = {
-      analytics: [
-        "dashboard.module.analytics.bullet1",
-        "dashboard.module.analytics.bullet2",
-        "dashboard.module.analytics.bullet3",
-      ],
-      atlas: [
-        "dashboard.module.atlas.bullet1",
-        "dashboard.module.atlas.bullet2",
-        "dashboard.module.atlas.bullet3",
-      ],
-      crm: [
-        "dashboard.module.crm.bullet1",
-        "dashboard.module.crm.bullet2",
-        "dashboard.module.crm.bullet3",
-      ],
-      flow: [
-        "dashboard.module.flow.bullet1",
-        "dashboard.module.flow.bullet2",
-        "dashboard.module.flow.bullet3",
-      ],
-      links: [
-        "dashboard.module.links.bullet1",
-        "dashboard.module.links.bullet2",
-        "dashboard.module.links.bullet3",
-      ],
-      maestro: [
-        "dashboard.module.maestro.bullet1",
-        "dashboard.module.maestro.bullet2",
-        "dashboard.module.maestro.bullet3",
-      ],
-      morph: [
-        "dashboard.module.morph.bullet1",
-        "dashboard.module.morph.bullet2",
-        "dashboard.module.morph.bullet3",
-      ],
-      nexus: [
-        "dashboard.module.nexus.bullet1",
-        "dashboard.module.nexus.bullet2",
-        "dashboard.module.nexus.bullet3",
-      ],
-      optima: [
-        "dashboard.module.optima.bullet1",
-        "dashboard.module.optima.bullet2",
-        "dashboard.module.optima.bullet3",
-      ],
-      seo: [
-        "dashboard.module.seo.bullet1",
-        "dashboard.module.seo.bullet2",
-        "dashboard.module.seo.bullet3",
-      ],
-      social: [
-        "dashboard.module.social.bullet1",
-        "dashboard.module.social.bullet2",
-        "dashboard.module.social.bullet3",
-      ],
-    };
-
-    const descriptionKeyByModule: Record<string, string> = {
-      analytics: "dashboard.module.analytics.description",
-      atlas: "dashboard.module.atlas.description",
-      crm: "dashboard.module.crm.description",
-      flow: "dashboard.module.flow.description",
-      links: "dashboard.module.links.description",
-      maestro: "dashboard.module.maestro.description",
-      morph: "dashboard.module.morph.description",
-      nexus: "dashboard.module.nexus.description",
-      optima: "dashboard.module.optima.description",
-      seo: "dashboard.module.seo.description",
-      social: "dashboard.module.social.description",
-    };
-
-    const iconByKey: Record<string, string> = {
-      analytics: "AN",
-      atlas: "AT",
-      crm: "CRM",
-      flow: "FL",
-      links: "LK",
-      maestro: "MA",
-      morph: "MX",
-      nexus: "NX",
-      optima: "IMG",
-      seo: "SEO",
-      social: "SO",
-    };
-
-    return indexItems.map((item) => {
-      const badge = toBadge(item.status);
-
-      const bulletKeys = bulletKeysByModule[item.key] ?? [
-        "dashboard.module.common.bullet1",
-        "dashboard.module.common.bullet2",
-        "dashboard.module.common.bullet3",
-      ];
-
-      return {
-        key: item.key,
-        name: t(item.nameKey),
-        short: t(item.promiseKey),
-        badge,
-        description: t(
-          descriptionKeyByModule[item.key] ?? "modules.common.comingSoon"
-        ),
-        bullets: bulletKeys.map((key) => t(key)),
-        href: item.route,
-        ico: iconByKey[item.key] || item.key.slice(0, 2).toUpperCase(),
-        highlight: item.key === "maestro" || item.key === "nexus",
-      };
-    });
-  }, [indexItems, t]);
 
   const [activeKey, setActiveKey] = useState<string>("nexus");
 
-  const onCardKeyDown = (e: React.KeyboardEvent<HTMLElement>, key: string) => {
+  function openModule(key: string, route: string, external?: boolean) {
+    setActiveKey(key);
+    if (external) {
+      window.open(route, "_blank", "noopener,noreferrer");
+    } else {
+      nav(route);
+    }
+  }
+
+  const onCardKeyDown = (
+    e: React.KeyboardEvent<HTMLElement>,
+    key: string,
+    route: string,
+    external?: boolean
+  ) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
-      const m = modules.find((x) => x.key === key);
-      if (!m) return;
-      setActiveKey(key);
-      nav(m.href);
+      openModule(key, route, external);
     }
   };
 
@@ -201,24 +79,25 @@ export default function DashboardHome() {
 
       <div className="noxel-body">
         <aside className="noxel-sidenav">
-          <div className="nav-group" aria-label={t("dashboard.modules")}>
+          <div className="nav-group" aria-label="Modules">
             {modules.map((m) => (
               <button
                 key={m.key}
                 type="button"
                 className={`nav-item ${m.key === activeKey ? "is-active" : ""}`}
-                onClick={() => {
-                  setActiveKey(m.key);
-                  nav(m.href);
-                }}
+                onClick={() => openModule(m.key, m.route, m.external)}
               >
                 <div className="nav-row">
                   <div className="nav-title">{m.name}</div>
-                  <span className={`pill pill--${m.badge.toLowerCase()}`}>
-                    {m.badge}
+                  <span
+                    className={`pill pill--${
+                      m.status === "ready" ? "live" : m.status
+                    }`}
+                  >
+                    {m.status === "ready" ? "LIVE" : m.status.toUpperCase()}
                   </span>
                 </div>
-                <div className="nav-sub">{m.short}</div>
+                <div className="nav-sub">{m.promise}</div>
               </button>
             ))}
           </div>
@@ -265,9 +144,7 @@ export default function DashboardHome() {
                       <h2 className="nx-h2">
                         {t("dashboard.hero.modulesHeading")}
                       </h2>
-                      <p className="nx-lead">
-                        {t("dashboard.hero.modulesLead")}
-                      </p>
+                      <p className="nx-lead">{t("dashboard.hero.modulesLead")}</p>
                     </div>
                   </div>
                 </div>
@@ -279,47 +156,55 @@ export default function DashboardHome() {
                     key={m.key}
                     className={[
                       "nx-card",
-                      m.highlight ? "nx-card--highlight" : "",
+                      m.key === "nexus" ? "nx-card--highlight" : "",
                       m.key === activeKey ? "nx-card--active" : "",
                     ].join(" ")}
-                    onClick={() => {
-                      setActiveKey(m.key);
-                      nav(m.href);
-                    }}
-                    onKeyDown={(e) => onCardKeyDown(e, m.key)}
+                    onClick={() => openModule(m.key, m.route, m.external)}
+                    onKeyDown={(e) => onCardKeyDown(e, m.key, m.route, m.external)}
                     role="button"
                     tabIndex={0}
                     aria-label={`${t("common.open")} ${m.name}`}
                   >
                     <div className="nx-card__top">
-                      <div className="nx-ico">{m.ico}</div>
+                      <img
+                        src={LOGO_BY_ID[m.key] || LOGO_BY_ID["360"]}
+                        alt=""
+                        style={{ width: 40, height: 40, objectFit: "contain" }}
+                        loading="lazy"
+                      />
                       <span
                         className={[
                           "nx-badge",
-                          m.badge === "LIVE" ? "nx-badge--live" : "",
-                          m.badge === "CORE" ? "nx-badge--core" : "",
+                          m.status === "ready" ? "nx-badge--live" : "",
+                          m.status === "core" ? "nx-badge--core" : "",
                         ].join(" ")}
                       >
-                        {m.badge}
+                        {m.status === "ready" ? "LIVE" : m.status.toUpperCase()}
                       </span>
                     </div>
 
                     <h3 className="nx-card__title">{m.name}</h3>
-                    <p className="nx-card__text">{m.description}</p>
+                    <p className="nx-card__text">{m.promise}</p>
 
-                    <ul className="nx-card__list">
-                      {m.bullets.slice(0, 3).map((b) => (
-                        <li key={b}>{b}</li>
-                      ))}
-                    </ul>
-
-                    <Link
-                      className="nx-card__link"
-                      to={m.href}
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      {t("dashboard.card.open")}
-                    </Link>
+                    {m.external ? (
+                      <a
+                        className="nx-card__link"
+                        href={m.route}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        {t("dashboard.card.open")} ↗
+                      </a>
+                    ) : (
+                      <Link
+                        className="nx-card__link"
+                        to={m.route}
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        {t("dashboard.card.open")}
+                      </Link>
+                    )}
                   </article>
                 ))}
               </div>
@@ -330,4 +215,3 @@ export default function DashboardHome() {
     </div>
   );
 }
-
