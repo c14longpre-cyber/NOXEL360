@@ -26,7 +26,8 @@ function isAuthProvider(value: string): value is AuthProvider {
     value === "microsoft" ||
     value === "facebook" ||
     value === "linkedin" ||
-    value === "tiktok"
+    value === "tiktok" ||
+    value === "github"
   );
 }
 
@@ -64,6 +65,13 @@ function buildRedirectUri(_req: Request, provider: AuthProvider): string {
       throw new Error("TIKTOK_REDIRECT_URI is missing in environment");
     }
     return process.env.TIKTOK_REDIRECT_URI;
+  }
+
+  if (provider === "github") {
+    if (!process.env.GITHUB_REDIRECT_URI) {
+      throw new Error("GITHUB_REDIRECT_URI is missing in environment");
+    }
+    return process.env.GITHUB_REDIRECT_URI;
   }
 
   throw new Error(`No redirect URI configured for provider: ${provider}`);

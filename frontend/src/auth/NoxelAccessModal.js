@@ -48,6 +48,13 @@ export default function NoxelAccessModal({ open, onClose }) {
             enabled: false,
             accent: "neutral",
             note: "Coming soon",
+        },
+        {
+            key: "github",
+            label: "GitHub",
+            icon: "gh",
+            enabled: true,
+            accent: "neutral",
         }
     ], []);
     if (!open)
@@ -78,6 +85,11 @@ export default function NoxelAccessModal({ open, onClose }) {
         }
         if (provider.key === "apple") {
             loginWithProvider("apple", "signin");
+            onClose();
+            return;
+        }
+        if (provider.key === "github") {
+            loginWithProvider("github", "signin");
             onClose();
             return;
         }

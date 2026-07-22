@@ -8,8 +8,7 @@ type ProviderKey =
   | "apple"
   | "facebook"
   | "linkedin"
-  | "tiktok"
-  | "github";
+  | "tiktok";
 
 type ProviderItem = {
   key: ProviderKey;
@@ -73,13 +72,6 @@ export default function NoxelAccessModal({ open, onClose }: Props) {
   enabled: false,
   accent: "neutral",
   note: "Coming soon",
-},
-{
-  key: "github",
-  label: "GitHub",
-  icon: "gh",
-  enabled: true,
-  accent: "neutral",
 }
     ],
     []
@@ -116,11 +108,6 @@ if (provider.key === "linkedin") {
 }
     if (provider.key === "apple") {
       loginWithProvider("apple", "signin");
-      onClose();
-      return;
-    }
-    if (provider.key === "github") {
-      loginWithProvider("github", "signin");
       onClose();
       return;
     }

@@ -6,6 +6,7 @@ import { microsoftProvider } from "./microsoft.provider";
 import { facebookProvider } from "./facebook.provider";
 import { linkedinProvider } from "./linkedin.provider";
 import { tiktokProvider } from "./tiktok.provider";
+import { githubProvider } from "./github.provider";
 
 export const providerRegistry: Partial<
   Record<AuthProvider, OAuthProviderAdapter>
@@ -15,6 +16,7 @@ export const providerRegistry: Partial<
   facebook: facebookProvider,
   linkedin: linkedinProvider,
   tiktok: tiktokProvider,
+  github: githubProvider,
 };
 
 export function getProviderAdapter(

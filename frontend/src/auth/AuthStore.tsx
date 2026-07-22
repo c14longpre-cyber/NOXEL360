@@ -11,7 +11,8 @@ export type AuthProviderName =
   | "microsoft"
   | "facebook"
   | "apple"
-  | "linkedin";
+  | "linkedin"
+  | "github";
 
 export type ConnectedProvider = {
   id: string;

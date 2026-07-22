@@ -6,7 +6,8 @@ export type AuthProvider =
   | "facebook"
   | "linkedin"
   | "tiktok"
-  | "apple";
+  | "apple"
+  | "github";
 
 export type NormalizedOAuthIdentity = {
   provider: AuthProvider;
