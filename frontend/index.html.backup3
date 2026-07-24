@@ -45,20 +45,18 @@
   </head>
   <body>
     <div id="root"></div>
-    <footer style="font-family:system-ui,sans-serif;background:#07090f;color:rgba(255,255,255,0.55);padding:32px 24px;text-align:center;font-size:13px;border-top:1px solid rgba(255,255,255,0.08);">
-      <p style="max-width:720px;margin:0 auto 16px;line-height:1.6;">
-        NOXEL360 connects NOXEL SEO, NOXEL Forge and Nexus in one dashboard for search visibility, verified backlinks, and language intelligence.
-      </p>
-      <nav aria-label="Site links" style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-bottom:14px;">
-        <a href="https://noxelseo.com" style="color:#3cde6a;text-decoration:none;">NOXEL SEO</a>
-        <a href="https://noxelforge.com" style="color:#3cde6a;text-decoration:none;">NOXEL Forge</a>
-        <a href="/nexus" style="color:#3cde6a;text-decoration:none;">NOXEL Nexus</a>
-        <a href="/account" style="color:rgba(255,255,255,0.55);text-decoration:none;">Account</a>
-        <a href="/privacy" style="color:rgba(255,255,255,0.55);text-decoration:none;">Privacy</a>
-        <a href="/terms" style="color:rgba(255,255,255,0.55);text-decoration:none;">Terms</a>
-      </nav>
-      <p style="margin:0;">&copy; 2026 NOXEL360. All rights reserved.</p>
-    </footer>
+    <noscript>
+      <div style="padding:40px;font-family:sans-serif;max-width:640px;margin:0 auto;">
+        <h1>NOXEL360</h1>
+        <p>NOXEL360 connects NOXEL SEO, NOXEL Forge and Nexus in one dashboard for search visibility, verified backlinks, and language intelligence.</p>
+        <ul>
+          <li><a href="https://noxelseo.com">NOXEL SEO</a> — search visibility, audits, and optimization intelligence.</li>
+          <li><a href="https://noxelforge.com">NOXEL Forge</a> — verified backlink exchange network for real, trusted sites.</li>
+          <li><a href="/nexus">NOXEL Nexus</a> — language, region, and cultural intelligence engine.</li>
+        </ul>
+        <p><a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms of Service</a></p>
+      </div>
+    </noscript>
     <div id="overlay-root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
