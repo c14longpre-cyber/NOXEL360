@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wireframes vs. Mockups: What's the Difference? — NOXEL360</title>
+<meta name="description" content="Wireframes and mockups explained in plain English — what each one is for, how they differ, and when a design team uses one instead of the other.">
+<link rel="canonical" href="https://noxel360.com/learn/wireframes-vs-mockups-explained.html" />
+<link rel="icon" href="/favicon.ico">
+<meta property="og:title" content="Wireframes vs. Mockups: What's the Difference?" />
+<meta property="og:description" content="What wireframes and mockups are for, how they differ, and when a design team uses one instead of the other." />
+<meta property="og:url" content="https://noxel360.com/learn/wireframes-vs-mockups-explained.html" />
+<meta property="og:type" content="article" />
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "Article", "headline": "Wireframes vs. Mockups: What's the Difference?", "description": "Wireframes and mockups explained in plain English — what each one is for, how they differ, and when a design team uses one instead of the other.", "author": { "@type": "Organization", "name": "NOXEL360" }, "publisher": { "@type": "Organization", "name": "NOXEL360", "url": "https://noxel360.com" }, "datePublished": "2026-07-24", "dateModified": "2026-07-24", "mainEntityOfPage": "https://noxel360.com/learn/wireframes-vs-mockups-explained.html" }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "DefinedTerm", "name": "Wireframe", "description": "A wireframe is a simplified, low-fidelity sketch of a screen's layout, showing where content and functions go without visual styling like color, fonts, or imagery.", "inDefinedTermSet": "https://noxel360.com/learn/wireframes-vs-mockups-explained.html" }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+  { "@type": "ListItem", "position": 1, "name": "Learn", "item": "https://noxel360.com/learn" },
+  { "@type": "ListItem", "position": 2, "name": "UX & UI", "item": "https://noxel360.com/learn/uxui.html" },
+  { "@type": "ListItem", "position": 3, "name": "Wireframes vs. Mockups", "item": "https://noxel360.com/learn/wireframes-vs-mockups-explained.html" }
+] }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+  { "@type": "Question", "name": "Can you skip wireframes and go straight to mockups?", "acceptedAnswer": { "@type": "Answer", "text": "It's possible for very small projects, but skipping wireframes usually means visual and layout decisions get tangled together, which slows down feedback and makes changes more expensive later." } },
+  { "@type": "Question", "name": "Are wireframes and prototypes the same thing?", "acceptedAnswer": { "@type": "Answer", "text": "No. A wireframe is a static layout. A prototype is an interactive version — often built from wireframes or mockups — that lets someone click through screens to simulate how the real product would behave." } },
+  { "@type": "Question", "name": "What tools are commonly used to create wireframes and mockups?", "acceptedAnswer": { "@type": "Answer", "text": "Figma is the most widely used tool for both today, since it supports quick low-fidelity wireframing and detailed high-fidelity mockups in the same file. Other common tools include Sketch, Adobe XD, and Balsamiq for simpler wireframes." } }
+] }
+</script>
+<style>
+  :root{--bg:#07090f;--surface:#0d1017;--border:rgba(255,255,255,0.07);--text:#e8eaf0;--muted:rgba(255,255,255,0.45);--g:#3cde6a}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+  a{color:var(--g);text-decoration:none}
+  nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:rgba(7,9,15,0.90);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+  .container{max-width:820px;margin:0 auto;padding:70px 40px}
+  h1{font-size:clamp(28px,4.5vw,44px);font-weight:900;line-height:1.15;margin-bottom:20px}
+  h2{font-size:21px;font-weight:800;margin:36px 0 14px;color:#fff}
+  p{color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin-bottom:16px}
+  ul,ol{color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin:0 0 20px 22px}
+  li{margin-bottom:8px}
+  table{width:100%;border-collapse:collapse;margin:20px 0;font-size:15px}
+  th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--border);color:rgba(255,255,255,0.75)}
+  th{color:#fff;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:0.5px}
+  .tag{font-size:11px;font-weight:800;letter-spacing:1.5px;color:var(--g);text-transform:uppercase;margin-bottom:12px}
+  .cta{display:inline-block;background:var(--g);color:#07090f;font-weight:800;padding:14px 32px;border-radius:10px;margin:24px 0}
+  .definition{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--g);border-radius:12px;padding:20px;margin:20px 0}
+  .faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px}
+  .faq-item h3{font-size:15px;margin:0 0 6px;color:#fff}
+  .closing{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;margin:24px 0;text-align:center}
+  .related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:20px 0}
+  .related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;font-size:14px;font-weight:700;color:var(--text)}
+  .related a:hover{border-color:var(--g)}
+  footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+  footer a{color:var(--muted);margin:0 12px}
+</style>
+</head>
+<body>
+  <nav>
+    <a href="/" style="display:flex;align-items:center;gap:10px">
+      <img src="/favicon-192x192.png" alt="NOXEL360" width="150" height="150" style="border-radius:8px">
+      <span style="font-weight:800">NOXEL360</span>
+    </a>
+    <div style="display:flex;gap:28px;font-size:14px;color:var(--muted)">
+      <a href="/learn">Learn</a>
+      <a href="/dashboard" style="background:var(--g);color:#07090f;padding:9px 20px;border-radius:8px;font-weight:800">Dashboard</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="tag">UX & UI Guide</div>
+    <h1>Wireframes vs. Mockups: What's the Difference?</h1>
+    <p>Before a single line of code is written, most design teams pass through two very different-looking stages: wireframes and mockups. They're often confused for one another, but they answer completely different questions — and using the wrong one at the wrong time slows a project down.</p>
+
+    <div class="definition">
+      <strong>Definition:</strong> A wireframe is a simplified, low-fidelity sketch of a screen's layout, showing where content and functions go without visual styling like color, fonts, or imagery.
+    </div>
+
+    <h2>What a wireframe is for</h2>
+    <p>A wireframe answers one question: where does everything go? It's usually black, white, and gray boxes representing a header, a button, a form field, an image block — laid out to show structure and hierarchy. Because there's no visual styling to react to, feedback stays focused on layout, content priority, and functionality instead of color preferences.</p>
+
+    <h2>What a mockup is for</h2>
+    <p>A mockup takes an approved wireframe and applies the real visual design: actual colors, typography, spacing, icons, and imagery. It answers a different question: what does this actually look like? A mockup is a static image — it looks like the finished product but nothing on it is clickable.</p>
+
+    <h2>Side-by-side comparison</h2>
+    <table>
+      <tr><th>Aspect</th><th>Wireframe</th><th>Mockup</th></tr>
+      <tr><td>Fidelity</td><td>Low</td><td>High</td></tr>
+      <tr><td>Focus</td><td>Layout & structure</td><td>Visual design</td></tr>
+      <tr><td>Colors & fonts</td><td>None (grayscale)</td><td>Final brand styling</td></tr>
+      <tr><td>Speed to produce</td><td>Fast — minutes to hours</td><td>Slower — hours to days</td></tr>
+      <tr><td>Interactivity</td><td>Static</td><td>Static</td></tr>
+      <tr><td>Used for</td><td>Early structural decisions</td><td>Stakeholder sign-off, developer handoff</td></tr>
+    </table>
+
+    <h2>Why the order matters</h2>
+    <p>Skipping wireframes and jumping straight to a polished mockup tends to backfire. Reviewers get distracted by colors and fonts before the layout is even settled, and any structural change means redoing visual work that's already finished. Starting with a wireframe keeps the early conversation cheap and focused, and the visual polish only gets applied once the structure is agreed on.</p>
+
+    <h2>Where prototypes fit in</h2>
+    <p>Neither wireframes nor mockups are interactive — they're static images. A prototype is the next step: wireframes or mockups linked together so someone can click through them and experience something closer to the real product before development starts.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>Can you skip wireframes and go straight to mockups?</h3>
+      <p>It's possible for very small projects, but skipping wireframes usually means visual and layout decisions get tangled together, which slows down feedback and makes changes more expensive later.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Are wireframes and prototypes the same thing?</h3>
+      <p>No. A wireframe is a static layout. A prototype is an interactive version — often built from wireframes or mockups — that lets someone click through screens to simulate how the real product would behave.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What tools are commonly used to create wireframes and mockups?</h3>
+      <p>Figma is the most widely used tool for both today, since it supports quick low-fidelity wireframing and detailed high-fidelity mockups in the same file. Other common tools include Sketch, Adobe XD, and Balsamiq for simpler wireframes.</p>
+    </div>
+
+    <div class="closing">
+      <p style="margin-bottom:8px">Turning designs into a site that actually gets found is the next step.</p>
+      <a href="/dashboard" class="cta">Try NOXEL360 Free</a>
+    </div>
+
+    <h2>Related Reading</h2>
+    <div class="related">
+      <a href="/learn/what-is-ui.html">What Is UI?</a>
+      <a href="/learn/what-is-a-user-journey.html">What Is a User Journey?</a>
+      <a href="/learn/responsive-design-explained.html">Responsive Design Explained</a>
+    </div>
+
+    <p><a href="/learn/uxui.html">← Back to UX & UI Guides</a></p>
+  </div>
+
+  <footer>
+    <a href="/">Home</a>
+    <a href="/learn">Learn</a>
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="https://noxelseo.com" target="_blank" rel="noopener">NOXEL SEO</a>
+    <a href="https://noxelforge.com" target="_blank" rel="noopener">NOXEL Forge</a>
+    <div style="margin-top:16px">© 2026 NOXEL360. All rights reserved.</div>
+  </footer>
+</body>
+</html>

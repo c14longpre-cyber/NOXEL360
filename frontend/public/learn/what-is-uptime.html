@@ -7,55 +7,92 @@
 <meta name="description" content="Uptime explained in plain English — what it measures, why 99.9% matters more than it sounds, and how to think about reliability.">
 <link rel="canonical" href="https://noxel360.com/learn/what-is-uptime.html" />
 <link rel="icon" href="/favicon.ico">
-<meta property="og:title" content="What Is Uptime?" />
+<meta property="og:title" content="What Is Uptime? A Simple Explanation" />
 <meta property="og:description" content="What uptime measures, and why 99.9% matters more than it sounds." />
 <meta property="og:url" content="https://noxel360.com/learn/what-is-uptime.html" />
 <meta property="og:type" content="article" />
 <script type="application/ld+json">
-{ "@context": "https://schema.org", "@type": "Article", "headline": "What Is Uptime? A Simple Explanation", "description": "Uptime explained in plain English — what it measures, why 99.9% matters more than it sounds, and how to think about reliability.", "author": { "@type": "Organization", "name": "NOXEL360" }, "publisher": { "@type": "Organization", "name": "NOXEL360", "url": "https://noxel360.com" }, "datePublished": "2026-07-24", "dateModified": "2026-07-24", "mainEntityOfPage": "https://noxel360.com/learn/what-is-uptime.html" }
+{ "@context": "https://schema.org", "@type": "Article", "headline": "What Is Uptime? A Simple Explanation", "description": "Uptime explained in plain English \u2014 what it measures, why 99.9% matters more than it sounds, and how to think about reliability.", "author": { "@type": "Organization", "name": "NOXEL360" }, "publisher": { "@type": "Organization", "name": "NOXEL360", "url": "https://noxel360.com" }, "datePublished": "2026-07-24", "dateModified": "2026-07-24", "mainEntityOfPage": "https://noxel360.com/learn/what-is-uptime.html" }
 </script>
 <script type="application/ld+json">
-{ "@context": "https://schema.org", "@type": "DefinedTerm", "name": "Uptime", "description": "Uptime is the percentage of time a website, server, or service is up and functioning normally, typically measured over a month or year.", "inDefinedTermSet": "https://noxel360.com/learn/what-is-uptime.html" }
+{ "@context": "https://schema.org", "@type": "DefinedTerm", "name": "Uptime", "description": "Uptime is the percentage of time a website or service is actually up and working, measured over a period like a month or a year.", "inDefinedTermSet": "https://noxel360.com/learn/what-is-uptime.html" }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Learn", "item": "https://noxel360.com/learn"}, {"@type": "ListItem", "position": 2, "name": "Web Foundations", "item": "https://noxel360.com/learn/web-foundations.html"}, {"@type": "ListItem", "position": 3, "name": "What Is Uptime? A Simple Explanation", "item": "https://noxel360.com/learn/what-is-uptime.html"}] }
 </script>
 <script type="application/ld+json">
 { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-  { "@type": "Question", "name": "What uptime percentage is considered good?", "acceptedAnswer": { "@type": "Answer", "text": "99.9% ('three nines') is a common baseline for reliable hosting. Mission-critical services often aim for 99.99% or higher, though each additional 'nine' becomes significantly harder and more expensive to achieve." } },
-  { "@type": "Question", "name": "How is uptime actually measured?", "acceptedAnswer": { "@type": "Answer", "text": "Typically through automated monitoring tools that repeatedly check whether a service responds correctly, tracking the total time it was reachable versus unreachable over a given period." } },
-  { "@type": "Question", "name": "Does 100% uptime actually exist?", "acceptedAnswer": { "@type": "Answer", "text": "In practice, no system guarantees true 100% uptime forever — even the largest cloud providers experience occasional outages. The goal is minimizing downtime as close to zero as realistically achievable." } }
+{ "@type": "Question", "name": "What uptime percentage is considered good?", "acceptedAnswer": { "@type": "Answer", "text": "99.9% (\"three nines\") is a common baseline. Mission-critical services often aim for 99.99% or higher." } },
+{ "@type": "Question", "name": "How is uptime actually measured?", "acceptedAnswer": { "@type": "Answer", "text": "Through automated monitoring tools that repeatedly check whether a service responds correctly over a given period." } },
+{ "@type": "Question", "name": "Does 100% uptime actually exist?", "acceptedAnswer": { "@type": "Answer", "text": "In practice, no system guarantees true 100% uptime forever \u2014 even the largest cloud providers experience occasional outages." } },
+{ "@type": "Question", "name": "What is an SLA?", "acceptedAnswer": { "@type": "Answer", "text": "A Service Level Agreement \u2014 a formal commitment from a provider to a minimum uptime percentage, sometimes with compensation if unmet." } },
+{ "@type": "Question", "name": "Can scheduled maintenance count against uptime?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on the provider's SLA definition \u2014 some exclude planned maintenance windows, others count all downtime equally." } },
+{ "@type": "Question", "name": "What's a realistic uptime expectation for a small business site?", "acceptedAnswer": { "@type": "Answer", "text": "99.9% or better is a reasonable, commonly achievable target with modern hosting platforms." } },
+{ "@type": "Question", "name": "How quickly should downtime be detected?", "acceptedAnswer": { "@type": "Answer", "text": "With good monitoring, within seconds to a few minutes \u2014 often before users even notice or report the problem." } }
 ] }
 </script>
 <style>
-  :root{--bg:#07090f;--surface:#0d1017;--border:rgba(255,255,255,0.07);--text:#e8eaf0;--muted:rgba(255,255,255,0.45);--g:#3cde6a}
+  :root{--bg:#07090f;--surface:#0d1017;--border:rgba(255,255,255,0.07);--text:#e8eaf0;--muted:rgba(255,255,255,0.45);--g:#3cde6a;--p:#702aa5}
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   body{font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
   a{color:var(--g);text-decoration:none}
   nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:rgba(7,9,15,0.90);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
   .container{max-width:820px;margin:0 auto;padding:70px 40px}
-  h1{font-size:clamp(28px,4.5vw,44px);font-weight:900;line-height:1.15;margin-bottom:20px}
-  h2{font-size:21px;font-weight:800;margin:36px 0 14px;color:#fff}
+  h1{font-size:clamp(28px,4.5vw,44px);font-weight:900;line-height:1.15;margin-bottom:14px;scroll-margin-top:90px}
+  h2{font-size:21px;font-weight:800;margin:36px 0 14px;color:#fff;scroll-margin-top:90px}
   p{color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin-bottom:16px}
   ul,ol{color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin:0 0 20px 22px}
   li{margin-bottom:8px}
-  table{width:100%;border-collapse:collapse;margin:20px 0;font-size:15px}
-  th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--border);color:rgba(255,255,255,0.75)}
-  th{color:#fff;font-weight:800}
+  table{width:100%;border-collapse:collapse;margin:8px 0 24px;font-size:15px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);color:rgba(255,255,255,0.75)}
+  th{color:#fff;font-size:13px;text-transform:uppercase}
   .tag{font-size:11px;font-weight:800;letter-spacing:1.5px;color:var(--g);text-transform:uppercase;margin-bottom:12px}
-  .cta{display:inline-block;background:var(--g);color:#07090f;font-weight:800;padding:14px 32px;border-radius:10px;margin:24px 0}
-  .definition{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--g);border-radius:12px;padding:20px;margin:20px 0}
+  .meta-row{display:flex;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--muted);margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+  .toc{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin:20px 0 28px}
+  .toc .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+  .toc ul{list-style:none;margin:0;columns:2;gap:8px}
+  .toc li{margin-bottom:6px;break-inside:avoid}
+  .toc a{color:rgba(255,255,255,0.75);font-size:14px}
+  .toc a:hover{color:var(--g)}
+  .one-sentence{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--g);border-radius:12px;padding:20px;margin:20px 0}
+  .didyouknow{background:rgba(60,222,106,0.07);border:1px solid rgba(60,222,106,0.25);border-radius:12px;padding:18px 20px;margin:28px 0}
+  .didyouknow .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--g);text-transform:uppercase;margin-bottom:6px}
+  .action-box{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--p);border-radius:12px;padding:20px;margin:28px 0}
+  .action-box .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:#b98af0;text-transform:uppercase;margin-bottom:6px}
+  .sources{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin:24px 0}
+  .sources .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+  .sources ul{margin:0;list-style:none}
+  .sources li{margin-bottom:8px}
+  .sources a{font-weight:700}
+  .sources span{color:var(--muted);font-size:13px}
+  .takeaways{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 24px;margin:28px 0}
+  .takeaways ul{margin:0;list-style:none}
+  .takeaways li{padding-left:26px;position:relative;margin-bottom:10px}
+  .takeaways li::before{content:"✓";position:absolute;left:0;color:var(--g);font-weight:900}
   .faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px}
   .faq-item h3{font-size:15px;margin:0 0 6px;color:#fff}
+  .learning-path{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0}
+  .learning-path .lp-box{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+  .learning-path .lp-box .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+  .learning-path ul{margin:0;list-style:none}
+  .learning-path li{margin-bottom:8px}
+  @media(max-width:600px){.learning-path{grid-template-columns:1fr}.toc ul{columns:1}}
   .closing{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;margin:24px 0;text-align:center}
+  .cta{display:inline-block;background:var(--g);color:#07090f;font-weight:800;padding:14px 32px;border-radius:10px;margin:24px 0 0}
+  .byline{font-size:13px;color:var(--muted);margin-top:32px}
   .related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:20px 0}
   .related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;font-size:14px;font-weight:700;color:var(--text)}
   .related a:hover{border-color:var(--g)}
   footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
   footer a{color:var(--muted);margin:0 12px}
+  #progress-bar{position:fixed;top:0;left:0;height:3px;background:var(--g);width:0%;z-index:200;transition:width 0.1s linear}
 </style>
 </head>
 <body>
+  <div id="progress-bar"></div>
   <nav>
     <a href="/" style="display:flex;align-items:center;gap:10px">
-      <img src="/favicon-192x192.png" alt="NOXEL360" width="150" height="150" style="border-radius:8px">
+      <img src="/favicon-192x192.png" alt="NOXEL360" width="42" height="42" style="border-radius:8px">
       <span style="font-weight:800">NOXEL360</span>
     </a>
     <div style="display:flex;gap:28px;font-size:14px;color:var(--muted)">
@@ -66,65 +103,67 @@
 
   <div class="container">
     <div class="tag">Web Foundations Guide</div>
-    <h1>What Is Uptime? A Simple Explanation</h1>
-
-    <div class="definition">
-      <strong style="color:#fff">In one sentence:</strong> Uptime is the percentage of time a website or service is actually up and working, measured over a period like a month or a year.
+    <h1 id="top">What Is Uptime? A Simple Explanation</h1>
+    <div class="meta-row">
+      <span>🕐 5 min read</span>
+      <span>📊 Beginner</span>
+      <span>📁 Web Foundations</span>
+      <span>📅 Published July 24, 2026</span>
+      <span>🔄 Updated July 24, 2026</span>
     </div>
 
-    <p>Uptime sounds like a simple concept, but the difference between 99% and 99.9% is much bigger in practice than the numbers suggest — and it's one of the most important things to understand when evaluating hosting reliability.</p>
+    <div class="toc"><div class="label">On This Page</div><ul><li><a href="#why-99-misleads">Why '99% Uptime' Sounds Better Than It Is</a></li><li><a href="#nines-table">The 'Nines' of Uptime</a></li><li><a href="#causes">What Causes Downtime</a></li><li><a href="#measurement">How Uptime Gets Measured and Guaranteed</a></li><li><a href="#faq">FAQ</a></li></ul></div>
 
-    <h2>Why "99% Uptime" Sounds Better Than It Is</h2>
-    <p>99% uptime sounds impressive — but it actually allows for over <strong>3.5 days of downtime per year</strong>. For a business relying on its website for sales, leads, or daily operations, that's a significant amount of lost availability. This is why hosting providers usually advertise uptime in terms of "nines" — each additional 9 represents a dramatically smaller amount of allowed downtime.</p>
+    <div class="one-sentence"><strong>In one sentence:</strong> Uptime is the percentage of time a website or service is actually up and working, measured over a period like a month or a year.</div>
 
-    <table>
-      <tr><th>Uptime %</th><th>Downtime per year</th></tr>
-      <tr><td>99%</td><td>~3.65 days</td></tr>
-      <tr><td>99.9%</td><td>~8.76 hours</td></tr>
-      <tr><td>99.99%</td><td>~52.6 minutes</td></tr>
-      <tr><td>99.999%</td><td>~5.26 minutes</td></tr>
-    </table>
+    <p>Uptime sounds like a simple concept, but the difference between 99% and 99.9% is much bigger in practice than the numbers suggest.</p>
 
-    <h2>What Causes Downtime</h2>
-    <ul>
-      <li>Server hardware failures</li>
-      <li>Software bugs or crashes</li>
-      <li>Traffic spikes overwhelming server capacity</li>
-      <li>DNS or network configuration issues</li>
-      <li>Scheduled maintenance (ideally minimized and communicated in advance)</li>
-    </ul>
+    <h2 id="why-99-misleads">Why '99% Uptime' Sounds Better Than It Is</h2>
+<p>99% uptime allows for over <strong>3.5 days of downtime per year</strong>. For a business relying on its website, that's significant lost availability.</p>
+<div class="didyouknow"><div class="label">💡 Did You Know?</div><p style="margin-bottom:0">Even the largest cloud providers in the world — AWS, Google Cloud, Microsoft Azure — have experienced multi-hour outages affecting major websites, despite massive investment in reliability.</p></div>
+<h2 id="nines-table">The 'Nines' of Uptime</h2>
+<table><tr><th>Uptime %</th><th>Downtime per year</th></tr><tr><td>99%</td><td>~3.65 days</td></tr><tr><td>99.9%</td><td>~8.76 hours</td></tr><tr><td>99.99%</td><td>~52.6 minutes</td></tr><tr><td>99.999%</td><td>~5.26 minutes</td></tr></table>
+<svg viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;margin:8px 0 28px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px">
+      <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3cde6a"/></marker></defs>
+      <rect x="140" y="45" width="120" height="50" rx="10" fill="#0d1017" stroke="#3cde6a" stroke-width="1.5"/><text x="200" y="75" fill="#ffffff" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Monitoring</text><line x1="260" y1="70" x2="290" y2="70" stroke="#3cde6a" stroke-width="2" marker-end="url(#arrow)"/><rect x="290" y="45" width="120" height="50" rx="10" fill="#0d1017" stroke="#702aa5" stroke-width="1.5"/><text x="350" y="75" fill="#ffffff" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Check</text><line x1="410" y1="70" x2="440" y2="70" stroke="#3cde6a" stroke-width="2" marker-end="url(#arrow)"/><rect x="440" y="45" width="120" height="50" rx="10" fill="#0d1017" stroke="#3cde6a" stroke-width="1.5"/><text x="500" y="75" fill="#ffffff" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Alert if Down</text>
+    </svg>
+<h2 id="causes">What Causes Downtime</h2>
+<ul><li>Server hardware failures</li><li>Software bugs or crashes</li><li>Traffic spikes overwhelming server capacity</li><li>DNS or network configuration issues</li><li>Scheduled maintenance</li></ul>
+<div class="sources"><div class="label">📚 Official Sources</div><ul><li><a href="https://uptimeinstitute.com/tiers" target="_blank" rel="noopener noreferrer">Uptime Institute — Tier Standards</a> <span>· industry reliability benchmarks</span></li></ul></div>
+<h2 id="measurement">How Uptime Gets Measured and Guaranteed</h2>
+<p>Providers often publish an <strong>SLA (Service Level Agreement)</strong> — a formal commitment to a minimum uptime percentage. Independent monitoring tools also check availability and alert owners the moment something goes down.</p>
+<div class="action-box"><div class="label">🧩 See It in Action with NOXEL360</div><p style="margin-bottom:0">NOXEL360's products run on modern cloud infrastructure built for reliability and minimal downtime.</p></div>
 
-    <h2>How Uptime Gets Measured and Guaranteed</h2>
-    <p>Hosting and cloud providers often publish an <strong>SLA (Service Level Agreement)</strong> — a formal commitment to a minimum uptime percentage, sometimes with compensation if they fail to meet it. Independent monitoring tools also exist that repeatedly check a website's availability and alert the owner the moment something goes down, often before users even notice.</p>
 
-    <h2>Why This Matters for Business Owners</h2>
-    <p>Every minute of downtime is a minute where customers can't reach you, complete a purchase, or trust that your business is reliable. When comparing hosting providers, uptime history and SLA guarantees are worth checking — not just price and features.</p>
+    <h2 id="faq">Frequently Asked Questions</h2>
+    <div class="faq-item"><h3>What uptime percentage is considered good?</h3><p>99.9% ("three nines") is a common baseline. Mission-critical services often aim for 99.99% or higher.</p></div>
+<div class="faq-item"><h3>How is uptime actually measured?</h3><p>Through automated monitoring tools that repeatedly check whether a service responds correctly over a given period.</p></div>
+<div class="faq-item"><h3>Does 100% uptime actually exist?</h3><p>In practice, no system guarantees true 100% uptime forever — even the largest cloud providers experience occasional outages.</p></div>
+<div class="faq-item"><h3>What is an SLA?</h3><p>A Service Level Agreement — a formal commitment from a provider to a minimum uptime percentage, sometimes with compensation if unmet.</p></div>
+<div class="faq-item"><h3>Can scheduled maintenance count against uptime?</h3><p>It depends on the provider's SLA definition — some exclude planned maintenance windows, others count all downtime equally.</p></div>
+<div class="faq-item"><h3>What's a realistic uptime expectation for a small business site?</h3><p>99.9% or better is a reasonable, commonly achievable target with modern hosting platforms.</p></div>
+<div class="faq-item"><h3>How quickly should downtime be detected?</h3><p>With good monitoring, within seconds to a few minutes — often before users even notice or report the problem.</p></div>
 
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <h3>What uptime percentage is considered good?</h3>
-      <p style="margin:0">99.9% ("three nines") is a common baseline for reliable hosting. Mission-critical services often aim for 99.99% or higher, though each additional "nine" becomes significantly harder and more expensive to achieve.</p>
-    </div>
-    <div class="faq-item">
-      <h3>How is uptime actually measured?</h3>
-      <p style="margin:0">Typically through automated monitoring tools that repeatedly check whether a service responds correctly, tracking the total time it was reachable versus unreachable over a given period.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Does 100% uptime actually exist?</h3>
-      <p style="margin:0">In practice, no system guarantees true 100% uptime forever — even the largest cloud providers experience occasional outages. The goal is minimizing downtime as close to zero as realistically achievable.</p>
+
+    <div class="takeaways">
+      <h2 style="margin-top:0">Key Takeaways</h2>
+      <ul><li>Uptime measures the percentage of time a service is actually available.</li><li>The gap between 99% and 99.9% uptime is much larger in practice than it sounds.</li><li>Downtime can stem from hardware failure, bugs, traffic spikes, or DNS issues.</li><li>SLAs formalize a provider's uptime commitment, sometimes with compensation.</li><li>No system achieves true 100% uptime — the goal is minimizing downtime as close to zero as realistic.</li></ul>
     </div>
 
-    <h2>Related Reading</h2>
-    <div class="related">
-      <a href="/learn/what-is-web-hosting.html">What Is Web Hosting?</a>
-      <a href="/learn/what-is-cloud-computing.html">What Is Cloud Computing?</a>
-      <a href="/learn">← Back to Learn</a>
+    <div class="learning-path">
+      <div class="lp-box"><div class="label">⬅ Before This</div><ul><li><a href="/learn/what-is-web-hosting.html">What Is Web Hosting?</a></li><li><a href="/learn/what-is-cloud-computing.html">What Is Cloud Computing?</a></li></ul></div>
+      <div class="lp-box"><div class="label">Next Step ➜</div><ul><li><a href="/learn/what-is-cybersecurity.html">What Is Cybersecurity?</a></li><li><a href="/learn/what-is-disaster-recovery.html">What Is Disaster Recovery?</a></li></ul></div>
     </div>
 
     <div class="closing">
-      <p style="margin-bottom:16px">NOXEL360's products run on modern cloud infrastructure built for reliability and minimal downtime.</p>
-      <a class="cta" href="/dashboard">Explore the NOXEL360 dashboard →</a>
+      <p style="margin-bottom:8px">See infrastructure built for reliability and minimal downtime.</p>
+      <a href="/dashboard" class="cta">Explore the NOXEL360 Dashboard →</a>
     </div>
+
+    <h2>Related Reading</h2>
+    <div class="related"><a href="/learn/what-is-web-hosting.html">What Is Web Hosting?</a><a href="/learn/what-is-cloud-computing.html">What Is Cloud Computing?</a><a href="/learn/what-is-a-cdn.html">What Is a CDN?</a></div>
+
+    <p class="byline">Written by the NOXEL360 Team · Reviewed by NOXEL Engineering · <a href="https://noxel360.com/learn/web-foundations.html">← Back to Web Foundations Guides</a></p>
   </div>
 
   <footer>
@@ -136,5 +175,13 @@
     <a href="https://noxelforge.com" target="_blank" rel="noopener">NOXEL Forge</a>
     <div style="margin-top:16px">© 2026 NOXEL360. All rights reserved.</div>
   </footer>
+
+  <script>
+    window.addEventListener('scroll', function(){
+      var el = document.documentElement;
+      var scrolled = (el.scrollTop) / (el.scrollHeight - el.clientHeight) * 100;
+      document.getElementById('progress-bar').style.width = Math.min(scrolled,100) + '%';
+    });
+  </script>
 </body>
 </html>
