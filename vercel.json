@@ -2,6 +2,13 @@
   "version": 2,
   "buildCommand": "npm --prefix frontend install && npm --prefix frontend run build",
   "outputDirectory": "frontend/dist",
+  "redirects": [
+    {
+      "source": "/learn/technologies.html",
+      "destination": "/learn/development.html",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/api/:path*",
