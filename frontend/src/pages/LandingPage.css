@@ -1,0 +1,137 @@
+/* NOXEL360 Landing Page — scoped under .noxel-landing so nothing leaks into the dashboard */
+
+.noxel-landing{
+  --nl-bg:#07090a;
+  --nl-surface:#0d1017;
+  --nl-border:rgba(255,255,255,0.08);
+  --nl-border-hover:rgba(60,222,106,0.4);
+  --nl-text:#eef1f0;
+  --nl-muted:rgba(255,255,255,0.55);
+  --nl-muted-2:rgba(255,255,255,0.35);
+  --nl-g:#3cde6a;
+  --nl-g-dim:rgba(60,222,106,0.12);
+  --nl-p:#8b5cf6;
+  --nl-p-dim:rgba(139,92,246,0.12);
+
+  font-family:"Segoe UI",system-ui,-apple-system,sans-serif;
+  background:var(--nl-bg);
+  color:var(--nl-text);
+  line-height:1.6;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+.noxel-landing *,.noxel-landing *::before,.noxel-landing *::after{box-sizing:border-box}
+.noxel-landing a{color:inherit;text-decoration:none}
+.noxel-landing main{flex:1 0 auto}
+.noxel-landing footer{flex-shrink:0}
+
+.noxel-landing .wrap{max-width:1180px;margin:0 auto;padding:0 40px}
+@media(max-width:640px){.noxel-landing .wrap{padding:0 20px}}
+
+.noxel-landing .nl-nav{
+  position:sticky;top:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 40px;background:rgba(7,9,10,0.85);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--nl-border);
+}
+@media(max-width:640px){.noxel-landing .nl-nav{padding:14px 20px}}
+.noxel-landing .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px;letter-spacing:0.5px}
+.noxel-landing .logo img{width:34px;height:34px;border-radius:8px}
+.noxel-landing .nav-links{display:flex;align-items:center;gap:32px;font-size:14px;color:var(--nl-muted)}
+.noxel-landing .nav-links a:hover{color:var(--nl-text)}
+.noxel-landing .nav-cta{background:var(--nl-g);color:#07090a;padding:10px 22px;border-radius:8px;font-weight:800;font-size:14px}
+@media(max-width:800px){.noxel-landing .nav-links{display:none}}
+
+.noxel-landing .hero{padding:120px 0 90px;position:relative;overflow:hidden}
+.noxel-landing .hero::before{
+  content:"";position:absolute;top:-200px;left:50%;transform:translateX(-50%);
+  width:900px;height:500px;
+  background:radial-gradient(ellipse at center, rgba(60,222,106,0.10) 0%, rgba(139,92,246,0.06) 45%, transparent 70%);
+  filter:blur(40px);pointer-events:none;
+}
+.noxel-landing .eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--nl-g);background:var(--nl-g-dim);border:1px solid rgba(60,222,106,0.25);
+  padding:8px 16px;border-radius:100px;margin-bottom:28px;
+}
+.noxel-landing .hero h1{
+  font-size:clamp(38px,6vw,68px);font-weight:900;line-height:1.08;letter-spacing:-1px;
+  max-width:820px;margin-bottom:26px;
+}
+.noxel-landing .hero h1 .accent{color:var(--nl-g)}
+.noxel-landing .hero p.lead{font-size:19px;color:var(--nl-muted);max-width:600px;margin-bottom:40px;line-height:1.7}
+.noxel-landing .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:64px}
+.noxel-landing .btn-primary{
+  background:var(--nl-g);color:#07090a;font-weight:800;padding:16px 32px;border-radius:10px;font-size:15px;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.noxel-landing .btn-secondary{
+  border:1px solid var(--nl-border);color:var(--nl-text);font-weight:700;padding:16px 32px;border-radius:10px;font-size:15px;
+}
+.noxel-landing .btn-secondary:hover{border-color:var(--nl-border-hover)}
+
+.noxel-landing .trust-row{
+  display:flex;gap:40px;flex-wrap:wrap;padding-top:32px;border-top:1px solid var(--nl-border);
+  font-size:14px;color:var(--nl-muted-2);
+}
+.noxel-landing .trust-row strong{color:var(--nl-muted)}
+
+.noxel-landing section{padding:90px 0}
+.noxel-landing .section-tag{font-size:12px;font-weight:800;letter-spacing:1.5px;color:var(--nl-g);text-transform:uppercase;margin-bottom:14px}
+.noxel-landing .section-title{font-size:clamp(28px,4vw,42px);font-weight:900;letter-spacing:-0.5px;max-width:640px;margin-bottom:20px}
+.noxel-landing .section-lead{font-size:17px;color:var(--nl-muted);max-width:600px;margin-bottom:56px}
+
+.noxel-landing .modules-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.noxel-landing .modules-grid{grid-template-columns:1fr}}
+.noxel-landing .module-card{
+  background:var(--nl-surface);border:1px solid var(--nl-border);border-radius:18px;padding:32px;
+  display:flex;flex-direction:column;transition:border-color 0.2s;
+}
+.noxel-landing .module-card:hover{border-color:var(--nl-border-hover)}
+.noxel-landing .module-card .icon{font-size:32px;margin-bottom:20px;display:block}
+.noxel-landing .module-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:20px}
+.noxel-landing .badge{font-size:11px;font-weight:800;letter-spacing:0.5px;padding:5px 12px;border-radius:100px}
+.noxel-landing .badge.live{color:var(--nl-g);background:var(--nl-g-dim);border:1px solid rgba(60,222,106,0.3)}
+.noxel-landing .badge.core{color:var(--nl-p);background:var(--nl-p-dim);border:1px solid rgba(139,92,246,0.3)}
+.noxel-landing .module-card h3{font-size:20px;font-weight:800;margin-bottom:10px}
+.noxel-landing .module-card p{color:var(--nl-muted);font-size:15px;line-height:1.65;margin-bottom:22px;flex-grow:1}
+.noxel-landing .module-card ul{list-style:none;margin-bottom:22px;padding:0}
+.noxel-landing .module-card li{font-size:14px;color:rgba(255,255,255,0.75);padding-left:20px;position:relative;margin-bottom:9px}
+.noxel-landing .module-card li::before{content:"✓";position:absolute;left:0;color:var(--nl-g);font-weight:900}
+.noxel-landing .module-link{font-weight:800;font-size:14px;color:var(--nl-text)}
+.noxel-landing .module-link .arrow{color:var(--nl-g)}
+
+.noxel-landing .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+@media(max-width:900px){.noxel-landing .how-grid{grid-template-columns:1fr}}
+.noxel-landing .how-step{border-left:2px solid var(--nl-border);padding-left:24px;position:relative}
+.noxel-landing .how-step .num{font-size:13px;font-weight:800;color:var(--nl-g);letter-spacing:1px;margin-bottom:12px;display:block}
+.noxel-landing .how-step h4{font-size:18px;font-weight:800;margin-bottom:10px}
+.noxel-landing .how-step p{color:var(--nl-muted);font-size:14.5px}
+
+.noxel-landing .split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+@media(max-width:900px){.noxel-landing .split{grid-template-columns:1fr;gap:40px}}
+.noxel-landing .split-visual{background:var(--nl-surface);border:1px solid var(--nl-border);border-radius:20px;padding:36px}
+.noxel-landing .stat-row{display:flex;justify-content:space-between;padding:18px 0;border-bottom:1px solid var(--nl-border)}
+.noxel-landing .stat-row:last-child{border-bottom:none}
+.noxel-landing .stat-row .label{color:var(--nl-muted);font-size:14px}
+.noxel-landing .stat-row .val{font-weight:800;font-size:15px}
+.noxel-landing .split ul.checklist{list-style:none;margin-top:24px;padding:0}
+.noxel-landing .split ul.checklist li{font-size:15.5px;color:rgba(255,255,255,0.8);padding-left:28px;position:relative;margin-bottom:16px;line-height:1.6}
+.noxel-landing .split ul.checklist li::before{content:"✓";position:absolute;left:0;color:var(--nl-g);font-weight:900;font-size:16px}
+
+.noxel-landing .final-cta{text-align:center;padding:100px 0;border-top:1px solid var(--nl-border);border-bottom:1px solid var(--nl-border)}
+.noxel-landing .final-cta h2{font-size:clamp(28px,4.5vw,44px);font-weight:900;margin-bottom:18px;letter-spacing:-0.5px}
+.noxel-landing .final-cta p{color:var(--nl-muted);font-size:17px;margin-bottom:36px;max-width:520px;margin-left:auto;margin-right:auto}
+
+.noxel-landing footer{border-top:1px solid var(--nl-border);padding:48px 0 32px}
+.noxel-landing .footer-top{
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;margin-bottom:32px;
+  padding-bottom:32px;border-bottom:1px solid var(--nl-border);
+}
+.noxel-landing .footer-desc{max-width:420px;color:var(--nl-muted-2);font-size:14px;line-height:1.7}
+.noxel-landing .footer-links{display:flex;gap:28px;flex-wrap:wrap;font-size:14px}
+.noxel-landing .footer-links a{color:var(--nl-muted)}
+.noxel-landing .footer-links a:hover{color:var(--nl-g)}
+.noxel-landing .footer-bottom{text-align:center;color:var(--nl-muted-2);font-size:13px}
