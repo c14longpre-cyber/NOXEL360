@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>NOXEL360 — SEO, Backlinks & Language Intelligence Suite</title>
-    <link rel="canonical" href="https://noxel360.com/dashboard" />
+    <link rel="canonical" href="https://noxel360.com/" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -15,7 +15,7 @@
     <meta property="og:title" content="NOXEL360 — SEO, Backlinks & Language Intelligence Suite" />
     <meta property="og:description" content="NOXEL360 connects NOXEL SEO, NOXEL Forge and Nexus in one dashboard for search visibility, verified backlinks, and language intelligence." />
     <meta property="og:image" content="https://noxel360.com/favicon-512x512.png" />
-    <meta property="og:url" content="https://noxel360.com/dashboard" />
+    <meta property="og:url" content="https://noxel360.com/" />
     <meta property="og:type" content="website" />
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -41,10 +41,67 @@
       ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "NOXEL360",
+      "url": "https://noxel360.com"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://noxel360.com/" }
+      ]
+    }
+    </script>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!--
+        Static fallback content — visible only until React mounts and replaces it.
+        Gives crawlers that don't execute JavaScript a real H1 and real content
+        to index, instead of an empty div. React overwrites this automatically
+        on hydration, so there is no duplicate-content risk for real visitors.
+      -->
+      <main style="font-family:system-ui,sans-serif;background:#07090a;color:#eef1f0;padding:80px 24px;max-width:820px;margin:0 auto;">
+        <h1 style="font-size:34px;font-weight:900;line-height:1.2;margin-bottom:20px;">
+          NOXEL360 — One Account. Three Connected Modules. Zero Juggling Tools.
+        </h1>
+        <p style="font-size:16px;line-height:1.7;color:rgba(255,255,255,0.75);margin-bottom:16px;">
+          NOXEL360 is the modular suite for anyone building online — solopreneurs, small teams,
+          and agencies managing multiple clients — who need search visibility, verified backlinks,
+          and language intelligence without stitching together five separate subscriptions to get it.
+        </p>
+        <p style="font-size:16px;line-height:1.7;color:rgba(255,255,255,0.75);margin-bottom:16px;">
+          <strong>NOXEL SEO</strong> provides automated site audits, technical and content scoring,
+          AI-powered fix suggestions, and search visibility tracking — including integration with
+          Google Search Console for real impressions, clicks, and query data. It's built for
+          solopreneurs and small teams who need enterprise-grade SEO tooling without the enterprise
+          price tag.
+        </p>
+        <p style="font-size:16px;line-height:1.7;color:rgba(255,255,255,0.75);margin-bottom:16px;">
+          <strong>NOXEL Forge</strong> is a verified backlink exchange network. Members submit real
+          sites in exchange for reviewed, quality backlinks — every submission is screened by an AI
+          reviewer against spam, thin content, and off-niche criteria before approval, keeping the
+          network free of low-quality link farms.
+        </p>
+        <p style="font-size:16px;line-height:1.7;color:rgba(255,255,255,0.75);margin-bottom:16px;">
+          <strong>NOXEL Nexus</strong> is the language and region intelligence engine underneath the
+          ecosystem — detecting a visitor's language, region, and cultural context to adapt content
+          and experience automatically across NOXEL360's products.
+        </p>
+        <p style="font-size:16px;line-height:1.7;color:rgba(255,255,255,0.75);">
+          Together, these three products form a connected toolkit: sign in once, and move between
+          search optimization, link building, and localization without juggling separate accounts
+          or tools.
+        </p>
+      </main>
+    </div>
     <footer style="font-family:system-ui,sans-serif;background:#07090f;color:rgba(255,255,255,0.55);padding:32px 24px;text-align:center;font-size:13px;border-top:1px solid rgba(255,255,255,0.08);">
       <p style="max-width:720px;margin:0 auto 16px;line-height:1.6;">
         NOXEL360 connects NOXEL SEO, NOXEL Forge and Nexus in one dashboard for search visibility, verified backlinks, and language intelligence.
