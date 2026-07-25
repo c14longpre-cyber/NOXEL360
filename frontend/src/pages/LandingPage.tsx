@@ -12,7 +12,7 @@ export default function LandingPage() {
         <div className="nav-links">
           <a href="#modules">Modules</a>
           <a href="#how-it-works">How It Works</a>
-          <Link to="/learn">Learn</Link>
+          <a href="/learn">Learn</a>
           <Link to="/pricing">Pricing</Link>
         </div>
         <Link to="/dashboard" className="nav-cta">Open Dashboard</Link>
@@ -179,8 +179,8 @@ export default function LandingPage() {
               <a href="https://noxelseo.com">NOXEL SEO</a>
               <a href="https://noxelforge.com">NOXEL Forge</a>
               <Link to="/dashboard">NOXEL Nexus</Link>
-              <Link to="/learn">Learn</Link>
-              <Link to="/account">Account</Link>
+              <a href="/learn">Learn</a>
+              <Link to="/app/account">Account</Link>
               <Link to="/privacy">Privacy</Link>
               <Link to="/terms">Terms</Link>
             </div>
