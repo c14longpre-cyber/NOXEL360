@@ -8,6 +8,8 @@ import OAuthCallbackPage from "./auth/OAuthCallbackPage";
 import PrivacyPage from "./legal/PrivacyPage";
 import TermsPage from "./legal/TermsPage";
 import NexusPage from "./pages/NexusPage";
+import LandingPage from "./pages/LandingPage";
+import { useAuthStore } from "./auth/AuthStore";
 
 function PricingRedirect() {
   useEffect(() => {
@@ -16,10 +18,16 @@ function PricingRedirect() {
   return null;
 }
 
+function RootRoute() {
+  const { isAuthenticated } = useAuthStore();
+  console.log("isAuthenticated:", isAuthenticated);
+  return isAuthenticated ? <Navigate to="/dashboard" replace /> : <LandingPage />;
+}
+
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/dashboard" replace />} />
+      <Route path="/" element={<RootRoute />} />
 
       <Route path="/dashboard" element={<DashboardHome />} />
       <Route path="/nexus" element={<NexusPage />} />
@@ -33,10 +41,6 @@ export default function App() {
       <Route path="/terms" element={<TermsPage />} />
       <Route path="/auth/link-account" element={<LinkAccountPage />} />
       <Route path="/auth/callback" element={<OAuthCallbackPage />} />
-
-      {/* NOXEL SEO and NOXEL Forge are external products (noxelseo.com,
-          noxelforge.com) — see DashboardHome / SideNav for outbound links.
-          No internal /app/* routes needed for them anymore. */}
 
       <Route path="/pricing" element={<PricingRedirect />} />
       <Route path="/pricing/*" element={<PricingRedirect />} />
