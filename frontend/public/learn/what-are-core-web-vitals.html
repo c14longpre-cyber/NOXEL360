@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Are Core Web Vitals? A Simple Explanation — NOXEL360</title>
+<meta name="description" content="Core Web Vitals explained in plain English — the three specific metrics Google uses to measure real user experience.">
+<link rel="canonical" href="https://noxel360.com/learn/what-are-core-web-vitals.html" />
+<link rel="icon" href="/favicon.ico">
+<meta property="og:title" content="What Are Core Web Vitals? A Simple Explanation" />
+<meta property="og:description" content="The three specific metrics Google uses to measure real user experience." />
+<meta property="og:url" content="https://noxel360.com/learn/what-are-core-web-vitals.html" />
+<meta property="og:type" content="article" />
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "Article", "headline": "What Are Core Web Vitals? A Simple Explanation", "description": "Core Web Vitals explained in plain English \u2014 the three specific metrics Google uses to measure real user experience.", "author": { "@type": "Organization", "name": "NOXEL360" }, "publisher": { "@type": "Organization", "name": "NOXEL360", "url": "https://noxel360.com" }, "datePublished": "2026-07-24", "dateModified": "2026-07-24", "mainEntityOfPage": "https://noxel360.com/learn/what-are-core-web-vitals.html" }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "DefinedTerm", "name": "Core Web Vitals", "description": "Core Web Vitals are three specific metrics Google uses to measure real-world user experience on a webpage: loading speed, interactivity, and visual stability.", "inDefinedTermSet": "https://noxel360.com/learn/what-are-core-web-vitals.html" }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Learn", "item": "https://noxel360.com/learn"}, {"@type": "ListItem", "position": 2, "name": "Performance", "item": "https://noxel360.com/learn/performance.html"}, {"@type": "ListItem", "position": 3, "name": "What Are Core Web Vitals? A Simple Explanation", "item": "https://noxel360.com/learn/what-are-core-web-vitals.html"}] }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+{ "@type": "Question", "name": "Are Core Web Vitals a direct Google ranking factor?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, Google has confirmed they're part of the broader page experience ranking signals, though content relevance remains more heavily weighted overall." } },
+{ "@type": "Question", "name": "What does LCP stand for?", "acceptedAnswer": { "@type": "Answer", "text": "Largest Contentful Paint \u2014 measuring how quickly the largest, main piece of content becomes visible to a visitor." } },
+{ "@type": "Question", "name": "What replaced FID (First Input Delay) as a Core Web Vital?", "acceptedAnswer": { "@type": "Answer", "text": "INP (Interaction to Next Paint) replaced FID in 2024, providing a more comprehensive measure of page responsiveness." } },
+{ "@type": "Question", "name": "What causes a poor CLS score?", "acceptedAnswer": { "@type": "Answer", "text": "Elements like images or ads loading without reserved space, causing surrounding content to unexpectedly shift position as the page loads." } },
+{ "@type": "Question", "name": "Can Core Web Vitals differ between mobile and desktop?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, often significantly \u2014 Google reports and evaluates these metrics separately for mobile and desktop experiences." } },
+{ "@type": "Question", "name": "Do all three Core Web Vitals need to be 'good' to rank well?", "acceptedAnswer": { "@type": "Answer", "text": "Not strictly required, but meeting all three thresholds is associated with a better overall page experience signal." } },
+{ "@type": "Question", "name": "How often does Google update Core Web Vitals thresholds or metrics?", "acceptedAnswer": { "@type": "Answer", "text": "Occasionally \u2014 as seen with the FID-to-INP transition, Google periodically refines these metrics based on evolving web standards and data." } }
+] }
+</script>
+<style>
+  :root{--bg:#07090f;--surface:#0d1017;--border:rgba(255,255,255,0.07);--text:#e8eaf0;--muted:rgba(255,255,255,0.45);--g:#3cde6a;--p:#702aa5}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+  a{color:var(--g);text-decoration:none}
+  nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:rgba(7,9,15,0.90);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+  .container{max-width:820px;margin:0 auto;padding:70px 40px}
+  h1{font-size:clamp(28px,4.5vw,44px);font-weight:900;line-height:1.15;margin-bottom:14px;scroll-margin-top:90px}
+  h2{font-size:21px;font-weight:800;margin:36px 0 14px;color:#fff;scroll-margin-top:90px}
+  p{color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin-bottom:16px}
+  ul,ol{color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin:0 0 20px 22px}
+  li{margin-bottom:8px}
+  table{width:100%;border-collapse:collapse;margin:8px 0 24px;font-size:15px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);color:rgba(255,255,255,0.75)}
+  th{color:#fff;font-size:13px;text-transform:uppercase}
+  .tag{font-size:11px;font-weight:800;letter-spacing:1.5px;color:var(--g);text-transform:uppercase;margin-bottom:12px}
+  .meta-row{display:flex;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--muted);margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+  .toc{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin:20px 0 28px}
+  .toc .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+  .toc ul{list-style:none;margin:0;columns:2;gap:8px}
+  .toc li{margin-bottom:6px;break-inside:avoid}
+  .toc a{color:rgba(255,255,255,0.75);font-size:14px}
+  .toc a:hover{color:var(--g)}
+  .one-sentence{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--g);border-radius:12px;padding:20px;margin:20px 0}
+  .didyouknow{background:rgba(60,222,106,0.07);border:1px solid rgba(60,222,106,0.25);border-radius:12px;padding:18px 20px;margin:28px 0}
+  .didyouknow .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--g);text-transform:uppercase;margin-bottom:6px}
+  .action-box{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--p);border-radius:12px;padding:20px;margin:28px 0}
+  .action-box .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:#b98af0;text-transform:uppercase;margin-bottom:6px}
+  .sources{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin:24px 0}
+  .sources .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+  .sources ul{margin:0;list-style:none}
+  .sources li{margin-bottom:8px}
+  .sources a{font-weight:700}
+  .sources span{color:var(--muted);font-size:13px}
+  .takeaways{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 24px;margin:28px 0}
+  .takeaways ul{margin:0;list-style:none}
+  .takeaways li{padding-left:26px;position:relative;margin-bottom:10px}
+  .takeaways li::before{content:"✓";position:absolute;left:0;color:var(--g);font-weight:900}
+  .faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px}
+  .faq-item h3{font-size:15px;margin:0 0 6px;color:#fff}
+  .learning-path{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0}
+  .learning-path .lp-box{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+  .learning-path .lp-box .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+  .learning-path ul{margin:0;list-style:none}
+  .learning-path li{margin-bottom:8px}
+  @media(max-width:600px){.learning-path{grid-template-columns:1fr}.toc ul{columns:1}}
+  .closing{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;margin:24px 0;text-align:center}
+  .cta{display:inline-block;background:var(--g);color:#07090f;font-weight:800;padding:14px 32px;border-radius:10px;margin:24px 0 0}
+  .byline{font-size:13px;color:var(--muted);margin-top:32px}
+  .related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:20px 0}
+  .related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;font-size:14px;font-weight:700;color:var(--text)}
+  .related a:hover{border-color:var(--g)}
+  footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+  footer a{color:var(--muted);margin:0 12px}
+  #progress-bar{position:fixed;top:0;left:0;height:3px;background:var(--g);width:0%;z-index:200;transition:width 0.1s linear}
+</style>
+</head>
+<body>
+  <div id="progress-bar"></div>
+  <nav>
+    <a href="/" style="display:flex;align-items:center;gap:10px">
+      <img src="/favicon-192x192.png" alt="NOXEL360" width="42" height="42" style="border-radius:8px">
+      <span style="font-weight:800">NOXEL360</span>
+    </a>
+    <div style="display:flex;gap:28px;font-size:14px;color:var(--muted)">
+      <a href="/learn">Learn</a>
+      <a href="/dashboard" style="background:var(--g);color:#07090f;padding:9px 20px;border-radius:8px;font-weight:800">Dashboard</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="tag">Performance Guide</div>
+    <h1 id="top">What Are Core Web Vitals? A Simple Explanation</h1>
+    <div class="meta-row">
+      <span>🕐 5 min read</span>
+      <span>📊 Intermediate</span>
+      <span>📁 Performance</span>
+      <span>📅 Published July 24, 2026</span>
+      <span>🔄 Updated July 24, 2026</span>
+    </div>
+
+    <div class="toc"><div class="label">On This Page</div><ul><li><a href="#the-three-metrics">The Three Core Web Vitals</a></li><li><a href="#good-thresholds">What 'Good' Looks Like</a></li><li><a href="#how-to-check">How to Check Your Own Core Web Vitals</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+
+    <div class="one-sentence"><strong>In one sentence:</strong> Core Web Vitals are three specific metrics Google uses to measure real-world user experience on a webpage: loading speed, interactivity, and visual stability.</div>
+
+    <p>Google introduced Core Web Vitals to standardize how page experience gets measured, moving beyond vague notions of "feels fast" into three concrete, measurable metrics.</p>
+
+    <h2 id="the-three-metrics">The Three Core Web Vitals</h2>
+<p><strong>LCP (Largest Contentful Paint)</strong> — how quickly the main content becomes visible. <strong>INP (Interaction to Next Paint)</strong> — how quickly the page responds to user input. <strong>CLS (Cumulative Layout Shift)</strong> — how much visual elements unexpectedly shift while loading.</p>
+<svg viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;margin:8px 0 28px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px">
+      <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3cde6a"/></marker></defs>
+      <rect x="140" y="45" width="120" height="50" rx="10" fill="#0d1017" stroke="#3cde6a" stroke-width="1.5"/><text x="200" y="75" fill="#ffffff" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">LCP</text><line x1="260" y1="70" x2="290" y2="70" stroke="#3cde6a" stroke-width="2" marker-end="url(#arrow)"/><rect x="290" y="45" width="120" height="50" rx="10" fill="#0d1017" stroke="#702aa5" stroke-width="1.5"/><text x="350" y="75" fill="#ffffff" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">INP</text><line x1="410" y1="70" x2="440" y2="70" stroke="#3cde6a" stroke-width="2" marker-end="url(#arrow)"/><rect x="440" y="45" width="120" height="50" rx="10" fill="#0d1017" stroke="#3cde6a" stroke-width="1.5"/><text x="500" y="75" fill="#ffffff" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">CLS</text>
+    </svg>
+<div class="sources"><div class="label">📚 Official Sources</div><ul><li><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener noreferrer">Google — Core Web Vitals</a> <span>· the official Core Web Vitals documentation</span></li></ul></div>
+<div class="didyouknow"><div class="label">💡 Did You Know?</div><p style="margin-bottom:0">Core Web Vitals thresholds are based on real user data collected across the web, not arbitrary targets — Google calibrated them against what actually correlates with a genuinely good experience.</p></div>
+<h2 id="good-thresholds">What 'Good' Looks Like</h2>
+<p>Google defines specific thresholds for each metric — generally, LCP under 2.5 seconds, INP under 200 milliseconds, and CLS under 0.1 are considered good, based on real user data.</p>
+<h2 id="how-to-check">How to Check Your Own Core Web Vitals</h2>
+<p>Google Search Console's Core Web Vitals report and PageSpeed Insights both show these metrics for real pages, based on actual visitor data where available.</p>
+<div class="action-box"><div class="label">🧩 See It in Action with NOXEL360</div><p style="margin-bottom:0">NOXEL SEO's scan engine checks all three Core Web Vitals automatically, with specific, prioritized fix suggestions.</p></div>
+
+
+    <h2 id="faq">Frequently Asked Questions</h2>
+    <div class="faq-item"><h3>Are Core Web Vitals a direct Google ranking factor?</h3><p>Yes, Google has confirmed they're part of the broader page experience ranking signals, though content relevance remains more heavily weighted overall.</p></div>
+<div class="faq-item"><h3>What does LCP stand for?</h3><p>Largest Contentful Paint — measuring how quickly the largest, main piece of content becomes visible to a visitor.</p></div>
+<div class="faq-item"><h3>What replaced FID (First Input Delay) as a Core Web Vital?</h3><p>INP (Interaction to Next Paint) replaced FID in 2024, providing a more comprehensive measure of page responsiveness.</p></div>
+<div class="faq-item"><h3>What causes a poor CLS score?</h3><p>Elements like images or ads loading without reserved space, causing surrounding content to unexpectedly shift position as the page loads.</p></div>
+<div class="faq-item"><h3>Can Core Web Vitals differ between mobile and desktop?</h3><p>Yes, often significantly — Google reports and evaluates these metrics separately for mobile and desktop experiences.</p></div>
+<div class="faq-item"><h3>Do all three Core Web Vitals need to be 'good' to rank well?</h3><p>Not strictly required, but meeting all three thresholds is associated with a better overall page experience signal.</p></div>
+<div class="faq-item"><h3>How often does Google update Core Web Vitals thresholds or metrics?</h3><p>Occasionally — as seen with the FID-to-INP transition, Google periodically refines these metrics based on evolving web standards and data.</p></div>
+
+
+    <div class="takeaways">
+      <h2 style="margin-top:0">Key Takeaways</h2>
+      <ul><li>Core Web Vitals measure loading speed, interactivity, and visual stability.</li><li>LCP, INP, and CLS are the three specific metrics involved.</li><li>Google confirmed these as part of its broader page experience ranking signals.</li><li>Thresholds are based on real user data, not arbitrary targets.</li><li>Search Console and PageSpeed Insights both report these metrics for real pages.</li></ul>
+    </div>
+
+    <div class="learning-path">
+      <div class="lp-box"><div class="label">⬅ Before This</div><ul><li><a href="/learn/what-is-page-speed.html">What Is Page Speed?</a></li></ul></div>
+      <div class="lp-box"><div class="label">Next Step ➜</div><ul><li><a href="/learn/what-is-image-optimization.html">What Is Image Optimization?</a></li></ul></div>
+    </div>
+
+    <div class="closing">
+      <p style="margin-bottom:8px">See all three Core Web Vitals checked automatically with prioritized fixes.</p>
+      <a href="/dashboard" class="cta">Explore the NOXEL360 Dashboard →</a>
+    </div>
+
+    <h2>Related Reading</h2>
+    <div class="related"><a href="/learn/what-is-page-speed.html">What Is Page Speed?</a><a href="/learn/what-is-technical-seo.html">What Is Technical SEO?</a><a href="/learn/what-is-google-search-console.html">What Is Google Search Console?</a></div>
+
+    <p class="byline">Written by the NOXEL360 Team · Reviewed by NOXEL Engineering · <a href="https://noxel360.com/learn/performance.html">← Back to Performance Guides</a></p>
+  </div>
+
+  <footer>
+    <a href="/">Home</a>
+    <a href="/learn">Learn</a>
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="https://noxelseo.com" target="_blank" rel="noopener">NOXEL SEO</a>
+    <a href="https://noxelforge.com" target="_blank" rel="noopener">NOXEL Forge</a>
+    <div style="margin-top:16px">© 2026 NOXEL360. All rights reserved.</div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function(){
+      var el = document.documentElement;
+      var scrolled = (el.scrollTop) / (el.scrollHeight - el.clientHeight) * 100;
+      document.getElementById('progress-bar').style.width = Math.min(scrolled,100) + '%';
+    });
+  </script>
+</body>
+</html>
