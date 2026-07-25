@@ -3,56 +3,96 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Web Accessibility (WCAG) Explained: A Simple Guide — NOXEL360</title>
-<meta name="description" content="Web accessibility and WCAG explained in plain English — designing so people with disabilities can actually use a website too.">
+<title>Web Accessibility & WCAG Explained — NOXEL360</title>
+<meta name="description" content="Web accessibility and WCAG explained in plain English — what accessibility means online, and what the standard actually requires.">
 <link rel="canonical" href="https://noxel360.com/learn/web-accessibility-wcag-explained.html" />
 <link rel="icon" href="/favicon.ico">
-<meta property="og:title" content="Web Accessibility (WCAG) Explained" />
-<meta property="og:description" content="Designing so people with disabilities can actually use a website too." />
+<meta property="og:title" content="Web Accessibility & WCAG Explained" />
+<meta property="og:description" content="What accessibility means online, and what the WCAG standard actually requires." />
 <meta property="og:url" content="https://noxel360.com/learn/web-accessibility-wcag-explained.html" />
 <meta property="og:type" content="article" />
 <script type="application/ld+json">
-{ "@context": "https://schema.org", "@type": "Article", "headline": "Web Accessibility (WCAG) Explained: A Simple Guide", "description": "Web accessibility and WCAG explained in plain English — designing so people with disabilities can actually use a website too.", "author": { "@type": "Organization", "name": "NOXEL360" }, "publisher": { "@type": "Organization", "name": "NOXEL360", "url": "https://noxel360.com" }, "datePublished": "2026-07-24", "dateModified": "2026-07-24", "mainEntityOfPage": "https://noxel360.com/learn/web-accessibility-wcag-explained.html" }
+{ "@context": "https://schema.org", "@type": "Article", "headline": "Web Accessibility & WCAG Explained", "description": "Web accessibility and WCAG explained in plain English \u2014 what accessibility means online, and what the standard actually requires.", "author": { "@type": "Organization", "name": "NOXEL360" }, "publisher": { "@type": "Organization", "name": "NOXEL360", "url": "https://noxel360.com" }, "datePublished": "2026-07-24", "dateModified": "2026-07-24", "mainEntityOfPage": "https://noxel360.com/learn/web-accessibility-wcag-explained.html" }
 </script>
 <script type="application/ld+json">
-{ "@context": "https://schema.org", "@type": "DefinedTerm", "name": "WCAG", "description": "WCAG (Web Content Accessibility Guidelines) is the internationally recognized standard for making websites usable by people with disabilities.", "inDefinedTermSet": "https://noxel360.com/learn/web-accessibility-wcag-explained.html" }
+{ "@context": "https://schema.org", "@type": "DefinedTerm", "name": "Web Accessibility", "description": "Web accessibility means designing websites so people with disabilities \u2014 visual, auditory, motor, or cognitive \u2014 can use them effectively, guided by a widely adopted standard called WCAG.", "inDefinedTermSet": "https://noxel360.com/learn/web-accessibility-wcag-explained.html" }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Learn", "item": "https://noxel360.com/learn"}, {"@type": "ListItem", "position": 2, "name": "UX & UI", "item": "https://noxel360.com/learn/uxui.html"}, {"@type": "ListItem", "position": 3, "name": "Web Accessibility & WCAG Explained", "item": "https://noxel360.com/learn/web-accessibility-wcag-explained.html"}] }
 </script>
 <script type="application/ld+json">
 { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-  { "@type": "Question", "name": "Is web accessibility legally required?", "acceptedAnswer": { "@type": "Answer", "text": "In many jurisdictions, yes, for certain types of businesses or organizations — regulations vary significantly by country and region, so checking applicable local requirements matters." } },
-  { "@type": "Question", "name": "Does accessibility only benefit people with permanent disabilities?", "acceptedAnswer": { "@type": "Answer", "text": "No — accessible design also helps people with temporary conditions (an injured hand), situational limitations (bright sunlight on a screen), and generally improves usability for everyone." } },
-  { "@type": "Question", "name": "What's the easiest accessibility improvement to start with?", "acceptedAnswer": { "@type": "Answer", "text": "Adding descriptive alt text to images is one of the simplest, highest-impact starting points, along with ensuring sufficient color contrast for readable text." } }
+{ "@type": "Question", "name": "What does WCAG stand for?", "acceptedAnswer": { "@type": "Answer", "text": "Web Content Accessibility Guidelines \u2014 the internationally recognized standard for web accessibility, maintained by the W3C." } },
+{ "@type": "Question", "name": "Is WCAG AA compliance legally required?", "acceptedAnswer": { "@type": "Answer", "text": "In many jurisdictions, yes, particularly for government and larger commercial websites \u2014 requirements vary by country and business size." } },
+{ "@type": "Question", "name": "Does accessibility only benefit people with permanent disabilities?", "acceptedAnswer": { "@type": "Answer", "text": "No \u2014 many accessibility improvements also help people in temporary or situational circumstances, like an injury or a noisy environment." } },
+{ "@type": "Question", "name": "What is a screen reader?", "acceptedAnswer": { "@type": "Answer", "text": "Software that reads a webpage's content aloud or converts it to braille, relied on heavily by blind and low-vision users." } },
+{ "@type": "Question", "name": "Can accessibility improvements affect SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, positively \u2014 many accessibility practices (clear structure, descriptive alt text) also directly support how well search engines understand a page." } },
+{ "@type": "Question", "name": "Is achieving WCAG AAA compliance realistic for most websites?", "acceptedAnswer": { "@type": "Answer", "text": "Rarely for an entire site \u2014 AAA is the highest standard and often impractical broadly; most organizations target AA as a realistic, meaningful goal." } },
+{ "@type": "Question", "name": "Do accessibility overlays (widgets) make a site compliant?", "acceptedAnswer": { "@type": "Answer", "text": "Not reliably \u2014 many accessibility experts caution that overlay tools don't fix underlying code issues and can create a false sense of compliance." } }
 ] }
 </script>
 <style>
-  :root{--bg:#07090f;--surface:#0d1017;--border:rgba(255,255,255,0.07);--text:#e8eaf0;--muted:rgba(255,255,255,0.45);--g:#3cde6a}
+  :root{--bg:#07090f;--surface:#0d1017;--border:rgba(255,255,255,0.07);--text:#e8eaf0;--muted:rgba(255,255,255,0.45);--g:#3cde6a;--p:#702aa5}
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   body{font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
   a{color:var(--g);text-decoration:none}
   nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:rgba(7,9,15,0.90);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
   .container{max-width:820px;margin:0 auto;padding:70px 40px}
-  h1{font-size:clamp(28px,4.5vw,44px);font-weight:900;line-height:1.15;margin-bottom:20px}
-  h2{font-size:21px;font-weight:800;margin:36px 0 14px;color:#fff}
+  h1{font-size:clamp(28px,4.5vw,44px);font-weight:900;line-height:1.15;margin-bottom:14px;scroll-margin-top:90px}
+  h2{font-size:21px;font-weight:800;margin:36px 0 14px;color:#fff;scroll-margin-top:90px}
   p{color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin-bottom:16px}
   ul,ol{color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin:0 0 20px 22px}
   li{margin-bottom:8px}
+  table{width:100%;border-collapse:collapse;margin:8px 0 24px;font-size:15px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);color:rgba(255,255,255,0.75)}
+  th{color:#fff;font-size:13px;text-transform:uppercase}
   .tag{font-size:11px;font-weight:800;letter-spacing:1.5px;color:var(--g);text-transform:uppercase;margin-bottom:12px}
-  .cta{display:inline-block;background:var(--g);color:#07090f;font-weight:800;padding:14px 32px;border-radius:10px;margin:24px 0}
-  .definition{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--g);border-radius:12px;padding:20px;margin:20px 0}
+  .meta-row{display:flex;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--muted);margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+  .toc{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin:20px 0 28px}
+  .toc .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+  .toc ul{list-style:none;margin:0;columns:2;gap:8px}
+  .toc li{margin-bottom:6px;break-inside:avoid}
+  .toc a{color:rgba(255,255,255,0.75);font-size:14px}
+  .toc a:hover{color:var(--g)}
+  .one-sentence{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--g);border-radius:12px;padding:20px;margin:20px 0}
+  .didyouknow{background:rgba(60,222,106,0.07);border:1px solid rgba(60,222,106,0.25);border-radius:12px;padding:18px 20px;margin:28px 0}
+  .didyouknow .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--g);text-transform:uppercase;margin-bottom:6px}
+  .action-box{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--p);border-radius:12px;padding:20px;margin:28px 0}
+  .action-box .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:#b98af0;text-transform:uppercase;margin-bottom:6px}
+  .sources{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin:24px 0}
+  .sources .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+  .sources ul{margin:0;list-style:none}
+  .sources li{margin-bottom:8px}
+  .sources a{font-weight:700}
+  .sources span{color:var(--muted);font-size:13px}
+  .takeaways{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 24px;margin:28px 0}
+  .takeaways ul{margin:0;list-style:none}
+  .takeaways li{padding-left:26px;position:relative;margin-bottom:10px}
+  .takeaways li::before{content:"✓";position:absolute;left:0;color:var(--g);font-weight:900}
   .faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px}
   .faq-item h3{font-size:15px;margin:0 0 6px;color:#fff}
+  .learning-path{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0}
+  .learning-path .lp-box{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+  .learning-path .lp-box .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+  .learning-path ul{margin:0;list-style:none}
+  .learning-path li{margin-bottom:8px}
+  @media(max-width:600px){.learning-path{grid-template-columns:1fr}.toc ul{columns:1}}
   .closing{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;margin:24px 0;text-align:center}
+  .cta{display:inline-block;background:var(--g);color:#07090f;font-weight:800;padding:14px 32px;border-radius:10px;margin:24px 0 0}
+  .byline{font-size:13px;color:var(--muted);margin-top:32px}
   .related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:20px 0}
   .related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;font-size:14px;font-weight:700;color:var(--text)}
   .related a:hover{border-color:var(--g)}
   footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
   footer a{color:var(--muted);margin:0 12px}
+  #progress-bar{position:fixed;top:0;left:0;height:3px;background:var(--g);width:0%;z-index:200;transition:width 0.1s linear}
 </style>
 </head>
 <body>
+  <div id="progress-bar"></div>
   <nav>
     <a href="/" style="display:flex;align-items:center;gap:10px">
-      <img src="/favicon-192x192.png" alt="NOXEL360" width="150" height="150" style="border-radius:8px">
+      <img src="/favicon-192x192.png" alt="NOXEL360" width="42" height="42" style="border-radius:8px">
       <span style="font-weight:800">NOXEL360</span>
     </a>
     <div style="display:flex;gap:28px;font-size:14px;color:var(--muted)">
@@ -62,65 +102,68 @@
   </nav>
 
   <div class="container">
-    <div class="tag">UX &amp; UI Guide</div>
-    <h1>Web Accessibility (WCAG) Explained: A Simple Guide</h1>
-
-    <div class="definition">
-      <strong style="color:#fff">In one sentence:</strong> Web accessibility means designing and building websites so people with disabilities — visual, auditory, motor, or cognitive — can perceive, navigate, and use them effectively, guided by the internationally recognized WCAG standard.
+    <div class="tag">UX & UI Guide</div>
+    <h1 id="top">Web Accessibility & WCAG Explained</h1>
+    <div class="meta-row">
+      <span>🕐 6 min read</span>
+      <span>📊 Intermediate</span>
+      <span>📁 UX & UI</span>
+      <span>📅 Published July 24, 2026</span>
+      <span>🔄 Updated July 24, 2026</span>
     </div>
 
-    <p>Accessibility is sometimes treated as an afterthought or a compliance checkbox, but it fundamentally determines whether a meaningful portion of potential visitors can actually use a website at all.</p>
+    <div class="toc"><div class="label">On This Page</div><ul><li><a href="#who-benefits">Who Web Accessibility Actually Serves</a></li><li><a href="#four-principles">The Four Principles Behind WCAG</a></li><li><a href="#levels">WCAG's Three Conformance Levels</a></li><li><a href="#practical-basics">Practical Accessibility Basics</a></li><li><a href="#faq">FAQ</a></li></ul></div>
 
-    <h2>What WCAG Actually Covers</h2>
-    <p>WCAG (Web Content Accessibility Guidelines) organizes accessibility around four core principles, often remembered as <strong>POUR</strong>:</p>
-    <ul>
-      <li><strong>Perceivable</strong> — information must be presentable in ways people can perceive (alt text for images, captions for video)</li>
-      <li><strong>Operable</strong> — interface elements must be usable (keyboard navigation, enough time to complete actions)</li>
-      <li><strong>Understandable</strong> — content and operation must be clear and predictable</li>
-      <li><strong>Robust</strong> — content must work reliably across different browsers and assistive technologies</li>
-    </ul>
+    <div class="one-sentence"><strong>In one sentence:</strong> Web accessibility means designing websites so people with disabilities — visual, auditory, motor, or cognitive — can use them effectively, guided by a widely adopted standard called WCAG.</div>
 
-    <h2>Common Accessibility Practices</h2>
-    <ul>
-      <li>Descriptive alt text on images</li>
-      <li>Sufficient color contrast between text and background</li>
-      <li>Full keyboard navigability (not requiring a mouse)</li>
-      <li>Clear, descriptive link text (not just "click here")</li>
-      <li>Captions or transcripts for video and audio content</li>
-      <li>Proper heading structure for screen readers to navigate</li>
-    </ul>
+    <p>Accessibility is often treated as an afterthought, but a significant share of internet users have some form of disability that affects how they browse the web — making this a mainstream design consideration, not a niche one.</p>
 
-    <h2>Accessibility Benefits Everyone, Not Just People With Disabilities</h2>
-    <p>Captions help people watching video without sound. High contrast helps everyone in bright sunlight. Clear navigation helps everyone, not just people using assistive technology. This is a genuinely important reframe — accessible design tends to be simply better design overall, not a narrow accommodation for a small group.</p>
+    <h2 id="who-benefits">Who Web Accessibility Actually Serves</h2>
+<ul><li>People who are blind or have low vision, using screen readers</li><li>People who are deaf or hard of hearing, relying on captions</li><li>People with motor impairments, navigating by keyboard only</li><li>People with cognitive disabilities, benefiting from clear, simple structure</li><li>Many others temporarily or situationally affected — a broken arm, bright sunlight, a noisy room</li></ul>
+<div class="didyouknow"><div class="label">💡 Did You Know?</div><p style="margin-bottom:0">Accessibility improvements often benefit far more people than just those with permanent disabilities — captions help anyone watching video in a noisy room, and clear contrast helps anyone using a phone in bright sunlight.</p></div>
+<h2 id="four-principles">The Four Principles Behind WCAG</h2>
+<p>WCAG is organized around <strong>POUR</strong>: content must be <strong>Perceivable</strong> (can be seen/heard), <strong>Operable</strong> (can be used, including by keyboard), <strong>Understandable</strong> (clear and predictable), and <strong>Robust</strong> (works with assistive technology).</p>
+<svg viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;margin:8px 0 28px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px">
+      <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3cde6a"/></marker></defs>
+      <rect x="65" y="45" width="120" height="50" rx="10" fill="#0d1017" stroke="#3cde6a" stroke-width="1.5"/><text x="125" y="75" fill="#ffffff" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Perceivable</text><line x1="185" y1="70" x2="215" y2="70" stroke="#3cde6a" stroke-width="2" marker-end="url(#arrow)"/><rect x="215" y="45" width="120" height="50" rx="10" fill="#0d1017" stroke="#702aa5" stroke-width="1.5"/><text x="275" y="75" fill="#ffffff" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Operable</text><line x1="335" y1="70" x2="365" y2="70" stroke="#3cde6a" stroke-width="2" marker-end="url(#arrow)"/><rect x="365" y="45" width="120" height="50" rx="10" fill="#0d1017" stroke="#3cde6a" stroke-width="1.5"/><text x="425" y="75" fill="#ffffff" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Understandable</text><line x1="485" y1="70" x2="515" y2="70" stroke="#3cde6a" stroke-width="2" marker-end="url(#arrow)"/><rect x="515" y="45" width="120" height="50" rx="10" fill="#0d1017" stroke="#702aa5" stroke-width="1.5"/><text x="575" y="75" fill="#ffffff" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Robust</text>
+    </svg>
+<div class="sources"><div class="label">📚 Official Sources</div><ul><li><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener noreferrer">W3C — WCAG Overview</a> <span>· the official accessibility standard</span></li><li><a href="https://webaim.org/intro/" target="_blank" rel="noopener noreferrer">WebAIM — Introduction to Web Accessibility</a> <span>· a widely used practical guide</span></li></ul></div>
+<h2 id="levels">WCAG's Three Conformance Levels</h2>
+<p>WCAG defines three levels: <strong>A</strong> (minimum), <strong>AA</strong> (the standard most legal requirements target), and <strong>AAA</strong> (the highest, often impractical for entire sites). Most organizations aim for AA compliance.</p>
+<div class="action-box"><div class="label">🧩 See It in Action with NOXEL360</div><p style="margin-bottom:0">NOXEL360's products are built with accessibility in mind from the start — semantic structure, proper contrast, and keyboard navigation throughout.</p></div>
+<h2 id="practical-basics">Practical Accessibility Basics</h2>
+<ul><li>Sufficient color contrast between text and background</li><li>Descriptive alt text for images</li><li>Full keyboard navigability, not just mouse</li><li>Clear, descriptive link text (not just "click here")</li><li>Proper heading structure for screen readers</li></ul>
 
-    <h2>Legal and Business Reasons This Matters</h2>
-    <p>Many jurisdictions have legal requirements around digital accessibility for certain types of organizations, and non-compliance can carry real legal risk. Beyond legal considerations, excluding people with disabilities from using a website also means excluding real customers and real revenue.</p>
 
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <h3>Is web accessibility legally required?</h3>
-      <p style="margin:0">In many jurisdictions, yes, for certain types of businesses or organizations — regulations vary significantly by country and region, so checking applicable local requirements matters.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Does accessibility only benefit people with permanent disabilities?</h3>
-      <p style="margin:0">No — accessible design also helps people with temporary conditions (an injured hand), situational limitations (bright sunlight on a screen), and generally improves usability for everyone.</p>
-    </div>
-    <div class="faq-item">
-      <h3>What's the easiest accessibility improvement to start with?</h3>
-      <p style="margin:0">Adding descriptive alt text to images is one of the simplest, highest-impact starting points, along with ensuring sufficient color contrast for readable text.</p>
+    <h2 id="faq">Frequently Asked Questions</h2>
+    <div class="faq-item"><h3>What does WCAG stand for?</h3><p>Web Content Accessibility Guidelines — the internationally recognized standard for web accessibility, maintained by the W3C.</p></div>
+<div class="faq-item"><h3>Is WCAG AA compliance legally required?</h3><p>In many jurisdictions, yes, particularly for government and larger commercial websites — requirements vary by country and business size.</p></div>
+<div class="faq-item"><h3>Does accessibility only benefit people with permanent disabilities?</h3><p>No — many accessibility improvements also help people in temporary or situational circumstances, like an injury or a noisy environment.</p></div>
+<div class="faq-item"><h3>What is a screen reader?</h3><p>Software that reads a webpage's content aloud or converts it to braille, relied on heavily by blind and low-vision users.</p></div>
+<div class="faq-item"><h3>Can accessibility improvements affect SEO?</h3><p>Yes, positively — many accessibility practices (clear structure, descriptive alt text) also directly support how well search engines understand a page.</p></div>
+<div class="faq-item"><h3>Is achieving WCAG AAA compliance realistic for most websites?</h3><p>Rarely for an entire site — AAA is the highest standard and often impractical broadly; most organizations target AA as a realistic, meaningful goal.</p></div>
+<div class="faq-item"><h3>Do accessibility overlays (widgets) make a site compliant?</h3><p>Not reliably — many accessibility experts caution that overlay tools don't fix underlying code issues and can create a false sense of compliance.</p></div>
+
+
+    <div class="takeaways">
+      <h2 style="margin-top:0">Key Takeaways</h2>
+      <ul><li>Web accessibility ensures people with disabilities can use a website effectively.</li><li>WCAG's four principles are Perceivable, Operable, Understandable, and Robust.</li><li>AA is the most commonly targeted WCAG conformance level.</li><li>Accessibility improvements often benefit far more users than just those with permanent disabilities.</li><li>Good accessibility practices frequently overlap with good SEO practices.</li></ul>
     </div>
 
-    <h2>Related Reading</h2>
-    <div class="related">
-      <a href="/learn/what-is-ux.html">What Is UX?</a>
-      <a href="/learn/what-is-ui.html">What Is UI?</a>
-      <a href="/learn">← Back to Learn</a>
+    <div class="learning-path">
+      <div class="lp-box"><div class="label">⬅ Before This</div><ul><li><a href="/learn/mobile-first-design-explained.html">Mobile-First Design Explained</a></li></ul></div>
+      <div class="lp-box"><div class="label">Next Step ➜</div><ul><li><a href="/learn/what-is-a-user-journey.html">What Is a User Journey?</a></li></ul></div>
     </div>
 
     <div class="closing">
-      <p style="margin-bottom:16px">Accessibility issues often overlap with SEO issues too — check both together with NOXEL SEO.</p>
-      <a class="cta" href="https://noxelseo.com" target="_blank" rel="noopener">Try NOXEL SEO →</a>
+      <p style="margin-bottom:8px">See accessibility built into a real product from the ground up.</p>
+      <a href="/dashboard" class="cta">Explore the NOXEL360 Dashboard →</a>
     </div>
+
+    <h2>Related Reading</h2>
+    <div class="related"><a href="/learn/mobile-first-design-explained.html">Mobile-First Design Explained</a><a href="/learn/what-is-a-user-journey.html">What Is a User Journey?</a><a href="/learn/what-is-ui.html">What Is UI?</a></div>
+
+    <p class="byline">Written by the NOXEL360 Team · Reviewed by NOXEL Engineering · <a href="https://noxel360.com/learn/uxui.html">← Back to UX & UI Guides</a></p>
   </div>
 
   <footer>
@@ -132,5 +175,13 @@
     <a href="https://noxelforge.com" target="_blank" rel="noopener">NOXEL Forge</a>
     <div style="margin-top:16px">© 2026 NOXEL360. All rights reserved.</div>
   </footer>
+
+  <script>
+    window.addEventListener('scroll', function(){
+      var el = document.documentElement;
+      var scrolled = (el.scrollTop) / (el.scrollHeight - el.clientHeight) * 100;
+      document.getElementById('progress-bar').style.width = Math.min(scrolled,100) + '%';
+    });
+  </script>
 </body>
 </html>
