@@ -20,7 +20,6 @@ function PricingRedirect() {
 
 function RootRoute() {
   const { isAuthenticated } = useAuthStore();
-  console.log("isAuthenticated:", isAuthenticated);
   return isAuthenticated ? <Navigate to="/dashboard" replace /> : <LandingPage />;
 }
 
