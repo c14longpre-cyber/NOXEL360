@@ -6,7 +6,7 @@ export default function LandingPage() {
     <div className="noxel-landing">
       <nav className="nl-nav">
         <Link to="/" className="logo">
-          <img src="/noxel-360.avif" alt="NOXEL360" />
+          <img src="/favicon-192x192.avif" alt="NOXEL360" />
           NOXEL360
         </Link>
         <div className="nav-links">
