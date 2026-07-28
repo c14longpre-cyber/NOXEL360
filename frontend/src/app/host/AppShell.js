@@ -1,7 +1,7 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
 import { SideNav } from "./SideNav";
-import noxel360Logo from "@/assets/logos/webp/noxel-360.webp";
+import noxel360Logo from "@/assets/logos/webp/noxel-360.avif";
 import UserMenu from "@/components/UserMenu";
 import HeaderLanguage from "@/components/HeaderLanguage";
 import TranslationStatusBanner from "@/components/TranslationStatusBanner";
