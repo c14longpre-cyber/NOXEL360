@@ -6,7 +6,7 @@ export default function LandingPage() {
     <div className="noxel-landing">
       <nav className="nl-nav">
         <Link to="/" className="logo">
-          <img src="/favicon-192x192.avif" alt="NOXEL360" width="34" height="34" style={{ borderRadius: 8 }} />
+          <img src="/favicon-192x192.avif" alt="NOXEL360" width="150" height="150" style={{ borderRadius: 8 }} />
           NOXEL360
         </Link>
         <div className="nav-links">
