@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generativ AI Nədir? Sadə İzahat — NOXEL360</title>
+<meta name="description" content="Generativ AI sadə dildə izah edilir — mətn, şəkil və kod necə yaradır və əvvəlki AI sistemlərindən nə ilə fərqlənir.">
+<link rel="canonical" href="https://noxel360.com/learn/what-is-generative-ai.html" />
+<link rel="icon" href="/favicon.ico">
+<meta property="og:title" content="Generativ AI Nədir?" />
+<meta property="og:description" content="Generativ AI mətn, şəkil və kod necə yaradır və əvvəlki AI sistemlərindən nə ilə fərqlənir." />
+<meta property="og:url" content="https://noxel360.com/learn/what-is-generative-ai.html" />
+<meta property="og:type" content="article" />
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "Article", "headline": "Generativ AI Nədir? Sadə İzahat", "description": "Generativ AI sadə dildə izah edilir — mətn, şəkil və kod necə yaradır və əvvəlki AI sistemlərindən nə ilə fərqlənir.", "author": { "@type": "Organization", "name": "NOXEL360" }, "publisher": { "@type": "Organization", "name": "NOXEL360", "url": "https://noxel360.com" }, "datePublished": "2026-07-24", "dateModified": "2026-07-24", "mainEntityOfPage": "https://noxel360.com/learn/what-is-generative-ai.html" }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "DefinedTerm", "name": "Generativ AI", "description": "Generativ AI, yalnız mövcud məzmunu təhlil edən və ya təsnif edən deyil, yeni məzmun — mətn, şəkil, kod, audio — yaradan AI kateqoriyasıdır.", "inDefinedTermSet": "https://noxel360.com/learn/what-is-generative-ai.html" }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+  { "@type": "Question", "name": "ChatGPT generativ AI ilə eyni şeydir?", "acceptedAnswer": { "@type": "Answer", "text": "ChatGPT generativ AI texnologiyası (böyük dil modeli) əsasında qurulmuş konkret bir məhsuldur. Generativ AI daha geniş kateqoriyadır — Claude da daxil olmaqla bir çox başqa məhsullar eyni sahədə mövcuddur." } },
+  { "@type": "Question", "name": "Generativ AI uydurma şeylər yarada bilər?", "acceptedAnswer": { "@type": "Answer", "text": "Bəli — buna tez-tez \"halüsinasiya\" deyilir. Model yoxlanılmış faktları axtarmaq əvəzinə statistik olaraq mümkün məzmun yaratdığı üçün, düzgün səslənən, lakin olmayan məlumatı əminliklə təqdim edə bilər." } },
+  { "@type": "Question", "name": "Generativ AI yazdığını başa düşür?", "acceptedAnswer": { "@type": "Answer", "text": "İnsan mənasında yox. O, təlim məlumatlarından öyrənilmiş nümunələrə əsasən sözlərin (və ya piksellərin, və ya kodun) mümkün ardıcıllığını proqnozlaşdırır, insanın malik olduğu kimi həqiqi məna anlayışı olmadan." } }
+] }
+</script>
+<style>
+  :root{--bg:#07090f;--surface:#0d1017;--border:rgba(255,255,255,0.07);--text:#e8eaf0;--muted:rgba(255,255,255,0.45);--g:#3cde6a}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+  a{color:var(--g);text-decoration:none}
+  nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:rgba(7,9,15,0.90);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+  .container{max-width:820px;margin:0 auto;padding:70px 40px}
+  h1{font-size:clamp(28px,4.5vw,44px);font-weight:900;line-height:1.15;margin-bottom:20px}
+  h2{font-size:21px;font-weight:800;margin:36px 0 14px;color:#fff}
+  p{color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin-bottom:16px}
+  ul,ol{color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin:0 0 20px 22px}
+  li{margin-bottom:8px}
+  .tag{font-size:11px;font-weight:800;letter-spacing:1.5px;color:var(--g);text-transform:uppercase;margin-bottom:12px}
+  .cta{display:inline-block;background:var(--g);color:#07090f;font-weight:800;padding:14px 32px;border-radius:10px;margin:24px 0}
+  .definition{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--g);border-radius:12px;padding:20px;margin:20px 0}
+  .faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px}
+  .faq-item h3{font-size:15px;margin:0 0 6px;color:#fff}
+  .closing{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;margin:24px 0;text-align:center}
+  .related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:20px 0}
+  .related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;font-size:14px;font-weight:700;color:var(--text)}
+  .related a:hover{border-color:var(--g)}
+  footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+  footer a{color:var(--muted);margin:0 12px}
+</style>  <link rel="alternate" hreflang="en" href="https://noxel360.com/learn/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="af" href="https://noxel360.com/learn/af/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="am" href="https://noxel360.com/learn/am/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="ar" href="https://noxel360.com/learn/ar/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="az" href="https://noxel360.com/learn/az/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="be" href="https://noxel360.com/learn/be/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="bg" href="https://noxel360.com/learn/bg/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="bn" href="https://noxel360.com/learn/bn/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="bs" href="https://noxel360.com/learn/bs/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="ca" href="https://noxel360.com/learn/ca/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="ceb" href="https://noxel360.com/learn/ceb/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="co" href="https://noxel360.com/learn/co/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="cs" href="https://noxel360.com/learn/cs/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="cy" href="https://noxel360.com/learn/cy/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="da" href="https://noxel360.com/learn/da/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="de" href="https://noxel360.com/learn/de/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="el" href="https://noxel360.com/learn/el/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="en-AU" href="https://noxel360.com/learn/en-AU/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="en-CA" href="https://noxel360.com/learn/en-CA/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="en-GB" href="https://noxel360.com/learn/en-GB/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="eo" href="https://noxel360.com/learn/eo/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="es" href="https://noxel360.com/learn/es/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="es-AR" href="https://noxel360.com/learn/es-AR/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="es-MX" href="https://noxel360.com/learn/es-MX/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="et" href="https://noxel360.com/learn/et/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="eu" href="https://noxel360.com/learn/eu/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="fa" href="https://noxel360.com/learn/fa/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="fi" href="https://noxel360.com/learn/fi/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="fr" href="https://noxel360.com/learn/fr/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="fr-BE" href="https://noxel360.com/learn/fr-BE/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="fr-CA" href="https://noxel360.com/learn/fr-CA/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="fy" href="https://noxel360.com/learn/fy/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="ga" href="https://noxel360.com/learn/ga/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="gd" href="https://noxel360.com/learn/gd/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="gl" href="https://noxel360.com/learn/gl/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="gu" href="https://noxel360.com/learn/gu/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="ha" href="https://noxel360.com/learn/ha/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="haw" href="https://noxel360.com/learn/haw/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="hi" href="https://noxel360.com/learn/hi/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="hmn" href="https://noxel360.com/learn/hmn/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="hr" href="https://noxel360.com/learn/hr/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="ht" href="https://noxel360.com/learn/ht/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="hu" href="https://noxel360.com/learn/hu/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="hy" href="https://noxel360.com/learn/hy/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="id" href="https://noxel360.com/learn/id/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="ig" href="https://noxel360.com/learn/ig/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="is" href="https://noxel360.com/learn/is/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="it" href="https://noxel360.com/learn/it/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="he" href="https://noxel360.com/learn/iw/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="ja" href="https://noxel360.com/learn/ja/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="jv" href="https://noxel360.com/learn/jw/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="ka" href="https://noxel360.com/learn/ka/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="kk" href="https://noxel360.com/learn/kk/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="km" href="https://noxel360.com/learn/km/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="kn" href="https://noxel360.com/learn/kn/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="ko" href="https://noxel360.com/learn/ko/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="ku" href="https://noxel360.com/learn/ku/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="ky" href="https://noxel360.com/learn/ky/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="la" href="https://noxel360.com/learn/la/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="lb" href="https://noxel360.com/learn/lb/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="lo" href="https://noxel360.com/learn/lo/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="lt" href="https://noxel360.com/learn/lt/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="lv" href="https://noxel360.com/learn/lv/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="mg" href="https://noxel360.com/learn/mg/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="mi" href="https://noxel360.com/learn/mi/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="mk" href="https://noxel360.com/learn/mk/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="ml" href="https://noxel360.com/learn/ml/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="mn" href="https://noxel360.com/learn/mn/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="mr" href="https://noxel360.com/learn/mr/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="ms" href="https://noxel360.com/learn/ms/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="mt" href="https://noxel360.com/learn/mt/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="my" href="https://noxel360.com/learn/my/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="ne" href="https://noxel360.com/learn/ne/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="nl" href="https://noxel360.com/learn/nl/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="no" href="https://noxel360.com/learn/no/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="ny" href="https://noxel360.com/learn/ny/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="pa" href="https://noxel360.com/learn/pa/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="pl" href="https://noxel360.com/learn/pl/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="ps" href="https://noxel360.com/learn/ps/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="pt" href="https://noxel360.com/learn/pt/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://noxel360.com/learn/pt-BR/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="ro" href="https://noxel360.com/learn/ro/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="ru" href="https://noxel360.com/learn/ru/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="sd" href="https://noxel360.com/learn/sd/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="si" href="https://noxel360.com/learn/si/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="sk" href="https://noxel360.com/learn/sk/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="sl" href="https://noxel360.com/learn/sl/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="sm" href="https://noxel360.com/learn/sm/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="sn" href="https://noxel360.com/learn/sn/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="so" href="https://noxel360.com/learn/so/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="sq" href="https://noxel360.com/learn/sq/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="sr" href="https://noxel360.com/learn/sr/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="st" href="https://noxel360.com/learn/st/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="su" href="https://noxel360.com/learn/su/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="sv" href="https://noxel360.com/learn/sv/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="sw" href="https://noxel360.com/learn/sw/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="ta" href="https://noxel360.com/learn/ta/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="te" href="https://noxel360.com/learn/te/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="tg" href="https://noxel360.com/learn/tg/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="th" href="https://noxel360.com/learn/th/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="tl" href="https://noxel360.com/learn/tl/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="tr" href="https://noxel360.com/learn/tr/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="uk" href="https://noxel360.com/learn/uk/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="ur" href="https://noxel360.com/learn/ur/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="uz" href="https://noxel360.com/learn/uz/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="vi" href="https://noxel360.com/learn/vi/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="xh" href="https://noxel360.com/learn/xh/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="yi" href="https://noxel360.com/learn/yi/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="yo" href="https://noxel360.com/learn/yo/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://noxel360.com/learn/zh/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="zh-HK" href="https://noxel360.com/learn/zh-HK/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="zh-TW" href="https://noxel360.com/learn/zh-TW/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="zu" href="https://noxel360.com/learn/zu/what-is-generative-ai.html" />
+  <link rel="alternate" hreflang="x-default" href="https://noxel360.com/learn/what-is-generative-ai.html" />
+</head>
+<body>
+  <nav>
+    <a href="/" style="display:flex;align-items:center;gap:10px">
+      <img src="/favicon-192x192.avif" alt="NOXEL360" width="150" height="150" style="border-radius:8px">
+      <span style="font-weight:800">NOXEL360</span>
+    </a>
+    <div style="display:flex;gap:28px;font-size:14px;color:var(--muted)">
+      <a href="/learn">Öyrən</a>
+      <a href="/dashboard" style="background:var(--g);color:#07090f;padding:9px 20px;border-radius:8px;font-weight:800">İdarə Paneli</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="tag">Süni İntellekt Bələdçisi</div>
+    <h1>Generativ AI Nədir? Sadə İzahat</h1>
+
+    <div class="definition">
+      <strong style="color:#fff">Bir cümlə ilə:</strong> Generativ AI, yalnız artıq mövcud olan məzmunu təhlil edən, çeşidləyən və ya təsnif edən deyil, yeni məzmun — mətn, şəkil, kod, audio — yaradan AI kateqoriyasıdır.
+    </div>
+
+    <p>Əvvəlki AI sistemləri əsasən tanıma və təsnifatda yaxşı idi: bu e-poçt spam-dır? Bu pişiyin şəklidir? Generativ AI kateqorik olaraq fərqli bir şey edir — ona verilən sorğuya cavab olaraq, əvvəllər mövcud olmayan yeni, orijinal məzmun yaradır.</p>
+
+    <h2>Generativ AI Əslində Məzmunu Necə Yaradır</h2>
+    <p>Böyük dil modelləri (Claude və ChatGPT kimi alətlərin arxasında duran texnologiya) nəhəng həcmdə mətn üzərində təlim keçir, dilin necə işlədiyinin statistik nümunələrini öyrənir — hansı sözlərin və ideyaların hansı kontekstlərdə hansılarını izləməyə meylli olduğunu. Sorğu verilən zaman, model bir-bir təxmin edir ki, növbəti nə gəlməsi ehtimalıdır və bu təxminlərdən tam, ardıcıl cavab formalaşdırır.</p>
+    <p>Eyni əsas konsepsiya — böyük verilənlər bazalarından nümunələr öyrənmək, sonra həmin nümunələrə uyğun yeni məzmun yaratmaq — şəkil generatorları, kod generatorları və audio generatorlara da aiddir, hər biri öz növündə məzmun üzərində təlim keçir.</p>
+
+    <h2>Bu Əvvəlki AI-dən Nə ilə Fərqlənir</h2>
+    <ul>
+      <li><strong>Təsnifat AI</strong> — mövcud şeyləri kateqoriyalara ayırır (spam/spam deyil, pişik/it)</li>
+      <li><strong>Generativ AI</strong> — əvvəllər mövcud olmayan yeni şeylər yaradır (esse, şəkil, kod bloku)</li>
+    </ul>
+    <p>Bu dəyişiklik generativ AI-nin praktikada niyə bu qədər fərqli hiss olunmasının səbəbidir — o, söhbət apara, məqalə yaza və ya kod yaza bilir, əvvəlki AI sistemlərinin sadəcə bunu etmək üçün qurulmadığı tapşırıqlar.</p>
+
+    <h2>Ümumi Generativ AI Kateqoriyaları</h2>
+    <ul>
+      <li><strong>Mətn yaratma</strong> — yazma, xülasə çıxarma, suallara cavab verme</li>
+      <li><strong>Şəkil yaratma</strong> — mətn təsvirindən orijinal şəkillər yaratma</li>
+      <li><strong>Kod yaratma</strong> — proqram kodu yazma və ya tamamlama</li>
+      <li><strong>Audio/səs yaratma</strong> — nitq və ya musiqi sintezləşdirmə</li>
+    </ul>
+
+    <h2>Başa Düşməyə Dəyər Həqiqi Məhdudiyyət</h2>
+    <p>Generativ AI yoxlanılmış faktları əldə etmək əvəzinə statistik olaraq mümkün məzmun proqnozlaşdıraraq işlədiyindən, düzgün səslənən, lakin olmayan məlumatı əminliklə təqdim edə bilər — buna tez-tez "halüsinasiya" deyilir. Bu, sadəcə yox olacaq xəta deyil; texnologiyanın necə işlədiyinin struktur xüsusiyyətidir və mühüm iddiaları yaradılmış nəticəyə kor-koranə etibar etmək əvəzinə yoxlamaq üçün yaxşı səbəbdir.</p>
+
+    <h2>Tez-tez Verilən Suallar</h2>
+    <div class="faq-item">
+      <h3>ChatGPT generativ AI ilə eyni şeydir?</h3>
+      <p style="margin:0">ChatGPT generativ AI texnologiyası (böyük dil modeli) əsasında qurulmuş konkret bir məhsuldur. Generativ AI daha geniş kateqoriyadır — Claude da daxil olmaqla bir çox başqa məhsullar eyni sahədə mövcuddur.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Generativ AI uydurma şeylər yarada bilər?</h3>
+      <p style="margin:0">Bəli — buna tez-tez "halüsinasiya" deyilir. Model yoxlanılmış faktları axtarmaq əvəzinə statistik olaraq mümkün məzmun yaratdığı üçün, düzgün səslənən, lakin olmayan məlumatı əminliklə təqdim edə bilər.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Generativ AI yazdığını başa düşür?</h3>
+      <p style="margin:0">İnsan mənasında yox. O, təlim məlumatlarından öyrənilmiş nümunələrə əsasən sözlərin (və ya piksellərin, və ya kodun) mümkün ardıcıllığını proqnozlaşdırır, insanın malik olduğu kimi həqiqi məna anlayışı olmadan.</p>
+    </div>
+
+    <h2>Əlaqəli Oxu</h2>
+    <div class="related">
+      <a href="/learn/what-is-artificial-intelligence.html">Süni İntellekt Nədir?</a>
+      <a href="/learn/what-are-ai-agents.html">AI Agentləri Nədir?</a>
+      <a href="/learn">← Öyrənməyə Qayıt</a>
+    </div>
+
+    <div class="closing">
+      <p style="margin-bottom:16px">NOXEL SEO-nun AI Yardımçısı problemləri izah etmək və real vaxtda düzəliş təklifləri yazmaq üçün generativ AI-dən istifadə edir.</p>
+      <a class="cta" href="/dashboard">NOXEL360 idarə panelini kəşf et →</a>
+    </div>
+  </div>
+
+  <footer>
+    <a href="/">Ana səhifə</a>
+    <a href="/learn">Öyrən</a>
+    <a href="/privacy">Məxfilik</a>
+    <a href="/terms">Şərtlər</a>
+    <a href="https://noxelseo.com" target="_blank" rel="noopener">NOXEL SEO</a>
+    <a href="https://noxelforge.com" target="_blank" rel="noopener">NOXEL Forge</a>
+    <div style="margin-top:16px">© 2026 NOXEL360. Bütün hüquqlar qorunur.</div>
+  </footer>
+</body>
+</html>

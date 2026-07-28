@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agile və Waterfall: Fərq Nədir? — NOXEL360</title>
+<meta name="description" content="Agile və Waterfall sadə dillə izah edilir — proqram layihələrini idarə etməyin iki yolu və hər birinin əslində nə vaxt uyğun olması.">
+<link rel="canonical" href="https://noxel360.com/learn/agile-vs-waterfall-explained.html" />
+<link rel="icon" href="/favicon.ico">
+<meta property="og:title" content="Agile və Waterfall: Fərq Nədir?" />
+<meta property="og:description" content="Proqram layihələrini idarə etməyin iki yolu və hər birinin əslində nə vaxt uyğun olması." />
+<meta property="og:url" content="https://noxel360.com/learn/agile-vs-waterfall-explained.html" />
+<meta property="og:type" content="article" />
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "Article", "headline": "Agile və Waterfall: Fərq Nədir?", "description": "Agile və Waterfall sadə dillə izah edilir — proqram layihələrini idarə etməyin iki yolu və hər birinin əslində nə vaxt uyğun olması.", "author": { "@type": "Organization", "name": "NOXEL360" }, "publisher": { "@type": "Organization", "name": "NOXEL360", "url": "https://noxel360.com" }, "datePublished": "2026-07-24", "dateModified": "2026-07-24", "mainEntityOfPage": "https://noxel360.com/learn/agile-vs-waterfall-explained.html" }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "DefinedTerm", "name": "Agile və Waterfall", "description": "Waterfall hər mərhələnin növbətisi başlamazdan əvvəl tamamilə başa çatdığı xətti layihə yanaşmasıdır; Agile işi kiçik, iterativ tsikllərə bölür və layihə boyunca müntəzəm rəylərə əsasən planların uyğunlaşdırılmasına imkan verir.", "inDefinedTermSet": "https://noxel360.com/learn/agile-vs-waterfall-explained.html" }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Öyrən", "item": "https://noxel360.com/learn"}, {"@type": "ListItem", "position": 2, "name": "Müqayisələr", "item": "https://noxel360.com/learn/comparisons.html"}, {"@type": "ListItem", "position": 3, "name": "Agile və Waterfall: Fərq Nədir?", "item": "https://noxel360.com/learn/agile-vs-waterfall-explained.html"}] }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+{ "@type": "Question", "name": "Proqram təminatı üçün Agile həmişə Waterfall-dan yaxşıdırmı?", "acceptedAnswer": { "@type": "Answer", "text": "Müasir proqram təminatının çoxu üçün bəli, ümumiyyətlə — baxmayaraq ki, Waterfall hələ də həqiqətən sabit tələbləri olan müəyyən, yaxşı müəyyənləşdirilmiş layihələrə uyğun ola bilər." } },
+{ "@type": "Question", "name": "Waterfall və Agile birləşdirilə bilərmi?", "acceptedAnswer": { "@type": "Answer", "text": "Bəli — hibrid yanaşmalar mövcuddur, əsas mərhələlər üçün Waterfall tipli əvvəlcədən planlaşdırma istifadə edilir, eyni zamanda hər mərhələ daxilində Agile iterasiyası tətbiq olunur." } },
+{ "@type": "Question", "name": "Agile-da 'sprint' nədir?", "acceptedAnswer": { "@type": "Answer", "text": "Komandanın müəyyən bir iş dəstini tamamladığı, sonra növbəti sprintdən əvvəl nəzərdən keçirdiyi və tənzimlədiyi qısa, sabit müddət (çox vaxt 1-2 həftə)." } },
+{ "@type": "Question", "name": "Agile zaman cədvəli baxımından Waterfall-dan daha az proqnozlaşdırıla biləndir?", "acceptedAnswer": { "@type": "Answer", "text": "Sabit son məzmun üçün çox vaxt bəli, baxmayaraq ki, Agile yol boyu artan şəkildə dəyər təqdim etmək üçün daha proqnozlaşdırıla bilən ola bilər." } },
+{ "@type": "Question", "name": "Waterfall xüsusilə proqram təminatı üçün niyə daha az məşhur oldu?", "acceptedAnswer": { "@type": "Answer", "text": "İstifadəçilər erkən versiyalarla qarşılıqlı əlaqədə olduqda proqram tələbləri tez-tez dəyişir, Waterfall-ın sərt, ardıcıl quruluşu bunu pis idarə edir." } },
+{ "@type": "Question", "name": "Agile heç planlaşdırma olmadığı deməkdirmi?", "acceptedAnswer": { "@type": "Answer", "text": "Xeyr — Agile hələ də planlaşdırmanı əhatə edir, sadəcə bütün layihə üçün bir hərtərəfli əvvəlcədən plan əvəzinə daha qısa, daha iterativ miqyasda." } }
+] }
+</script>
+<style>
+  :root{--bg:#07090f;--surface:#0d1017;--border:rgba(255,255,255,0.07);--text:#e8eaf0;--muted:rgba(255,255,255,0.45);--g:#3cde6a;--p:#702aa5}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+  a{color:var(--g);text-decoration:none}
+  nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:rgba(7,9,15,0.90);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+  .container{max-width:820px;margin:0 auto;padding:70px 40px}
+  h1{font-size:clamp(28px,4.5vw,44px);font-weight:900;line-height:1.15;margin-bottom:14px;scroll-margin-top:90px}
+  h2{font-size:21px;font-weight:800;margin:36px 0 14px;color:#fff;scroll-margin-top:90px}
+  p{color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin-bottom:16px}
+  ul,ol{color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin:0 0 20px 22px}
+  li{margin-bottom:8px}
+  table{width:100%;border-collapse:collapse;margin:8px 0 24px;font-size:15px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);color:rgba(255,255,255,0.75)}
+  th{color:#fff;font-size:13px;text-transform:uppercase}
+  .tag{font-size:11px;font-weight:800;letter-spacing:1.5px;color:var(--g);text-transform:uppercase;margin-bottom:12px}
+  .meta-row{display:flex;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--muted);margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+  .toc{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin:20px 0 28px}
+  .toc .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+  .toc ul{list-style:none;margin:0;columns:2;gap:8px}
+  .toc li{margin-bottom:6px;break-inside:avoid}
+  .toc a{color:rgba(255,255,255,0.75);font-size:14px}
+  .toc a:hover{color:var(--g)}
+  .one-sentence{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--g);border-radius:12px;padding:20px;margin:20px 0}
+  .didyouknow{background:rgba(60,222,106,0.07);border:1px solid rgba(60,222,106,0.25);border-radius:12px;padding:18px 20px;margin:28px 0}
+  .didyouknow .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--g);text-transform:uppercase;margin-bottom:6px}
+  .action-box{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--p);border-radius:12px;padding:20px;margin:28px 0}
+  .action-box .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:#b98af0;text-transform:uppercase;margin-bottom:6px}
+  .sources{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin:24px 0}
+  .sources .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+  .sources ul{margin:0;list-style:none}
+  .sources li{margin-bottom:8px}
+  .sources a{font-weight:700}
+  .sources span{color:var(--muted);font-size:13px}
+  .takeaways{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 24px;margin:28px 0}
+  .takeaways ul{margin:0;list-style:none}
+  .takeaways li{padding-left:26px;position:relative;margin-bottom:10px}
+  .takeaways li::before{content:"✓";position:absolute;left:0;color:var(--g);font-weight:900}
+  .faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px}
+  .faq-item h3{font-size:15px;margin:0 0 6px;color:#fff}
+  .learning-path{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0}
+  .learning-path .lp-box{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+  .learning-path .lp-box .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+  .learning-path ul{margin:0;list-style:none}
+  .learning-path li{margin-bottom:8px}
+  @media(max-width:600px){.learning-path{grid-template-columns:1fr}.toc ul{columns:1}}
+  .closing{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;margin:24px 0;text-align:center}
+  .cta{display:inline-block;background:var(--g);color:#07090f;font-weight:800;padding:14px 32px;border-radius:10px;margin:24px 0 0}
+  .byline{font-size:13px;color:var(--muted);margin-top:32px}
+  .related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:20px 0}
+  .related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;font-size:14px;font-weight:700;color:var(--text)}
+  .related a:hover{border-color:var(--g)}
+  footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+  footer a{color:var(--muted);margin:0 12px}
+  #progress-bar{position:fixed;top:0;left:0;height:3px;background:var(--g);width:0%;z-index:200;transition:width 0.1s linear}
+</style>  <link rel="alternate" hreflang="en" href="https://noxel360.com/learn/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="af" href="https://noxel360.com/learn/af/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="am" href="https://noxel360.com/learn/am/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="ar" href="https://noxel360.com/learn/ar/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="az" href="https://noxel360.com/learn/az/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="be" href="https://noxel360.com/learn/be/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="bg" href="https://noxel360.com/learn/bg/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="bn" href="https://noxel360.com/learn/bn/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="bs" href="https://noxel360.com/learn/bs/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="ca" href="https://noxel360.com/learn/ca/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="ceb" href="https://noxel360.com/learn/ceb/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="co" href="https://noxel360.com/learn/co/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="cs" href="https://noxel360.com/learn/cs/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="cy" href="https://noxel360.com/learn/cy/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="da" href="https://noxel360.com/learn/da/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="de" href="https://noxel360.com/learn/de/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="el" href="https://noxel360.com/learn/el/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="en-AU" href="https://noxel360.com/learn/en-AU/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="en-CA" href="https://noxel360.com/learn/en-CA/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="en-GB" href="https://noxel360.com/learn/en-GB/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="eo" href="https://noxel360.com/learn/eo/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="es" href="https://noxel360.com/learn/es/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="es-AR" href="https://noxel360.com/learn/es-AR/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="es-MX" href="https://noxel360.com/learn/es-MX/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="et" href="https://noxel360.com/learn/et/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="eu" href="https://noxel360.com/learn/eu/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="fa" href="https://noxel360.com/learn/fa/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="fi" href="https://noxel360.com/learn/fi/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="fr" href="https://noxel360.com/learn/fr/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="fr-BE" href="https://noxel360.com/learn/fr-BE/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="fr-CA" href="https://noxel360.com/learn/fr-CA/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="fy" href="https://noxel360.com/learn/fy/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="ga" href="https://noxel360.com/learn/ga/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="gd" href="https://noxel360.com/learn/gd/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="gl" href="https://noxel360.com/learn/gl/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="gu" href="https://noxel360.com/learn/gu/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="ha" href="https://noxel360.com/learn/ha/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="haw" href="https://noxel360.com/learn/haw/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="hi" href="https://noxel360.com/learn/hi/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="hmn" href="https://noxel360.com/learn/hmn/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="hr" href="https://noxel360.com/learn/hr/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="ht" href="https://noxel360.com/learn/ht/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="hu" href="https://noxel360.com/learn/hu/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="hy" href="https://noxel360.com/learn/hy/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="id" href="https://noxel360.com/learn/id/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="ig" href="https://noxel360.com/learn/ig/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="is" href="https://noxel360.com/learn/is/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="it" href="https://noxel360.com/learn/it/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="he" href="https://noxel360.com/learn/iw/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="ja" href="https://noxel360.com/learn/ja/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="jv" href="https://noxel360.com/learn/jw/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="ka" href="https://noxel360.com/learn/ka/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="kk" href="https://noxel360.com/learn/kk/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="km" href="https://noxel360.com/learn/km/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="kn" href="https://noxel360.com/learn/kn/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="ko" href="https://noxel360.com/learn/ko/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="ku" href="https://noxel360.com/learn/ku/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="ky" href="https://noxel360.com/learn/ky/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="la" href="https://noxel360.com/learn/la/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="lb" href="https://noxel360.com/learn/lb/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="lo" href="https://noxel360.com/learn/lo/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="lt" href="https://noxel360.com/learn/lt/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="lv" href="https://noxel360.com/learn/lv/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="mg" href="https://noxel360.com/learn/mg/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="mi" href="https://noxel360.com/learn/mi/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="mk" href="https://noxel360.com/learn/mk/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="ml" href="https://noxel360.com/learn/ml/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="mn" href="https://noxel360.com/learn/mn/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="mr" href="https://noxel360.com/learn/mr/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="ms" href="https://noxel360.com/learn/ms/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="mt" href="https://noxel360.com/learn/mt/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="my" href="https://noxel360.com/learn/my/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="ne" href="https://noxel360.com/learn/ne/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="nl" href="https://noxel360.com/learn/nl/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="no" href="https://noxel360.com/learn/no/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="ny" href="https://noxel360.com/learn/ny/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="pa" href="https://noxel360.com/learn/pa/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="pl" href="https://noxel360.com/learn/pl/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="ps" href="https://noxel360.com/learn/ps/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="pt" href="https://noxel360.com/learn/pt/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://noxel360.com/learn/pt-BR/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="ro" href="https://noxel360.com/learn/ro/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="ru" href="https://noxel360.com/learn/ru/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="sd" href="https://noxel360.com/learn/sd/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="si" href="https://noxel360.com/learn/si/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="sk" href="https://noxel360.com/learn/sk/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="sl" href="https://noxel360.com/learn/sl/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="sm" href="https://noxel360.com/learn/sm/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="sn" href="https://noxel360.com/learn/sn/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="so" href="https://noxel360.com/learn/so/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="sq" href="https://noxel360.com/learn/sq/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="sr" href="https://noxel360.com/learn/sr/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="st" href="https://noxel360.com/learn/st/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="su" href="https://noxel360.com/learn/su/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="sv" href="https://noxel360.com/learn/sv/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="sw" href="https://noxel360.com/learn/sw/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="ta" href="https://noxel360.com/learn/ta/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="te" href="https://noxel360.com/learn/te/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="tg" href="https://noxel360.com/learn/tg/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="th" href="https://noxel360.com/learn/th/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="tl" href="https://noxel360.com/learn/tl/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="tr" href="https://noxel360.com/learn/tr/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="uk" href="https://noxel360.com/learn/uk/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="ur" href="https://noxel360.com/learn/ur/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="uz" href="https://noxel360.com/learn/uz/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="vi" href="https://noxel360.com/learn/vi/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="xh" href="https://noxel360.com/learn/xh/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="yi" href="https://noxel360.com/learn/yi/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="yo" href="https://noxel360.com/learn/yo/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://noxel360.com/learn/zh/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="zh-HK" href="https://noxel360.com/learn/zh-HK/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="zh-TW" href="https://noxel360.com/learn/zh-TW/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="zu" href="https://noxel360.com/learn/zu/agile-vs-waterfall-explained.html" />
+  <link rel="alternate" hreflang="x-default" href="https://noxel360.com/learn/agile-vs-waterfall-explained.html" />
+</head>
+<body>
+  <div id="progress-bar"></div>
+  <nav>
+    <a href="/" style="display:flex;align-items:center;gap:10px">
+      <img src="/favicon-192x192.avif" alt="NOXEL360" width="42" height="42" style="border-radius:8px">
+      <span style="font-weight:800">NOXEL360</span>
+    </a>
+    <div style="display:flex;gap:28px;font-size:14px;color:var(--muted)">
+      <a href="/learn">Öyrən</a>
+      <a href="/dashboard" style="background:var(--g);color:#07090f;padding:9px 20px;border-radius:8px;font-weight:800">İdarə Paneli</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="tag">Müqayisələr Bələdçisi</div>
+    <h1 id="top">Agile və Waterfall: Fərq Nədir?</h1>
+    <div class="meta-row">
+      <span>🕐 5 dəqiqəlik oxu</span>
+      <span>📊 Orta səviyyə</span>
+      <span>📁 Müqayisələr</span>
+      <span>📅 Nəşr olundu 24 İyul 2026</span>
+      <span>🔄 Yeniləndi 24 İyul 2026</span>
+    </div>
+
+    <div class="toc"><div class="label">Bu Səhifədə</div><ul><li><a href="#comparison-table">Yan-Yana Müqayisə</a></li><li><a href="#when-to-use">Hər Biri Nə Vaxt Həqiqətən Uyğundur</a></li><li><a href="#why-agile-dominant">Agile Proqram Təminatında Niyə Dominant Oldu</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+
+    <div class="one-sentence"><strong>Bir cümlə ilə:</strong> Waterfall hər mərhələnin növbətisi başlamazdan əvvəl tamamilə başa çatdığı xətti layihə yanaşmasıdır; Agile işi kiçik, iterativ tsikllərə bölür və layihə boyunca müntəzəm rəylərə əsasən planların uyğunlaşdırılmasına imkan verir.</div>
+
+    <p>Bunlar proqram layihələrini idarə etmək üçün iki əsas fərqli fəlsəfəni təmsil edir — biri hərtərəfli əvvəlcədən planlaşdırmaya dəyər verir, digəri yol boyu öyrənilən şeylərə uyğunlaşma qabiliyyətinə dəyər verir.</p>
+
+    <h2 id="comparison-table">Yan-Yana Müqayisə</h2>
+<table><tr><th>Aspekt</th><th>Waterfall</th><th>Agile</th></tr><tr><td>Struktur</td><td>Xətti, ardıcıl mərhələlər</td><td>İterativ tsikllər (sprintlər)</td></tr><tr><td>Çeviklik</td><td>Aşağı — plan əvvəlcədən qurulur</td><td>Yüksək — rəylərə əsasən uyğunlaşır</td></tr><tr><td>Ən yaxşısı</td><td>Yaxşı müəyyənləşdirilmiş, sabit tələblər</td><td>İnkişaf edən, qeyri-müəyyən tələblər</td></tr><tr><td>Rəy vaxtı</td><td>Əsasən sonda</td><td>Davamlı, boyunca</td></tr></table>
+<svg viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;margin:8px 0 28px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px">
+      <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3cde6a"/></marker></defs>
+      <rect x="140" y="45" width="120" height="50" rx="10" fill="#0d1017" stroke="#3cde6a" stroke-width="1.5"/><text x="200" y="75" fill="#ffffff" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Waterfall (Xətti)</text><line x1="260" y1="70" x2="290" y2="70" stroke="#3cde6a" stroke-width="2" marker-end="url(#arrow)"/><rect x="290" y="45" width="120" height="50" rx="10" fill="#0d1017" stroke="#702aa5" stroke-width="1.5"/><text x="350" y="75" fill="#ffffff" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">və ya</text><line x1="410" y1="70" x2="440" y2="70" stroke="#3cde6a" stroke-width="2" marker-end="url(#arrow)"/><rect x="440" y="45" width="120" height="50" rx="10" fill="#0d1017" stroke="#3cde6a" stroke-width="1.5"/><text x="500" y="75" fill="#ffffff" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Agile (İterativ)</text>
+    </svg>
+<div class="sources"><div class="label">📚 Rəsmi Mənbələr</div><ul><li><a href="https://agilemanifesto.org/" target="_blank" rel="noopener noreferrer">Agile Manifesto</a> <span>· Agile metodologiyasının arxasında duran əsas sənəd</span></li></ul></div>
+<div class="didyouknow"><div class="label">💡 Bildinizmi?</div><p style="margin-bottom:0">Waterfall-ın adı tərəqqinin suyun pilləkənlərlə aşağı axması kimi bir istiqamətdə, mərhələdən-mərhələyə axmasından gəlir — mərhələ tamamlandıqdan sonra əvvəlki mərhələyə qayıtmaq gözləntisi olmadan.</p></div>
+<h2 id="when-to-use">Hər Biri Nə Vaxt Həqiqətən Uyğundur</h2>
+<p>Waterfall əvvəlcədən aydın, sabit, yaxşı başa düşülən tələbləri olan layihələrə uyğundur — məsələn, müəyyən tənzimlənən və ya tikinti ilə əlaqəli layihələr. Agile xüsusilə proqram təminatının inkişafına uyğundur, burada istifadəçilər rəy verdikdə tələblər çox vaxt inkişaf edir.</p>
+<div class="action-box"><div class="label">🧩 NOXEL360 ilə Fəaliyyətdə Görün</div><p style="margin-bottom:0">NOXEL360-ın öz məhsul inkişafı iterativ, Agile tipli yanaşmaya əməl edir — bir böyük, əvvəlcədən plan əvəzinə kiçik artımlarla göndərilir.</p></div>
+<h2 id="why-agile-dominant">Agile Proqram Təminatında Niyə Dominant Oldu</h2>
+<p>Proqram tələblərini əvvəlcədən tam müəyyənləşdirmək məşhur dərəcədə çətindir — Agile-ın iterativ yanaşması komandalara tamamilə ilkin, potensial olaraq qüsurlu plana sadiq qalmaq əvəzinə həqiqi istifadəçi rəyinə əsasən kursu tənzimləməyə imkan verir.</p>
+
+
+    <h2 id="faq">Tez-tez Verilən Suallar</h2>
+    <div class="faq-item"><h3>Proqram təminatı üçün Agile həmişə Waterfall-dan yaxşıdırmı?</h3><p>Müasir proqram təminatının çoxu üçün bəli, ümumiyyətlə — baxmayaraq ki, Waterfall hələ də həqiqətən sabit tələbləri olan müəyyən, yaxşı müəyyənləşdirilmiş layihələrə uyğun ola bilər.</p></div>
+<div class="faq-item"><h3>Waterfall və Agile birləşdirilə bilərmi?</h3><p>Bəli — hibrid yanaşmalar mövcuddur, əsas mərhələlər üçün Waterfall tipli əvvəlcədən planlaşdırma istifadə edilir, eyni zamanda hər mərhələ daxilində Agile iterasiyası tətbiq olunur.</p></div>
+<div class="faq-item"><h3>Agile-da 'sprint' nədir?</h3><p>Komandanın müəyyən bir iş dəstini tamamladığı, sonra növbəti sprintdən əvvəl nəzərdən keçirdiyi və tənzimlədiyi qısa, sabit müddət (çox vaxt 1-2 həftə).</p></div>
+<div class="faq-item"><h3>Agile zaman cədvəli baxımından Waterfall-dan daha az proqnozlaşdırıla biləndir?</h3><p>Sabit son məzmun üçün çox vaxt bəli, baxmayaraq ki, Agile yol boyu artan şəkildə dəyər təqdim etmək üçün daha proqnozlaşdırıla bilən ola bilər.</p></div>
+<div class="faq-item"><h3>Waterfall xüsusilə proqram təminatı üçün niyə daha az məşhur oldu?</h3><p>İstifadəçilər erkən versiyalarla qarşılıqlı əlaqədə olduqda proqram tələbləri tez-tez dəyişir, Waterfall-ın sərt, ardıcıl quruluşu bunu pis idarə edir.</p></div>
+<div class="faq-item"><h3>Agile heç planlaşdırma olmadığı deməkdirmi?</h3><p>Xeyr — Agile hələ də planlaşdırmanı əhatə edir, sadəcə bütün layihə üçün bir hərtərəfli əvvəlcədən plan əvəzinə daha qısa, daha iterativ miqyasda.</p></div>
+
+
+    <div class="takeaways">
+      <h2 style="margin-top:0">Əsas Çıxarışlar</h2>
+      <ul><li>Waterfall bir-birinin ardınca tamamlanan xətti, ardıcıl mərhələlərə əməl edir.</li><li>Agile işi davamlı rəy ilə qısa, iterativ tsikllərə bölür.</li><li>Waterfall sabit, yaxşı müəyyənləşdirilmiş tələblərə uyğundur; Agile inkişaf edənlərə uyğundur.</li><li>Agile tələblərin nə qədər tez-tez dəyişməsi səbəbindən proqram təminatında dominant oldu.</li><li>Hər ikisini birləşdirən hibrid yanaşmalar xüsusi layihə ehtiyacları üçün mövcuddur.</li></ul>
+    </div>
+
+    <div class="learning-path">
+      <div class="lp-box"><div class="label">⬅ Bundan Əvvəl</div><ul><li><a href="/learn/shopify-vs-woocommerce-explained.html">Shopify və WooCommerce</a></li></ul></div>
+      <div class="lp-box"><div class="label">Növbəti Addım ➜</div><ul><li><a href="/learn/saas-vs-custom-software-explained.html">SaaS və Xüsusi Proqram</a></li></ul></div>
+    </div>
+
+    <div class="closing">
+      <p style="margin-bottom:8px">İterativ, rəyə əsaslanan məhsul inkişafını praktikada görün.</p>
+      <a href="/dashboard" class="cta">NOXEL360 İdarə Panelini Kəşf Edin →</a>
+    </div>
+
+    <h2>Əlaqəli Oxu</h2>
+    <div class="related"><a href="/learn/what-is-devops.html">DevOps Nədir?</a><a href="/learn/what-is-continuous-integration.html">CI/CD Nədir?</a><a href="/learn/saas-vs-custom-software-explained.html">SaaS və Xüsusi Proqram</a></div>
+
+    <p class="byline">NOXEL360 Komandası tərəfindən yazılıb · NOXEL Engineering tərəfindən nəzərdən keçirilib · <a href="https://noxel360.com/learn/comparisons.html">← Müqayisələr Bələdçilərinə Qayıt</a></p>
+  </div>
+
+  <footer>
+    <a href="/">Ana Səhifə</a>
+    <a href="/learn">Öyrən</a>
+    <a href="/privacy">Məxfilik</a>
+    <a href="/terms">Şərtlər</a>
+    <a href="https://noxelseo.com" target="_blank" rel="noopener">NOXEL SEO</a>
+    <a href="https://noxelforge.com" target="_blank" rel="noopener">NOXEL Forge</a>
+    <div style="margin-top:16px">© 2026 NOXEL360. Bütün hüquqlar qorunur.</div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function(){
+      var el = document.documentElement;
+      var scrolled = (el.scrollTop) / (el.scrollHeight - el.clientHeight) * 100;
+      document.getElementById('progress-bar').style.width = Math.min(scrolled,100) + '%';
+    });
+  </script>
+</body>
+</html>

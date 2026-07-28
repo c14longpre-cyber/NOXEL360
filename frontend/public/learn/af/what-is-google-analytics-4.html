@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="af">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wat Is GA4 (Google Analytics 4)? 'n Eenvoudige Verduideliking — NOXEL360</title>
+<meta name="description" content="GA4 verduidelik in gewone Afrikaans — hoe dit verskil van ouer Google Analytics weergawes, en wat jy moet weet voordat jy dit opstel.">
+<link rel="canonical" href="https://noxel360.com/learn/what-is-google-analytics-4.html" />
+<link rel="icon" href="/favicon.ico">
+<meta property="og:title" content="Wat Is GA4 (Google Analytics 4)? 'n Eenvoudige Verduideliking" />
+<meta property="og:description" content="Hoe GA4 verskil van ouer Google Analytics weergawes, en wat jy moet weet voordat jy dit opstel." />
+<meta property="og:url" content="https://noxel360.com/learn/what-is-google-analytics-4.html" />
+<meta property="og:type" content="article" />
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "Article", "headline": "Wat Is GA4 (Google Analytics 4)? 'n Eenvoudige Verduideliking", "description": "GA4 verduidelik in gewone Afrikaans — hoe dit verskil van ouer Google Analytics weergawes, en wat jy moet weet voordat jy dit opstel.", "author": { "@type": "Organization", "name": "NOXEL360" }, "publisher": { "@type": "Organization", "name": "NOXEL360", "url": "https://noxel360.com" }, "datePublished": "2026-07-24", "dateModified": "2026-07-24", "mainEntityOfPage": "https://noxel360.com/learn/what-is-google-analytics-4.html" }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "DefinedTerm", "name": "GA4", "description": "GA4 (Google Analytics 4) is die huidige weergawe van Google se gratis webontledingsplatform, gebou rondom 'n gebeurtenis-gebaseerde datamodel eerder as die ouer sessie-gebaseerde benadering van vorige weergawes.", "inDefinedTermSet": "https://noxel360.com/learn/what-is-google-analytics-4.html" }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Leer", "item": "https://noxel360.com/learn"}, {"@type": "ListItem", "position": 2, "name": "Data & Ontleding", "item": "https://noxel360.com/learn/data-analytics.html"}, {"@type": "ListItem", "position": 3, "name": "Wat Is GA4 (Google Analytics 4)? 'n Eenvoudige Verduideliking", "item": "https://noxel360.com/learn/what-is-google-analytics-4.html"}] }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+{ "@type": "Question", "name": "Is GA4 gratis soos ouer Google Analytics weergawes?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, GA4 se standaard weergawe bly gratis, met 'n betaalde ondernemingsvlak (GA4 360) vir baie groot organisasies." } },
+{ "@type": "Question", "name": "Moet ek migreer van 'n ouer Analytics weergawe na GA4?", "acceptedAnswer": { "@type": "Answer", "text": "Ja — Google het die vorige weergawe heeltemal afgetree, wat GA4 die enigste huidige opsie vorentoe maak." } },
+{ "@type": "Question", "name": "Is GA4 moeiliker om te gebruik as ouer Google Analytics?", "acceptedAnswer": { "@type": "Answer", "text": "Die gebeurtenis-gebaseerde model het aanvanklik 'n leerkurwe, alhoewel baie kernverslae konseptueel soortgelyk bly sodra jy die onderliggende struktuur verstaan." } },
+{ "@type": "Question", "name": "Wat is 'n 'gebeurtenis' in GA4?", "acceptedAnswer": { "@type": "Answer", "text": "Enige naspeurbaregebruikersaksie — 'n bladsyvertoning, klik, blaai, videospeel, of aankoop — buigsaam hanteer eerder as vasgestel in starre voorafbepaalde kategorieë." } },
+{ "@type": "Question", "name": "Kan GA4 beide 'n webwerf en 'n mobiele toepassing saam naspoor?", "acceptedAnswer": { "@type": "Answer", "text": "Ja — hierdie kruis-platform naspeuring is een van GA4 se kern ontwerpdoelwitte, wat data verenig wat voorheen afsonderlike gereedskap benodig het." } },
+{ "@type": "Question", "name": "Vervang GA4 Google Search Console?", "acceptedAnswer": { "@type": "Answer", "text": "Nee — hulle dien verskillende doeleindes. GA4 spoor besoekersgedrag op die webwerf breed na; Search Console fokus spesifiek op Google soekprestasie." } },
+{ "@type": "Question", "name": "Is historiese data van ouer Analytics weergawes beskikbaar in GA4?", "acceptedAnswer": { "@type": "Answer", "text": "Oor die algemeen nie — data dra nie outomaties oor nie, wat die rede is waarom baie besighede albei stelsels gelyktydig bedryf het tydens die oorgangsperiode." } }
+] }
+</script>
+<style>
+  :root{--bg:#07090f;--surface:#0d1017;--border:rgba(255,255,255,0.07);--text:#e8eaf0;--muted:rgba(255,255,255,0.45);--g:#3cde6a;--p:#702aa5}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+  a{color:var(--g);text-decoration:none}
+  nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:rgba(7,9,15,0.90);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+  .container{max-width:820px;margin:0 auto;padding:70px 40px}
+  h1{font-size:clamp(28px,4.5vw,44px);font-weight:900;line-height:1.15;margin-bottom:14px;scroll-margin-top:90px}
+  h2{font-size:21px;font-weight:800;margin:36px 0 14px;color:#fff;scroll-margin-top:90px}
+  p{color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin-bottom:16px}
+  ul,ol{color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin:0 0 20px 22px}
+  li{margin-bottom:8px}
+  table{width:100%;border-collapse:collapse;margin:8px 0 24px;font-size:15px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);color:rgba(255,255,255,0.75)}
+  th{color:#fff;font-size:13px;text-transform:uppercase}
+  .tag{font-size:11px;font-weight:800;letter-spacing:1.5px;color:var(--g);text-transform:uppercase;margin-bottom:12px}
+  .meta-row{display:flex;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--muted);margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+  .toc{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin:20px 0 28px}
+  .toc .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+  .toc ul{list-style:none;margin:0;columns:2;gap:8px}
+  .toc li{margin-bottom:6px;break-inside:avoid}
+  .toc a{color:rgba(255,255,255,0.75);font-size:14px}
+  .toc a:hover{color:var(--g)}
+  .one-sentence{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--g);border-radius:12px;padding:20px;margin:20px 0}
+  .didyouknow{background:rgba(60,222,106,0.07);border:1px solid rgba(60,222,106,0.25);border-radius:12px;padding:18px 20px;margin:28px 0}
+  .didyouknow .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--g);text-transform:uppercase;margin-bottom:6px}
+  .action-box{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--p);border-radius:12px;padding:20px;margin:28px 0}
+  .action-box .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:#b98af0;text-transform:uppercase;margin-bottom:6px}
+  .sources{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin:24px 0}
+  .sources .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+  .sources ul{margin:0;list-style:none}
+  .sources li{margin-bottom:8px}
+  .sources a{font-weight:700}
+  .sources span{color:var(--muted);font-size:13px}
+  .takeaways{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 24px;margin:28px 0}
+  .takeaways ul{margin:0;list-style:none}
+  .takeaways li{padding-left:26px;position:relative;margin-bottom:10px}
+  .takeaways li::before{content:"✓";position:absolute;left:0;color:var(--g);font-weight:900}
+  .faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px}
+  .faq-item h3{font-size:15px;margin:0 0 6px;color:#fff}
+  .learning-path{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0}
+  .learning-path .lp-box{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+  .learning-path .lp-box .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+  .learning-path ul{margin:0;list-style:none}
+  .learning-path li{margin-bottom:8px}
+  @media(max-width:600px){.learning-path{grid-template-columns:1fr}.toc ul{columns:1}}
+  .closing{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;margin:24px 0;text-align:center}
+  .cta{display:inline-block;background:var(--g);color:#07090f;font-weight:800;padding:14px 32px;border-radius:10px;margin:24px 0 0}
+  .byline{font-size:13px;color:var(--muted);margin-top:32px}
+  .related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:20px 0}
+  .related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;font-size:14px;font-weight:700;color:var(--text)}
+  .related a:hover{border-color:var(--g)}
+  footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+  footer a{color:var(--muted);margin:0 12px}
+  #progress-bar{position:fixed;top:0;left:0;height:3px;background:var(--g);width:0%;z-index:200;transition:width 0.1s linear}
+</style>  <link rel="alternate" hreflang="en" href="https://noxel360.com/learn/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="af" href="https://noxel360.com/learn/af/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="am" href="https://noxel360.com/learn/am/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="ar" href="https://noxel360.com/learn/ar/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="az" href="https://noxel360.com/learn/az/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="be" href="https://noxel360.com/learn/be/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="bg" href="https://noxel360.com/learn/bg/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="bn" href="https://noxel360.com/learn/bn/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="bs" href="https://noxel360.com/learn/bs/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="ca" href="https://noxel360.com/learn/ca/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="ceb" href="https://noxel360.com/learn/ceb/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="co" href="https://noxel360.com/learn/co/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="cs" href="https://noxel360.com/learn/cs/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="cy" href="https://noxel360.com/learn/cy/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="da" href="https://noxel360.com/learn/da/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="de" href="https://noxel360.com/learn/de/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="el" href="https://noxel360.com/learn/el/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="en-AU" href="https://noxel360.com/learn/en-AU/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="en-CA" href="https://noxel360.com/learn/en-CA/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="en-GB" href="https://noxel360.com/learn/en-GB/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="eo" href="https://noxel360.com/learn/eo/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="es" href="https://noxel360.com/learn/es/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="es-AR" href="https://noxel360.com/learn/es-AR/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="es-MX" href="https://noxel360.com/learn/es-MX/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="et" href="https://noxel360.com/learn/et/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="eu" href="https://noxel360.com/learn/eu/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="fa" href="https://noxel360.com/learn/fa/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="fi" href="https://noxel360.com/learn/fi/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="fr" href="https://noxel360.com/learn/fr/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="fr-BE" href="https://noxel360.com/learn/fr-BE/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="fr-CA" href="https://noxel360.com/learn/fr-CA/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="fy" href="https://noxel360.com/learn/fy/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="ga" href="https://noxel360.com/learn/ga/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="gd" href="https://noxel360.com/learn/gd/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="gl" href="https://noxel360.com/learn/gl/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="gu" href="https://noxel360.com/learn/gu/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="ha" href="https://noxel360.com/learn/ha/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="haw" href="https://noxel360.com/learn/haw/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="hi" href="https://noxel360.com/learn/hi/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="hmn" href="https://noxel360.com/learn/hmn/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="hr" href="https://noxel360.com/learn/hr/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="ht" href="https://noxel360.com/learn/ht/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="hu" href="https://noxel360.com/learn/hu/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="hy" href="https://noxel360.com/learn/hy/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="id" href="https://noxel360.com/learn/id/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="ig" href="https://noxel360.com/learn/ig/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="is" href="https://noxel360.com/learn/is/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="it" href="https://noxel360.com/learn/it/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="he" href="https://noxel360.com/learn/iw/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="ja" href="https://noxel360.com/learn/ja/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="jv" href="https://noxel360.com/learn/jw/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="ka" href="https://noxel360.com/learn/ka/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="kk" href="https://noxel360.com/learn/kk/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="km" href="https://noxel360.com/learn/km/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="kn" href="https://noxel360.com/learn/kn/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="ko" href="https://noxel360.com/learn/ko/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="ku" href="https://noxel360.com/learn/ku/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="ky" href="https://noxel360.com/learn/ky/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="la" href="https://noxel360.com/learn/la/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="lb" href="https://noxel360.com/learn/lb/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="lo" href="https://noxel360.com/learn/lo/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="lt" href="https://noxel360.com/learn/lt/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="lv" href="https://noxel360.com/learn/lv/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="mg" href="https://noxel360.com/learn/mg/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="mi" href="https://noxel360.com/learn/mi/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="mk" href="https://noxel360.com/learn/mk/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="ml" href="https://noxel360.com/learn/ml/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="mn" href="https://noxel360.com/learn/mn/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="mr" href="https://noxel360.com/learn/mr/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="ms" href="https://noxel360.com/learn/ms/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="mt" href="https://noxel360.com/learn/mt/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="my" href="https://noxel360.com/learn/my/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="ne" href="https://noxel360.com/learn/ne/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="nl" href="https://noxel360.com/learn/nl/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="no" href="https://noxel360.com/learn/no/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="ny" href="https://noxel360.com/learn/ny/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="pa" href="https://noxel360.com/learn/pa/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="pl" href="https://noxel360.com/learn/pl/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="ps" href="https://noxel360.com/learn/ps/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="pt" href="https://noxel360.com/learn/pt/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://noxel360.com/learn/pt-BR/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="ro" href="https://noxel360.com/learn/ro/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="ru" href="https://noxel360.com/learn/ru/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="sd" href="https://noxel360.com/learn/sd/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="si" href="https://noxel360.com/learn/si/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="sk" href="https://noxel360.com/learn/sk/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="sl" href="https://noxel360.com/learn/sl/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="sm" href="https://noxel360.com/learn/sm/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="sn" href="https://noxel360.com/learn/sn/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="so" href="https://noxel360.com/learn/so/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="sq" href="https://noxel360.com/learn/sq/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="sr" href="https://noxel360.com/learn/sr/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="st" href="https://noxel360.com/learn/st/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="su" href="https://noxel360.com/learn/su/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="sv" href="https://noxel360.com/learn/sv/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="sw" href="https://noxel360.com/learn/sw/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="ta" href="https://noxel360.com/learn/ta/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="te" href="https://noxel360.com/learn/te/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="tg" href="https://noxel360.com/learn/tg/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="th" href="https://noxel360.com/learn/th/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="tl" href="https://noxel360.com/learn/tl/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="tr" href="https://noxel360.com/learn/tr/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="uk" href="https://noxel360.com/learn/uk/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="ur" href="https://noxel360.com/learn/ur/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="uz" href="https://noxel360.com/learn/uz/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="vi" href="https://noxel360.com/learn/vi/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="xh" href="https://noxel360.com/learn/xh/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="yi" href="https://noxel360.com/learn/yi/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="yo" href="https://noxel360.com/learn/yo/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://noxel360.com/learn/zh/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="zh-HK" href="https://noxel360.com/learn/zh-HK/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="zh-TW" href="https://noxel360.com/learn/zh-TW/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="zu" href="https://noxel360.com/learn/zu/what-is-google-analytics-4.html" />
+  <link rel="alternate" hreflang="x-default" href="https://noxel360.com/learn/what-is-google-analytics-4.html" />
+</head>
+<body>
+  <div id="progress-bar"></div>
+  <nav>
+    <a href="/" style="display:flex;align-items:center;gap:10px">
+      <img src="/favicon-192x192.avif" alt="NOXEL360" width="42" height="42" style="border-radius:8px">
+      <span style="font-weight:800">NOXEL360</span>
+    </a>
+    <div style="display:flex;gap:28px;font-size:14px;color:var(--muted)">
+      <a href="/learn">Leer</a>
+      <a href="/dashboard" style="background:var(--g);color:#07090f;padding:9px 20px;border-radius:8px;font-weight:800">Kontrolepaneel</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="tag">Data & Ontleding Gids</div>
+    <h1 id="top">Wat Is GA4 (Google Analytics 4)? 'n Eenvoudige Verduideliking</h1>
+    <div class="meta-row">
+      <span>🕐 5 min lees</span>
+      <span>📊 Intermediêr</span>
+      <span>📁 Data & Ontleding</span>
+      <span>📅 Gepubliseer 24 Julie 2026</span>
+      <span>🔄 Opgedateer 24 Julie 2026</span>
+    </div>
+
+    <div class="toc"><div class="label">Op Hierdie Bladsy</div><ul><li><a href="#event-based">Hoekom GA4 se Gebeurtenis-Gebaseerde Model Anders Is</a></li><li><a href="#key-differences">Sleutelverskille Van Ouer Weergawes</a></li><li><a href="#getting-started">Begin Met GA4</a></li><li><a href="#faq">Gereelde Vrae</a></li></ul></div>
+
+    <div class="one-sentence"><strong>In een sin:</strong> GA4 (Google Analytics 4) is die huidige weergawe van Google se gratis webontledingsplatform, gebou rondom 'n gebeurtenis-gebaseerde datamodel eerder as die ouer sessie-gebaseerde benadering van vorige weergawes.</div>
+
+    <p>Google Analytics het deur die jare groot strukturele veranderinge ondergaan, en GA4 verteenwoordig die beduidendste verskuiwing nog — 'n werklik ander manier om data te modelleer, nie net 'n visuele verfrisings nie.</p>
+
+    <h2 id="event-based">Hoekom GA4 se Gebeurtenis-Gebaseerde Model Anders Is</h2>
+<p>Ouer Google Analytics het data spesifiek rondom sessies en bladsyvertonings georganiseer. GA4 hanteer byna alles — 'n bladsyvertoning, 'n klik, 'n blaai, 'n videospeel, 'n aankoop — as 'n buigsame, aanpasbare "gebeurtenis", wat meer genuanseerde naspeuring moontlik maak.</p>
+<svg viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;margin:8px 0 28px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px">
+      <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3cde6a"/></marker></defs>
+      <rect x="140" y="45" width="120" height="50" rx="10" fill="#0d1017" stroke="#3cde6a" stroke-width="1.5"/><text x="200" y="75" fill="#ffffff" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Gebruikersaksie</text><line x1="260" y1="70" x2="290" y2="70" stroke="#3cde6a" stroke-width="2" marker-end="url(#arrow)"/><rect x="290" y="45" width="120" height="50" rx="10" fill="#0d1017" stroke="#702aa5" stroke-width="1.5"/><text x="350" y="75" fill="#ffffff" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Gebeurtenis</text><line x1="410" y1="70" x2="440" y2="70" stroke="#3cde6a" stroke-width="2" marker-end="url(#arrow)"/><rect x="440" y="45" width="120" height="50" rx="10" fill="#0d1017" stroke="#3cde6a" stroke-width="1.5"/><text x="500" y="75" fill="#ffffff" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">GA4 Verslag</text>
+    </svg>
+<div class="sources"><div class="label">📚 Amptelike Bronne</div><ul><li><a href="https://support.google.com/analytics/answer/10089681" target="_blank" rel="noopener noreferrer">Google — GA4 Dokumentasie</a> <span>· amptelike GA4 opstel- en naslaangids</span></li></ul></div>
+<div class="didyouknow"><div class="label">💡 Het Jy Geweet?</div><p style="margin-bottom:0">GA4 se verskuiwing na 'n gebeurtenis-gebaseerde model is gedeeltelik gedryf deur die behoefte om gebruikersgedrag konsekwent oor beide webwerwe en mobiele toepassings binne 'n enkele verenigde platform na te spoor.</p></div>
+<h2 id="key-differences">Sleutelverskille Van Ouer Weergawes</h2>
+<ul><li><strong>Kruis-platform naspeuring</strong> — verenigde data oor webwerwe en toepassings</li><li><strong>Gebeurtenis-gebaseerde model</strong> — meer buigsaam as vaste sessie/bladsyvertoning struktuur</li><li><strong>Privaatheid-gefokusde ontwerp</strong> — gebou met ontwikkelende privaatheidregulasies in gedagte</li><li><strong>Voorspellende statistieke</strong> — masjienleer-gebaseerde insigte soos aankoopwaarskynlikheid</li></ul>
+<div class="action-box"><div class="label">🧩 Sien Dit in Aksie met NOXEL360</div><p style="margin-bottom:0">NOXEL SEO integreer met Search Console saam met ontledingsdata om 'n voller prentjie van werfprestasie op een plek te gee.</p></div>
+<h2 id="getting-started">Begin Met GA4</h2>
+<p>Opstelling behels die skep van 'n GA4 eiendom, die byvoeging van die nasperingskode (of die gebruik van Google Tag Manager), en die definiëring van sleutelgebeurtenisse relevant tot die besigheid se werklike doelwitte.</p>
+
+
+    <h2 id="faq">Gereelde Vrae</h2>
+    <div class="faq-item"><h3>Is GA4 gratis soos ouer Google Analytics weergawes?</h3><p>Ja, GA4 se standaard weergawe bly gratis, met 'n betaalde ondernemingsvlak (GA4 360) vir baie groot organisasies.</p></div>
+<div class="faq-item"><h3>Moet ek migreer van 'n ouer Analytics weergawe na GA4?</h3><p>Ja — Google het die vorige weergawe heeltemal afgetree, wat GA4 die enigste huidige opsie vorentoe maak.</p></div>
+<div class="faq-item"><h3>Is GA4 moeiliker om te gebruik as ouer Google Analytics?</h3><p>Die gebeurtenis-gebaseerde model het aanvanklik 'n leerkurwe, alhoewel baie kernverslae konseptueel soortgelyk bly sodra jy die onderliggende struktuur verstaan.</p></div>
+<div class="faq-item"><h3>Wat is 'n 'gebeurtenis' in GA4?</h3><p>Enige naspeurbaregebruikersaksie — 'n bladsyvertoning, klik, blaai, videospeel, of aankoop — buigsaam hanteer eerder as vasgestel in starre voorafbepaalde kategorieë.</p></div>
+<div class="faq-item"><h3>Kan GA4 beide 'n webwerf en 'n mobiele toepassing saam naspoor?</h3><p>Ja — hierdie kruis-platform naspeuring is een van GA4 se kern ontwerpdoelwitte, wat data verenig wat voorheen afsonderlike gereedskap benodig het.</p></div>
+<div class="faq-item"><h3>Vervang GA4 Google Search Console?</h3><p>Nee — hulle dien verskillende doeleindes. GA4 spoor besoekersgedrag op die webwerf breed na; Search Console fokus spesifiek op Google soekprestasie.</p></div>
+<div class="faq-item"><h3>Is historiese data van ouer Analytics weergawes beskikbaar in GA4?</h3><p>Oor die algemeen nie — data dra nie outomaties oor nie, wat die rede is waarom baie besighede albei stelsels gelyktydig bedryf het tydens die oorgangsperiode.</p></div>
+
+
+    <div class="takeaways">
+      <h2 style="margin-top:0">Sleutel Wegneemetes</h2>
+      <ul><li>GA4 is Google se huidige ontledingsplatform, gebou op 'n gebeurtenis-gebaseerde datamodel.</li><li>Dit het die ouer sessie/bladsyvertoning-gebaseerde struktuur heeltemal vervang.</li><li>Kruis-platform naspeuring verenig webwerf- en toepassing-data op een plek.</li><li>GA4 bly gratis vir die oorgrote meerderheid van besighede.</li><li>Dit vul aan, eerder as om te vervang, Google Search Console.</li></ul>
+    </div>
+
+    <div class="learning-path">
+      <div class="lp-box"><div class="label">⬅ Voor Hierdie</div><ul><li><a href="/learn/what-is-a-conversion-funnel.html">Wat Is 'n Omskakelingtregter?</a></li></ul></div>
+      <div class="lp-box"><div class="label">Volgende Stap ➜</div><ul><li><a href="/learn/bounce-rate-explained.html">Weerkaatssyfer Verduidelik</a></li></ul></div>
+    </div>
+
+    <div class="closing">
+      <p style="margin-bottom:8px">Sien ontledings- en Search Console-data gekombineer in een kontrolepaneel.</p>
+      <a href="/dashboard" class="cta">Verken die NOXEL360 Kontrolepaneel →</a>
+    </div>
+
+    <h2>Verwante Leesstof</h2>
+    <div class="related"><a href="/learn/what-is-web-analytics.html">Wat Is Webontleding?</a><a href="/learn/what-is-google-search-console.html">Wat Is Google Search Console?</a><a href="/learn/bounce-rate-explained.html">Weerkaatssyfer Verduidelik</a></div>
+
+    <p class="byline">Geskryf deur die NOXEL360 Span · Hersien deur NOXEL Ingenieurswese · <a href="https://noxel360.com/learn/data-analytics.html">← Terug na Data & Ontleding Gidse</a></p>
+  </div>
+
+  <footer>
+    <a href="/">Tuis</a>
+    <a href="/learn">Leer</a>
+    <a href="/privacy">Privaatheid</a>
+    <a href="/terms">Terme</a>
+    <a href="https://noxelseo.com" target="_blank" rel="noopener">NOXEL SEO</a>
+    <a href="https://noxelforge.com" target="_blank" rel="noopener">NOXEL Forge</a>
+    <div style="margin-top:16px">© 2026 NOXEL360. Alle regte voorbehou.</div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function(){
+      var el = document.documentElement;
+      var scrolled = (el.scrollTop) / (el.scrollHeight - el.clientHeight) * 100;
+      document.getElementById('progress-bar').style.width = Math.min(scrolled,100) + '%';
+    });
+  </script>
+</body>
+</html>

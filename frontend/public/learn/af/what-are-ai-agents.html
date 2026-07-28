@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="af">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wat is KI-agente? 'n Eenvoudige Verduideliking — NOXEL360</title>
+<meta name="description" content="KI-agente verduidelik in eenvoudige taal — hoe hulle verskil van 'n kletsprogram, en wat dit beteken vir KI om self aksies te neem.">
+<link rel="canonical" href="https://noxel360.com/learn/what-are-ai-agents.html" />
+<link rel="icon" href="/favicon.ico">
+<meta property="og:title" content="Wat is KI-agente?" />
+<meta property="og:description" content="Hoe KI-agente verskil van 'n kletsprogram, en wat dit beteken vir KI om self aksies te neem." />
+<meta property="og:url" content="https://noxel360.com/learn/what-are-ai-agents.html" />
+<meta property="og:type" content="article" />
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "Article", "headline": "Wat is KI-agente? 'n Eenvoudige Verduideliking", "description": "KI-agente verduidelik in eenvoudige taal — hoe hulle verskil van 'n kletsprogram, en wat dit beteken vir KI om self aksies te neem.", "author": { "@type": "Organization", "name": "NOXEL360" }, "publisher": { "@type": "Organization", "name": "NOXEL360", "url": "https://noxel360.com" }, "datePublished": "2026-07-24", "dateModified": "2026-07-24", "mainEntityOfPage": "https://noxel360.com/learn/what-are-ai-agents.html" }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "DefinedTerm", "name": "KI-agent", "description": "'n KI-agent is 'n KI-stelsel wat aksies kan neem — gereedskap gebruik, API's aanroep, meerstap-take voltooi — na 'n doelwit toe, eerder as om slegs op 'n enkele prompt met teks te reageer.", "inDefinedTermSet": "https://noxel360.com/learn/what-are-ai-agents.html" }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+  { "@type": "Question", "name": "Is 'n KI-agent dieselfde as 'n kletsprogram?", "acceptedAnswer": { "@type": "Answer", "text": "Nee. 'n Kletsprogram reageer op boodskappe met teks. 'n KI-agent kan werklike aksies neem — die web deursoek, API's aanroep, kode uitvoer, meerstap-take voltooi — dikwels met veel minder stap-vir-stap menslike leiding." } },
+  { "@type": "Question", "name": "Kan KI-agente sonder enige menslike toesig werk?", "acceptedAnswer": { "@type": "Answer", "text": "Tegnies kan sommige, maar dit word oor die algemeen as riskant beskou vir enigiets beduidend. Die meeste praktiese, verantwoordelike implementerings sluit menslike oorsig by sleutel besluitpunte in, veral vir aksies wat moeilik is om terug te draai." } },
+  { "@type": "Question", "name": "Maak KI-agente foute?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, en die gevolge kan oor verskeie stappe vererger, aangesien 'n agent se latere aksies dikwels op sy vroeëre een afhang. Dit is waarom toesig en duidelike grense meer saak maak met agente as met eenvoudige enkel-respons KI." } }
+] }
+</script>
+<style>
+  :root{--bg:#07090f;--surface:#0d1017;--border:rgba(255,255,255,0.07);--text:#e8eaf0;--muted:rgba(255,255,255,0.45);--g:#3cde6a}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+  a{color:var(--g);text-decoration:none}
+  nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:rgba(7,9,15,0.90);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+  .container{max-width:820px;margin:0 auto;padding:70px 40px}
+  h1{font-size:clamp(28px,4.5vw,44px);font-weight:900;line-height:1.15;margin-bottom:20px}
+  h2{font-size:21px;font-weight:800;margin:36px 0 14px;color:#fff}
+  p{color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin-bottom:16px}
+  ul,ol{color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin:0 0 20px 22px}
+  li{margin-bottom:8px}
+  .tag{font-size:11px;font-weight:800;letter-spacing:1.5px;color:var(--g);text-transform:uppercase;margin-bottom:12px}
+  .cta{display:inline-block;background:var(--g);color:#07090f;font-weight:800;padding:14px 32px;border-radius:10px;margin:24px 0}
+  .definition{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--g);border-radius:12px;padding:20px;margin:20px 0}
+  .faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px}
+  .faq-item h3{font-size:15px;margin:0 0 6px;color:#fff}
+  .closing{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;margin:24px 0;text-align:center}
+  .related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:20px 0}
+  .related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;font-size:14px;font-weight:700;color:var(--text)}
+  .related a:hover{border-color:var(--g)}
+  footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+  footer a{color:var(--muted);margin:0 12px}
+</style>  <link rel="alternate" hreflang="en" href="https://noxel360.com/learn/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="af" href="https://noxel360.com/learn/af/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="am" href="https://noxel360.com/learn/am/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="ar" href="https://noxel360.com/learn/ar/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="az" href="https://noxel360.com/learn/az/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="be" href="https://noxel360.com/learn/be/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="bg" href="https://noxel360.com/learn/bg/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="bn" href="https://noxel360.com/learn/bn/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="bs" href="https://noxel360.com/learn/bs/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="ca" href="https://noxel360.com/learn/ca/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="ceb" href="https://noxel360.com/learn/ceb/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="co" href="https://noxel360.com/learn/co/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="cs" href="https://noxel360.com/learn/cs/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="cy" href="https://noxel360.com/learn/cy/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="da" href="https://noxel360.com/learn/da/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="de" href="https://noxel360.com/learn/de/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="el" href="https://noxel360.com/learn/el/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="en-AU" href="https://noxel360.com/learn/en-AU/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="en-CA" href="https://noxel360.com/learn/en-CA/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="en-GB" href="https://noxel360.com/learn/en-GB/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="eo" href="https://noxel360.com/learn/eo/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="es" href="https://noxel360.com/learn/es/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="es-AR" href="https://noxel360.com/learn/es-AR/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="es-MX" href="https://noxel360.com/learn/es-MX/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="et" href="https://noxel360.com/learn/et/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="eu" href="https://noxel360.com/learn/eu/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="fa" href="https://noxel360.com/learn/fa/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="fi" href="https://noxel360.com/learn/fi/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="fr" href="https://noxel360.com/learn/fr/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="fr-BE" href="https://noxel360.com/learn/fr-BE/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="fr-CA" href="https://noxel360.com/learn/fr-CA/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="fy" href="https://noxel360.com/learn/fy/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="ga" href="https://noxel360.com/learn/ga/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="gd" href="https://noxel360.com/learn/gd/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="gl" href="https://noxel360.com/learn/gl/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="gu" href="https://noxel360.com/learn/gu/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="ha" href="https://noxel360.com/learn/ha/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="haw" href="https://noxel360.com/learn/haw/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="hi" href="https://noxel360.com/learn/hi/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="hmn" href="https://noxel360.com/learn/hmn/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="hr" href="https://noxel360.com/learn/hr/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="ht" href="https://noxel360.com/learn/ht/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="hu" href="https://noxel360.com/learn/hu/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="hy" href="https://noxel360.com/learn/hy/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="id" href="https://noxel360.com/learn/id/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="ig" href="https://noxel360.com/learn/ig/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="is" href="https://noxel360.com/learn/is/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="it" href="https://noxel360.com/learn/it/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="he" href="https://noxel360.com/learn/iw/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="ja" href="https://noxel360.com/learn/ja/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="jv" href="https://noxel360.com/learn/jw/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="ka" href="https://noxel360.com/learn/ka/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="kk" href="https://noxel360.com/learn/kk/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="km" href="https://noxel360.com/learn/km/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="kn" href="https://noxel360.com/learn/kn/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="ko" href="https://noxel360.com/learn/ko/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="ku" href="https://noxel360.com/learn/ku/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="ky" href="https://noxel360.com/learn/ky/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="la" href="https://noxel360.com/learn/la/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="lb" href="https://noxel360.com/learn/lb/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="lo" href="https://noxel360.com/learn/lo/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="lt" href="https://noxel360.com/learn/lt/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="lv" href="https://noxel360.com/learn/lv/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="mg" href="https://noxel360.com/learn/mg/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="mi" href="https://noxel360.com/learn/mi/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="mk" href="https://noxel360.com/learn/mk/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="ml" href="https://noxel360.com/learn/ml/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="mn" href="https://noxel360.com/learn/mn/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="mr" href="https://noxel360.com/learn/mr/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="ms" href="https://noxel360.com/learn/ms/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="mt" href="https://noxel360.com/learn/mt/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="my" href="https://noxel360.com/learn/my/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="ne" href="https://noxel360.com/learn/ne/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="nl" href="https://noxel360.com/learn/nl/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="no" href="https://noxel360.com/learn/no/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="ny" href="https://noxel360.com/learn/ny/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="pa" href="https://noxel360.com/learn/pa/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="pl" href="https://noxel360.com/learn/pl/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="ps" href="https://noxel360.com/learn/ps/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="pt" href="https://noxel360.com/learn/pt/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://noxel360.com/learn/pt-BR/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="ro" href="https://noxel360.com/learn/ro/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="ru" href="https://noxel360.com/learn/ru/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="sd" href="https://noxel360.com/learn/sd/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="si" href="https://noxel360.com/learn/si/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="sk" href="https://noxel360.com/learn/sk/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="sl" href="https://noxel360.com/learn/sl/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="sm" href="https://noxel360.com/learn/sm/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="sn" href="https://noxel360.com/learn/sn/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="so" href="https://noxel360.com/learn/so/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="sq" href="https://noxel360.com/learn/sq/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="sr" href="https://noxel360.com/learn/sr/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="st" href="https://noxel360.com/learn/st/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="su" href="https://noxel360.com/learn/su/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="sv" href="https://noxel360.com/learn/sv/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="sw" href="https://noxel360.com/learn/sw/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="ta" href="https://noxel360.com/learn/ta/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="te" href="https://noxel360.com/learn/te/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="tg" href="https://noxel360.com/learn/tg/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="th" href="https://noxel360.com/learn/th/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="tl" href="https://noxel360.com/learn/tl/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="tr" href="https://noxel360.com/learn/tr/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="uk" href="https://noxel360.com/learn/uk/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="ur" href="https://noxel360.com/learn/ur/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="uz" href="https://noxel360.com/learn/uz/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="vi" href="https://noxel360.com/learn/vi/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="xh" href="https://noxel360.com/learn/xh/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="yi" href="https://noxel360.com/learn/yi/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="yo" href="https://noxel360.com/learn/yo/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://noxel360.com/learn/zh/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="zh-HK" href="https://noxel360.com/learn/zh-HK/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="zh-TW" href="https://noxel360.com/learn/zh-TW/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="zu" href="https://noxel360.com/learn/zu/what-are-ai-agents.html" />
+  <link rel="alternate" hreflang="x-default" href="https://noxel360.com/learn/what-are-ai-agents.html" />
+</head>
+<body>
+  <nav>
+    <a href="/" style="display:flex;align-items:center;gap:10px">
+      <img src="/favicon-192x192.avif" alt="NOXEL360" width="150" height="150" style="border-radius:8px">
+      <span style="font-weight:800">NOXEL360</span>
+    </a>
+    <div style="display:flex;gap:28px;font-size:14px;color:var(--muted)">
+      <a href="/learn">Leer</a>
+      <a href="/dashboard" style="background:var(--g);color:#07090f;padding:9px 20px;border-radius:8px;font-weight:800">Dashboard</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="tag">Kunsmatige Intelligensie Gids</div>
+    <h1>Wat is KI-agente? 'n Eenvoudige Verduideliking</h1>
+
+    <div class="definition">
+      <strong style="color:#fff">In een sin:</strong> 'n KI-agent is 'n KI-stelsel wat werklike aksies na 'n doelwit toe kan neem — gereedskap gebruik, API's aanroep, meerstap-take voltooi — in plaas daarvan om net op 'n enkele vraag met 'n blok teks te reageer.
+    </div>
+
+    <p>'n Gewone KI-klets-interaksie is 'n enkele retoer: jy vra 'n vraag, die KI reageer met teks, klaar. 'n KI-agent werk anders — dit kan 'n reeks stappe beplan, gereedskap onderweg gebruik, sy eie vordering nagaan, en voortgaan om na 'n doelwit te werk met veel minder stap-vir-stap instruksie.</p>
+
+    <h2>Kletsprogram teenoor Agent: 'n Praktiese Voorbeeld</h2>
+    <p>Vra 'n gewone kletsprogram "wat is die weer in Montreal," en dit reageer met wat dit reeds weet (wat dalk verouderd is). Vra 'n KI-agent dieselfde ding, en dit mag werklik die web deursoek vir huidige weerdata, die regte antwoord verkry, en reageer met geverifieerde, bygewerkte inligting — 'n aksie neem, nie net teks uit geheue genereer nie.</p>
+
+    <h2>Wat Maak Iets 'n "Agent"</h2>
+    <ul>
+      <li><strong>Gereedskapsgebruik</strong> — die vermoë om eksterne gereedskap aan te roep (die web deursoek, kode uitvoer, 'n databasis ondervra)</li>
+      <li><strong>Meerstap-redenering</strong> — 'n komplekse taak in kleiner stappe breek en daardeur werk</li>
+      <li><strong>Outonomie</strong> — 'n taak met 'n doelwit voltooi, eerder as om elke enkele stap uitgespel te kry</li>
+      <li><strong>Terugvoerlusse</strong> — sy eie werk nagaan en koers aanpas as iets nie gaan soos verwag nie</li>
+    </ul>
+
+    <h2>Waarom Dit Prakties Saak Maak</h2>
+    <p>KI-agente kan werklik komplekse werkvloeie hanteer — 'n onderwerp oor verskeie bronne ondersoek, 'n vorm invul, 'n indiening teen 'n stel kriteria hersien, en dan 'n aksie neem gebaseer op daardie hersiening. NOXEL Forge se indieningshersieër, byvoorbeeld, ontleed 'n ingedien bladsy teen kwaliteit en nis-kriteria en maak 'n goedkeur/verwerp besluit — 'n regte agentiese werkvloei, nie net 'n enkele teksrespons nie.</p>
+
+    <h2>Die Werklike Risiko Werd om te Verstaan</h2>
+    <p>Omdat agente aksies neem en verskeie stappe saam ketting, kan foute vererger op maniere wat 'n enkele teksrespons nooit sou nie. 'n Agent wat 'n taak vroeg verkeerd verstaan, mag vol selfvertroue voortgaan op die verkeerde pad vir nog verskeie stappe voordat iemand dit agterkom. Dit is waarom deurdagte menslike toesig — veral vir beduidende of moeilik-om-terug-te-draai aksies — 'n belangrike deel van verantwoordelike agent-ontwerp bly.</p>
+
+    <h2>Gereelde Gestelde Vrae</h2>
+    <div class="faq-item">
+      <h3>Is 'n KI-agent dieselfde as 'n kletsprogram?</h3>
+      <p style="margin:0">Nee. 'n Kletsprogram reageer op boodskappe met teks. 'n KI-agent kan werklike aksies neem — die web deursoek, API's aanroep, kode uitvoer, meerstap-take voltooi — dikwels met veel minder stap-vir-stap menslike leiding.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Kan KI-agente sonder enige menslike toesig werk?</h3>
+      <p style="margin:0">Tegnies kan sommige, maar dit word oor die algemeen as riskant beskou vir enigiets beduidend. Die meeste praktiese, verantwoordelike implementerings sluit menslike oorsig by sleutel besluitpunte in, veral vir aksies wat moeilik is om terug te draai.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Maak KI-agente foute?</h3>
+      <p style="margin:0">Ja, en die gevolge kan oor verskeie stappe vererger, aangesien 'n agent se latere aksies dikwels op sy vroeëre een afhang. Dit is waarom toesig en duidelike grense meer saak maak met agente as met eenvoudige enkel-respons KI.</p>
+    </div>
+
+    <h2>Verwante Leesmateriaal</h2>
+    <div class="related">
+      <a href="/learn/ai-automation-vs-ai-agent.html">KI-outomatisering teenoor KI-agent</a>
+      <a href="/learn/what-is-generative-ai.html">Wat is Generatiewe KI?</a>
+      <a href="/learn">← Terug na Leer</a>
+    </div>
+
+    <div class="closing">
+      <p style="margin-bottom:16px">NOXEL Forge se KI-hersieër werk as 'n regte agent — ontleed, besluit, en tree outomaties op indienings op.</p>
+      <a class="cta" href="/dashboard">Verken die NOXEL360 dashboard →</a>
+    </div>
+  </div>
+
+  <footer>
+    <a href="/">Tuis</a>
+    <a href="/learn">Leer</a>
+    <a href="/privacy">Privaatheid</a>
+    <a href="/terms">Terme</a>
+    <a href="https://noxelseo.com" target="_blank" rel="noopener">NOXEL SEO</a>
+    <a href="https://noxelforge.com" target="_blank" rel="noopener">NOXEL Forge</a>
+    <div style="margin-top:16px">© 2026 NOXEL360. Alle regte voorbehou.</div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="af">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wat Is 'n IP-Adres? 'n Eenvoudige Verduideliking — NOXEL360</title>
+<meta name="description" content="IP-adresse in gewone taal verduidelik — wat hulle is, IPv4 vs IPv6, en waarom elke toestel aanlyn een nodig het.">
+<link rel="canonical" href="https://noxel360.com/learn/what-is-an-ip-address.html" />
+<link rel="icon" href="/favicon.ico">
+<meta property="og:title" content="Wat Is 'n IP-Adres? 'n Eenvoudige Verduideliking" />
+<meta property="og:description" content="Wat IP-adresse is, IPv4 vs IPv6, en waarom elke toestel aanlyn een nodig het." />
+<meta property="og:url" content="https://noxel360.com/learn/what-is-an-ip-address.html" />
+<meta property="og:type" content="article" />
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "Article", "headline": "Wat Is 'n IP-Adres? 'n Eenvoudige Verduideliking", "description": "IP-adresse in gewone taal verduidelik — wat hulle is, IPv4 vs IPv6, en waarom elke toestel aanlyn een nodig het.", "author": { "@type": "Organization", "name": "NOXEL360" }, "publisher": { "@type": "Organization", "name": "NOXEL360", "url": "https://noxel360.com" }, "datePublished": "2026-07-24", "dateModified": "2026-07-24", "mainEntityOfPage": "https://noxel360.com/learn/what-is-an-ip-address.html" }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "DefinedTerm", "name": "IP-Adres", "description": "'n IP-adres is 'n unieke numeriese identifiseerder wat aan elke toestel wat aan 'n netwerk gekoppel is, toegeken word, sodat data presies weet waarheen om te gaan.", "inDefinedTermSet": "https://noxel360.com/learn/what-is-an-ip-address.html" }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Leer", "item": "https://noxel360.com/learn"}, {"@type": "ListItem", "position": 2, "name": "Web Fondamente", "item": "https://noxel360.com/learn/web-foundations.html"}, {"@type": "ListItem", "position": 3, "name": "Wat Is 'n IP-Adres? 'n Eenvoudige Verduideliking", "item": "https://noxel360.com/learn/what-is-an-ip-address.html"}] }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+{ "@type": "Question", "name": "Onthul my IP-adres my presiese ligging?", "acceptedAnswer": { "@type": "Answer", "text": "Tipies 'n algemene area wat aan jou verskaffer gekoppel is, nie 'n presiese adres nie. Akkuraatheid wissel beduidend per verskaffer en ligging." } },
+{ "@type": "Question", "name": "Waarom raak ons van IPv4-adresse af?", "acceptedAnswer": { "@type": "Answer", "text": "IPv4 laat ~4.3 miljard unieke adresse toe — te min vir vandag se aantal gekoppelde toestelle, wat is hoekom IPv6 geskep is." } },
+{ "@type": "Question", "name": "Het elke webwerf sy eie IP-adres?", "acceptedAnswer": { "@type": "Answer", "text": "Dikwels deel verskeie webwerwe 'n enkele IP op dieselfde bediener, onderskei deur domeinnaam — dit beïnvloed nie besoeker-ervaring nie." } },
+{ "@type": "Question", "name": "Kan my IP-adres mettertyd verander?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, veral vir tuis-internetverbindings, waar verskaffers dikwels dinamiese IP's toeken wat periodiek verander." } },
+{ "@type": "Question", "name": "Wat is 'n statiese IP-adres?", "acceptedAnswer": { "@type": "Answer", "text": "'n IP-adres wat vas bly eerder as om te verander, dikwels gebruik vir bedieners wat 'n stabiele, voorspelbare adres nodig het." } },
+{ "@type": "Question", "name": "Is dit veilig om my IP-adres met iemand te deel?", "acceptedAnswer": { "@type": "Answer", "text": "Oor die algemeen lae risiko op sy eie, alhoewel dit 'n algemene ligging kan onthul en, gekombineer met ander data, kan bydra tot opsporing." } },
+{ "@type": "Question", "name": "Kan twee toestelle dieselfde IP-adres hê?", "acceptedAnswer": { "@type": "Answer", "text": "Nie op dieselfde netwerk gelyktydig nie — dit sou 'n konflik veroorsaak. Private IP's kan oor verskillende, afsonderlike netwerke herhaal." } }
+] }
+</script>
+<style>
+  :root{--bg:#07090f;--surface:#0d1017;--border:rgba(255,255,255,0.07);--text:#e8eaf0;--muted:rgba(255,255,255,0.45);--g:#3cde6a;--p:#702aa5}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+  a{color:var(--g);text-decoration:none}
+  nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:rgba(7,9,15,0.90);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+  .container{max-width:820px;margin:0 auto;padding:70px 40px}
+  h1{font-size:clamp(28px,4.5vw,44px);font-weight:900;line-height:1.15;margin-bottom:14px;scroll-margin-top:90px}
+  h2{font-size:21px;font-weight:800;margin:36px 0 14px;color:#fff;scroll-margin-top:90px}
+  p{color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin-bottom:16px}
+  ul,ol{color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin:0 0 20px 22px}
+  li{margin-bottom:8px}
+  table{width:100%;border-collapse:collapse;margin:8px 0 24px;font-size:15px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);color:rgba(255,255,255,0.75)}
+  th{color:#fff;font-size:13px;text-transform:uppercase}
+  .tag{font-size:11px;font-weight:800;letter-spacing:1.5px;color:var(--g);text-transform:uppercase;margin-bottom:12px}
+  .meta-row{display:flex;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--muted);margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+  .toc{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin:20px 0 28px}
+  .toc .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+  .toc ul{list-style:none;margin:0;columns:2;gap:8px}
+  .toc li{margin-bottom:6px;break-inside:avoid}
+  .toc a{color:rgba(255,255,255,0.75);font-size:14px}
+  .toc a:hover{color:var(--g)}
+  .one-sentence{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--g);border-radius:12px;padding:20px;margin:20px 0}
+  .didyouknow{background:rgba(60,222,106,0.07);border:1px solid rgba(60,222,106,0.25);border-radius:12px;padding:18px 20px;margin:28px 0}
+  .didyouknow .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--g);text-transform:uppercase;margin-bottom:6px}
+  .action-box{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--p);border-radius:12px;padding:20px;margin:28px 0}
+  .action-box .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:#b98af0;text-transform:uppercase;margin-bottom:6px}
+  .sources{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin:24px 0}
+  .sources .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+  .sources ul{margin:0;list-style:none}
+  .sources li{margin-bottom:8px}
+  .sources a{font-weight:700}
+  .sources span{color:var(--muted);font-size:13px}
+  .takeaways{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 24px;margin:28px 0}
+  .takeaways ul{margin:0;list-style:none}
+  .takeaways li{padding-left:26px;position:relative;margin-bottom:10px}
+  .takeaways li::before{content:"✓";position:absolute;left:0;color:var(--g);font-weight:900}
+  .faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px}
+  .faq-item h3{font-size:15px;margin:0 0 6px;color:#fff}
+  .learning-path{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0}
+  .learning-path .lp-box{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+  .learning-path .lp-box .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+  .learning-path ul{margin:0;list-style:none}
+  .learning-path li{margin-bottom:8px}
+  @media(max-width:600px){.learning-path{grid-template-columns:1fr}.toc ul{columns:1}}
+  .closing{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;margin:24px 0;text-align:center}
+  .cta{display:inline-block;background:var(--g);color:#07090f;font-weight:800;padding:14px 32px;border-radius:10px;margin:24px 0 0}
+  .byline{font-size:13px;color:var(--muted);margin-top:32px}
+  .related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:20px 0}
+  .related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;font-size:14px;font-weight:700;color:var(--text)}
+  .related a:hover{border-color:var(--g)}
+  footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+  footer a{color:var(--muted);margin:0 12px}
+  #progress-bar{position:fixed;top:0;left:0;height:3px;background:var(--g);width:0%;z-index:200;transition:width 0.1s linear}
+</style>  <link rel="alternate" hreflang="en" href="https://noxel360.com/learn/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="af" href="https://noxel360.com/learn/af/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="am" href="https://noxel360.com/learn/am/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="ar" href="https://noxel360.com/learn/ar/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="az" href="https://noxel360.com/learn/az/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="be" href="https://noxel360.com/learn/be/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="bg" href="https://noxel360.com/learn/bg/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="bn" href="https://noxel360.com/learn/bn/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="bs" href="https://noxel360.com/learn/bs/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="ca" href="https://noxel360.com/learn/ca/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="ceb" href="https://noxel360.com/learn/ceb/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="co" href="https://noxel360.com/learn/co/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="cs" href="https://noxel360.com/learn/cs/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="cy" href="https://noxel360.com/learn/cy/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="da" href="https://noxel360.com/learn/da/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="de" href="https://noxel360.com/learn/de/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="el" href="https://noxel360.com/learn/el/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="en-AU" href="https://noxel360.com/learn/en-AU/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="en-CA" href="https://noxel360.com/learn/en-CA/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="en-GB" href="https://noxel360.com/learn/en-GB/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="eo" href="https://noxel360.com/learn/eo/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="es" href="https://noxel360.com/learn/es/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="es-AR" href="https://noxel360.com/learn/es-AR/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="es-MX" href="https://noxel360.com/learn/es-MX/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="et" href="https://noxel360.com/learn/et/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="eu" href="https://noxel360.com/learn/eu/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="fa" href="https://noxel360.com/learn/fa/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="fi" href="https://noxel360.com/learn/fi/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="fr" href="https://noxel360.com/learn/fr/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="fr-BE" href="https://noxel360.com/learn/fr-BE/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="fr-CA" href="https://noxel360.com/learn/fr-CA/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="fy" href="https://noxel360.com/learn/fy/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="ga" href="https://noxel360.com/learn/ga/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="gd" href="https://noxel360.com/learn/gd/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="gl" href="https://noxel360.com/learn/gl/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="gu" href="https://noxel360.com/learn/gu/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="ha" href="https://noxel360.com/learn/ha/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="haw" href="https://noxel360.com/learn/haw/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="hi" href="https://noxel360.com/learn/hi/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="hmn" href="https://noxel360.com/learn/hmn/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="hr" href="https://noxel360.com/learn/hr/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="ht" href="https://noxel360.com/learn/ht/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="hu" href="https://noxel360.com/learn/hu/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="hy" href="https://noxel360.com/learn/hy/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="id" href="https://noxel360.com/learn/id/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="ig" href="https://noxel360.com/learn/ig/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="is" href="https://noxel360.com/learn/is/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="it" href="https://noxel360.com/learn/it/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="he" href="https://noxel360.com/learn/iw/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="ja" href="https://noxel360.com/learn/ja/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="jv" href="https://noxel360.com/learn/jw/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="ka" href="https://noxel360.com/learn/ka/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="kk" href="https://noxel360.com/learn/kk/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="km" href="https://noxel360.com/learn/km/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="kn" href="https://noxel360.com/learn/kn/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="ko" href="https://noxel360.com/learn/ko/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="ku" href="https://noxel360.com/learn/ku/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="ky" href="https://noxel360.com/learn/ky/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="la" href="https://noxel360.com/learn/la/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="lb" href="https://noxel360.com/learn/lb/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="lo" href="https://noxel360.com/learn/lo/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="lt" href="https://noxel360.com/learn/lt/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="lv" href="https://noxel360.com/learn/lv/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="mg" href="https://noxel360.com/learn/mg/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="mi" href="https://noxel360.com/learn/mi/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="mk" href="https://noxel360.com/learn/mk/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="ml" href="https://noxel360.com/learn/ml/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="mn" href="https://noxel360.com/learn/mn/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="mr" href="https://noxel360.com/learn/mr/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="ms" href="https://noxel360.com/learn/ms/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="mt" href="https://noxel360.com/learn/mt/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="my" href="https://noxel360.com/learn/my/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="ne" href="https://noxel360.com/learn/ne/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="nl" href="https://noxel360.com/learn/nl/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="no" href="https://noxel360.com/learn/no/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="ny" href="https://noxel360.com/learn/ny/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="pa" href="https://noxel360.com/learn/pa/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="pl" href="https://noxel360.com/learn/pl/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="ps" href="https://noxel360.com/learn/ps/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="pt" href="https://noxel360.com/learn/pt/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://noxel360.com/learn/pt-BR/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="ro" href="https://noxel360.com/learn/ro/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="ru" href="https://noxel360.com/learn/ru/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="sd" href="https://noxel360.com/learn/sd/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="si" href="https://noxel360.com/learn/si/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="sk" href="https://noxel360.com/learn/sk/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="sl" href="https://noxel360.com/learn/sl/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="sm" href="https://noxel360.com/learn/sm/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="sn" href="https://noxel360.com/learn/sn/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="so" href="https://noxel360.com/learn/so/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="sq" href="https://noxel360.com/learn/sq/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="sr" href="https://noxel360.com/learn/sr/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="st" href="https://noxel360.com/learn/st/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="su" href="https://noxel360.com/learn/su/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="sv" href="https://noxel360.com/learn/sv/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="sw" href="https://noxel360.com/learn/sw/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="ta" href="https://noxel360.com/learn/ta/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="te" href="https://noxel360.com/learn/te/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="tg" href="https://noxel360.com/learn/tg/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="th" href="https://noxel360.com/learn/th/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="tl" href="https://noxel360.com/learn/tl/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="tr" href="https://noxel360.com/learn/tr/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="uk" href="https://noxel360.com/learn/uk/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="ur" href="https://noxel360.com/learn/ur/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="uz" href="https://noxel360.com/learn/uz/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="vi" href="https://noxel360.com/learn/vi/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="xh" href="https://noxel360.com/learn/xh/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="yi" href="https://noxel360.com/learn/yi/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="yo" href="https://noxel360.com/learn/yo/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://noxel360.com/learn/zh/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="zh-HK" href="https://noxel360.com/learn/zh-HK/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="zh-TW" href="https://noxel360.com/learn/zh-TW/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="zu" href="https://noxel360.com/learn/zu/what-is-an-ip-address.html" />
+  <link rel="alternate" hreflang="x-default" href="https://noxel360.com/learn/what-is-an-ip-address.html" />
+</head>
+<body>
+  <div id="progress-bar"></div>
+  <nav>
+    <a href="/" style="display:flex;align-items:center;gap:10px">
+      <img src="/favicon-192x192.avif" alt="NOXEL360" width="42" height="42" style="border-radius:8px">
+      <span style="font-weight:800">NOXEL360</span>
+    </a>
+    <div style="display:flex;gap:28px;font-size:14px;color:var(--muted)">
+      <a href="/learn">Leer</a>
+      <a href="/dashboard" style="background:var(--g);color:#07090f;padding:9px 20px;border-radius:8px;font-weight:800">Dashboard</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="tag">Web Fondamente Gids</div>
+    <h1 id="top">Wat Is 'n IP-Adres? 'n Eenvoudige Verduideliking</h1>
+    <div class="meta-row">
+      <span>🕐 5 min lees</span>
+      <span>📊 Beginner</span>
+      <span>📁 Web Fondamente</span>
+      <span>📅 Gepubliseer 24 Julie 2026</span>
+      <span>🔄 Opgedateer 24 Julie 2026</span>
+    </div>
+
+    <div class="toc"><div class="label">Op Hierdie Bladsy</div><ul><li><a href="#what-it-looks-like">Hoe 'n IP-Adres Lyk</a></li><li><a href="#ipv4-ipv6">IPv4 vs IPv6</a></li><li><a href="#public-private">Publieke vs Private IP-Adresse</a></li><li><a href="#faq">Gereelde Vrae</a></li></ul></div>
+
+    <div class="one-sentence"><strong>In een sin:</strong> 'n IP-adres is 'n unieke numeriese identifiseerder wat aan elke toestel wat aan 'n netwerk gekoppel is, toegeken word, sodat data presies weet waarheen om te gaan.</div>
+
+    <p>Elke toestel wat aan die internet gekoppel is — jou foon, skootrekenaar, en elke bediener wat elke webwerf huisves — het 'n IP-adres. Dit is die werklike bestemming waarna DNS 'n domeinnaam vertaal.</p>
+
+    <h2 id="what-it-looks-like">Hoe 'n IP-Adres Lyk</h2>
+<p>'n Tipiese IPv4-adres lyk soos <strong>192.168.1.1</strong> — vier nommers geskei deur punte, elk tussen 0 en 255. Dit laat ongeveer 4.3 miljard unieke adresse toe.</p>
+<div class="didyouknow"><div class="label">💡 Het Jy Geweet?</div><p style="margin-bottom:0">IPv6 ondersteun ongeveer 340 undecillion unieke adresse — genoeg om 'n unieke adres aan elke korrel sand op Aarde baie kere oor toe te ken.</p></div>
+<h2 id="ipv4-ipv6">IPv4 vs IPv6</h2>
+<p>Soos internet-gekoppelde toestelle ontplof het, het die wêreld begin om van IPv4-adresse af te raak. <strong>IPv6</strong> is geskep om dit op te los, deur 'n veel langer formaat te gebruik wat 'n baie groter aantal adresse toelaat. Beide loop vandag sy aan sy.</p>
+<svg viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;margin:8px 0 28px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px">
+      <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3cde6a"/></marker></defs>
+      <rect x="65" y="45" width="120" height="50" rx="10" fill="#0d1017" stroke="#3cde6a" stroke-width="1.5"/><text x="125" y="75" fill="#ffffff" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Toestel</text><line x1="185" y1="70" x2="215" y2="70" stroke="#3cde6a" stroke-width="2" marker-end="url(#arrow)"/><rect x="215" y="45" width="120" height="50" rx="10" fill="#0d1017" stroke="#702aa5" stroke-width="1.5"/><text x="275" y="75" fill="#ffffff" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Roeter</text><line x1="335" y1="70" x2="365" y2="70" stroke="#3cde6a" stroke-width="2" marker-end="url(#arrow)"/><rect x="365" y="45" width="120" height="50" rx="10" fill="#0d1017" stroke="#3cde6a" stroke-width="1.5"/><text x="425" y="75" fill="#ffffff" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Publieke IP</text><line x1="485" y1="70" x2="515" y2="70" stroke="#3cde6a" stroke-width="2" marker-end="url(#arrow)"/><rect x="515" y="45" width="120" height="50" rx="10" fill="#0d1017" stroke="#702aa5" stroke-width="1.5"/><text x="575" y="75" fill="#ffffff" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">Internet</text>
+    </svg>
+<div class="sources"><div class="label">📚 Amptelike Bronne</div><ul><li><a href="https://www.iana.org/numbers" target="_blank" rel="noopener noreferrer">IANA — IP-Adres Toewysing</a> <span>· die owerheid wat globale IP-adres toewysing bestuur</span></li></ul></div>
+<h2 id="public-private">Publieke vs Private IP-Adresse</h2>
+<p>Toestelle op jou tuisnetwerk kry elk 'n <strong>private</strong> IP-adres, slegs sigbaar binne jou netwerk. Jou hele netwerk deel een <strong>publieke</strong> IP, toegeken deur jou internetverskaffer, wat is wat die res van die internet sien.</p>
+<div class="action-box"><div class="label">🧩 Sien Dit in Aksie met NOXEL360</div><p style="margin-bottom:0">Sien die werklike infrastruktuur waarop NOXEL360 se produkte loop — domeine, bedieners, en alles daartussen.</p></div>
+
+
+    <h2 id="faq">Gereelde Vrae</h2>
+    <div class="faq-item"><h3>Onthul my IP-adres my presiese ligging?</h3><p>Tipies 'n algemene area wat aan jou verskaffer gekoppel is, nie 'n presiese adres nie. Akkuraatheid wissel beduidend per verskaffer en ligging.</p></div>
+<div class="faq-item"><h3>Waarom raak ons van IPv4-adresse af?</h3><p>IPv4 laat ~4.3 miljard unieke adresse toe — te min vir vandag se aantal gekoppelde toestelle, wat is hoekom IPv6 geskep is.</p></div>
+<div class="faq-item"><h3>Het elke webwerf sy eie IP-adres?</h3><p>Dikwels deel verskeie webwerwe 'n enkele IP op dieselfde bediener, onderskei deur domeinnaam — dit beïnvloed nie besoeker-ervaring nie.</p></div>
+<div class="faq-item"><h3>Kan my IP-adres mettertyd verander?</h3><p>Ja, veral vir tuis-internetverbindings, waar verskaffers dikwels dinamiese IP's toeken wat periodiek verander.</p></div>
+<div class="faq-item"><h3>Wat is 'n statiese IP-adres?</h3><p>'n IP-adres wat vas bly eerder as om te verander, dikwels gebruik vir bedieners wat 'n stabiele, voorspelbare adres nodig het.</p></div>
+<div class="faq-item"><h3>Is dit veilig om my IP-adres met iemand te deel?</h3><p>Oor die algemeen lae risiko op sy eie, alhoewel dit 'n algemene ligging kan onthul en, gekombineer met ander data, kan bydra tot opsporing.</p></div>
+<div class="faq-item"><h3>Kan twee toestelle dieselfde IP-adres hê?</h3><p>Nie op dieselfde netwerk gelyktydig nie — dit sou 'n konflik veroorsaak. Private IP's kan oor verskillende, afsonderlike netwerke herhaal.</p></div>
+
+
+    <div class="takeaways">
+      <h2 style="margin-top:0">Sleutelpunte</h2>
+      <ul><li>Elke internet-gekoppelde toestel het 'n unieke IP-adres.</li><li>IPv4-adresse lyk soos 192.168.1.1; IPv6 gebruik 'n langer formaat vir baie meer adresse.</li><li>Private IP's geld binne 'n tuisnetwerk; 'n publieke IP verteenwoordig die hele netwerk aan die internet.</li><li>DNS bestaan spesifiek om vriendelike domeinname in hierdie numeriese adresse te vertaal.</li><li>IP-adresse is direk belangrik wanneer DNS- of vuurmuurreëls gekonfigureer word.</li></ul>
+    </div>
+
+    <div class="learning-path">
+      <div class="lp-box"><div class="label">⬅ Voor Hierdie</div><ul><li><a href="/learn/what-is-dns.html">Wat Is DNS?</a></li></ul></div>
+      <div class="lp-box"><div class="label">Volgende Stap ➜</div><ul><li><a href="/learn/what-is-web-hosting.html">Wat Is Webgasheer?</a></li></ul></div>
+    </div>
+
+    <div class="closing">
+      <p style="margin-bottom:8px">Sien die werklike infrastruktuur agter NOXEL360 se produkte.</p>
+      <a href="/dashboard" class="cta">Verken die NOXEL360 Dashboard →</a>
+    </div>
+
+    <h2>Verwante Leesstof</h2>
+    <div class="related"><a href="/learn/what-is-dns.html">Wat Is DNS?</a><a href="/learn/what-is-web-hosting.html">Wat Is Webgasheer?</a><a href="/learn/what-is-a-website.html">Wat Is 'n Webwerf?</a></div>
+
+    <p class="byline">Geskryf deur die NOXEL360-Span · Hersien deur NOXEL Ingenieurswese · <a href="https://noxel360.com/learn/web-foundations.html">← Terug na Web Fondamente Gidse</a></p>
+  </div>
+
+  <footer>
+    <a href="/">Tuis</a>
+    <a href="/learn">Leer</a>
+    <a href="/privacy">Privaatheid</a>
+    <a href="/terms">Terme</a>
+    <a href="https://noxelseo.com" target="_blank" rel="noopener">NOXEL SEO</a>
+    <a href="https://noxelforge.com" target="_blank" rel="noopener">NOXEL Forge</a>
+    <div style="margin-top:16px">© 2026 NOXEL360. Alle regte voorbehou.</div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function(){
+      var el = document.documentElement;
+      var scrolled = (el.scrollTop) / (el.scrollHeight - el.clientHeight) * 100;
+      document.getElementById('progress-bar').style.width = Math.min(scrolled,100) + '%';
+    });
+  </script>
+</body>
+</html>

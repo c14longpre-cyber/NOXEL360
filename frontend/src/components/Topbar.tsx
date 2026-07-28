@@ -1,5 +1,5 @@
-import GlobeLogo from "@/assets/logos/webp/globe-selector.webp";
-import noxel360Logo from "@/assets/logos/webp/noxel-360.webp";
+import GlobeLogo from "@/assets/logos/webp/globe-selector.avif";
+import noxel360Logo from "@/assets/logos/webp/noxel-360.avif";
 
 export default function Topbar() {
   return (

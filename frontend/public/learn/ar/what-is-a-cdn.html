@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ما هي شبكة توزيع المحتوى (CDN)؟ شرح مبسط — NOXEL360</title>
+<meta name="description" content="شرح شبكة توزيع المحتوى (CDN) بلغة بسيطة — كيف تجعل شبكات توزيع المحتوى المواقع تُحمّل بشكل أسرع للزوار في أي مكان في العالم.">
+<link rel="canonical" href="https://noxel360.com/learn/what-is-a-cdn.html" />
+<link rel="icon" href="/favicon.ico">
+<meta property="og:title" content="ما هي شبكة توزيع المحتوى (CDN)؟ شرح مبسط" />
+<meta property="og:description" content="كيف تجعل شبكات توزيع المحتوى المواقع تُحمّل بشكل أسرع، في كل مكان في العالم." />
+<meta property="og:url" content="https://noxel360.com/learn/what-is-a-cdn.html" />
+<meta property="og:type" content="article" />
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "Article", "headline": "ما هي شبكة توزيع المحتوى (CDN)؟ شرح مبسط", "description": "شرح شبكة توزيع المحتوى (CDN) بلغة بسيطة — كيف تجعل شبكات توزيع المحتوى المواقع تُحمّل بشكل أسرع للزوار في أي مكان في العالم.", "author": { "@type": "Organization", "name": "NOXEL360" }, "publisher": { "@type": "Organization", "name": "NOXEL360", "url": "https://noxel360.com" }, "datePublished": "2026-07-24", "dateModified": "2026-07-24", "mainEntityOfPage": "https://noxel360.com/learn/what-is-a-cdn.html" }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "DefinedTerm", "name": "CDN", "description": "شبكة توزيع المحتوى (CDN) هي شبكة من الخوادم المنتشرة في جميع أنحاء العالم تقوم بتوصيل محتوى الموقع من أقرب خادم للزائر، مما يجعل الصفحات تُحمّل بشكل أسرع.", "inDefinedTermSet": "https://noxel360.com/learn/what-is-a-cdn.html" }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "تعلّم", "item": "https://noxel360.com/learn"}, {"@type": "ListItem", "position": 2, "name": "أساسيات الويب", "item": "https://noxel360.com/learn/web-foundations.html"}, {"@type": "ListItem", "position": 3, "name": "ما هي شبكة توزيع المحتوى (CDN)؟ شرح مبسط", "item": "https://noxel360.com/learn/what-is-a-cdn.html"}] }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+{ "@type": "Question", "name": "هل تحتاج المواقع الصغيرة إلى CDN؟", "acceptedAnswer": { "@type": "Answer", "text": "العديد من منصات الاستضافة الحديثة تتضمن وظائف CDN تلقائيًا، حتى للمواقع الصغيرة، لذلك غالبًا لا يوجد قرار منفصل يجب اتخاذه." } },
+{ "@type": "Question", "name": "هل يستبدل CDN الحاجة إلى الاستضافة العادية؟", "acceptedAnswer": { "@type": "Answer", "text": "لا. يعمل CDN جنبًا إلى جنب مع الاستضافة، حيث يقوم بتخزين وتسليم المحتوى الثابت بشكل أسرع — بينما لا تزال الاستضافة تتعامل مع أي شيء ديناميكي." } },
+{ "@type": "Question", "name": "هل يمكن لـ CDN تحسين SEO؟", "acceptedAnswer": { "@type": "Answer", "text": "بشكل غير مباشر، نعم — أوقات التحميل الأسرع تحسن Core Web Vitals، وهو عامل تصنيف مؤكد من Google." } },
+{ "@type": "Question", "name": "ما المحتوى الذي لا يقوم CDN عادةً بتخزينه؟", "acceptedAnswer": { "@type": "Answer", "text": "المحتوى الديناميكي المخصص مثل لوحة التحكم الخاصة بالمستخدم المسجل عادةً ما يزال يحتاج إلى الوصول إلى الخادم الأصلي مباشرة." } },
+{ "@type": "Question", "name": "هل Cloudflare عبارة عن CDN؟", "acceptedAnswer": { "@type": "Answer", "text": "نعم، Cloudflare هو أحد مزودي CDN الأكثر استخدامًا على نطاق واسع، ويقدم أيضًا خدمات الأمان وDNS." } },
+{ "@type": "Question", "name": "هل استخدام CDN يكلف أكثر؟", "acceptedAnswer": { "@type": "Answer", "text": "العديد من منصات الاستضافة الحديثة تتضمن وظائف CDN في أسعارها الأساسية؛ قد يكون لخدمات CDN المخصصة مستويات تسعير منفصلة." } },
+{ "@type": "Question", "name": "ما مدى السرعة التي يجعل بها CDN الموقع؟", "acceptedAnswer": { "@type": "Answer", "text": "يختلف الأمر، لكن الزوار البعيدين عن الخادم الأصلي يمكنهم رؤية تحسينات في وقت التحميل بمقدار عدة مئات من المللي ثانية أو أكثر." } }
+] }
+</script>
+<style>
+  :root{--bg:#07090f;--surface:#0d1017;--border:rgba(255,255,255,0.07);--text:#e8eaf0;--muted:rgba(255,255,255,0.45);--g:#3cde6a;--p:#702aa5}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+  a{color:var(--g);text-decoration:none}
+  nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:rgba(7,9,15,0.90);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+  .container{max-width:820px;margin:0 auto;padding:70px 40px}
+  h1{font-size:clamp(28px,4.5vw,44px);font-weight:900;line-height:1.15;margin-bottom:14px;scroll-margin-top:90px}
+  h2{font-size:21px;font-weight:800;margin:36px 0 14px;color:#fff;scroll-margin-top:90px}
+  p{color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin-bottom:16px}
+  ul,ol{color:rgba(255,255,255,0.7);font-size:16px;line-height:1.8;margin:0 0 20px 22px}
+  li{margin-bottom:8px}
+  table{width:100%;border-collapse:collapse;margin:8px 0 24px;font-size:15px}
+  th,td{text-align:right;padding:10px 12px;border-bottom:1px solid var(--border);color:rgba(255,255,255,0.75)}
+  th{color:#fff;font-size:13px;text-transform:uppercase}
+  .tag{font-size:11px;font-weight:800;letter-spacing:1.5px;color:var(--g);text-transform:uppercase;margin-bottom:12px}
+  .meta-row{display:flex;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--muted);margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+  .toc{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin:20px 0 28px}
+  .toc .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+  .toc ul{list-style:none;margin:0;columns:2;gap:8px}
+  .toc li{margin-bottom:6px;break-inside:avoid}
+  .toc a{color:rgba(255,255,255,0.75);font-size:14px}
+  .toc a:hover{color:var(--g)}
+  .one-sentence{background:var(--surface);border:1px solid var(--border);border-right:3px solid var(--g);border-radius:12px;padding:20px;margin:20px 0}
+  .didyouknow{background:rgba(60,222,106,0.07);border:1px solid rgba(60,222,106,0.25);border-radius:12px;padding:18px 20px;margin:28px 0}
+  .didyouknow .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--g);text-transform:uppercase;margin-bottom:6px}
+  .action-box{background:var(--surface);border:1px solid var(--border);border-right:3px solid var(--p);border-radius:12px;padding:20px;margin:28px 0}
+  .action-box .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:#b98af0;text-transform:uppercase;margin-bottom:6px}
+  .sources{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin:24px 0}
+  .sources .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+  .sources ul{margin:0;list-style:none}
+  .sources li{margin-bottom:8px}
+  .sources a{font-weight:700}
+  .sources span{color:var(--muted);font-size:13px}
+  .takeaways{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 24px;margin:28px 0}
+  .takeaways ul{margin:0;list-style:none}
+  .takeaways li{padding-right:26px;position:relative;margin-bottom:10px}
+  .takeaways li::before{content:"✓";position:absolute;right:0;color:var(--g);font-weight:900}
+  .faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px}
+  .faq-item h3{font-size:15px;margin:0 0 6px;color:#fff}
+  .learning-path{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0}
+  .learning-path .lp-box{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+  .learning-path .lp-box .label{font-size:12px;font-weight:800;letter-spacing:0.5px;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+  .learning-path ul{margin:0;list-style:none}
+  .learning-path li{margin-bottom:8px}
+  @media(max-width:600px){.learning-path{grid-template-columns:1fr}.toc ul{columns:1}}
+  .closing{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;margin:24px 0;text-align:center}
+  .cta{display:inline-block;background:var(--g);color:#07090f;font-weight:800;padding:14px 32px;border-radius:10px;margin:24px 0 0}
+  .byline{font-size:13px;color:var(--muted);margin-top:32px}
+  .related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:20px 0}
+  .related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;font-size:14px;font-weight:700;color:var(--text)}
+  .related a:hover{border-color:var(--g)}
+  footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+  footer a{color:var(--muted);margin:0 12px}
+  #progress-bar{position:fixed;top:0;right:0;height:3px;background:var(--g);width:0%;z-index:200;transition:width 0.1s linear}
+</style>  <link rel="alternate" hreflang="en" href="https://noxel360.com/learn/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="af" href="https://noxel360.com/learn/af/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="am" href="https://noxel360.com/learn/am/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="ar" href="https://noxel360.com/learn/ar/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="az" href="https://noxel360.com/learn/az/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="be" href="https://noxel360.com/learn/be/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="bg" href="https://noxel360.com/learn/bg/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="bn" href="https://noxel360.com/learn/bn/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="bs" href="https://noxel360.com/learn/bs/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="ca" href="https://noxel360.com/learn/ca/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="ceb" href="https://noxel360.com/learn/ceb/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="co" href="https://noxel360.com/learn/co/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="cs" href="https://noxel360.com/learn/cs/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="cy" href="https://noxel360.com/learn/cy/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="da" href="https://noxel360.com/learn/da/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="de" href="https://noxel360.com/learn/de/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="el" href="https://noxel360.com/learn/el/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="en-AU" href="https://noxel360.com/learn/en-AU/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="en-CA" href="https://noxel360.com/learn/en-CA/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="en-GB" href="https://noxel360.com/learn/en-GB/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="eo" href="https://noxel360.com/learn/eo/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="es" href="https://noxel360.com/learn/es/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="es-AR" href="https://noxel360.com/learn/es-AR/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="es-MX" href="https://noxel360.com/learn/es-MX/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="et" href="https://noxel360.com/learn/et/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="eu" href="https://noxel360.com/learn/eu/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="fa" href="https://noxel360.com/learn/fa/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="fi" href="https://noxel360.com/learn/fi/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="fr" href="https://noxel360.com/learn/fr/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="fr-BE" href="https://noxel360.com/learn/fr-BE/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="fr-CA" href="https://noxel360.com/learn/fr-CA/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="fy" href="https://noxel360.com/learn/fy/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="ga" href="https://noxel360.com/learn/ga/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="gd" href="https://noxel360.com/learn/gd/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="gl" href="https://noxel360.com/learn/gl/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="gu" href="https://noxel360.com/learn/gu/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="ha" href="https://noxel360.com/learn/ha/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="haw" href="https://noxel360.com/learn/haw/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="hi" href="https://noxel360.com/learn/hi/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="hmn" href="https://noxel360.com/learn/hmn/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="hr" href="https://noxel360.com/learn/hr/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="ht" href="https://noxel360.com/learn/ht/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="hu" href="https://noxel360.com/learn/hu/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="hy" href="https://noxel360.com/learn/hy/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="id" href="https://noxel360.com/learn/id/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="ig" href="https://noxel360.com/learn/ig/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="is" href="https://noxel360.com/learn/is/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="it" href="https://noxel360.com/learn/it/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="he" href="https://noxel360.com/learn/iw/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="ja" href="https://noxel360.com/learn/ja/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="jv" href="https://noxel360.com/learn/jw/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="ka" href="https://noxel360.com/learn/ka/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="kk" href="https://noxel360.com/learn/kk/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="km" href="https://noxel360.com/learn/km/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="kn" href="https://noxel360.com/learn/kn/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="ko" href="https://noxel360.com/learn/ko/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="ku" href="https://noxel360.com/learn/ku/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="ky" href="https://noxel360.com/learn/ky/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="la" href="https://noxel360.com/learn/la/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="lb" href="https://noxel360.com/learn/lb/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="lo" href="https://noxel360.com/learn/lo/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="lt" href="https://noxel360.com/learn/lt/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="lv" href="https://noxel360.com/learn/lv/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="mg" href="https://noxel360.com/learn/mg/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="mi" href="https://noxel360.com/learn/mi/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="mk" href="https://noxel360.com/learn/mk/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="ml" href="https://noxel360.com/learn/ml/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="mn" href="https://noxel360.com/learn/mn/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="mr" href="https://noxel360.com/learn/mr/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="ms" href="https://noxel360.com/learn/ms/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="mt" href="https://noxel360.com/learn/mt/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="my" href="https://noxel360.com/learn/my/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="ne" href="https://noxel360.com/learn/ne/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="nl" href="https://noxel360.com/learn/nl/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="no" href="https://noxel360.com/learn/no/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="ny" href="https://noxel360.com/learn/ny/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="pa" href="https://noxel360.com/learn/pa/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="pl" href="https://noxel360.com/learn/pl/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="ps" href="https://noxel360.com/learn/ps/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="pt" href="https://noxel360.com/learn/pt/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://noxel360.com/learn/pt-BR/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="ro" href="https://noxel360.com/learn/ro/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="ru" href="https://noxel360.com/learn/ru/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="sd" href="https://noxel360.com/learn/sd/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="si" href="https://noxel360.com/learn/si/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="sk" href="https://noxel360.com/learn/sk/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="sl" href="https://noxel360.com/learn/sl/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="sm" href="https://noxel360.com/learn/sm/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="sn" href="https://noxel360.com/learn/sn/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="so" href="https://noxel360.com/learn/so/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="sq" href="https://noxel360.com/learn/sq/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="sr" href="https://noxel360.com/learn/sr/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="st" href="https://noxel360.com/learn/st/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="su" href="https://noxel360.com/learn/su/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="sv" href="https://noxel360.com/learn/sv/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="sw" href="https://noxel360.com/learn/sw/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="ta" href="https://noxel360.com/learn/ta/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="te" href="https://noxel360.com/learn/te/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="tg" href="https://noxel360.com/learn/tg/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="th" href="https://noxel360.com/learn/th/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="tl" href="https://noxel360.com/learn/tl/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="tr" href="https://noxel360.com/learn/tr/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="uk" href="https://noxel360.com/learn/uk/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="ur" href="https://noxel360.com/learn/ur/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="uz" href="https://noxel360.com/learn/uz/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="vi" href="https://noxel360.com/learn/vi/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="xh" href="https://noxel360.com/learn/xh/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="yi" href="https://noxel360.com/learn/yi/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="yo" href="https://noxel360.com/learn/yo/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://noxel360.com/learn/zh/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="zh-HK" href="https://noxel360.com/learn/zh-HK/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="zh-TW" href="https://noxel360.com/learn/zh-TW/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="zu" href="https://noxel360.com/learn/zu/what-is-a-cdn.html" />
+  <link rel="alternate" hreflang="x-default" href="https://noxel360.com/learn/what-is-a-cdn.html" />
+</head>
+<body>
+  <div id="progress-bar"></div>
+  <nav>
+    <a href="/" style="display:flex;align-items:center;gap:10px">
+      <img src="/favicon-192x192.avif" alt="NOXEL360" width="42" height="42" style="border-radius:8px">
+      <span style="font-weight:800">NOXEL360</span>
+    </a>
+    <div style="display:flex;gap:28px;font-size:14px;color:var(--muted)">
+      <a href="/learn">تعلّم</a>
+      <a href="/dashboard" style="background:var(--g);color:#07090f;padding:9px 20px;border-radius:8px;font-weight:800">لوحة التحكم</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="tag">دليل أساسيات الويب</div>
+    <h1 id="top">ما هي شبكة توزيع المحتوى (CDN)؟ شرح مبسط</h1>
+    <div class="meta-row">
+      <span>🕐 5 دقائق قراءة</span>
+      <span>📊 مبتدئ</span>
+      <span>📁 أساسيات الويب</span>
+      <span>📅 نُشر في 24 يوليو 2026</span>
+      <span>🔄 آخر تحديث 24 يوليو 2026</span>
+    </div>
+
+    <div class="toc"><div class="label">محتويات الصفحة</div><ul><li><a href="#solving-distance">كيف يحل CDN مشكلة المسافة</a></li><li><a href="#analogy">تشبيه بسيط</a></li><li><a href="#what-speeds-up">ما الذي يسرّعه CDN فعليًا</a></li><li><a href="#beyond-speed">لماذا هذا مهم بعيدًا عن مجرد السرعة</a></li><li><a href="#faq">الأسئلة الشائعة</a></li></ul></div>
+
+    <div class="one-sentence"><strong>في جملة واحدة:</strong> شبكة توزيع المحتوى (CDN) هي شبكة من الخوادم المنتشرة في جميع أنحاء العالم تقوم بتوصيل محتوى الموقع من أقرب خادم للزائر، مما يجعل الصفحات تُحمّل بشكل أسرع.</div>
+
+    <p>بدون CDN، يجب على كل زائر لموقعك الويب جلب المحتوى من موقع خادم الاستضافة الواحد — كلما كان بعيدًا، زاد التأخير.</p>
+
+    <h2 id="solving-distance">كيف يحل CDN مشكلة المسافة</h2>
+<p>يحتفظ CDN بنسخ مخزنة مؤقتًا من محتوى الموقع الثابت على خوادم موزعة حول العالم. عندما يزور شخص ما، يقوم CDN بخدمته من أقرب موقع — مما يقلل وقت التحميل بشكل كبير في كثير من الأحيان.</p>
+<h2 id="analogy">تشبيه بسيط</h2>
+<p>تخيل كتابًا شهيرًا. بدلاً من شحن كل نسخة من مستودع واحد، تقوم بإنشاء مستودعات أصغر في المدن الكبرى. شخص في طوكيو يحصل على نسخته من مستودع طوكيو، وليس نسخة مشحونة من نيويورك.</p>
+<svg viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;margin:8px 0 28px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px">
+      <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3cde6a"/></marker></defs>
+      <rect x="140" y="45" width="120" height="50" rx="10" fill="#0d1017" stroke="#3cde6a" stroke-width="1.5"/><text x="200" y="75" fill="#ffffff" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">زائر</text><line x1="260" y1="70" x2="290" y2="70" stroke="#3cde6a" stroke-width="2" marker-end="url(#arrow)"/><rect x="290" y="45" width="120" height="50" rx="10" fill="#0d1017" stroke="#702aa5" stroke-width="1.5"/><text x="350" y="75" fill="#ffffff" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">أقرب عقدة CDN</text><line x1="410" y1="70" x2="440" y2="70" stroke="#3cde6a" stroke-width="2" marker-end="url(#arrow)"/><rect x="440" y="45" width="120" height="50" rx="10" fill="#0d1017" stroke="#3cde6a" stroke-width="1.5"/><text x="500" y="75" fill="#ffffff" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">محتوى مخزّن</text>
+    </svg>
+<div class="didyouknow"><div class="label">💡 هل تعلم؟</div><p style="margin-bottom:0">تشغّل بعض شبكات CDN آلاف مواقع الخوادم في أكثر من 100 دولة، مما يضع المحتوى المخزّن مؤقتًا على بعد ميلي ثانية من كل مستخدم إنترنت تقريبًا على وجه الأرض.</p></div>
+<h2 id="what-speeds-up">ما الذي يسرّعه CDN فعليًا</h2>
+<ul><li>الصور ومقاطع الفيديو وملفات الوسائط الأخرى</li><li>ملفات CSS و JavaScript</li><li>الخطوط والأصول الثابتة الأخرى</li><li>في بعض الإعدادات، صفحات كاملة مخزنة مؤقتًا</li></ul>
+<div class="sources"><div class="label">📚 المصادر الرسمية</div><ul><li><a href="https://www.cloudflare.com/learning/cdn/what-is-a-cdn/" target="_blank" rel="noopener noreferrer">Cloudflare — ما هو CDN؟</a> <span>· نظرة عامة من أحد مزودي CDN الرائدين</span></li></ul></div>
+<h2 id="beyond-speed">لماذا هذا مهم بعيدًا عن مجرد السرعة</h2>
+<p>أوقات التحميل الأسرع تؤثر مباشرة على Core Web Vitals (عامل تصنيف حقيقي في Google)، وتقلل من معدلات الارتداد، وتحسن التحويلات. يضيف CDN أيضًا مرونة إذا كان أحد مواقع الخوادم يواجه مشاكل.</p>
+<div class="action-box"><div class="label">🧩 شاهد العمل الفعلي مع NOXEL360</div><p style="margin-bottom:0">يتم توصيل منتجات NOXEL360 عالميًا من خلال بنية تحتية حديثة لـ CDN — سريعة، أينما كان الزوار.</p></div>
+
+
+    <h2 id="faq">الأسئلة الشائعة</h2>
+    <div class="faq-item"><h3>هل تحتاج المواقع الصغيرة إلى CDN؟</h3><p>العديد من منصات الاستضافة الحديثة تتضمن وظائف CDN تلقائيًا، حتى للمواقع الصغيرة، لذلك غالبًا لا يوجد قرار منفصل يجب اتخاذه.</p></div>
+<div class="faq-item"><h3>هل يستبدل CDN الحاجة إلى الاستضافة العادية؟</h3><p>لا. يعمل CDN جنبًا إلى جنب مع الاستضافة، حيث يقوم بتخزين وتسليم المحتوى الثابت بشكل أسرع — بينما لا تزال الاستضافة تتعامل مع أي شيء ديناميكي.</p></div>
+<div class="faq-item"><h3>هل يمكن لـ CDN تحسين SEO؟</h3><p>بشكل غير مباشر، نعم — أوقات التحميل الأسرع تحسن Core Web Vitals، وهو عامل تصنيف مؤكد من Google.</p></div>
+<div class="faq-item"><h3>ما المحتوى الذي لا يقوم CDN عادةً بتخزينه؟</h3><p>المحتوى الديناميكي المخصص مثل لوحة التحكم الخاصة بالمستخدم المسجل عادةً ما يزال يحتاج إلى الوصول إلى الخادم الأصلي مباشرة.</p></div>
+<div class="faq-item"><h3>هل Cloudflare عبارة عن CDN؟</h3><p>نعم، Cloudflare هو أحد مزودي CDN الأكثر استخدامًا على نطاق واسع، ويقدم أيضًا خدمات الأمان و DNS.</p></div>
+<div class="faq-item"><h3>هل استخدام CDN يكلف أكثر؟</h3><p>العديد من منصات الاستضافة الحديثة تتضمن وظائف CDN في أسعارها الأساسية؛ قد يكون لخدمات CDN المخصصة مستويات تسعير منفصلة.</p></div>
+<div class="faq-item"><h3>ما مدى السرعة التي يجعل بها CDN الموقع؟</h3><p>يختلف الأمر، لكن الزوار البعيدين عن الخادم الأصلي يمكنهم رؤية تحسينات في وقت التحميل بمقدار عدة مئات من المللي ثانية أو أكثر.</p></div>
+
+
+    <div class="takeaways">
+      <h2 style="margin-top:0">النقاط الرئيسية</h2>
+      <ul><li>يقوم CDN بتوصيل المحتوى المخزّن مؤقتًا من موقع الخادم الأقرب لكل زائر.</li><li>يسرّع بشكل أساسي الأصول الثابتة — الصور، CSS، JavaScript، الخطوط.</li><li>أوقات التحميل الأسرع من CDN تحسن Core Web Vitals و SEO بشكل غير مباشر.</li><li>يعمل CDN جنبًا إلى جنب مع الاستضافة، وليس كبديل لها.</li><li>العديد من منصات الاستضافة الحديثة تتضمن وظائف CDN تلقائيًا.</li></ul>
+    </div>
+
+    <div class="learning-path">
+      <div class="lp-box"><div class="label">⬅ قبل هذا</div><ul><li><a href="/learn/what-is-cloud-computing.html">ما هي الحوسبة السحابية؟</a></li></ul></div>
+      <div class="lp-box"><div class="label">الخطوة التالية ➜</div><ul><li><a href="/learn/what-is-bandwidth.html">ما هو النطاق الترددي؟</a></li></ul></div>
+    </div>
+
+    <div class="closing">
+      <p style="margin-bottom:8px">شاهد توزيع المحتوى السريع عالميًا في العمل.</p>
+      <a href="/dashboard" class="cta">استكشف لوحة تحكم NOXEL360 ←</a>
+    </div>
+
+    <h2>قراءات ذات صلة</h2>
+    <div class="related"><a href="/learn/what-is-cloud-computing.html">ما هي الحوسبة السحابية؟</a><a href="/learn/what-is-bandwidth.html">ما هو النطاق الترددي؟</a><a href="/learn/what-is-uptime.html">ما هو وقت التشغيل؟</a></div>
+
+    <p class="byline">كتبه فريق NOXEL360 · راجعه فريق هندسة NOXEL · <a href="https://noxel360.com/learn/web-foundations.html">→ العودة إلى أدلة أساسيات الويب</a></p>
+  </div>
+
+  <footer>
+    <a href="/">الرئيسية</a>
+    <a href="/learn">تعلّم</a>
+    <a href="/privacy">الخصوصية</a>
+    <a href="/terms">الشروط</a>
+    <a href="https://noxelseo.com" target="_blank" rel="noopener">NOXEL SEO</a>
+    <a href="https://noxelforge.com" target="_blank" rel="noopener">NOXEL Forge</a>
+    <div style="margin-top:16px">© 2026 NOXEL360. جميع الحقوق محفوظة.</div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function(){
+      var el = document.documentElement;
+      var scrolled = (el.scrollTop) / (el.scrollHeight - el.clientHeight) * 100;
+      document.getElementById('progress-bar').style.width = Math.min(scrolled,100) + '%';
+    });
+  </script>
+</body>
+</html>

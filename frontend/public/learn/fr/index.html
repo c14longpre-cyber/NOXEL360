@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOXEL360 Learn — Guides sur la technologie web, le développement et le marketing</title>
+<meta name="description" content="Guides clairs et pratiques sur la technologie web, le développement et le marketing numérique — sans jargon, sans superflu. Créé par NOXEL360.">
+<link rel="canonical" href="https://noxel360.com/learn" />
+<link rel="icon" href="/favicon.ico">
+<meta property="og:title" content="NOXEL360 Learn" />
+<meta property="og:description" content="Guides clairs et pratiques sur la technologie web, le développement et le marketing numérique." />
+<meta property="og:url" content="https://noxel360.com/learn" />
+<meta property="og:type" content="website" />
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "CollectionPage", "name": "NOXEL360 Learn", "description": "Guides clairs et pratiques sur la technologie web, le développement et le marketing numérique — sans jargon, sans superflu.", "url": "https://noxel360.com/learn" }
+</script>
+<style>
+  :root{--bg:#07090f;--surface:#0d1017;--border:rgba(255,255,255,0.07);--text:#e8eaf0;--muted:rgba(255,255,255,0.45);--g:#3cde6a}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+  a{color:var(--g);text-decoration:none}
+  nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:rgba(7,9,15,0.90);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+  .container{max-width:1080px;margin:0 auto;padding:70px 40px}
+  h1{font-size:clamp(28px,4.5vw,44px);font-weight:900;line-height:1.15;margin-bottom:16px}
+  .intro{color:rgba(255,255,255,0.65);font-size:16px;line-height:1.8;margin-bottom:44px;max-width:680px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+  .card{display:block;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px}
+  a.card:hover{border-color:var(--g)}
+  .card .icon{font-size:28px;margin-bottom:12px;display:block}
+  .card h2{font-size:18px;font-weight:800;color:#fff;margin-bottom:8px}
+  .card p{color:rgba(255,255,255,0.6);font-size:14px;line-height:1.6;margin-bottom:12px}
+  .count{font-size:12px;font-weight:800;color:var(--g)}
+  .soon{font-size:12px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px}
+  .card.disabled{opacity:0.55}
+  footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;margin-top:44px}
+  footer a{color:var(--muted);margin:0 12px}
+</style>
+  <link rel="alternate" hreflang="en" href="https://noxel360.com/learn/fr/" />
+  <link rel="alternate" hreflang="af" href="https://noxel360.com/learn/af/" />
+  <link rel="alternate" hreflang="am" href="https://noxel360.com/learn/am/" />
+  <link rel="alternate" hreflang="ar" href="https://noxel360.com/learn/ar/" />
+  <link rel="alternate" hreflang="az" href="https://noxel360.com/learn/az/" />
+  <link rel="alternate" hreflang="be" href="https://noxel360.com/learn/be/" />
+  <link rel="alternate" hreflang="bg" href="https://noxel360.com/learn/bg/" />
+  <link rel="alternate" hreflang="bn" href="https://noxel360.com/learn/bn/" />
+  <link rel="alternate" hreflang="bs" href="https://noxel360.com/learn/bs/" />
+  <link rel="alternate" hreflang="ca" href="https://noxel360.com/learn/ca/" />
+  <link rel="alternate" hreflang="ceb" href="https://noxel360.com/learn/ceb/" />
+  <link rel="alternate" hreflang="co" href="https://noxel360.com/learn/co/" />
+  <link rel="alternate" hreflang="cs" href="https://noxel360.com/learn/cs/" />
+  <link rel="alternate" hreflang="cy" href="https://noxel360.com/learn/cy/" />
+  <link rel="alternate" hreflang="da" href="https://noxel360.com/learn/da/" />
+  <link rel="alternate" hreflang="de" href="https://noxel360.com/learn/de/" />
+  <link rel="alternate" hreflang="el" href="https://noxel360.com/learn/el/" />
+  <link rel="alternate" hreflang="en-AU" href="https://noxel360.com/learn/en-AU/" />
+  <link rel="alternate" hreflang="en-CA" href="https://noxel360.com/learn/en-CA/" />
+  <link rel="alternate" hreflang="en-GB" href="https://noxel360.com/learn/en-GB/" />
+  <link rel="alternate" hreflang="eo" href="https://noxel360.com/learn/eo/" />
+  <link rel="alternate" hreflang="es" href="https://noxel360.com/learn/es/" />
+  <link rel="alternate" hreflang="es-AR" href="https://noxel360.com/learn/es-AR/" />
+  <link rel="alternate" hreflang="es-MX" href="https://noxel360.com/learn/es-MX/" />
+  <link rel="alternate" hreflang="et" href="https://noxel360.com/learn/et/" />
+  <link rel="alternate" hreflang="eu" href="https://noxel360.com/learn/eu/" />
+  <link rel="alternate" hreflang="fa" href="https://noxel360.com/learn/fa/" />
+  <link rel="alternate" hreflang="fi" href="https://noxel360.com/learn/fi/" />
+  <link rel="alternate" hreflang="fr" href="https://noxel360.com/learn/fr/" />
+  <link rel="alternate" hreflang="fr-BE" href="https://noxel360.com/learn/fr-BE/" />
+  <link rel="alternate" hreflang="fr-CA" href="https://noxel360.com/learn/fr-CA/" />
+  <link rel="alternate" hreflang="fy" href="https://noxel360.com/learn/fy/" />
+  <link rel="alternate" hreflang="ga" href="https://noxel360.com/learn/ga/" />
+  <link rel="alternate" hreflang="gd" href="https://noxel360.com/learn/gd/" />
+  <link rel="alternate" hreflang="gl" href="https://noxel360.com/learn/gl/" />
+  <link rel="alternate" hreflang="gu" href="https://noxel360.com/learn/gu/" />
+  <link rel="alternate" hreflang="ha" href="https://noxel360.com/learn/ha/" />
+  <link rel="alternate" hreflang="haw" href="https://noxel360.com/learn/haw/" />
+  <link rel="alternate" hreflang="hi" href="https://noxel360.com/learn/hi/" />
+  <link rel="alternate" hreflang="hmn" href="https://noxel360.com/learn/hmn/" />
+  <link rel="alternate" hreflang="hr" href="https://noxel360.com/learn/hr/" />
+  <link rel="alternate" hreflang="ht" href="https://noxel360.com/learn/ht/" />
+  <link rel="alternate" hreflang="hu" href="https://noxel360.com/learn/hu/" />
+  <link rel="alternate" hreflang="hy" href="https://noxel360.com/learn/hy/" />
+  <link rel="alternate" hreflang="id" href="https://noxel360.com/learn/id/" />
+  <link rel="alternate" hreflang="ig" href="https://noxel360.com/learn/ig/" />
+  <link rel="alternate" hreflang="is" href="https://noxel360.com/learn/is/" />
+  <link rel="alternate" hreflang="it" href="https://noxel360.com/learn/it/" />
+  <link rel="alternate" hreflang="he" href="https://noxel360.com/learn/iw/" />
+  <link rel="alternate" hreflang="ja" href="https://noxel360.com/learn/ja/" />
+  <link rel="alternate" hreflang="jv" href="https://noxel360.com/learn/jw/" />
+  <link rel="alternate" hreflang="ka" href="https://noxel360.com/learn/ka/" />
+  <link rel="alternate" hreflang="kk" href="https://noxel360.com/learn/kk/" />
+  <link rel="alternate" hreflang="km" href="https://noxel360.com/learn/km/" />
+  <link rel="alternate" hreflang="kn" href="https://noxel360.com/learn/kn/" />
+  <link rel="alternate" hreflang="ko" href="https://noxel360.com/learn/ko/" />
+  <link rel="alternate" hreflang="ku" href="https://noxel360.com/learn/ku/" />
+  <link rel="alternate" hreflang="ky" href="https://noxel360.com/learn/ky/" />
+  <link rel="alternate" hreflang="la" href="https://noxel360.com/learn/la/" />
+  <link rel="alternate" hreflang="lb" href="https://noxel360.com/learn/lb/" />
+  <link rel="alternate" hreflang="lo" href="https://noxel360.com/learn/lo/" />
+  <link rel="alternate" hreflang="lt" href="https://noxel360.com/learn/lt/" />
+  <link rel="alternate" hreflang="lv" href="https://noxel360.com/learn/lv/" />
+  <link rel="alternate" hreflang="mg" href="https://noxel360.com/learn/mg/" />
+  <link rel="alternate" hreflang="mi" href="https://noxel360.com/learn/mi/" />
+  <link rel="alternate" hreflang="mk" href="https://noxel360.com/learn/mk/" />
+  <link rel="alternate" hreflang="ml" href="https://noxel360.com/learn/ml/" />
+  <link rel="alternate" hreflang="mn" href="https://noxel360.com/learn/mn/" />
+  <link rel="alternate" hreflang="mr" href="https://noxel360.com/learn/mr/" />
+  <link rel="alternate" hreflang="ms" href="https://noxel360.com/learn/ms/" />
+  <link rel="alternate" hreflang="mt" href="https://noxel360.com/learn/mt/" />
+  <link rel="alternate" hreflang="my" href="https://noxel360.com/learn/my/" />
+  <link rel="alternate" hreflang="ne" href="https://noxel360.com/learn/ne/" />
+  <link rel="alternate" hreflang="nl" href="https://noxel360.com/learn/nl/" />
+  <link rel="alternate" hreflang="no" href="https://noxel360.com/learn/no/" />
+  <link rel="alternate" hreflang="ny" href="https://noxel360.com/learn/ny/" />
+  <link rel="alternate" hreflang="pa" href="https://noxel360.com/learn/pa/" />
+  <link rel="alternate" hreflang="pl" href="https://noxel360.com/learn/pl/" />
+  <link rel="alternate" hreflang="ps" href="https://noxel360.com/learn/ps/" />
+  <link rel="alternate" hreflang="pt" href="https://noxel360.com/learn/pt/" />
+  <link rel="alternate" hreflang="pt-BR" href="https://noxel360.com/learn/pt-BR/" />
+  <link rel="alternate" hreflang="ro" href="https://noxel360.com/learn/ro/" />
+  <link rel="alternate" hreflang="ru" href="https://noxel360.com/learn/ru/" />
+  <link rel="alternate" hreflang="sd" href="https://noxel360.com/learn/sd/" />
+  <link rel="alternate" hreflang="si" href="https://noxel360.com/learn/si/" />
+  <link rel="alternate" hreflang="sk" href="https://noxel360.com/learn/sk/" />
+  <link rel="alternate" hreflang="sl" href="https://noxel360.com/learn/sl/" />
+  <link rel="alternate" hreflang="sm" href="https://noxel360.com/learn/sm/" />
+  <link rel="alternate" hreflang="sn" href="https://noxel360.com/learn/sn/" />
+  <link rel="alternate" hreflang="so" href="https://noxel360.com/learn/so/" />
+  <link rel="alternate" hreflang="sq" href="https://noxel360.com/learn/sq/" />
+  <link rel="alternate" hreflang="sr" href="https://noxel360.com/learn/sr/" />
+  <link rel="alternate" hreflang="st" href="https://noxel360.com/learn/st/" />
+  <link rel="alternate" hreflang="su" href="https://noxel360.com/learn/su/" />
+  <link rel="alternate" hreflang="sv" href="https://noxel360.com/learn/sv/" />
+  <link rel="alternate" hreflang="sw" href="https://noxel360.com/learn/sw/" />
+  <link rel="alternate" hreflang="ta" href="https://noxel360.com/learn/ta/" />
+  <link rel="alternate" hreflang="te" href="https://noxel360.com/learn/te/" />
+  <link rel="alternate" hreflang="tg" href="https://noxel360.com/learn/tg/" />
+  <link rel="alternate" hreflang="th" href="https://noxel360.com/learn/th/" />
+  <link rel="alternate" hreflang="tl" href="https://noxel360.com/learn/tl/" />
+  <link rel="alternate" hreflang="tr" href="https://noxel360.com/learn/tr/" />
+  <link rel="alternate" hreflang="uk" href="https://noxel360.com/learn/uk/" />
+  <link rel="alternate" hreflang="ur" href="https://noxel360.com/learn/ur/" />
+  <link rel="alternate" hreflang="uz" href="https://noxel360.com/learn/uz/" />
+  <link rel="alternate" hreflang="vi" href="https://noxel360.com/learn/vi/" />
+  <link rel="alternate" hreflang="xh" href="https://noxel360.com/learn/xh/" />
+  <link rel="alternate" hreflang="yi" href="https://noxel360.com/learn/yi/" />
+  <link rel="alternate" hreflang="yo" href="https://noxel360.com/learn/yo/" />
+  <link rel="alternate" hreflang="zh-CN" href="https://noxel360.com/learn/zh/" />
+  <link rel="alternate" hreflang="zh-HK" href="https://noxel360.com/learn/zh-HK/" />
+  <link rel="alternate" hreflang="zh-TW" href="https://noxel360.com/learn/zh-TW/" />
+  <link rel="alternate" hreflang="zu" href="https://noxel360.com/learn/zu/" />
+  <link rel="alternate" hreflang="x-default" href="https://noxel360.com/learn/fr/" />
+</head>
+<body>
+  <nav>
+    <a href="/" style="display:flex;align-items:center;gap:10px">
+      <img src="/favicon-192x192.avif" alt="NOXEL360" width="42" height="42" style="border-radius:8px">
+      <span style="font-weight:800">NOXEL360</span>
+    </a>
+    <div style="display:flex;gap:28px;font-size:14px;color:var(--muted)">
+      <a href="/learn">Apprendre</a>
+      <a href="/dashboard" style="background:var(--g);color:#07090f;padding:9px 20px;border-radius:8px;font-weight:800">Tableau de bord</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>NOXEL360 Learn</h1>
+    <p class="intro">Guides clairs et pratiques sur la technologie, le développement et les concepts marketing derrière les sites web et produits modernes — sans jargon, sans superflu.</p>
+
+    <div class="grid">
+      <a class="card" href="/learn/development.html">
+        <span class="icon">💻</span>
+        <h2>Développement</h2>
+        <p>Front-end, back-end, API, bases de données et outils utilisés par les équipes pour créer des logiciels modernes.</p>
+        <span class="count">9 guides disponibles</span>
+      </a>
+      <a class="card" href="/learn/web-foundations.html">
+        <span class="icon">🌐</span>
+        <h2>Fondamentaux du Web</h2>
+        <p>Domaines, DNS, hébergement, HTTPS et les éléments de base sur lesquels repose chaque site web.</p>
+        <span class="count">11 guides disponibles</span>
+      </a>
+      <a class="card" href="/learn/artificial-intelligence.html">
+        <span class="icon">🤖</span>
+        <h2>Intelligence Artificielle</h2>
+        <p>IA, apprentissage automatique, agents IA et comment les entreprises les utilisent réellement.</p>
+        <span class="count">9 guides disponibles</span>
+      </a>
+      <a class="card" href="/learn/automation.html">
+        <span class="icon">⚙️</span>
+        <h2>Automatisation</h2>
+        <p>Automatisation des flux de travail, RPA, webhooks et connexion de systèmes sans travail manuel.</p>
+        <span class="count">7 guides disponibles</span>
+      </a>
+      <a class="card" href="/learn/security.html">
+        <span class="icon">🔒</span>
+        <h2>Sécurité</h2>
+        <p>Bases de la cybersécurité, MFA, cryptage et protection d'une entreprise en ligne.</p>
+        <span class="count">9 guides disponibles</span>
+      </a>
+      <a class="card" href="/learn/digital-marketing.html">
+        <span class="icon">📈</span>
+        <h2>Marketing Numérique</h2>
+        <p>SEO, GEO, stratégie de contenu et comment fonctionnent réellement les moteurs de recherche et d'IA.</p>
+        <span class="count">10 guides disponibles</span>
+      </a>
+      <a class="card" href="/learn/uxui.html">
+        <span class="icon">🎨</span>
+        <h2>UX & UI</h2>
+        <p>Principes de conception derrière les interfaces que les gens apprécient vraiment utiliser.</p>
+        <span class="count">8 guides disponibles</span>
+      </a>
+
+      <a class="card" href="/learn/ecommerce.html">
+        <span class="icon">🛒</span>
+        <h2>E-commerce</h2>
+        <p>Boutiques en ligne, passerelles de paiement, plateformes et vente en ligne.</p>
+        <span class="count">8 guides disponibles</span>
+      </a>
+      <a class="card" href="/learn/data-analytics.html">
+        <span class="icon">📊</span>
+        <h2>Données & Analytics</h2>
+        <p>Analytics, Search Console, KPI et donner du sens aux données commerciales.</p>
+        <span class="count">8 guides disponibles</span>
+      </a>
+      <a class="card" href="/learn/infrastructure.html">
+        <span class="icon">☁️</span>
+        <h2>Infrastructure</h2>
+        <p>Serveurs, conteneurs et systèmes qui maintiennent les logiciels en fonctionnement.</p>
+        <span class="count">8 guides disponibles</span>
+      </a>
+      <a class="card" href="/learn/performance.html">
+        <span class="icon">🚀</span>
+        <h2>Performance</h2>
+        <p>Vitesse du site, Core Web Vitals et pourquoi la performance compte.</p>
+        <span class="count">8 guides disponibles</span>
+      </a>
+      <a class="card" href="/learn/digital-transformation.html">
+        <span class="icon">🏢</span>
+        <h2>Transformation Numérique</h2>
+        <p>ERP, CRM, CMS et modernisation du fonctionnement d'une entreprise.</p>
+        <span class="count">8 guides disponibles</span>
+      </a>
+      <a class="card" href="/learn/business-questions.html">
+        <span class="icon">❓</span>
+        <h2>Questions Business</h2>
+        <p>Réponses directes aux questions que se posent réellement les chefs d'entreprise.</p>
+        <span class="count">8 guides disponibles</span>
+      </a>
+      <a class="card" href="/learn/comparisons.html">
+        <span class="icon">⚖️</span>
+        <h2>Comparaisons</h2>
+        <p>Analyses comparatives — REST vs GraphQL, SQL vs NoSQL, et plus encore.</p>
+        <span class="count">8 guides disponibles</span>
+      </a>
+      <a class="card" href="/learn/noxel360-ecosystem.html">
+        <span class="icon">🧩</span>
+        <h2>Écosystème NOXEL360</h2>
+        <p>Ce que font réellement NOXEL SEO, NOXEL Forge et Nexus, et comment ils se connectent.</p>
+        <span class="count">8 guides disponibles</span>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <a href="/">Accueil</a>
+    <a href="/learn">Apprendre</a>
+    <a href="/privacy">Confidentialité</a>
+    <a href="/terms">Conditions</a>
+    <a href="https://noxelseo.com" target="_blank" rel="noopener">NOXEL SEO</a>
+    <a href="https://noxelforge.com" target="_blank" rel="noopener">NOXEL Forge</a>
+    <div style="margin-top:16px">© 2026 NOXEL360. Tous droits réservés.</div>
+  </footer>
+</body>
+</html>

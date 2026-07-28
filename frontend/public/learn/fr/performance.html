@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guides de Performance — NOXEL360 Learn</title>
+<meta name="description" content="Guides clairs et pratiques sur la vitesse du site, les Core Web Vitals et l'importance de la performance.">
+<link rel="canonical" href="https://noxel360.com/learn/performance.html" />
+<link rel="icon" href="/favicon.ico">
+<meta property="og:title" content="Guides de Performance — NOXEL360 Learn" />
+<meta property="og:description" content="Guides clairs et pratiques sur la vitesse du site, les Core Web Vitals et l'importance de la performance." />
+<meta property="og:url" content="https://noxel360.com/learn/performance.html" />
+<meta property="og:type" content="website" />
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+  { "@type": "ListItem", "position": 1, "name": "Apprendre", "item": "https://noxel360.com/learn" },
+  { "@type": "ListItem", "position": 2, "name": "Performance", "item": "https://noxel360.com/learn/performance.html" }
+] }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "CollectionPage", "name": "Guides de Performance", "description": "Guides clairs et pratiques sur la vitesse du site, les Core Web Vitals et l'importance de la performance.", "url": "https://noxel360.com/learn/performance.html" }
+</script>
+<style>
+  :root{--bg:#07090f;--surface:#0d1017;--border:rgba(255,255,255,0.07);--text:#e8eaf0;--muted:rgba(255,255,255,0.45);--g:#3cde6a}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+  a{color:var(--g);text-decoration:none}
+  nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:rgba(7,9,15,0.90);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+  .container{max-width:920px;margin:0 auto;padding:70px 40px}
+  h1{font-size:clamp(28px,4.5vw,44px);font-weight:900;line-height:1.15;margin-bottom:16px}
+  .intro{color:rgba(255,255,255,0.65);font-size:16px;line-height:1.8;margin-bottom:40px;max-width:640px}
+  .tag{font-size:11px;font-weight:800;letter-spacing:1.5px;color:var(--g);text-transform:uppercase;margin-bottom:12px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .card{display:block;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px}
+  .card:hover{border-color:var(--g)}
+  .card h2{font-size:17px;font-weight:800;color:#fff;margin-bottom:8px}
+  .card p{color:rgba(255,255,255,0.6);font-size:14px;line-height:1.6;margin:0}
+  footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;margin-top:40px}
+  footer a{color:var(--muted);margin:0 12px}
+</style>
+  <link rel="alternate" hreflang="en" href="https://noxel360.com/learn/performance.html" />
+  <link rel="alternate" hreflang="af" href="https://noxel360.com/learn/af/performance.html" />
+  <link rel="alternate" hreflang="am" href="https://noxel360.com/learn/am/performance.html" />
+  <link rel="alternate" hreflang="ar" href="https://noxel360.com/learn/ar/performance.html" />
+  <link rel="alternate" hreflang="az" href="https://noxel360.com/learn/az/performance.html" />
+  <link rel="alternate" hreflang="be" href="https://noxel360.com/learn/be/performance.html" />
+  <link rel="alternate" hreflang="bg" href="https://noxel360.com/learn/bg/performance.html" />
+  <link rel="alternate" hreflang="bn" href="https://noxel360.com/learn/bn/performance.html" />
+  <link rel="alternate" hreflang="bs" href="https://noxel360.com/learn/bs/performance.html" />
+  <link rel="alternate" hreflang="ca" href="https://noxel360.com/learn/ca/performance.html" />
+  <link rel="alternate" hreflang="ceb" href="https://noxel360.com/learn/ceb/performance.html" />
+  <link rel="alternate" hreflang="co" href="https://noxel360.com/learn/co/performance.html" />
+  <link rel="alternate" hreflang="cs" href="https://noxel360.com/learn/cs/performance.html" />
+  <link rel="alternate" hreflang="cy" href="https://noxel360.com/learn/cy/performance.html" />
+  <link rel="alternate" hreflang="da" href="https://noxel360.com/learn/da/performance.html" />
+  <link rel="alternate" hreflang="de" href="https://noxel360.com/learn/de/performance.html" />
+  <link rel="alternate" hreflang="el" href="https://noxel360.com/learn/el/performance.html" />
+  <link rel="alternate" hreflang="en-AU" href="https://noxel360.com/learn/en-AU/performance.html" />
+  <link rel="alternate" hreflang="en-CA" href="https://noxel360.com/learn/en-CA/performance.html" />
+  <link rel="alternate" hreflang="en-GB" href="https://noxel360.com/learn/en-GB/performance.html" />
+  <link rel="alternate" hreflang="eo" href="https://noxel360.com/learn/eo/performance.html" />
+  <link rel="alternate" hreflang="es" href="https://noxel360.com/learn/es/performance.html" />
+  <link rel="alternate" hreflang="es-AR" href="https://noxel360.com/learn/es-AR/performance.html" />
+  <link rel="alternate" hreflang="es-MX" href="https://noxel360.com/learn/es-MX/performance.html" />
+  <link rel="alternate" hreflang="et" href="https://noxel360.com/learn/et/performance.html" />
+  <link rel="alternate" hreflang="eu" href="https://noxel360.com/learn/eu/performance.html" />
+  <link rel="alternate" hreflang="fa" href="https://noxel360.com/learn/fa/performance.html" />
+  <link rel="alternate" hreflang="fi" href="https://noxel360.com/learn/fi/performance.html" />
+  <link rel="alternate" hreflang="fr" href="https://noxel360.com/learn/fr/performance.html" />
+  <link rel="alternate" hreflang="fr-BE" href="https://noxel360.com/learn/fr-BE/performance.html" />
+  <link rel="alternate" hreflang="fr-CA" href="https://noxel360.com/learn/fr-CA/performance.html" />
+  <link rel="alternate" hreflang="fy" href="https://noxel360.com/learn/fy/performance.html" />
+  <link rel="alternate" hreflang="ga" href="https://noxel360.com/learn/ga/performance.html" />
+  <link rel="alternate" hreflang="gd" href="https://noxel360.com/learn/gd/performance.html" />
+  <link rel="alternate" hreflang="gl" href="https://noxel360.com/learn/gl/performance.html" />
+  <link rel="alternate" hreflang="gu" href="https://noxel360.com/learn/gu/performance.html" />
+  <link rel="alternate" hreflang="ha" href="https://noxel360.com/learn/ha/performance.html" />
+  <link rel="alternate" hreflang="haw" href="https://noxel360.com/learn/haw/performance.html" />
+  <link rel="alternate" hreflang="hi" href="https://noxel360.com/learn/hi/performance.html" />
+  <link rel="alternate" hreflang="hmn" href="https://noxel360.com/learn/hmn/performance.html" />
+  <link rel="alternate" hreflang="hr" href="https://noxel360.com/learn/hr/performance.html" />
+  <link rel="alternate" hreflang="ht" href="https://noxel360.com/learn/ht/performance.html" />
+  <link rel="alternate" hreflang="hu" href="https://noxel360.com/learn/hu/performance.html" />
+  <link rel="alternate" hreflang="hy" href="https://noxel360.com/learn/hy/performance.html" />
+  <link rel="alternate" hreflang="id" href="https://noxel360.com/learn/id/performance.html" />
+  <link rel="alternate" hreflang="ig" href="https://noxel360.com/learn/ig/performance.html" />
+  <link rel="alternate" hreflang="is" href="https://noxel360.com/learn/is/performance.html" />
+  <link rel="alternate" hreflang="it" href="https://noxel360.com/learn/it/performance.html" />
+  <link rel="alternate" hreflang="he" href="https://noxel360.com/learn/iw/performance.html" />
+  <link rel="alternate" hreflang="ja" href="https://noxel360.com/learn/ja/performance.html" />
+  <link rel="alternate" hreflang="jv" href="https://noxel360.com/learn/jw/performance.html" />
+  <link rel="alternate" hreflang="ka" href="https://noxel360.com/learn/ka/performance.html" />
+  <link rel="alternate" hreflang="kk" href="https://noxel360.com/learn/kk/performance.html" />
+  <link rel="alternate" hreflang="km" href="https://noxel360.com/learn/km/performance.html" />
+  <link rel="alternate" hreflang="kn" href="https://noxel360.com/learn/kn/performance.html" />
+  <link rel="alternate" hreflang="ko" href="https://noxel360.com/learn/ko/performance.html" />
+  <link rel="alternate" hreflang="ku" href="https://noxel360.com/learn/ku/performance.html" />
+  <link rel="alternate" hreflang="ky" href="https://noxel360.com/learn/ky/performance.html" />
+  <link rel="alternate" hreflang="la" href="https://noxel360.com/learn/la/performance.html" />
+  <link rel="alternate" hreflang="lb" href="https://noxel360.com/learn/lb/performance.html" />
+  <link rel="alternate" hreflang="lo" href="https://noxel360.com/learn/lo/performance.html" />
+  <link rel="alternate" hreflang="lt" href="https://noxel360.com/learn/lt/performance.html" />
+  <link rel="alternate" hreflang="lv" href="https://noxel360.com/learn/lv/performance.html" />
+  <link rel="alternate" hreflang="mg" href="https://noxel360.com/learn/mg/performance.html" />
+  <link rel="alternate" hreflang="mi" href="https://noxel360.com/learn/mi/performance.html" />
+  <link rel="alternate" hreflang="mk" href="https://noxel360.com/learn/mk/performance.html" />
+  <link rel="alternate" hreflang="ml" href="https://noxel360.com/learn/ml/performance.html" />
+  <link rel="alternate" hreflang="mn" href="https://noxel360.com/learn/mn/performance.html" />
+  <link rel="alternate" hreflang="mr" href="https://noxel360.com/learn/mr/performance.html" />
+  <link rel="alternate" hreflang="ms" href="https://noxel360.com/learn/ms/performance.html" />
+  <link rel="alternate" hreflang="mt" href="https://noxel360.com/learn/mt/performance.html" />
+  <link rel="alternate" hreflang="my" href="https://noxel360.com/learn/my/performance.html" />
+  <link rel="alternate" hreflang="ne" href="https://noxel360.com/learn/ne/performance.html" />
+  <link rel="alternate" hreflang="nl" href="https://noxel360.com/learn/nl/performance.html" />
+  <link rel="alternate" hreflang="no" href="https://noxel360.com/learn/no/performance.html" />
+  <link rel="alternate" hreflang="ny" href="https://noxel360.com/learn/ny/performance.html" />
+  <link rel="alternate" hreflang="pa" href="https://noxel360.com/learn/pa/performance.html" />
+  <link rel="alternate" hreflang="pl" href="https://noxel360.com/learn/pl/performance.html" />
+  <link rel="alternate" hreflang="ps" href="https://noxel360.com/learn/ps/performance.html" />
+  <link rel="alternate" hreflang="pt" href="https://noxel360.com/learn/pt/performance.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://noxel360.com/learn/pt-BR/performance.html" />
+  <link rel="alternate" hreflang="ro" href="https://noxel360.com/learn/ro/performance.html" />
+  <link rel="alternate" hreflang="ru" href="https://noxel360.com/learn/ru/performance.html" />
+  <link rel="alternate" hreflang="sd" href="https://noxel360.com/learn/sd/performance.html" />
+  <link rel="alternate" hreflang="si" href="https://noxel360.com/learn/si/performance.html" />
+  <link rel="alternate" hreflang="sk" href="https://noxel360.com/learn/sk/performance.html" />
+  <link rel="alternate" hreflang="sl" href="https://noxel360.com/learn/sl/performance.html" />
+  <link rel="alternate" hreflang="sm" href="https://noxel360.com/learn/sm/performance.html" />
+  <link rel="alternate" hreflang="sn" href="https://noxel360.com/learn/sn/performance.html" />
+  <link rel="alternate" hreflang="so" href="https://noxel360.com/learn/so/performance.html" />
+  <link rel="alternate" hreflang="sq" href="https://noxel360.com/learn/sq/performance.html" />
+  <link rel="alternate" hreflang="sr" href="https://noxel360.com/learn/sr/performance.html" />
+  <link rel="alternate" hreflang="st" href="https://noxel360.com/learn/st/performance.html" />
+  <link rel="alternate" hreflang="su" href="https://noxel360.com/learn/su/performance.html" />
+  <link rel="alternate" hreflang="sv" href="https://noxel360.com/learn/sv/performance.html" />
+  <link rel="alternate" hreflang="sw" href="https://noxel360.com/learn/sw/performance.html" />
+  <link rel="alternate" hreflang="ta" href="https://noxel360.com/learn/ta/performance.html" />
+  <link rel="alternate" hreflang="te" href="https://noxel360.com/learn/te/performance.html" />
+  <link rel="alternate" hreflang="tg" href="https://noxel360.com/learn/tg/performance.html" />
+  <link rel="alternate" hreflang="th" href="https://noxel360.com/learn/th/performance.html" />
+  <link rel="alternate" hreflang="tl" href="https://noxel360.com/learn/tl/performance.html" />
+  <link rel="alternate" hreflang="tr" href="https://noxel360.com/learn/tr/performance.html" />
+  <link rel="alternate" hreflang="uk" href="https://noxel360.com/learn/uk/performance.html" />
+  <link rel="alternate" hreflang="ur" href="https://noxel360.com/learn/ur/performance.html" />
+  <link rel="alternate" hreflang="uz" href="https://noxel360.com/learn/uz/performance.html" />
+  <link rel="alternate" hreflang="vi" href="https://noxel360.com/learn/vi/performance.html" />
+  <link rel="alternate" hreflang="xh" href="https://noxel360.com/learn/xh/performance.html" />
+  <link rel="alternate" hreflang="yi" href="https://noxel360.com/learn/yi/performance.html" />
+  <link rel="alternate" hreflang="yo" href="https://noxel360.com/learn/yo/performance.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://noxel360.com/learn/zh/performance.html" />
+  <link rel="alternate" hreflang="zh-HK" href="https://noxel360.com/learn/zh-HK/performance.html" />
+  <link rel="alternate" hreflang="zh-TW" href="https://noxel360.com/learn/zh-TW/performance.html" />
+  <link rel="alternate" hreflang="zu" href="https://noxel360.com/learn/zu/performance.html" />
+  <link rel="alternate" hreflang="x-default" href="https://noxel360.com/learn/performance.html" />
+</head>
+<body>
+  <nav>
+    <a href="/" style="display:flex;align-items:center;gap:10px">
+      <img src="/favicon-192x192.avif" alt="NOXEL360" width="42" height="42" style="border-radius:8px">
+      <span style="font-weight:800">NOXEL360</span>
+    </a>
+    <div style="display:flex;gap:28px;font-size:14px;color:var(--muted)">
+      <a href="/learn">Apprendre</a>
+      <a href="/dashboard" style="background:var(--g);color:#07090f;padding:9px 20px;border-radius:8px;font-weight:800">Tableau de bord</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="tag">Performance</div>
+    <h1>Guides de Performance</h1>
+    <p class="intro">Vitesse du site, Core Web Vitals et pourquoi la performance est importante — les fondamentaux d'un site web qui se charge rapidement et convertit bien.</p>
+
+    <div class="grid">
+      <a class="card" href="/learn/what-is-page-speed.html"><h2>Qu'est-ce que la vitesse de page ?</h2><p>Ce qui est réellement mesuré, et pourquoi les délais nuisent à votre activité.</p></a>
+      <a class="card" href="/learn/what-are-core-web-vitals.html"><h2>Que sont les Core Web Vitals ?</h2><p>Les trois métriques que Google utilise pour mesurer l'expérience utilisateur réelle.</p></a>
+      <a class="card" href="/learn/what-is-image-optimization.html"><h2>Qu'est-ce que l'optimisation d'image ?</h2><p>Comment réduire la taille des fichiers accélère considérablement un site web.</p></a>
+      <a class="card" href="/learn/what-is-browser-caching.html"><h2>Qu'est-ce que la mise en cache du navigateur ?</h2><p>Comment le stockage local des fichiers accélère les visites répétées.</p></a>
+      <a class="card" href="/learn/what-is-lazy-loading.html"><h2>Qu'est-ce que le chargement différé ?</h2><p>Comment différer le contenu jusqu'à ce qu'il soit nécessaire accélère le chargement initial.</p></a>
+      <a class="card" href="/learn/what-is-minification.html"><h2>Qu'est-ce que la minification ?</h2><p>Comment supprimer les caractères de code inutiles réduit la taille des fichiers.</p></a>
+      <a class="card" href="/learn/what-is-time-to-first-byte.html"><h2>Qu'est-ce que le Time to First Byte ?</h2><p>Ce que mesure le TTFB, et pourquoi c'est un signal de vitesse précoce.</p></a>
+      <a class="card" href="/learn/why-website-performance-matters-explained.html"><h2>Pourquoi la performance est importante</h2><p>Le lien réel et mesurable entre la vitesse et les résultats.</p></a>
+    </div>
+  </div>
+
+  <footer>
+    <a href="/">Accueil</a>
+    <a href="/learn">Apprendre</a>
+    <a href="/privacy">Confidentialité</a>
+    <a href="/terms">Conditions</a>
+    <a href="https://noxelseo.com" target="_blank" rel="noopener">NOXEL SEO</a>
+    <a href="https://noxelforge.com" target="_blank" rel="noopener">NOXEL Forge</a>
+    <div style="margin-top:16px">© 2026 NOXEL360. Tous droits réservés.</div>
+  </footer>
+</body>
+</html>

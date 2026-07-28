@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أدلة أساسيات الويب — NOXEL360 تعلّم</title>
+<meta name="description" content="أدلة بلغة بسيطة عن النطاقات، DNS، الاستضافة، HTTPS، والعناصر الأساسية التي يعمل عليها كل موقع ويب.">
+<link rel="canonical" href="https://noxel360.com/learn/web-foundations.html" />
+<link rel="icon" href="/favicon.ico">
+<meta property="og:title" content="أدلة أساسيات الويب — NOXEL360 تعلّم" />
+<meta property="og:description" content="أدلة بلغة بسيطة عن النطاقات، DNS، الاستضافة، HTTPS، والعناصر الأساسية التي يعمل عليها كل موقع ويب." />
+<meta property="og:url" content="https://noxel360.com/learn/web-foundations.html" />
+<meta property="og:type" content="website" />
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "CollectionPage", "name": "أدلة أساسيات الويب", "description": "أدلة بلغة بسيطة عن النطاقات، DNS، الاستضافة، HTTPS، والعناصر الأساسية التي يعمل عليها كل موقع ويب.", "url": "https://noxel360.com/learn/web-foundations.html", "publisher": { "@type": "Organization", "name": "NOXEL360", "url": "https://noxel360.com" } }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+  { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://noxel360.com/" },
+  { "@type": "ListItem", "position": 2, "name": "تعلّم", "item": "https://noxel360.com/learn" },
+  { "@type": "ListItem", "position": 3, "name": "أساسيات الويب", "item": "https://noxel360.com/learn/web-foundations.html" }
+] }
+</script>
+<style>
+  :root{--bg:#07090f;--surface:#0d1017;--border:rgba(255,255,255,0.07);--text:#e8eaf0;--muted:rgba(255,255,255,0.45);--g:#3cde6a}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+  a{color:var(--g);text-decoration:none}
+  nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:rgba(7,9,15,0.90);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+  .container{max-width:820px;margin:0 auto;padding:70px 40px}
+  .breadcrumb{font-size:13px;color:var(--muted);margin-bottom:20px}
+  .breadcrumb a{color:var(--muted)}
+  h1{font-size:clamp(28px,4.5vw,44px);font-weight:900;line-height:1.15;margin-bottom:16px}
+  .lead{color:rgba(255,255,255,0.65);font-size:16px;line-height:1.7;margin-bottom:40px;max-width:600px}
+  .article-list{display:flex;flex-direction:column;gap:14px}
+  .article-card{display:block;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 24px;transition:border-color .15s}
+  .article-card:hover{border-color:var(--g)}
+  .article-card h2{font-size:17px;font-weight:800;color:#fff;margin-bottom:6px}
+  .article-card p{color:rgba(255,255,255,0.55);font-size:14px;margin:0}
+  footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;margin-top:40px}
+  footer a{color:var(--muted);margin:0 12px}
+</style>  <link rel="alternate" hreflang="en" href="https://noxel360.com/learn/web-foundations.html" />
+  <link rel="alternate" hreflang="af" href="https://noxel360.com/learn/af/web-foundations.html" />
+  <link rel="alternate" hreflang="am" href="https://noxel360.com/learn/am/web-foundations.html" />
+  <link rel="alternate" hreflang="ar" href="https://noxel360.com/learn/ar/web-foundations.html" />
+  <link rel="alternate" hreflang="az" href="https://noxel360.com/learn/az/web-foundations.html" />
+  <link rel="alternate" hreflang="be" href="https://noxel360.com/learn/be/web-foundations.html" />
+  <link rel="alternate" hreflang="bg" href="https://noxel360.com/learn/bg/web-foundations.html" />
+  <link rel="alternate" hreflang="bn" href="https://noxel360.com/learn/bn/web-foundations.html" />
+  <link rel="alternate" hreflang="bs" href="https://noxel360.com/learn/bs/web-foundations.html" />
+  <link rel="alternate" hreflang="ca" href="https://noxel360.com/learn/ca/web-foundations.html" />
+  <link rel="alternate" hreflang="ceb" href="https://noxel360.com/learn/ceb/web-foundations.html" />
+  <link rel="alternate" hreflang="co" href="https://noxel360.com/learn/co/web-foundations.html" />
+  <link rel="alternate" hreflang="cs" href="https://noxel360.com/learn/cs/web-foundations.html" />
+  <link rel="alternate" hreflang="cy" href="https://noxel360.com/learn/cy/web-foundations.html" />
+  <link rel="alternate" hreflang="da" href="https://noxel360.com/learn/da/web-foundations.html" />
+  <link rel="alternate" hreflang="de" href="https://noxel360.com/learn/de/web-foundations.html" />
+  <link rel="alternate" hreflang="el" href="https://noxel360.com/learn/el/web-foundations.html" />
+  <link rel="alternate" hreflang="en-AU" href="https://noxel360.com/learn/en-AU/web-foundations.html" />
+  <link rel="alternate" hreflang="en-CA" href="https://noxel360.com/learn/en-CA/web-foundations.html" />
+  <link rel="alternate" hreflang="en-GB" href="https://noxel360.com/learn/en-GB/web-foundations.html" />
+  <link rel="alternate" hreflang="eo" href="https://noxel360.com/learn/eo/web-foundations.html" />
+  <link rel="alternate" hreflang="es" href="https://noxel360.com/learn/es/web-foundations.html" />
+  <link rel="alternate" hreflang="es-AR" href="https://noxel360.com/learn/es-AR/web-foundations.html" />
+  <link rel="alternate" hreflang="es-MX" href="https://noxel360.com/learn/es-MX/web-foundations.html" />
+  <link rel="alternate" hreflang="et" href="https://noxel360.com/learn/et/web-foundations.html" />
+  <link rel="alternate" hreflang="eu" href="https://noxel360.com/learn/eu/web-foundations.html" />
+  <link rel="alternate" hreflang="fa" href="https://noxel360.com/learn/fa/web-foundations.html" />
+  <link rel="alternate" hreflang="fi" href="https://noxel360.com/learn/fi/web-foundations.html" />
+  <link rel="alternate" hreflang="fr" href="https://noxel360.com/learn/fr/web-foundations.html" />
+  <link rel="alternate" hreflang="fr-BE" href="https://noxel360.com/learn/fr-BE/web-foundations.html" />
+  <link rel="alternate" hreflang="fr-CA" href="https://noxel360.com/learn/fr-CA/web-foundations.html" />
+  <link rel="alternate" hreflang="fy" href="https://noxel360.com/learn/fy/web-foundations.html" />
+  <link rel="alternate" hreflang="ga" href="https://noxel360.com/learn/ga/web-foundations.html" />
+  <link rel="alternate" hreflang="gd" href="https://noxel360.com/learn/gd/web-foundations.html" />
+  <link rel="alternate" hreflang="gl" href="https://noxel360.com/learn/gl/web-foundations.html" />
+  <link rel="alternate" hreflang="gu" href="https://noxel360.com/learn/gu/web-foundations.html" />
+  <link rel="alternate" hreflang="ha" href="https://noxel360.com/learn/ha/web-foundations.html" />
+  <link rel="alternate" hreflang="haw" href="https://noxel360.com/learn/haw/web-foundations.html" />
+  <link rel="alternate" hreflang="hi" href="https://noxel360.com/learn/hi/web-foundations.html" />
+  <link rel="alternate" hreflang="hmn" href="https://noxel360.com/learn/hmn/web-foundations.html" />
+  <link rel="alternate" hreflang="hr" href="https://noxel360.com/learn/hr/web-foundations.html" />
+  <link rel="alternate" hreflang="ht" href="https://noxel360.com/learn/ht/web-foundations.html" />
+  <link rel="alternate" hreflang="hu" href="https://noxel360.com/learn/hu/web-foundations.html" />
+  <link rel="alternate" hreflang="hy" href="https://noxel360.com/learn/hy/web-foundations.html" />
+  <link rel="alternate" hreflang="id" href="https://noxel360.com/learn/id/web-foundations.html" />
+  <link rel="alternate" hreflang="ig" href="https://noxel360.com/learn/ig/web-foundations.html" />
+  <link rel="alternate" hreflang="is" href="https://noxel360.com/learn/is/web-foundations.html" />
+  <link rel="alternate" hreflang="it" href="https://noxel360.com/learn/it/web-foundations.html" />
+  <link rel="alternate" hreflang="he" href="https://noxel360.com/learn/iw/web-foundations.html" />
+  <link rel="alternate" hreflang="ja" href="https://noxel360.com/learn/ja/web-foundations.html" />
+  <link rel="alternate" hreflang="jv" href="https://noxel360.com/learn/jw/web-foundations.html" />
+  <link rel="alternate" hreflang="ka" href="https://noxel360.com/learn/ka/web-foundations.html" />
+  <link rel="alternate" hreflang="kk" href="https://noxel360.com/learn/kk/web-foundations.html" />
+  <link rel="alternate" hreflang="km" href="https://noxel360.com/learn/km/web-foundations.html" />
+  <link rel="alternate" hreflang="kn" href="https://noxel360.com/learn/kn/web-foundations.html" />
+  <link rel="alternate" hreflang="ko" href="https://noxel360.com/learn/ko/web-foundations.html" />
+  <link rel="alternate" hreflang="ku" href="https://noxel360.com/learn/ku/web-foundations.html" />
+  <link rel="alternate" hreflang="ky" href="https://noxel360.com/learn/ky/web-foundations.html" />
+  <link rel="alternate" hreflang="la" href="https://noxel360.com/learn/la/web-foundations.html" />
+  <link rel="alternate" hreflang="lb" href="https://noxel360.com/learn/lb/web-foundations.html" />
+  <link rel="alternate" hreflang="lo" href="https://noxel360.com/learn/lo/web-foundations.html" />
+  <link rel="alternate" hreflang="lt" href="https://noxel360.com/learn/lt/web-foundations.html" />
+  <link rel="alternate" hreflang="lv" href="https://noxel360.com/learn/lv/web-foundations.html" />
+  <link rel="alternate" hreflang="mg" href="https://noxel360.com/learn/mg/web-foundations.html" />
+  <link rel="alternate" hreflang="mi" href="https://noxel360.com/learn/mi/web-foundations.html" />
+  <link rel="alternate" hreflang="mk" href="https://noxel360.com/learn/mk/web-foundations.html" />
+  <link rel="alternate" hreflang="ml" href="https://noxel360.com/learn/ml/web-foundations.html" />
+  <link rel="alternate" hreflang="mn" href="https://noxel360.com/learn/mn/web-foundations.html" />
+  <link rel="alternate" hreflang="mr" href="https://noxel360.com/learn/mr/web-foundations.html" />
+  <link rel="alternate" hreflang="ms" href="https://noxel360.com/learn/ms/web-foundations.html" />
+  <link rel="alternate" hreflang="mt" href="https://noxel360.com/learn/mt/web-foundations.html" />
+  <link rel="alternate" hreflang="my" href="https://noxel360.com/learn/my/web-foundations.html" />
+  <link rel="alternate" hreflang="ne" href="https://noxel360.com/learn/ne/web-foundations.html" />
+  <link rel="alternate" hreflang="nl" href="https://noxel360.com/learn/nl/web-foundations.html" />
+  <link rel="alternate" hreflang="no" href="https://noxel360.com/learn/no/web-foundations.html" />
+  <link rel="alternate" hreflang="ny" href="https://noxel360.com/learn/ny/web-foundations.html" />
+  <link rel="alternate" hreflang="pa" href="https://noxel360.com/learn/pa/web-foundations.html" />
+  <link rel="alternate" hreflang="pl" href="https://noxel360.com/learn/pl/web-foundations.html" />
+  <link rel="alternate" hreflang="ps" href="https://noxel360.com/learn/ps/web-foundations.html" />
+  <link rel="alternate" hreflang="pt" href="https://noxel360.com/learn/pt/web-foundations.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://noxel360.com/learn/pt-BR/web-foundations.html" />
+  <link rel="alternate" hreflang="ro" href="https://noxel360.com/learn/ro/web-foundations.html" />
+  <link rel="alternate" hreflang="ru" href="https://noxel360.com/learn/ru/web-foundations.html" />
+  <link rel="alternate" hreflang="sd" href="https://noxel360.com/learn/sd/web-foundations.html" />
+  <link rel="alternate" hreflang="si" href="https://noxel360.com/learn/si/web-foundations.html" />
+  <link rel="alternate" hreflang="sk" href="https://noxel360.com/learn/sk/web-foundations.html" />
+  <link rel="alternate" hreflang="sl" href="https://noxel360.com/learn/sl/web-foundations.html" />
+  <link rel="alternate" hreflang="sm" href="https://noxel360.com/learn/sm/web-foundations.html" />
+  <link rel="alternate" hreflang="sn" href="https://noxel360.com/learn/sn/web-foundations.html" />
+  <link rel="alternate" hreflang="so" href="https://noxel360.com/learn/so/web-foundations.html" />
+  <link rel="alternate" hreflang="sq" href="https://noxel360.com/learn/sq/web-foundations.html" />
+  <link rel="alternate" hreflang="sr" href="https://noxel360.com/learn/sr/web-foundations.html" />
+  <link rel="alternate" hreflang="st" href="https://noxel360.com/learn/st/web-foundations.html" />
+  <link rel="alternate" hreflang="su" href="https://noxel360.com/learn/su/web-foundations.html" />
+  <link rel="alternate" hreflang="sv" href="https://noxel360.com/learn/sv/web-foundations.html" />
+  <link rel="alternate" hreflang="sw" href="https://noxel360.com/learn/sw/web-foundations.html" />
+  <link rel="alternate" hreflang="ta" href="https://noxel360.com/learn/ta/web-foundations.html" />
+  <link rel="alternate" hreflang="te" href="https://noxel360.com/learn/te/web-foundations.html" />
+  <link rel="alternate" hreflang="tg" href="https://noxel360.com/learn/tg/web-foundations.html" />
+  <link rel="alternate" hreflang="th" href="https://noxel360.com/learn/th/web-foundations.html" />
+  <link rel="alternate" hreflang="tl" href="https://noxel360.com/learn/tl/web-foundations.html" />
+  <link rel="alternate" hreflang="tr" href="https://noxel360.com/learn/tr/web-foundations.html" />
+  <link rel="alternate" hreflang="uk" href="https://noxel360.com/learn/uk/web-foundations.html" />
+  <link rel="alternate" hreflang="ur" href="https://noxel360.com/learn/ur/web-foundations.html" />
+  <link rel="alternate" hreflang="uz" href="https://noxel360.com/learn/uz/web-foundations.html" />
+  <link rel="alternate" hreflang="vi" href="https://noxel360.com/learn/vi/web-foundations.html" />
+  <link rel="alternate" hreflang="xh" href="https://noxel360.com/learn/xh/web-foundations.html" />
+  <link rel="alternate" hreflang="yi" href="https://noxel360.com/learn/yi/web-foundations.html" />
+  <link rel="alternate" hreflang="yo" href="https://noxel360.com/learn/yo/web-foundations.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://noxel360.com/learn/zh/web-foundations.html" />
+  <link rel="alternate" hreflang="zh-HK" href="https://noxel360.com/learn/zh-HK/web-foundations.html" />
+  <link rel="alternate" hreflang="zh-TW" href="https://noxel360.com/learn/zh-TW/web-foundations.html" />
+  <link rel="alternate" hreflang="zu" href="https://noxel360.com/learn/zu/web-foundations.html" />
+  <link rel="alternate" hreflang="x-default" href="https://noxel360.com/learn/web-foundations.html" />
+</head>
+<body>
+  <nav>
+    <a href="/" style="display:flex;align-items:center;gap:10px">
+      <img src="/favicon-192x192.avif" alt="NOXEL360" width="150" height="150" style="border-radius:8px">
+      <span style="font-weight:800">NOXEL360</span>
+    </a>
+    <div style="display:flex;gap:28px;font-size:14px;color:var(--muted)">
+      <a href="/learn" style="color:var(--g)">تعلّم</a>
+      <a href="/dashboard" style="background:var(--g);color:#07090f;padding:9px 20px;border-radius:8px;font-weight:800">لوحة التحكم</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="breadcrumb"><a href="/learn">تعلّم</a> / أساسيات الويب</div>
+    <h1>أدلة أساسيات الويب</h1>
+    <p class="lead">العناصر الأساسية التي يعمل عليها كل موقع ويب — النطاقات، DNS، الاستضافة، وطبقة الأمان التي تحافظ على سلامة كل شيء.</p>
+
+    <div class="article-list">
+      <a class="article-card" href="/learn/what-is-a-website.html">
+        <h2>ما هو الموقع الإلكتروني؟</h2>
+        <p>ما هو الموقع الإلكتروني فعلياً، وكيف ينتقل من الخادم إلى شاشتك.</p>
+      </a>
+      <a class="article-card" href="/learn/what-is-a-domain-name.html">
+        <h2>ما هو اسم النطاق؟</h2>
+        <p>ما هو اسم النطاق فعلياً، وكيف يختلف عن استضافة الويب.</p>
+      </a>
+      <a class="article-card" href="/learn/what-is-dns.html">
+        <h2>ما هو DNS؟</h2>
+        <p>كيف تُترجم أسماء النطاقات إلى العناوين التي تستخدمها الأجهزة فعلياً.</p>
+      </a>
+      <a class="article-card" href="/learn/what-is-an-ip-address.html">
+        <h2>ما هو عنوان IP؟</h2>
+        <p>ما هي عناوين IP، IPv4 مقابل IPv6، ولماذا يحتاج كل جهاز متصل بالإنترنت إلى واحد.</p>
+      </a>
+      <a class="article-card" href="/learn/http-vs-https.html">
+        <h2>HTTP مقابل HTTPS: ما الفرق؟</h2>
+        <p>ما هو الفرق الفعلي، ولماذا HTTPS مهم لكل موقع ويب اليوم.</p>
+      </a>
+      <a class="article-card" href="/learn/what-is-ssl-tls.html">
+        <h2>ما هو SSL/TLS؟</h2>
+        <p>ماذا تفعل SSL و TLS فعلياً، وكيف تشغّل الشهادات قفل HTTPS.</p>
+      </a>
+      <a class="article-card" href="/learn/what-is-web-hosting.html">
+        <h2>ما هي استضافة الويب؟</h2>
+        <p>ما هي استضافة الويب فعلياً، والأنواع الرئيسية المتاحة.</p>
+      </a>
+      <a class="article-card" href="/learn/what-is-cloud-computing.html">
+        <h2>ما هي الحوسبة السحابية؟</h2>
+        <p>ما الذي تعنيه الحوسبة السحابية فعلياً، ولماذا حلت محل امتلاك خوادم فعلية.</p>
+      </a>
+      <a class="article-card" href="/learn/what-is-a-cdn.html">
+        <h2>ما هو CDN؟</h2>
+        <p>كيف تجعل شبكات توصيل المحتوى المواقع الإلكترونية تحمّل بشكل أسرع، في كل مكان في العالم.</p>
+      </a>
+      <a class="article-card" href="/learn/what-is-bandwidth.html">
+        <h2>ما هو النطاق الترددي؟</h2>
+        <p>ما الذي يقيسه النطاق الترددي، وكيف يختلف عن السرعة.</p>
+      </a>
+      <a class="article-card" href="/learn/what-is-uptime.html">
+        <h2>ما هو وقت التشغيل؟</h2>
+        <p>ما الذي يقيسه وقت التشغيل، ولماذا 99.9% أهم مما يبدو.</p>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <a href="/">الرئيسية</a>
+    <a href="/learn">تعلّم</a>
+    <a href="/privacy">الخصوصية</a>
+    <a href="/terms">الشروط</a>
+    <a href="https://noxelseo.com" target="_blank" rel="noopener">NOXEL SEO</a>
+    <a href="https://noxelforge.com" target="_blank" rel="noopener">NOXEL Forge</a>
+    <div style="margin-top:16px">© 2026 NOXEL360. جميع الحقوق محفوظة.</div>
+  </footer>
+</body>
+</html>
