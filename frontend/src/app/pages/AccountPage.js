@@ -23,7 +23,7 @@ export default function AccountPage() {
     const { user, isAuthenticated, loading: authLoading } = useAuthStore();
     const { t } = useI18n();
     const currentTier = normalizeTier(account?.billing.tier);
-    return (_jsx("div", { className: "noxel-landing", children: _jsxs("div", { className: "nx-wrap", children: [_jsx("header", { className: "nx-hero", children: _jsxs("div", { className: "account-hero-layout", children: [_jsx("div", { className: "account-hero-left", children: _jsx("img", { src: "/logos/noxel360.svg", alt: "NOXEL360", style: { height: 150 } }) }), _jsxs("div", { className: "account-hero-center", children: [_jsx("h1", { className: "nx-title", children: t("account.title") }), _jsx("p", { className: "nx-subtitle", children: t("account.subtitle") })] }), _jsxs("div", { className: "account-hero-right", children: [_jsxs("div", { className: "account-hero-top", style: {
+    return (_jsx("div", { className: "noxel-landing", children: _jsxs("div", { className: "nx-wrap", children: [_jsx("header", { className: "nx-hero", children: _jsxs("div", { className: "account-hero-layout", children: [_jsx("div", { className: "account-hero-left", children: _jsx("img", { src: "/logos/NOXEL_360_LOGO.svg", alt: "NOXEL360", style: { height: 150 } }) }), _jsxs("div", { className: "account-hero-center", children: [_jsx("h1", { className: "nx-title", children: t("account.title") }), _jsx("p", { className: "nx-subtitle", children: t("account.subtitle") })] }), _jsxs("div", { className: "account-hero-right", children: [_jsxs("div", { className: "account-hero-top", style: {
                                             display: "flex",
                                             alignItems: "center",
                                             gap: 12,

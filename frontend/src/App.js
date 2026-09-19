@@ -2,6 +2,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { Suspense, lazy, useEffect } from "react";
 import { useAuthStore } from "./auth/AuthStore";
+import { AccountProvider } from "./account/AccountStore";
 // Route-level code splitting: each page's JS is only downloaded and executed
 // when that route is actually visited, instead of all bundled into the main
 // chunk that has to run before the page becomes interactive. This directly
@@ -40,5 +41,5 @@ function RouteLoadingFallback() {
         }, children: "Loading\u2026" }));
 }
 export default function App() {
-    return (_jsx(Suspense, { fallback: _jsx(RouteLoadingFallback, {}), children: _jsxs(Routes, { children: [_jsx(Route, { path: "/", element: _jsx(RootRoute, {}) }), _jsx(Route, { path: "/dashboard", element: _jsx(DashboardHome, {}) }), _jsx(Route, { path: "/nexus", element: _jsx(NexusPage, {}) }), _jsxs(Route, { path: "/app", element: _jsx(AppShell, {}), children: [_jsx(Route, { index: true, element: _jsx(Navigate, { to: "/dashboard", replace: true }) }), _jsx(Route, { path: "account", element: _jsx(AccountPage, {}) })] }), _jsx(Route, { path: "/privacy", element: _jsx(PrivacyPage, {}) }), _jsx(Route, { path: "/terms", element: _jsx(TermsPage, {}) }), _jsx(Route, { path: "/auth/link-account", element: _jsx(LinkAccountPage, {}) }), _jsx(Route, { path: "/auth/callback", element: _jsx(OAuthCallbackPage, {}) }), _jsx(Route, { path: "/pricing", element: _jsx(PricingRedirect, {}) }), _jsx(Route, { path: "/pricing/*", element: _jsx(PricingRedirect, {}) }), _jsx(Route, { path: "*", element: _jsx("div", { style: { padding: 24 }, children: "404" }) })] }) }));
+    return (_jsx(Suspense, { fallback: _jsx(RouteLoadingFallback, {}), children: _jsxs(Routes, { children: [_jsx(Route, { path: "/", element: _jsx(RootRoute, {}) }), _jsx(Route, { path: "/dashboard", element: _jsx(DashboardHome, {}) }), _jsx(Route, { path: "/nexus", element: _jsx(NexusPage, {}) }), _jsxs(Route, { path: "/app", element: _jsx(AppShell, {}), children: [_jsx(Route, { index: true, element: _jsx(Navigate, { to: "/dashboard", replace: true }) }), _jsx(Route, { path: "account", element: _jsx(AccountProvider, { children: _jsx(AccountPage, {}) }) })] }), _jsx(Route, { path: "/privacy", element: _jsx(PrivacyPage, {}) }), _jsx(Route, { path: "/terms", element: _jsx(TermsPage, {}) }), _jsx(Route, { path: "/auth/link-account", element: _jsx(LinkAccountPage, {}) }), _jsx(Route, { path: "/auth/callback", element: _jsx(OAuthCallbackPage, {}) }), _jsx(Route, { path: "/pricing", element: _jsx(PricingRedirect, {}) }), _jsx(Route, { path: "/pricing/*", element: _jsx(PricingRedirect, {}) }), _jsx(Route, { path: "*", element: _jsx("div", { style: { padding: 24 }, children: "404" }) })] }) }));
 }
