@@ -1,7 +1,6 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
 import { SideNav } from "./SideNav";
-import noxel360Logo from "@/assets/logos/webp/noxel-360.avif";
 import UserMenu from "@/components/UserMenu";
 import HeaderLanguage from "@/components/HeaderLanguage";
 import TranslationStatusBanner from "@/components/TranslationStatusBanner";
@@ -35,7 +34,7 @@ export function AppShell() {
                                     justifyContent: "center",
                                     textDecoration: "none",
                                     flex: "0 0 auto",
-                                }, children: _jsx("img", { src: noxel360Logo, alt: "Noxel360", loading: "eager", style: {
+                                }, children: _jsx("img", { src: "/logos/NOXEL_360_LOGO.svg", alt: "Noxel360", loading: "eager", style: {
                                         width: "100%",
                                         height: "100%",
                                         objectFit: "contain",
