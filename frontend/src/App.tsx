@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { Suspense, lazy, useEffect } from "react";
 import { useAuthStore } from "./auth/AuthStore";
+import { Analytics } from "@vercel/analytics/react";
 
 // Route-level code splitting: each page's JS is only downloaded and executed
 // when that route is actually visited, instead of all bundled into the main
@@ -53,31 +54,34 @@ function RouteLoadingFallback() {
 
 export default function App() {
   return (
-    <Suspense fallback={<RouteLoadingFallback />}>
-      <Routes>
-        <Route path="/" element={<RootRoute />} />
+    <>
+      <Suspense fallback={<RouteLoadingFallback />}>
+        <Routes>
+          <Route path="/" element={<RootRoute />} />
 
-        <Route path="/dashboard" element={<DashboardHome />} />
-        <Route path="/nexus" element={<NexusPage />} />
+          <Route path="/dashboard" element={<DashboardHome />} />
+          <Route path="/nexus" element={<NexusPage />} />
 
-        <Route path="/app" element={<AppShell />}>
-          <Route index element={<Navigate to="/dashboard" replace />} />
-          <Route path="account" element={<AccountPage />} />
-        </Route>
+          <Route path="/app" element={<AppShell />}>
+            <Route index element={<Navigate to="/dashboard" replace />} />
+            <Route path="account" element={<AccountPage />} />
+          </Route>
 
-        <Route path="/privacy" element={<PrivacyPage />} />
-        <Route path="/terms" element={<TermsPage />} />
-        <Route path="/auth/link-account" element={<LinkAccountPage />} />
-        <Route path="/auth/callback" element={<OAuthCallbackPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/terms" element={<TermsPage />} />
+          <Route path="/auth/link-account" element={<LinkAccountPage />} />
+          <Route path="/auth/callback" element={<OAuthCallbackPage />} />
 
-        {/* NOXEL SEO and NOXEL Forge are external products (noxelseo.com,
-            noxelforge.com) — see DashboardHome / SideNav for outbound links.
-            No internal /app/* routes needed for them anymore. */}
+          {/* NOXEL SEO and NOXEL Forge are external products (noxelseo.com,
+              noxelforge.com) — see DashboardHome / SideNav for outbound links.
+              No internal /app/* routes needed for them anymore. */}
 
-        <Route path="/pricing" element={<PricingRedirect />} />
-        <Route path="/pricing/*" element={<PricingRedirect />} />
-        <Route path="*" element={<div style={{ padding: 24 }}>404</div>} />
-      </Routes>
-    </Suspense>
+          <Route path="/pricing" element={<PricingRedirect />} />
+          <Route path="/pricing/*" element={<PricingRedirect />} />
+          <Route path="*" element={<div style={{ padding: 24 }}>404</div>} />
+        </Routes>
+      </Suspense>
+      <Analytics />
+    </>
   );
 }
