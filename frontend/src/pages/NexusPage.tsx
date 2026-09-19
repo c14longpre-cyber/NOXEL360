@@ -172,10 +172,12 @@ export default function NexusPage() {
     <div
       dir={pageDir}
       style={{
-        minHeight: "100vh",
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        overflow: "hidden",
         background: "linear-gradient(180deg, #060810 0%, #0A0D18 100%)",
         color: "white",
-        padding: 24,
       }}
     >
       <TranslationStatusBanner />
@@ -189,6 +191,8 @@ export default function NexusPage() {
           flexWrap: "wrap",
           gap: 16,
           marginBottom: 20,
+          flexShrink: 0,
+          padding: "24px 24px 0 24px",
         }}
       >
         <div>
@@ -226,6 +230,8 @@ export default function NexusPage() {
           ← {t("nexus.back")}
         </button>
       </header>
+
+      <div style={{ flex: 1, overflowY: "auto", padding: "0 24px 24px 24px" }}>
 
       {/* Current language badge */}
       <div
@@ -586,6 +592,7 @@ export default function NexusPage() {
           currentLanguage={language}
           onSelectLanguage={handleMapSelectLanguage}
         />
+      </div>
       </div>
     </div>
   );

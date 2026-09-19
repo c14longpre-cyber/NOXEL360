@@ -134,22 +134,6 @@
           or tools.
         </p>
 
-        <h2 style="font-size:22px;font-weight:800;margin:40px 0 20px;">Not Three Tools. One Connected Toolkit.</h2>
-        <p style="font-size:16px;line-height:1.7;color:rgba(255,255,255,0.75);margin-bottom:16px;">
-          Each module solves a distinct problem, but they're designed to inform each other instead
-          of operating in isolation. A NOXEL SEO audit surfaces a site's visibility gaps — thin
-          content, missing schema, slow Core Web Vitals. NOXEL Forge helps close the authority gap
-          those audits often reveal, connecting a site with verified backlink partners instead of
-          leaving link building as a manual, cold-outreach grind. NOXEL Nexus sits underneath both,
-          detecting a visitor's language and region so the same underlying content and tooling
-          adapt automatically — no separate localization project required.
-        </p>
-        <p style="font-size:16px;line-height:1.7;color:rgba(255,255,255,0.75);">
-          The result isn't three disconnected tools that happen to share a login. It's a single
-          account where an issue flagged in one module has a natural next step in another, instead
-          of exporting a report and starting over somewhere else.
-        </p>
-
         <h2 style="font-size:22px;font-weight:800;margin:40px 0 20px;">Frequently Asked Questions</h2>
         <dl style="font-size:16px;line-height:1.7;color:rgba(255,255,255,0.75);">
           <dt style="font-weight:700;color:#eef1f0;margin-bottom:6px;">Do I need separate accounts for NOXEL SEO, NOXEL Forge, and Nexus?</dt>
@@ -165,16 +149,11 @@
           <dd style="margin:0 0 20px;">NOXEL Nexus is the language, region, and cultural intelligence engine underneath the ecosystem. It detects a visitor's language and region to adapt content automatically across NOXEL360's products.</dd>
 
           <dt style="font-weight:700;color:#eef1f0;margin-bottom:6px;">Can I use just one module instead of the whole suite?</dt>
-          <dd style="margin:0 0 20px;">Yes. Each module stands on its own and can be enabled individually — you're not required to activate every module to use NOXEL360.</dd>
-
-          <dt style="font-weight:700;color:#eef1f0;margin-bottom:6px;">How long does it take to see results?</dt>
-          <dd style="margin:0 0 20px;">NOXEL SEO's free audit returns results in seconds — you'll see your visibility score and top issues immediately. NOXEL Forge backlink placements and ranking improvements from fixed technical issues typically show measurable movement within 4–8 weeks, consistent with normal search engine re-crawling and re-indexing timelines.</dd>
-
-          <dt style="font-weight:700;color:#eef1f0;margin-bottom:6px;">Is my data shared between modules?</dt>
-          <dd style="margin:0;">Only what's needed to make the modules useful together — for example, a site you've added to NOXEL SEO is available to reference in NOXEL Forge without re-entering it. NOXEL360 doesn't sell or share account data with third parties.</dd>
+          <dd style="margin:0;">Yes. Each module stands on its own and can be enabled individually — you're not required to activate every module to use NOXEL360.</dd>
         </dl>
       </main>
-      <footer style="font-family:system-ui,sans-serif;background:#07090f;color:rgba(255,255,255,0.55);padding:32px 24px;text-align:center;font-size:13px;border-top:1px solid rgba(255,255,255,0.08);">
+    </div>
+    <footer style="font-family:system-ui,sans-serif;background:#07090f;color:rgba(255,255,255,0.55);padding:32px 24px;text-align:center;font-size:13px;border-top:1px solid rgba(255,255,255,0.08);">
       <p style="max-width:720px;margin:0 auto 16px;line-height:1.6;">
         NOXEL360 connects NOXEL SEO, NOXEL Forge and Nexus in one dashboard for search visibility, verified backlinks, and language intelligence.
       </p>
@@ -189,8 +168,6 @@
       </nav>
       <p style="margin:0;">&copy; 2026 NOXEL360. All rights reserved.</p>
     </footer>
-    </div>
-    
     <div id="overlay-root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

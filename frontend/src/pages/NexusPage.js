@@ -156,10 +156,12 @@ export default function NexusPage() {
     }
     const pageDir = currentLanguage.direction === "rtl" ? "rtl" : "ltr";
     return (_jsxs("div", { dir: pageDir, style: {
-            minHeight: "100vh",
+            height: "100vh",
+            display: "flex",
+            flexDirection: "column",
+            overflow: "hidden",
             background: "linear-gradient(180deg, #060810 0%, #0A0D18 100%)",
             color: "white",
-            padding: 24,
         }, children: [_jsx(TranslationStatusBanner, {}), _jsxs("header", { style: {
                     display: "flex",
                     alignItems: "center",
@@ -167,6 +169,8 @@ export default function NexusPage() {
                     flexWrap: "wrap",
                     gap: 16,
                     marginBottom: 20,
+                    flexShrink: 0,
+                    padding: "24px 24px 0 24px",
                 }, children: [_jsxs("div", { children: [_jsx("div", { style: {
                                     fontSize: 12,
                                     opacity: 0.7,
@@ -180,161 +184,161 @@ export default function NexusPage() {
                             color: "white",
                             cursor: "pointer",
                             fontWeight: 600,
-                        }, children: ["\u2190 ", t("nexus.back")] })] }), _jsxs("div", { style: {
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: 10,
-                    padding: "8px 14px",
-                    borderRadius: 999,
-                    border: "1px solid rgba(60,222,106,0.5)",
-                    background: "rgba(60,222,106,0.08)",
-                    marginBottom: 20,
-                }, children: [_jsx("span", { style: { fontSize: 18 }, children: currentLanguage.flag }), _jsxs("span", { style: { fontWeight: 600 }, children: [t("language.selector.current"), ": ", currentLanguage.label] }), _jsxs("span", { style: { opacity: 0.7 }, children: ["(", currentLanguage.nativeLabel, ")"] }), currentLanguage.indigenous && (_jsx("span", { style: {
-                            fontSize: 11,
-                            padding: "2px 8px",
+                        }, children: ["\u2190 ", t("nexus.back")] })] }), _jsxs("div", { style: { flex: 1, overflowY: "auto", padding: "0 24px 24px 24px" }, children: [_jsxs("div", { style: {
+                            display: "inline-flex",
+                            alignItems: "center",
+                            gap: 10,
+                            padding: "8px 14px",
                             borderRadius: 999,
-                            background: "rgba(112,42,165,0.22)",
-                            border: "1px solid rgba(112,42,165,0.55)",
-                        }, children: t("nexus.indigenousBadge", undefined, "Indigenous") }))] }), _jsxs("div", { style: {
-                    display: "flex",
-                    flexWrap: "wrap",
-                    gap: 12,
-                    marginBottom: 20,
-                    alignItems: "center",
-                }, children: [_jsx("input", { type: "text", value: query, onChange: (e) => setQuery(e.target.value), placeholder: t("nexus.search.placeholder"), style: {
-                            flex: "1 1 260px",
-                            minWidth: 200,
-                            padding: "12px 16px",
-                            borderRadius: 12,
-                            border: "1px solid rgba(255,255,255,0.14)",
-                            background: "rgba(255,255,255,0.05)",
-                            color: "white",
-                            fontSize: 15,
-                            outline: "none",
-                        } }), _jsx("div", { style: { display: "flex", gap: 8, flexWrap: "wrap" }, children: REGION_FILTERS.map((r) => {
-                            const active = region === r.id;
-                            return (_jsx("button", { type: "button", onClick: () => setRegion(r.id), style: {
-                                    padding: "10px 14px",
+                            border: "1px solid rgba(60,222,106,0.5)",
+                            background: "rgba(60,222,106,0.08)",
+                            marginBottom: 20,
+                        }, children: [_jsx("span", { style: { fontSize: 18 }, children: currentLanguage.flag }), _jsxs("span", { style: { fontWeight: 600 }, children: [t("language.selector.current"), ": ", currentLanguage.label] }), _jsxs("span", { style: { opacity: 0.7 }, children: ["(", currentLanguage.nativeLabel, ")"] }), currentLanguage.indigenous && (_jsx("span", { style: {
+                                    fontSize: 11,
+                                    padding: "2px 8px",
                                     borderRadius: 999,
-                                    border: active
-                                        ? "1px solid rgba(60,222,106,0.9)"
-                                        : "1px solid rgba(255,255,255,0.14)",
-                                    background: active
-                                        ? "rgba(60,222,106,0.14)"
-                                        : "rgba(255,255,255,0.04)",
+                                    background: "rgba(112,42,165,0.22)",
+                                    border: "1px solid rgba(112,42,165,0.55)",
+                                }, children: t("nexus.indigenousBadge", undefined, "Indigenous") }))] }), _jsxs("div", { style: {
+                            display: "flex",
+                            flexWrap: "wrap",
+                            gap: 12,
+                            marginBottom: 20,
+                            alignItems: "center",
+                        }, children: [_jsx("input", { type: "text", value: query, onChange: (e) => setQuery(e.target.value), placeholder: t("nexus.search.placeholder"), style: {
+                                    flex: "1 1 260px",
+                                    minWidth: 200,
+                                    padding: "12px 16px",
+                                    borderRadius: 12,
+                                    border: "1px solid rgba(255,255,255,0.14)",
+                                    background: "rgba(255,255,255,0.05)",
                                     color: "white",
-                                    cursor: "pointer",
-                                    fontSize: 13,
-                                    fontWeight: 600,
-                                }, children: t(r.labelKey, undefined, r.fallback) }, r.id));
-                        }) })] }), _jsxs("div", { style: {
-                    display: "grid",
-                    gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.2fr)",
-                    gap: 16,
-                    marginBottom: 24,
-                }, children: [_jsxs("div", { style: {
+                                    fontSize: 15,
+                                    outline: "none",
+                                } }), _jsx("div", { style: { display: "flex", gap: 8, flexWrap: "wrap" }, children: REGION_FILTERS.map((r) => {
+                                    const active = region === r.id;
+                                    return (_jsx("button", { type: "button", onClick: () => setRegion(r.id), style: {
+                                            padding: "10px 14px",
+                                            borderRadius: 999,
+                                            border: active
+                                                ? "1px solid rgba(60,222,106,0.9)"
+                                                : "1px solid rgba(255,255,255,0.14)",
+                                            background: active
+                                                ? "rgba(60,222,106,0.14)"
+                                                : "rgba(255,255,255,0.04)",
+                                            color: "white",
+                                            cursor: "pointer",
+                                            fontSize: 13,
+                                            fontWeight: 600,
+                                        }, children: t(r.labelKey, undefined, r.fallback) }, r.id));
+                                }) })] }), _jsxs("div", { style: {
+                            display: "grid",
+                            gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.2fr)",
+                            gap: 16,
+                            marginBottom: 24,
+                        }, children: [_jsxs("div", { style: {
+                                    borderRadius: 20,
+                                    border: "1px solid rgba(255,255,255,0.1)",
+                                    background: "rgba(255,255,255,0.03)",
+                                    padding: 8,
+                                    maxHeight: 560,
+                                    overflowY: "auto",
+                                }, children: [_jsxs("div", { style: {
+                                            padding: "8px 12px",
+                                            fontSize: 12,
+                                            opacity: 0.7,
+                                            textTransform: "uppercase",
+                                            letterSpacing: "0.1em",
+                                        }, children: [t("nexus.list.heading"), " (", filteredCountries.length, ")"] }), filteredCountries.length === 0 && (_jsx("div", { style: { padding: 16, opacity: 0.6, fontSize: 14 }, children: t("nexus.list.empty") })), filteredCountries.map((c) => {
+                                        const active = c.iso2.toUpperCase() === selectedIso.toUpperCase();
+                                        const hasIndigenous = (INDIGENOUS_BY_ISO2[c.iso2.toUpperCase()] || []).length > 0;
+                                        return (_jsxs("button", { type: "button", onClick: () => setSelectedIso(c.iso2.toUpperCase()), style: {
+                                                display: "flex",
+                                                alignItems: "center",
+                                                gap: 12,
+                                                width: "100%",
+                                                textAlign: "start",
+                                                padding: "10px 12px",
+                                                borderRadius: 10,
+                                                border: "none",
+                                                background: active ? "rgba(60,222,106,0.14)" : "transparent",
+                                                color: "white",
+                                                cursor: "pointer",
+                                            }, onMouseEnter: (e) => {
+                                                if (!active)
+                                                    e.currentTarget.style.background = "rgba(255,255,255,0.05)";
+                                            }, onMouseLeave: (e) => {
+                                                if (!active)
+                                                    e.currentTarget.style.background = "transparent";
+                                            }, children: [c.flag && (_jsx("img", { src: c.flag, alt: "", loading: "lazy", style: {
+                                                        width: 28,
+                                                        height: 20,
+                                                        objectFit: "cover",
+                                                        borderRadius: 3,
+                                                        border: "1px solid rgba(255,255,255,0.1)",
+                                                        flex: "0 0 auto",
+                                                    } })), _jsxs("div", { style: { flex: 1, minWidth: 0 }, children: [_jsx("div", { style: {
+                                                                fontWeight: 600,
+                                                                fontSize: 14,
+                                                                whiteSpace: "nowrap",
+                                                                overflow: "hidden",
+                                                                textOverflow: "ellipsis",
+                                                            }, children: c.name }), _jsxs("div", { style: {
+                                                                fontSize: 11,
+                                                                opacity: 0.65,
+                                                                whiteSpace: "nowrap",
+                                                                overflow: "hidden",
+                                                                textOverflow: "ellipsis",
+                                                            }, children: [c.iso2, " \u00B7 ", c.region || "—"] })] }), hasIndigenous && (_jsx("span", { title: t("nexus.indigenousLanguagesAvailable", undefined, "Indigenous languages available"), style: {
+                                                        fontSize: 10,
+                                                        padding: "2px 6px",
+                                                        borderRadius: 999,
+                                                        background: "rgba(112,42,165,0.22)",
+                                                        border: "1px solid rgba(112,42,165,0.55)",
+                                                        flex: "0 0 auto",
+                                                    }, children: "\u2605" })), active && (_jsx("span", { style: {
+                                                        color: "rgb(60,222,106)",
+                                                        fontWeight: 700,
+                                                        fontSize: 16,
+                                                    }, children: "\u2713" }))] }, c.iso2));
+                                    })] }), _jsx("div", { style: {
+                                    borderRadius: 20,
+                                    border: "1px solid rgba(255,255,255,0.1)",
+                                    background: "rgba(255,255,255,0.04)",
+                                    padding: 20,
+                                    maxHeight: 560,
+                                    overflowY: "auto",
+                                }, children: !selectedCountry ? (_jsx("div", { style: { opacity: 0.6 }, children: t("language.selector.selectCountry") })) : (_jsxs(_Fragment, { children: [_jsxs("div", { style: {
+                                                display: "flex",
+                                                alignItems: "center",
+                                                gap: 16,
+                                                marginBottom: 16,
+                                            }, children: [selectedCountry.flag && (_jsx("img", { src: selectedCountry.flag, alt: selectedCountry.name, style: {
+                                                        width: 72,
+                                                        height: 48,
+                                                        objectFit: "cover",
+                                                        borderRadius: 8,
+                                                        border: "1px solid rgba(255,255,255,0.12)",
+                                                    } })), _jsxs("div", { style: { minWidth: 0 }, children: [_jsx("h2", { style: { margin: 0, fontSize: 24 }, children: selectedCountry.name }), _jsxs("div", { style: { opacity: 0.7, fontSize: 13 }, children: [selectedCountry.iso2, " \u00B7 ", selectedCountry.iso3 || "—", " \u00B7", " ", selectedCountry.region || "—"] })] })] }), _jsxs("div", { style: {
+                                                display: "grid",
+                                                gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+                                                gap: 8,
+                                                fontSize: 13,
+                                                marginBottom: 18,
+                                            }, children: [_jsx(InfoRow, { label: t("language.selector.capital"), value: selectedCountry.capital }), _jsx(InfoRow, { label: t("language.selector.subregion"), value: selectedCountry.subregion }), _jsx(InfoRow, { label: t("language.selector.domain"), value: selectedCountry.domain }), _jsx(InfoRow, { label: t("language.selector.currency"), value: selectedCountry.currencyCode
+                                                        ? `${selectedCountry.currencySymbol || ""} ${selectedCountry.currencyCode}`.trim()
+                                                        : undefined })] }), _jsx(LanguageSection, { title: t("language.selector.officialLanguages"), emptyLabel: "\u2014", choices: officialChoices, activeCode: language, onPick: setLanguage, accentColor: "rgba(60,222,106,0.9)", accentBg: "rgba(60,222,106,0.14)" }), indigenousChoices.length > 0 && (_jsx("div", { style: { marginTop: 18 }, children: _jsx(LanguageSection, { title: t("language.selector.indigenousLanguages"), subtitle: t("nexus.indigenousRespect", undefined, "Languages of First Peoples and ancestral communities. Click any to set it as your interface language."), emptyLabel: "\u2014", choices: indigenousChoices, activeCode: language, onPick: setLanguage, accentColor: "rgba(112,42,165,0.9)", accentBg: "rgba(112,42,165,0.18)", showNation: true }) }))] })) })] }), _jsxs("div", { style: {
                             borderRadius: 20,
                             border: "1px solid rgba(255,255,255,0.1)",
                             background: "rgba(255,255,255,0.03)",
-                            padding: 8,
-                            maxHeight: 560,
-                            overflowY: "auto",
-                        }, children: [_jsxs("div", { style: {
-                                    padding: "8px 12px",
+                            padding: 16,
+                        }, children: [_jsx("div", { style: {
                                     fontSize: 12,
                                     opacity: 0.7,
                                     textTransform: "uppercase",
                                     letterSpacing: "0.1em",
-                                }, children: [t("nexus.list.heading"), " (", filteredCountries.length, ")"] }), filteredCountries.length === 0 && (_jsx("div", { style: { padding: 16, opacity: 0.6, fontSize: 14 }, children: t("nexus.list.empty") })), filteredCountries.map((c) => {
-                                const active = c.iso2.toUpperCase() === selectedIso.toUpperCase();
-                                const hasIndigenous = (INDIGENOUS_BY_ISO2[c.iso2.toUpperCase()] || []).length > 0;
-                                return (_jsxs("button", { type: "button", onClick: () => setSelectedIso(c.iso2.toUpperCase()), style: {
-                                        display: "flex",
-                                        alignItems: "center",
-                                        gap: 12,
-                                        width: "100%",
-                                        textAlign: "start",
-                                        padding: "10px 12px",
-                                        borderRadius: 10,
-                                        border: "none",
-                                        background: active ? "rgba(60,222,106,0.14)" : "transparent",
-                                        color: "white",
-                                        cursor: "pointer",
-                                    }, onMouseEnter: (e) => {
-                                        if (!active)
-                                            e.currentTarget.style.background = "rgba(255,255,255,0.05)";
-                                    }, onMouseLeave: (e) => {
-                                        if (!active)
-                                            e.currentTarget.style.background = "transparent";
-                                    }, children: [c.flag && (_jsx("img", { src: c.flag, alt: "", loading: "lazy", style: {
-                                                width: 28,
-                                                height: 20,
-                                                objectFit: "cover",
-                                                borderRadius: 3,
-                                                border: "1px solid rgba(255,255,255,0.1)",
-                                                flex: "0 0 auto",
-                                            } })), _jsxs("div", { style: { flex: 1, minWidth: 0 }, children: [_jsx("div", { style: {
-                                                        fontWeight: 600,
-                                                        fontSize: 14,
-                                                        whiteSpace: "nowrap",
-                                                        overflow: "hidden",
-                                                        textOverflow: "ellipsis",
-                                                    }, children: c.name }), _jsxs("div", { style: {
-                                                        fontSize: 11,
-                                                        opacity: 0.65,
-                                                        whiteSpace: "nowrap",
-                                                        overflow: "hidden",
-                                                        textOverflow: "ellipsis",
-                                                    }, children: [c.iso2, " \u00B7 ", c.region || "—"] })] }), hasIndigenous && (_jsx("span", { title: t("nexus.indigenousLanguagesAvailable", undefined, "Indigenous languages available"), style: {
-                                                fontSize: 10,
-                                                padding: "2px 6px",
-                                                borderRadius: 999,
-                                                background: "rgba(112,42,165,0.22)",
-                                                border: "1px solid rgba(112,42,165,0.55)",
-                                                flex: "0 0 auto",
-                                            }, children: "\u2605" })), active && (_jsx("span", { style: {
-                                                color: "rgb(60,222,106)",
-                                                fontWeight: 700,
-                                                fontSize: 16,
-                                            }, children: "\u2713" }))] }, c.iso2));
-                            })] }), _jsx("div", { style: {
-                            borderRadius: 20,
-                            border: "1px solid rgba(255,255,255,0.1)",
-                            background: "rgba(255,255,255,0.04)",
-                            padding: 20,
-                            maxHeight: 560,
-                            overflowY: "auto",
-                        }, children: !selectedCountry ? (_jsx("div", { style: { opacity: 0.6 }, children: t("language.selector.selectCountry") })) : (_jsxs(_Fragment, { children: [_jsxs("div", { style: {
-                                        display: "flex",
-                                        alignItems: "center",
-                                        gap: 16,
-                                        marginBottom: 16,
-                                    }, children: [selectedCountry.flag && (_jsx("img", { src: selectedCountry.flag, alt: selectedCountry.name, style: {
-                                                width: 72,
-                                                height: 48,
-                                                objectFit: "cover",
-                                                borderRadius: 8,
-                                                border: "1px solid rgba(255,255,255,0.12)",
-                                            } })), _jsxs("div", { style: { minWidth: 0 }, children: [_jsx("h2", { style: { margin: 0, fontSize: 24 }, children: selectedCountry.name }), _jsxs("div", { style: { opacity: 0.7, fontSize: 13 }, children: [selectedCountry.iso2, " \u00B7 ", selectedCountry.iso3 || "—", " \u00B7", " ", selectedCountry.region || "—"] })] })] }), _jsxs("div", { style: {
-                                        display: "grid",
-                                        gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
-                                        gap: 8,
-                                        fontSize: 13,
-                                        marginBottom: 18,
-                                    }, children: [_jsx(InfoRow, { label: t("language.selector.capital"), value: selectedCountry.capital }), _jsx(InfoRow, { label: t("language.selector.subregion"), value: selectedCountry.subregion }), _jsx(InfoRow, { label: t("language.selector.domain"), value: selectedCountry.domain }), _jsx(InfoRow, { label: t("language.selector.currency"), value: selectedCountry.currencyCode
-                                                ? `${selectedCountry.currencySymbol || ""} ${selectedCountry.currencyCode}`.trim()
-                                                : undefined })] }), _jsx(LanguageSection, { title: t("language.selector.officialLanguages"), emptyLabel: "\u2014", choices: officialChoices, activeCode: language, onPick: setLanguage, accentColor: "rgba(60,222,106,0.9)", accentBg: "rgba(60,222,106,0.14)" }), indigenousChoices.length > 0 && (_jsx("div", { style: { marginTop: 18 }, children: _jsx(LanguageSection, { title: t("language.selector.indigenousLanguages"), subtitle: t("nexus.indigenousRespect", undefined, "Languages of First Peoples and ancestral communities. Click any to set it as your interface language."), emptyLabel: "\u2014", choices: indigenousChoices, activeCode: language, onPick: setLanguage, accentColor: "rgba(112,42,165,0.9)", accentBg: "rgba(112,42,165,0.18)", showNation: true }) }))] })) })] }), _jsxs("div", { style: {
-                    borderRadius: 20,
-                    border: "1px solid rgba(255,255,255,0.1)",
-                    background: "rgba(255,255,255,0.03)",
-                    padding: 16,
-                }, children: [_jsx("div", { style: {
-                            fontSize: 12,
-                            opacity: 0.7,
-                            textTransform: "uppercase",
-                            letterSpacing: "0.1em",
-                            marginBottom: 10,
-                        }, children: t("nexus.map.heading") }), _jsx(NexusLanguageMap, { currentLanguage: language, onSelectLanguage: handleMapSelectLanguage })] })] }));
+                                    marginBottom: 10,
+                                }, children: t("nexus.map.heading") }), _jsx(NexusLanguageMap, { currentLanguage: language, onSelectLanguage: handleMapSelectLanguage })] })] })] }));
 }
 function InfoRow({ label, value }) {
     return (_jsxs("div", { style: {

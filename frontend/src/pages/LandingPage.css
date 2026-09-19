@@ -135,3 +135,9 @@
 .noxel-landing .footer-links a{color:var(--nl-muted)}
 .noxel-landing .footer-links a:hover{color:var(--nl-g)}
 .noxel-landing .footer-bottom{text-align:center;color:var(--nl-muted-2);font-size:13px}
+
+@media (max-width: 900px) {
+  .nl-mascot-float {
+    display: none;
+  }
+}

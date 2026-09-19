@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { LOGO_BY_ID } from "@/app/modules/logos";
 import { useModulesIndex } from "../modules/useModulesIndex";
@@ -14,6 +14,11 @@ export default function DashboardHome() {
   const { t } = useI18n();
 
   const [activeKey, setActiveKey] = useState<string>("nexus");
+
+  useEffect(() => {
+    document.body.style.overflow = "auto";
+    return () => { document.body.style.overflow = "hidden"; };
+  }, []);
 
   function openModule(key: string, route: string, external?: boolean) {
     setActiveKey(key);
@@ -136,7 +141,7 @@ export default function DashboardHome() {
                     <h1 className="nx-title">{t("dashboard.hero.title")}</h1>
                     <p className="nx-subtitle">{t("dashboard.hero.subtitle")}</p>
 
-                    <div
+                                      <div
                       className="nx-section-head"
                       id="modules"
                       style={{ marginTop: 18 }}
@@ -147,6 +152,19 @@ export default function DashboardHome() {
                       <p className="nx-lead">{t("dashboard.hero.modulesLead")}</p>
                     </div>
                   </div>
+                 <img
+                    src="/NX360-transparent.avif"
+                    alt="NX360, your NOXEL360 companion"
+                    loading="lazy"
+                    style={{
+                      width: 380,
+                      height: "auto",
+                      marginLeft: "auto",
+                      flexShrink: 0,
+                      opacity: 0.95,
+                      alignSelf: "flex-start",
+                    }}
+                  />
                 </div>
               <section aria-label="About NOXEL360" style={{ maxWidth: 760, margin: "0 auto 32px", color: "rgba(255,255,255,0.7)", fontSize: 15, lineHeight: 1.7 }}>
                 <p>NOXEL360 is a modular platform built around three functional products.</p>
@@ -218,6 +236,22 @@ export default function DashboardHome() {
               </div>
             </div>
           </section>
+                    <footer style={{ borderTop: "1px solid rgba(255,255,255,0.08)", marginTop: 48, padding: "32px 0", textAlign: "center", fontSize: 13, color: "rgba(255,255,255,0.55)" }}>
+            <p style={{ maxWidth: 720, margin: "0 auto 16px", lineHeight: 1.6 }}>
+              NOXEL360 connects NOXEL SEO, NOXEL Forge, and Nexus in one dashboard for search
+              visibility, verified backlinks, and language intelligence.
+            </p>
+            <nav aria-label="Site links" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 16, marginBottom: 14 }}>
+              <a href="https://noxelseo.com" style={{ color: "#3ddc84", textDecoration: "none" }}>NOXEL SEO</a>
+              <a href="https://noxelforge.com" style={{ color: "#3ddc84", textDecoration: "none" }}>NOXEL Forge</a>
+              <Link to="/nexus" style={{ color: "#3ddc84", textDecoration: "none" }}>NOXEL Nexus</Link>
+              <a href="/learn" style={{ color: "#3ddc84", textDecoration: "none" }}>Learn</a>
+              <Link to="/app/account" style={{ color: "rgba(255,255,255,0.55)", textDecoration: "none" }}>Account</Link>
+              <Link to="/privacy" style={{ color: "rgba(255,255,255,0.55)", textDecoration: "none" }}>Privacy</Link>
+              <Link to="/terms" style={{ color: "rgba(255,255,255,0.55)", textDecoration: "none" }}>Terms</Link>
+            </nav>
+            <p style={{ margin: 0 }}>© 2026 NOXEL360. All rights reserved.</p>
+          </footer>
         </main>
       </div>
     </div>

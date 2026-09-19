@@ -5,15 +5,14 @@ import "./LandingPage.css";
 export default function LandingPage() {
   useEffect(() => {
     document.body.style.overflow = "auto";
-    return () => { document.body.style.overflow = ""; };
+    return () => { document.body.style.overflow = "hidden"; };
   }, []);
 
   return (
     <div className="noxel-landing">
       <nav className="nl-nav">
         <Link to="/" className="logo">
-          <img src="/favicon-192x192.avif" alt="NOXEL360" width="150" height="150" style={{ borderRadius: 8 }} />
-          NOXEL360
+          <img src="/logos/NOXEL_360_LOGO.svg" alt="NOXEL360" width="150" height="150" style={{ borderRadius: 8, objectFit: "contain" }} />
         </Link>
         <div className="nav-links">
           <a href="#modules">Modules</a>
@@ -42,12 +41,24 @@ export default function LandingPage() {
               <Link to="/dashboard" className="btn-primary">Open Your Dashboard →</Link>
               <a href="#modules" className="btn-secondary">See the Modules</a>
             </div>
-            <div className="trust-row">
+                     <div className="trust-row">
               <div><strong>3</strong> connected modules</div>
               <div><strong>1</strong> shared account, one login</div>
               <div><strong>115</strong> languages supported across the ecosystem</div>
             </div>
           </div>
+         <img
+  src="/NX360-transparent.avif"
+  alt="NX360, your NOXEL360 companion"
+  loading="lazy"
+  style={{
+    width: 280,
+    marginLeft: "auto",
+    flexShrink: 0,
+    opacity: 0.95,
+    alignSelf: "flex-end",
+  }}
+/>
         </div>
 
         <section id="modules">
@@ -178,7 +189,12 @@ export default function LandingPage() {
                   <li>New modules plug in without disrupting what already works</li>
                 </ul>
               </div>
-              <div className="split-visual">
+                            <div className="split-visual" style={{ position: "relative" }}>
+                <img
+                  src="/NX360-transparent.avif"
+                  alt="NX360"
+                  style={{ width: 120, marginBottom: 16, opacity: 0.95 }}
+                />
                 <div className="stat-row"><span className="label">Modules live today</span><span className="val">2 (SEO, Forge)</span></div>
                 <div className="stat-row"><span className="label">Core intelligence layer</span><span className="val">Nexus</span></div>
                 <div className="stat-row"><span className="label">Accounts required</span><span className="val">1</span></div>
