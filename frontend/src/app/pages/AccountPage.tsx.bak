@@ -34,7 +34,7 @@ export default function AccountPage() {
           <div className="account-hero-layout">
             <div className="account-hero-left">
               <img
-                src="/logos/NOXEL_360_LOGO.svg"
+                src="/logos/noxel360.svg"
                 alt="NOXEL360"
                 style={{ height: 150 }}
               />

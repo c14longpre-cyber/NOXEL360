@@ -1,5 +1,5 @@
 import GlobeLogo from "@/assets/logos/webp/globe-selector.avif";
-
+import noxel360Logo from "@/assets/logos/webp/noxel-360.avif";
 
 export default function Topbar() {
   return (
@@ -7,7 +7,7 @@ export default function Topbar() {
       {/* LEFT */}
       <div className="flex items-center gap-3">
         <img
-          src="/logos/NOXEL_360_LOGO.svg"
+          src={noxel360Logo}
           alt="Noxel360"
           className="h-11 w-auto"
           style={{ objectFit: "contain" }}
