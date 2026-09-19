@@ -17,6 +17,7 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "currency-symbol-map": "^5.1.0",
     "iso-language-codes": "^2.0.0",
     "vite": "^8.0.0",

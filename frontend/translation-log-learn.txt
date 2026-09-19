@@ -1,0 +1,636 @@
+Total pages to translate per language: 143 (1 index + 15 hubs + 127 articles)
+­ƒîì NOXEL360 ÔÇö Learn Translation Generator
+­ƒôä Pages: 143 (index + 15 hubs + 127 articles)
+­ƒùú´©Å  Languages: 112 (af, am, ar, az, be, bg, bn, bs, ca, ceb, co, cs, cy, da, de, el, en-AU, en-CA, en-GB, eo, es, es-AR, es-MX, et, eu, fa, fi, fr, fr-BE, fr-CA, fy, ga, gd, gl, gu, ha, haw, hi, hmn, hr, ht, hu, hy, id, ig, is, it, iw, ja, jw, ka, kk, km, kn, ko, ku, ky, la, lb, lo, lt, lv, mg, mi, mk, ml, mn, mr, ms, mt, my, ne, nl, no, ny, pa, pl, ps, pt, pt-BR, ro, ru, sd, si, sk, sl, sm, sn, so, sq, sr, st, su, sv, sw, ta, te, tg, th, tl, tr, uk, ur, uz, vi, xh, yi, yo, zh, zh-HK, zh-TW, zu)
+­ƒöü Mode: SKIP existing
+
+­ƒôî Refreshing hreflang tags on English originals...
+  Ô£à hreflang refreshed on index.html
+  Ô£à hreflang refreshed on development.html
+  Ô£à hreflang refreshed on web-foundations.html
+  Ô£à hreflang refreshed on artificial-intelligence.html
+  Ô£à hreflang refreshed on automation.html
+  Ô£à hreflang refreshed on security.html
+  Ô£à hreflang refreshed on digital-marketing.html
+  ÔÜá´©Å  uxui.html not found, skipping
+  Ô£à hreflang refreshed on ecommerce.html
+  Ô£à hreflang refreshed on data-analytics.html
+  Ô£à hreflang refreshed on infrastructure.html
+  Ô£à hreflang refreshed on performance.html
+  Ô£à hreflang refreshed on digital-transformation.html
+  Ô£à hreflang refreshed on business-questions.html
+  Ô£à hreflang refreshed on comparisons.html
+  Ô£à hreflang refreshed on noxel360-ecosystem.html
+  Ô£à hreflang refreshed on what-is-an-api.html
+  Ô£à hreflang refreshed on what-is-front-end-development.html
+  Ô£à hreflang refreshed on what-is-back-end-development.html
+  Ô£à hreflang refreshed on what-is-full-stack-development.html
+  Ô£à hreflang refreshed on what-is-a-database.html
+  Ô£à hreflang refreshed on what-is-devops.html
+  Ô£à hreflang refreshed on what-are-microservices.html
+  Ô£à hreflang refreshed on what-is-version-control-git.html
+  Ô£à hreflang refreshed on what-is-continuous-integration.html
+  Ô£à hreflang refreshed on what-is-a-website.html
+  Ô£à hreflang refreshed on what-is-a-domain-name.html
+  Ô£à hreflang refreshed on what-is-dns.html
+  Ô£à hreflang refreshed on what-is-an-ip-address.html
+  Ô£à hreflang refreshed on http-vs-https.html
+  Ô£à hreflang refreshed on what-is-ssl-tls.html
+  Ô£à hreflang refreshed on what-is-web-hosting.html
+  Ô£à hreflang refreshed on what-is-cloud-computing.html
+  Ô£à hreflang refreshed on what-is-a-cdn.html
+  Ô£à hreflang refreshed on what-is-bandwidth.html
+  Ô£à hreflang refreshed on what-is-uptime.html
+  Ô£à hreflang refreshed on what-is-artificial-intelligence.html
+  Ô£à hreflang refreshed on what-is-machine-learning.html
+  Ô£à hreflang refreshed on what-is-generative-ai.html
+  Ô£à hreflang refreshed on what-are-ai-agents.html
+  Ô£à hreflang refreshed on what-is-prompt-engineering.html
+  Ô£à hreflang refreshed on what-is-rag.html
+  Ô£à hreflang refreshed on ai-automation-vs-ai-agent.html
+  Ô£à hreflang refreshed on how-businesses-use-ai.html
+  Ô£à hreflang refreshed on ai-risks-and-limitations.html
+  Ô£à hreflang refreshed on what-is-business-automation.html
+  Ô£à hreflang refreshed on what-is-workflow-automation.html
+  Ô£à hreflang refreshed on what-is-process-automation.html
+  Ô£à hreflang refreshed on what-is-rpa.html
+  Ô£à hreflang refreshed on what-is-event-driven-automation.html
+  Ô£à hreflang refreshed on what-is-api-integration.html
+  Ô£à hreflang refreshed on what-are-webhooks.html
+  Ô£à hreflang refreshed on what-is-cybersecurity.html
+  Ô£à hreflang refreshed on common-cyber-threats.html
+  Ô£à hreflang refreshed on what-is-mfa.html
+  Ô£à hreflang refreshed on password-managers-explained.html
+  Ô£à hreflang refreshed on what-is-data-encryption.html
+  Ô£à hreflang refreshed on firewalls-explained.html
+  Ô£à hreflang refreshed on backup-strategies.html
+  Ô£à hreflang refreshed on what-is-disaster-recovery.html
+  Ô£à hreflang refreshed on what-is-zero-trust-security.html
+  Ô£à hreflang refreshed on what-is-seo.html
+  Ô£à hreflang refreshed on what-is-local-seo.html
+  Ô£à hreflang refreshed on what-is-technical-seo.html
+  Ô£à hreflang refreshed on what-is-geo.html
+  Ô£à hreflang refreshed on what-is-sem.html
+  Ô£à hreflang refreshed on what-is-ppc.html
+  Ô£à hreflang refreshed on what-is-content-marketing.html
+  Ô£à hreflang refreshed on what-is-email-marketing.html
+  Ô£à hreflang refreshed on what-is-cro.html
+  Ô£à hreflang refreshed on what-is-ab-testing.html
+  Ô£à hreflang refreshed on what-is-ux.html
+  Ô£à hreflang refreshed on what-is-ui.html
+  Ô£à hreflang refreshed on responsive-design-explained.html
+  Ô£à hreflang refreshed on mobile-first-design-explained.html
+  Ô£à hreflang refreshed on web-accessibility-wcag-explained.html
+  Ô£à hreflang refreshed on what-is-a-user-journey.html
+  Ô£à hreflang refreshed on wireframes-vs-mockups-explained.html
+  Ô£à hreflang refreshed on what-is-a-design-system.html
+  Ô£à hreflang refreshed on what-is-ecommerce.html
+  Ô£à hreflang refreshed on what-is-a-shopping-cart.html
+  Ô£à hreflang refreshed on what-is-a-payment-gateway.html
+  Ô£à hreflang refreshed on what-is-dropshipping.html
+  Ô£à hreflang refreshed on what-is-a-marketplace.html
+  Ô£à hreflang refreshed on what-is-inventory-management.html
+  Ô£à hreflang refreshed on what-is-a-pos-system.html
+  Ô£à hreflang refreshed on cart-abandonment-explained.html
+  Ô£à hreflang refreshed on what-is-web-analytics.html
+  Ô£à hreflang refreshed on what-is-google-search-console.html
+  Ô£à hreflang refreshed on what-are-kpis.html
+  Ô£à hreflang refreshed on what-is-a-conversion-funnel.html
+  Ô£à hreflang refreshed on what-is-google-analytics-4.html
+  Ô£à hreflang refreshed on bounce-rate-explained.html
+  Ô£à hreflang refreshed on what-is-a-dashboard.html
+  Ô£à hreflang refreshed on data-driven-decision-making-explained.html
+  Ô£à hreflang refreshed on what-is-a-server.html
+  Ô£à hreflang refreshed on what-are-containers.html
+  Ô£à hreflang refreshed on what-is-kubernetes.html
+  Ô£à hreflang refreshed on what-is-serverless-computing.html
+  Ô£à hreflang refreshed on what-is-load-balancing.html
+  Ô£à hreflang refreshed on what-is-infrastructure-as-code.html
+  Ô£à hreflang refreshed on what-is-a-reverse-proxy.html
+  Ô£à hreflang refreshed on what-is-edge-computing.html
+  Ô£à hreflang refreshed on what-is-page-speed.html
+  Ô£à hreflang refreshed on what-are-core-web-vitals.html
+  Ô£à hreflang refreshed on what-is-image-optimization.html
+  Ô£à hreflang refreshed on what-is-browser-caching.html
+  Ô£à hreflang refreshed on what-is-lazy-loading.html
+  Ô£à hreflang refreshed on what-is-minification.html
+  Ô£à hreflang refreshed on what-is-time-to-first-byte.html
+  Ô£à hreflang refreshed on why-website-performance-matters-explained.html
+  Ô£à hreflang refreshed on what-is-digital-transformation.html
+  Ô£à hreflang refreshed on what-is-erp.html
+  Ô£à hreflang refreshed on what-is-a-crm.html
+  Ô£à hreflang refreshed on what-is-a-cms.html
+  Ô£à hreflang refreshed on what-is-saas.html
+  Ô£à hreflang refreshed on what-is-a-tech-stack.html
+  Ô£à hreflang refreshed on cloud-migration-explained.html
+  Ô£à hreflang refreshed on legacy-systems-explained.html
+  Ô£à hreflang refreshed on do-i-need-a-website-explained.html
+  Ô£à hreflang refreshed on how-much-does-a-website-cost-explained.html
+  Ô£à hreflang refreshed on wordpress-vs-website-builder-explained.html
+  Ô£à hreflang refreshed on do-i-need-a-developer-or-diy-explained.html
+  Ô£à hreflang refreshed on how-much-to-spend-on-marketing-explained.html
+  Ô£à hreflang refreshed on is-my-business-ready-for-automation-explained.html
+  Ô£à hreflang refreshed on outsource-vs-hire-in-house-explained.html
+  Ô£à hreflang refreshed on how-long-does-seo-take-explained.html
+  Ô£à hreflang refreshed on rest-vs-graphql-explained.html
+  Ô£à hreflang refreshed on sql-vs-nosql-explained.html
+  Ô£à hreflang refreshed on monolith-vs-microservices-explained.html
+  Ô£à hreflang refreshed on shopify-vs-woocommerce-explained.html
+  Ô£à hreflang refreshed on agile-vs-waterfall-explained.html
+  Ô£à hreflang refreshed on saas-vs-custom-software-explained.html
+  Ô£à hreflang refreshed on b2b-vs-b2c-explained.html
+  Ô£à hreflang refreshed on cloud-vs-on-premises-explained.html
+  Ô£à hreflang refreshed on what-is-noxel360.html
+  Ô£à hreflang refreshed on what-is-noxel-seo.html
+  Ô£à hreflang refreshed on what-is-noxel-forge.html
+  Ô£à hreflang refreshed on what-is-nexus.html
+  Ô£à hreflang refreshed on noxel-seo-features-explained.html
+  Ô£à hreflang refreshed on what-is-trust-score-forge-explained.html
+  Ô£à hreflang refreshed on how-noxel-seo-and-forge-connect-explained.html
+  Ô£à hreflang refreshed on noxel360-ai-copilot-explained.html
+
+­ƒîÉ Translating to Afrikaans (af)...
+  ­ƒöä Translating index.html... Ô£à saved to public/learn/af/index.html
+  ­ƒöä Translating development.html... Ô£à saved to public/learn/af/development.html
+  ­ƒöä Translating web-foundations.html... Ô£à saved to public/learn/af/web-foundations.html
+  ­ƒöä Translating artificial-intelligence.html... Ô£à saved to public/learn/af/artificial-intelligence.html
+  ­ƒöä Translating automation.html... Ô£à saved to public/learn/af/automation.html
+  ­ƒöä Translating security.html... Ô£à saved to public/learn/af/security.html
+  ­ƒöä Translating digital-marketing.html... Ô£à saved to public/learn/af/digital-marketing.html
+  ­ƒöä Translating ecommerce.html... Ô£à saved to public/learn/af/ecommerce.html
+  ­ƒöä Translating data-analytics.html... Ô£à saved to public/learn/af/data-analytics.html
+  ­ƒöä Translating infrastructure.html... Ô£à saved to public/learn/af/infrastructure.html
+  ­ƒöä Translating performance.html... Ô£à saved to public/learn/af/performance.html
+  ­ƒöä Translating digital-transformation.html... Ô£à saved to public/learn/af/digital-transformation.html
+  ­ƒöä Translating business-questions.html... Ô£à saved to public/learn/af/business-questions.html
+  ­ƒöä Translating comparisons.html... Ô£à saved to public/learn/af/comparisons.html
+  ­ƒöä Translating noxel360-ecosystem.html... Ô£à saved to public/learn/af/noxel360-ecosystem.html
+  ­ƒöä Translating what-is-an-api.html... Ô£à saved to public/learn/af/what-is-an-api.html
+  ­ƒöä Translating what-is-front-end-development.html... Ô£à saved to public/learn/af/what-is-front-end-development.html
+  ­ƒöä Translating what-is-back-end-development.html... Ô£à saved to public/learn/af/what-is-back-end-development.html
+  ­ƒöä Translating what-is-full-stack-development.html... Ô£à saved to public/learn/af/what-is-full-stack-development.html
+  ­ƒöä Translating what-is-a-database.html... Ô£à saved to public/learn/af/what-is-a-database.html
+  ­ƒöä Translating what-is-devops.html... Ô£à saved to public/learn/af/what-is-devops.html
+  ­ƒöä Translating what-are-microservices.html... Ô£à saved to public/learn/af/what-are-microservices.html
+  ­ƒöä Translating what-is-version-control-git.html... Ô£à saved to public/learn/af/what-is-version-control-git.html
+  ­ƒöä Translating what-is-continuous-integration.html... Ô£à saved to public/learn/af/what-is-continuous-integration.html
+  ­ƒöä Translating what-is-a-website.html... Ô£à saved to public/learn/af/what-is-a-website.html
+  ­ƒöä Translating what-is-a-domain-name.html... Ô£à saved to public/learn/af/what-is-a-domain-name.html
+  ­ƒöä Translating what-is-dns.html... Ô£à saved to public/learn/af/what-is-dns.html
+  ­ƒöä Translating what-is-an-ip-address.html... Ô£à saved to public/learn/af/what-is-an-ip-address.html
+  ­ƒöä Translating http-vs-https.html... Ô£à saved to public/learn/af/http-vs-https.html
+  ­ƒöä Translating what-is-ssl-tls.html... Ô£à saved to public/learn/af/what-is-ssl-tls.html
+  ­ƒöä Translating what-is-web-hosting.html... Ô£à saved to public/learn/af/what-is-web-hosting.html
+  ­ƒöä Translating what-is-cloud-computing.html... Ô£à saved to public/learn/af/what-is-cloud-computing.html
+  ­ƒöä Translating what-is-a-cdn.html... Ô£à saved to public/learn/af/what-is-a-cdn.html
+  ­ƒöä Translating what-is-bandwidth.html... Ô£à saved to public/learn/af/what-is-bandwidth.html
+  ­ƒöä Translating what-is-uptime.html... Ô£à saved to public/learn/af/what-is-uptime.html
+  ­ƒöä Translating what-is-artificial-intelligence.html... Ô£à saved to public/learn/af/what-is-artificial-intelligence.html
+  ­ƒöä Translating what-is-machine-learning.html... Ô£à saved to public/learn/af/what-is-machine-learning.html
+  ­ƒöä Translating what-is-generative-ai.html... Ô£à saved to public/learn/af/what-is-generative-ai.html
+  ­ƒöä Translating what-are-ai-agents.html... Ô£à saved to public/learn/af/what-are-ai-agents.html
+  ­ƒöä Translating what-is-prompt-engineering.html... Ô£à saved to public/learn/af/what-is-prompt-engineering.html
+  ­ƒöä Translating what-is-rag.html... Ô£à saved to public/learn/af/what-is-rag.html
+  ­ƒöä Translating ai-automation-vs-ai-agent.html... Ô£à saved to public/learn/af/ai-automation-vs-ai-agent.html
+  ­ƒöä Translating how-businesses-use-ai.html... Ô£à saved to public/learn/af/how-businesses-use-ai.html
+  ­ƒöä Translating ai-risks-and-limitations.html... Ô£à saved to public/learn/af/ai-risks-and-limitations.html
+  ­ƒöä Translating what-is-business-automation.html... Ô£à saved to public/learn/af/what-is-business-automation.html
+  ­ƒöä Translating what-is-workflow-automation.html... Ô£à saved to public/learn/af/what-is-workflow-automation.html
+  ­ƒöä Translating what-is-process-automation.html... Ô£à saved to public/learn/af/what-is-process-automation.html
+  ­ƒöä Translating what-is-rpa.html... Ô£à saved to public/learn/af/what-is-rpa.html
+  ­ƒöä Translating what-is-event-driven-automation.html... Ô£à saved to public/learn/af/what-is-event-driven-automation.html
+  ­ƒöä Translating what-is-api-integration.html... Ô£à saved to public/learn/af/what-is-api-integration.html
+  ­ƒöä Translating what-are-webhooks.html... Ô£à saved to public/learn/af/what-are-webhooks.html
+  ­ƒöä Translating what-is-cybersecurity.html... Ô£à saved to public/learn/af/what-is-cybersecurity.html
+  ­ƒöä Translating common-cyber-threats.html... Ô£à saved to public/learn/af/common-cyber-threats.html
+  ­ƒöä Translating what-is-mfa.html... Ô£à saved to public/learn/af/what-is-mfa.html
+  ­ƒöä Translating password-managers-explained.html... Ô£à saved to public/learn/af/password-managers-explained.html
+  ­ƒöä Translating what-is-data-encryption.html... Ô£à saved to public/learn/af/what-is-data-encryption.html
+  ­ƒöä Translating firewalls-explained.html... Ô£à saved to public/learn/af/firewalls-explained.html
+  ­ƒöä Translating backup-strategies.html... Ô£à saved to public/learn/af/backup-strategies.html
+  ­ƒöä Translating what-is-disaster-recovery.html... Ô£à saved to public/learn/af/what-is-disaster-recovery.html
+  ­ƒöä Translating what-is-zero-trust-security.html... Ô£à saved to public/learn/af/what-is-zero-trust-security.html
+  ­ƒöä Translating what-is-seo.html... Ô£à saved to public/learn/af/what-is-seo.html
+  ­ƒöä Translating what-is-local-seo.html... Ô£à saved to public/learn/af/what-is-local-seo.html
+  ­ƒöä Translating what-is-technical-seo.html... Ô£à saved to public/learn/af/what-is-technical-seo.html
+  ­ƒöä Translating what-is-geo.html... Ô£à saved to public/learn/af/what-is-geo.html
+  ­ƒöä Translating what-is-sem.html... Ô£à saved to public/learn/af/what-is-sem.html
+  ­ƒöä Translating what-is-ppc.html... Ô£à saved to public/learn/af/what-is-ppc.html
+  ­ƒöä Translating what-is-content-marketing.html... Ô£à saved to public/learn/af/what-is-content-marketing.html
+  ­ƒöä Translating what-is-email-marketing.html... Ô£à saved to public/learn/af/what-is-email-marketing.html
+  ­ƒöä Translating what-is-cro.html... Ô£à saved to public/learn/af/what-is-cro.html
+  ­ƒöä Translating what-is-ab-testing.html... Ô£à saved to public/learn/af/what-is-ab-testing.html
+  ­ƒöä Translating what-is-ux.html... Ô£à saved to public/learn/af/what-is-ux.html
+  ­ƒöä Translating what-is-ui.html... Ô£à saved to public/learn/af/what-is-ui.html
+  ­ƒöä Translating responsive-design-explained.html... Ô£à saved to public/learn/af/responsive-design-explained.html
+  ­ƒöä Translating mobile-first-design-explained.html... Ô£à saved to public/learn/af/mobile-first-design-explained.html
+  ­ƒöä Translating web-accessibility-wcag-explained.html... Ô£à saved to public/learn/af/web-accessibility-wcag-explained.html
+  ­ƒöä Translating what-is-a-user-journey.html... Ô£à saved to public/learn/af/what-is-a-user-journey.html
+  ­ƒöä Translating wireframes-vs-mockups-explained.html... Ô£à saved to public/learn/af/wireframes-vs-mockups-explained.html
+  ­ƒöä Translating what-is-a-design-system.html... Ô£à saved to public/learn/af/what-is-a-design-system.html
+  ­ƒöä Translating what-is-ecommerce.html... Ô£à saved to public/learn/af/what-is-ecommerce.html
+  ­ƒöä Translating what-is-a-shopping-cart.html... Ô£à saved to public/learn/af/what-is-a-shopping-cart.html
+  ­ƒöä Translating what-is-a-payment-gateway.html... Ô£à saved to public/learn/af/what-is-a-payment-gateway.html
+  ­ƒöä Translating what-is-dropshipping.html... Ô£à saved to public/learn/af/what-is-dropshipping.html
+  ­ƒöä Translating what-is-a-marketplace.html... Ô£à saved to public/learn/af/what-is-a-marketplace.html
+  ­ƒöä Translating what-is-inventory-management.html... Ô£à saved to public/learn/af/what-is-inventory-management.html
+  ­ƒöä Translating what-is-a-pos-system.html... Ô£à saved to public/learn/af/what-is-a-pos-system.html
+  ­ƒöä Translating cart-abandonment-explained.html... Ô£à saved to public/learn/af/cart-abandonment-explained.html
+  ­ƒöä Translating what-is-web-analytics.html... Ô£à saved to public/learn/af/what-is-web-analytics.html
+  ­ƒöä Translating what-is-google-search-console.html... Ô£à saved to public/learn/af/what-is-google-search-console.html
+  ­ƒöä Translating what-are-kpis.html... Ô£à saved to public/learn/af/what-are-kpis.html
+  ­ƒöä Translating what-is-a-conversion-funnel.html... Ô£à saved to public/learn/af/what-is-a-conversion-funnel.html
+  ­ƒöä Translating what-is-google-analytics-4.html... Ô£à saved to public/learn/af/what-is-google-analytics-4.html
+  ­ƒöä Translating bounce-rate-explained.html... Ô£à saved to public/learn/af/bounce-rate-explained.html
+  ­ƒöä Translating what-is-a-dashboard.html... Ô£à saved to public/learn/af/what-is-a-dashboard.html
+  ­ƒöä Translating data-driven-decision-making-explained.html... Ô£à saved to public/learn/af/data-driven-decision-making-explained.html
+  ­ƒöä Translating what-is-a-server.html... Ô£à saved to public/learn/af/what-is-a-server.html
+  ­ƒöä Translating what-are-containers.html... Ô£à saved to public/learn/af/what-are-containers.html
+  ­ƒöä Translating what-is-kubernetes.html... Ô£à saved to public/learn/af/what-is-kubernetes.html
+  ­ƒöä Translating what-is-serverless-computing.html... Ô£à saved to public/learn/af/what-is-serverless-computing.html
+  ­ƒöä Translating what-is-load-balancing.html... Ô£à saved to public/learn/af/what-is-load-balancing.html
+  ­ƒöä Translating what-is-infrastructure-as-code.html... Ô£à saved to public/learn/af/what-is-infrastructure-as-code.html
+  ­ƒöä Translating what-is-a-reverse-proxy.html... Ô£à saved to public/learn/af/what-is-a-reverse-proxy.html
+  ­ƒöä Translating what-is-edge-computing.html... Ô£à saved to public/learn/af/what-is-edge-computing.html
+  ­ƒöä Translating what-is-page-speed.html... Ô£à saved to public/learn/af/what-is-page-speed.html
+  ­ƒöä Translating what-are-core-web-vitals.html... Ô£à saved to public/learn/af/what-are-core-web-vitals.html
+  ­ƒöä Translating what-is-image-optimization.html... Ô£à saved to public/learn/af/what-is-image-optimization.html
+  ­ƒöä Translating what-is-browser-caching.html... Ô£à saved to public/learn/af/what-is-browser-caching.html
+  ­ƒöä Translating what-is-lazy-loading.html... Ô£à saved to public/learn/af/what-is-lazy-loading.html
+  ­ƒöä Translating what-is-minification.html... Ô£à saved to public/learn/af/what-is-minification.html
+  ­ƒöä Translating what-is-time-to-first-byte.html... Ô£à saved to public/learn/af/what-is-time-to-first-byte.html
+  ­ƒöä Translating why-website-performance-matters-explained.html... Ô£à saved to public/learn/af/why-website-performance-matters-explained.html
+  ­ƒöä Translating what-is-digital-transformation.html... Ô£à saved to public/learn/af/what-is-digital-transformation.html
+  ­ƒöä Translating what-is-erp.html... Ô£à saved to public/learn/af/what-is-erp.html
+  ­ƒöä Translating what-is-a-crm.html... Ô£à saved to public/learn/af/what-is-a-crm.html
+  ­ƒöä Translating what-is-a-cms.html... Ô£à saved to public/learn/af/what-is-a-cms.html
+  ­ƒöä Translating what-is-saas.html... Ô£à saved to public/learn/af/what-is-saas.html
+  ­ƒöä Translating what-is-a-tech-stack.html... Ô£à saved to public/learn/af/what-is-a-tech-stack.html
+  ­ƒöä Translating cloud-migration-explained.html... Ô£à saved to public/learn/af/cloud-migration-explained.html
+  ­ƒöä Translating legacy-systems-explained.html... Ô£à saved to public/learn/af/legacy-systems-explained.html
+  ­ƒöä Translating do-i-need-a-website-explained.html... Ô£à saved to public/learn/af/do-i-need-a-website-explained.html
+  ­ƒöä Translating how-much-does-a-website-cost-explained.html... Ô£à saved to public/learn/af/how-much-does-a-website-cost-explained.html
+  ­ƒöä Translating wordpress-vs-website-builder-explained.html... Ô£à saved to public/learn/af/wordpress-vs-website-builder-explained.html
+  ­ƒöä Translating do-i-need-a-developer-or-diy-explained.html... Ô£à saved to public/learn/af/do-i-need-a-developer-or-diy-explained.html
+  ­ƒöä Translating how-much-to-spend-on-marketing-explained.html... Ô£à saved to public/learn/af/how-much-to-spend-on-marketing-explained.html
+  ­ƒöä Translating is-my-business-ready-for-automation-explained.html... Ô£à saved to public/learn/af/is-my-business-ready-for-automation-explained.html
+  ­ƒöä Translating outsource-vs-hire-in-house-explained.html... Ô£à saved to public/learn/af/outsource-vs-hire-in-house-explained.html
+  ­ƒöä Translating how-long-does-seo-take-explained.html... Ô£à saved to public/learn/af/how-long-does-seo-take-explained.html
+  ­ƒöä Translating rest-vs-graphql-explained.html... Ô£à saved to public/learn/af/rest-vs-graphql-explained.html
+  ­ƒöä Translating sql-vs-nosql-explained.html... Ô£à saved to public/learn/af/sql-vs-nosql-explained.html
+  ­ƒöä Translating monolith-vs-microservices-explained.html... Ô£à saved to public/learn/af/monolith-vs-microservices-explained.html
+  ­ƒöä Translating shopify-vs-woocommerce-explained.html... Ô£à saved to public/learn/af/shopify-vs-woocommerce-explained.html
+  ­ƒöä Translating agile-vs-waterfall-explained.html... Ô£à saved to public/learn/af/agile-vs-waterfall-explained.html
+  ­ƒöä Translating saas-vs-custom-software-explained.html... Ô£à saved to public/learn/af/saas-vs-custom-software-explained.html
+  ­ƒöä Translating b2b-vs-b2c-explained.html... Ô£à saved to public/learn/af/b2b-vs-b2c-explained.html
+  ­ƒöä Translating cloud-vs-on-premises-explained.html... Ô£à saved to public/learn/af/cloud-vs-on-premises-explained.html
+  ­ƒöä Translating what-is-noxel360.html... Ô£à saved to public/learn/af/what-is-noxel360.html
+  ­ƒöä Translating what-is-noxel-seo.html... Ô£à saved to public/learn/af/what-is-noxel-seo.html
+  ­ƒöä Translating what-is-noxel-forge.html... Ô£à saved to public/learn/af/what-is-noxel-forge.html
+  ­ƒöä Translating what-is-nexus.html... Ô£à saved to public/learn/af/what-is-nexus.html
+  ­ƒöä Translating noxel-seo-features-explained.html... Ô£à saved to public/learn/af/noxel-seo-features-explained.html
+  ­ƒöä Translating what-is-trust-score-forge-explained.html... Ô£à saved to public/learn/af/what-is-trust-score-forge-explained.html
+  ­ƒöä Translating how-noxel-seo-and-forge-connect-explained.html... Ô£à saved to public/learn/af/how-noxel-seo-and-forge-connect-explained.html
+  ­ƒöä Translating noxel360-ai-copilot-explained.html... Ô£à saved to public/learn/af/noxel360-ai-copilot-explained.html
+
+­ƒîÉ Translating to Amharic (am)...
+  ­ƒöä Translating index.html... Ô£à saved to public/learn/am/index.html
+  ­ƒöä Translating development.html... Ô£à saved to public/learn/am/development.html
+  ­ƒöä Translating web-foundations.html... Ô£à saved to public/learn/am/web-foundations.html
+  ­ƒöä Translating artificial-intelligence.html... Ô£à saved to public/learn/am/artificial-intelligence.html
+  ­ƒöä Translating automation.html... Ô£à saved to public/learn/am/automation.html
+  ­ƒöä Translating security.html... Ô£à saved to public/learn/am/security.html
+  ­ƒöä Translating digital-marketing.html... Ô£à saved to public/learn/am/digital-marketing.html
+  ­ƒöä Translating ecommerce.html... Ô£à saved to public/learn/am/ecommerce.html
+  ­ƒöä Translating data-analytics.html... Ô£à saved to public/learn/am/data-analytics.html
+  ­ƒöä Translating infrastructure.html... Ô£à saved to public/learn/am/infrastructure.html
+  ­ƒöä Translating performance.html... Ô£à saved to public/learn/am/performance.html
+  ­ƒöä Translating digital-transformation.html... Ô£à saved to public/learn/am/digital-transformation.html
+  ­ƒöä Translating business-questions.html... Ô£à saved to public/learn/am/business-questions.html
+  ­ƒöä Translating comparisons.html... Ô£à saved to public/learn/am/comparisons.html
+  ­ƒöä Translating noxel360-ecosystem.html... Ô£à saved to public/learn/am/noxel360-ecosystem.html
+  ­ƒöä Translating what-is-an-api.html... ÔØî ERROR: fetch failed
+  ­ƒöä Translating what-is-front-end-development.html... ÔØî ERROR: fetch failed
+  ­ƒöä Translating what-is-back-end-development.html... ÔØî ERROR: fetch failed
+  ­ƒöä Translating what-is-full-stack-development.html... Ô£à saved to public/learn/am/what-is-full-stack-development.html
+  ­ƒöä Translating what-is-a-database.html... Ô£à saved to public/learn/am/what-is-a-database.html
+  ­ƒöä Translating what-is-devops.html... Ô£à saved to public/learn/am/what-is-devops.html
+  ­ƒöä Translating what-are-microservices.html... Ô£à saved to public/learn/am/what-are-microservices.html
+  ­ƒöä Translating what-is-version-control-git.html... Ô£à saved to public/learn/am/what-is-version-control-git.html
+  ­ƒöä Translating what-is-continuous-integration.html... Ô£à saved to public/learn/am/what-is-continuous-integration.html
+  ­ƒöä Translating what-is-a-website.html... Ô£à saved to public/learn/am/what-is-a-website.html
+  ­ƒöä Translating what-is-a-domain-name.html... Ô£à saved to public/learn/am/what-is-a-domain-name.html
+  ­ƒöä Translating what-is-dns.html... Ô£à saved to public/learn/am/what-is-dns.html
+  ­ƒöä Translating what-is-an-ip-address.html... Ô£à saved to public/learn/am/what-is-an-ip-address.html
+  ­ƒöä Translating http-vs-https.html... Ô£à saved to public/learn/am/http-vs-https.html
+  ­ƒöä Translating what-is-ssl-tls.html... Ô£à saved to public/learn/am/what-is-ssl-tls.html
+  ­ƒöä Translating what-is-web-hosting.html... Ô£à saved to public/learn/am/what-is-web-hosting.html
+  ­ƒöä Translating what-is-cloud-computing.html... Ô£à saved to public/learn/am/what-is-cloud-computing.html
+  ­ƒöä Translating what-is-a-cdn.html... Ô£à saved to public/learn/am/what-is-a-cdn.html
+  ­ƒöä Translating what-is-bandwidth.html... Ô£à saved to public/learn/am/what-is-bandwidth.html
+  ­ƒöä Translating what-is-uptime.html... Ô£à saved to public/learn/am/what-is-uptime.html
+  ­ƒöä Translating what-is-artificial-intelligence.html... Ô£à saved to public/learn/am/what-is-artificial-intelligence.html
+  ­ƒöä Translating what-is-machine-learning.html... Ô£à saved to public/learn/am/what-is-machine-learning.html
+  ­ƒöä Translating what-is-generative-ai.html... Ô£à saved to public/learn/am/what-is-generative-ai.html
+  ­ƒöä Translating what-are-ai-agents.html... Ô£à saved to public/learn/am/what-are-ai-agents.html
+  ­ƒöä Translating what-is-prompt-engineering.html... Ô£à saved to public/learn/am/what-is-prompt-engineering.html
+  ­ƒöä Translating what-is-rag.html... Ô£à saved to public/learn/am/what-is-rag.html
+  ­ƒöä Translating ai-automation-vs-ai-agent.html... Ô£à saved to public/learn/am/ai-automation-vs-ai-agent.html
+  ­ƒöä Translating how-businesses-use-ai.html... Ô£à saved to public/learn/am/how-businesses-use-ai.html
+  ­ƒöä Translating ai-risks-and-limitations.html... Ô£à saved to public/learn/am/ai-risks-and-limitations.html
+  ­ƒöä Translating what-is-business-automation.html... Ô£à saved to public/learn/am/what-is-business-automation.html
+  ­ƒöä Translating what-is-workflow-automation.html... Ô£à saved to public/learn/am/what-is-workflow-automation.html
+  ­ƒöä Translating what-is-process-automation.html... Ô£à saved to public/learn/am/what-is-process-automation.html
+  ­ƒöä Translating what-is-rpa.html... Ô£à saved to public/learn/am/what-is-rpa.html
+  ­ƒöä Translating what-is-event-driven-automation.html... Ô£à saved to public/learn/am/what-is-event-driven-automation.html
+  ­ƒöä Translating what-is-api-integration.html... Ô£à saved to public/learn/am/what-is-api-integration.html
+  ­ƒöä Translating what-are-webhooks.html... Ô£à saved to public/learn/am/what-are-webhooks.html
+  ­ƒöä Translating what-is-cybersecurity.html... Ô£à saved to public/learn/am/what-is-cybersecurity.html
+  ­ƒöä Translating common-cyber-threats.html... Ô£à saved to public/learn/am/common-cyber-threats.html
+  ­ƒöä Translating what-is-mfa.html... Ô£à saved to public/learn/am/what-is-mfa.html
+  ­ƒöä Translating password-managers-explained.html... Ô£à saved to public/learn/am/password-managers-explained.html
+  ­ƒöä Translating what-is-data-encryption.html... Ô£à saved to public/learn/am/what-is-data-encryption.html
+  ­ƒöä Translating firewalls-explained.html... Ô£à saved to public/learn/am/firewalls-explained.html
+  ­ƒöä Translating backup-strategies.html... Ô£à saved to public/learn/am/backup-strategies.html
+  ­ƒöä Translating what-is-disaster-recovery.html... Ô£à saved to public/learn/am/what-is-disaster-recovery.html
+  ­ƒöä Translating what-is-zero-trust-security.html... Ô£à saved to public/learn/am/what-is-zero-trust-security.html
+  ­ƒöä Translating what-is-seo.html... Ô£à saved to public/learn/am/what-is-seo.html
+  ­ƒöä Translating what-is-local-seo.html... Ô£à saved to public/learn/am/what-is-local-seo.html
+  ­ƒöä Translating what-is-technical-seo.html... Ô£à saved to public/learn/am/what-is-technical-seo.html
+  ­ƒöä Translating what-is-geo.html... Ô£à saved to public/learn/am/what-is-geo.html
+  ­ƒöä Translating what-is-sem.html... Ô£à saved to public/learn/am/what-is-sem.html
+  ­ƒöä Translating what-is-ppc.html... Ô£à saved to public/learn/am/what-is-ppc.html
+  ­ƒöä Translating what-is-content-marketing.html... Ô£à saved to public/learn/am/what-is-content-marketing.html
+  ­ƒöä Translating what-is-email-marketing.html... Ô£à saved to public/learn/am/what-is-email-marketing.html
+  ­ƒöä Translating what-is-cro.html... Ô£à saved to public/learn/am/what-is-cro.html
+  ­ƒöä Translating what-is-ab-testing.html... Ô£à saved to public/learn/am/what-is-ab-testing.html
+  ­ƒöä Translating what-is-ux.html... Ô£à saved to public/learn/am/what-is-ux.html
+  ­ƒöä Translating what-is-ui.html... Ô£à saved to public/learn/am/what-is-ui.html
+  ­ƒöä Translating responsive-design-explained.html... Ô£à saved to public/learn/am/responsive-design-explained.html
+  ­ƒöä Translating mobile-first-design-explained.html... Ô£à saved to public/learn/am/mobile-first-design-explained.html
+  ­ƒöä Translating web-accessibility-wcag-explained.html... Ô£à saved to public/learn/am/web-accessibility-wcag-explained.html
+  ­ƒöä Translating what-is-a-user-journey.html... Ô£à saved to public/learn/am/what-is-a-user-journey.html
+  ­ƒöä Translating wireframes-vs-mockups-explained.html... Ô£à saved to public/learn/am/wireframes-vs-mockups-explained.html
+  ­ƒöä Translating what-is-a-design-system.html... Ô£à saved to public/learn/am/what-is-a-design-system.html
+  ­ƒöä Translating what-is-ecommerce.html... Ô£à saved to public/learn/am/what-is-ecommerce.html
+  ­ƒöä Translating what-is-a-shopping-cart.html... Ô£à saved to public/learn/am/what-is-a-shopping-cart.html
+  ­ƒöä Translating what-is-a-payment-gateway.html... Ô£à saved to public/learn/am/what-is-a-payment-gateway.html
+  ­ƒöä Translating what-is-dropshipping.html... Ô£à saved to public/learn/am/what-is-dropshipping.html
+  ­ƒöä Translating what-is-a-marketplace.html... Ô£à saved to public/learn/am/what-is-a-marketplace.html
+  ­ƒöä Translating what-is-inventory-management.html... Ô£à saved to public/learn/am/what-is-inventory-management.html
+  ­ƒöä Translating what-is-a-pos-system.html... Ô£à saved to public/learn/am/what-is-a-pos-system.html
+  ­ƒöä Translating cart-abandonment-explained.html... Ô£à saved to public/learn/am/cart-abandonment-explained.html
+  ­ƒöä Translating what-is-web-analytics.html... Ô£à saved to public/learn/am/what-is-web-analytics.html
+  ­ƒöä Translating what-is-google-search-console.html... ÔØî ERROR: API error: <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+
+<title>api.anthropic.com | 520: Web server is returning an unknown error</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/main.css" />
+</head>
+<body>
+<div id="cf-wrapper">
+    <div id="cf-error-details" class="p-0">
+        <header class="mx-auto pt-10 lg:pt-6 lg:px-8 w-240 lg:w-full mb-8">
+            <h1 class="inline-block sm:block sm:mb-2 font-light text-60 lg:text-4xl text-black-dark leading-tight mr-2">
+                <span class="inline-block">Web server is returning an unknown error</span>
+                <span class="code-label">Error code 520</span>
+            </h1>
+            <div>
+                Visit <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_520&utm_campaign=api.anthropic.com" target="_blank" rel="noopener noreferrer">cloudflare.com</a> for more information.
+            </div>
+            <div class="mt-3">2026-07-26 06:00:18 UTC</div>
+        </header>
+        <div class="my-8 bg-gradient-gray">
+            <div class="w-240 lg:w-full mx-auto">
+                <div class="clearfix md:px-8">
+                    <div id="cf-browser-status" class=" relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+  <div class="relative mb-10 md:m-0">
+    
+    <span class="cf-icon-browser block md:hidden h-20 bg-center bg-no-repeat"></span>
+    <span class="cf-icon-ok w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+    
+  </div>
+  <span class="md:block w-full truncate">You</span>
+  <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">
+  
+    Browser
+  
+  </h3>
+  
+  <span class="leading-1.3 text-2xl text-green-success">Working</span>
+  
+</div>
+                    <div id="cf-cloudflare-status" class=" relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+  <div class="relative mb-10 md:m-0">
+    <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_520&#38;utm_campaign=api.anthropic.com" target="_blank" rel="noopener noreferrer">
+    <span class="cf-icon-cloud block md:hidden h-20 bg-center bg-no-repeat"></span>
+    <span class="cf-icon-ok w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+    </a>
+  </div>
+  <span class="md:block w-full truncate">Toronto</span>
+  <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">
+  <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_520&utm_campaign=api.anthropic.com" target="_blank" rel="noopener noreferrer">
+    Cloudflare
+  </a>
+  </h3>
+  
+  <span class="leading-1.3 text-2xl text-green-success">Working</span>
+  
+</div>
+                    <div id="cf-host-status" class="cf-error-source relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+  <div class="relative mb-10 md:m-0">
+    
+    <span class="cf-icon-server block md:hidden h-20 bg-center bg-no-repeat"></span>
+    <span class="cf-icon-error w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+    
+  </div>
+  <span class="md:block w-full truncate">api.anthropic.com</span>
+  <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">
+  
+    Host
+  
+  </h3>
+  
+  <span class="leading-1.3 text-2xl text-red-error">Error</span>
+  
+</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-240 lg:w-full mx-auto mb-8 lg:px-8">
+            <div class="clearfix">
+                <div class="w-1/2 md:w-full float-left pr-6 md:pb-10 md:pr-0 leading-relaxed">
+                    <h2 class="text-3xl font-normal leading-1.3 mb-4">What happened?</h2>
+                    <p>There is an unknown connection issue between Cloudflare and the origin web server. As a result, the web page can not be displayed.</p>
+                </div>
+                <div class="w-1/2 md:w-full float-left leading-relaxed">
+                    <h2 class="text-3xl font-normal leading-1.3 mb-4">What can I do?</h2>
+                    
+                <h3 class="text-15 font-semibold mb-2">If you are a visitor of this website:</h3>
+                <p class="mb-6">Please try again in a few minutes.</p>
+
+                <h3 class="text-15 font-semibold mb-2">If you are the owner of this website:</h3>
+                <p><span>There is an issue between Cloudflare's cache and your origin web server. Cloudflare monitors for these errors and automatically investigates the cause. To help support the investigation, you can pull the corresponding error log from your web server and submit it our support team.  Please include the Ray ID (which is at the bottom of this error page).</span> <a rel="noopener noreferrer" href=   "https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-520/">Additional troubleshooting resources</a>.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cf-error-footer cf-wrapper w-240 lg:w-full py-10 sm:py-4 sm:px-8 mx-auto text-center sm:text-left border-solid border-0 border-t border-gray-300">
+    <p class="text-13">
+      <span class="cf-footer-item sm:block sm:mb-1">Cloudflare Ray ID: <strong class="font-semibold">a2112bbf6843ab94</strong></span>
+      <span class="cf-footer-separator sm:hidden">&bull;</span>
+      <span id="cf-footer-item-ip" class="cf-footer-item hidden sm:block sm:mb-1">
+        Your IP:
+        <button type="button" id="cf-footer-ip-reveal" class="cf-footer-ip-reveal-btn">Click to reveal</button>
+        <span class="hidden" id="cf-footer-ip">2605:8d80:67c0:61bf:c456:45ce:9875:c8f7</span>
+        <span class="cf-footer-separator sm:hidden">&bull;</span>
+      </span>
+      <span class="cf-footer-item sm:block sm:mb-1"><span>Performance &amp; security by</span> <a rel="noopener noreferrer" href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_520&#38;utm_campaign=api.anthropic.com" id="brand_link" target="_blank">Cloudflare</a></span>
+      
+    </p>
+    <script>(function(){function d(){var b=a.getElementById("cf-footer-item-ip"),c=a.getElementById("cf-footer-ip-reveal");b&&"classList"in b&&(b.classList.remove("hidden"),c.addEventListener("click",function(){c.classList.add("hidden");a.getElementById("cf-footer-ip").classList.remove("hidden")}))}var a=document;document.addEventListener&&a.addEventListener("DOMContentLoaded",d)})();</script>
+  </div><!-- /.error-footer -->
+
+    </div>
+</div>
+</body>
+</html>
+  ­ƒöä Translating what-are-kpis.html... Ô£à saved to public/learn/am/what-are-kpis.html
+  ­ƒöä Translating what-is-a-conversion-funnel.html... Ô£à saved to public/learn/am/what-is-a-conversion-funnel.html
+  ­ƒöä Translating what-is-google-analytics-4.html... Ô£à saved to public/learn/am/what-is-google-analytics-4.html
+  ­ƒöä Translating bounce-rate-explained.html... Ô£à saved to public/learn/am/bounce-rate-explained.html
+  ­ƒöä Translating what-is-a-dashboard.html... Ô£à saved to public/learn/am/what-is-a-dashboard.html
+  ­ƒöä Translating data-driven-decision-making-explained.html... Ô£à saved to public/learn/am/data-driven-decision-making-explained.html
+  ­ƒöä Translating what-is-a-server.html... Ô£à saved to public/learn/am/what-is-a-server.html
+  ­ƒöä Translating what-are-containers.html... Ô£à saved to public/learn/am/what-are-containers.html
+  ­ƒöä Translating what-is-kubernetes.html... Ô£à saved to public/learn/am/what-is-kubernetes.html
+  ­ƒöä Translating what-is-serverless-computing.html... Ô£à saved to public/learn/am/what-is-serverless-computing.html
+  ­ƒöä Translating what-is-load-balancing.html... Ô£à saved to public/learn/am/what-is-load-balancing.html
+  ­ƒöä Translating what-is-infrastructure-as-code.html... Ô£à saved to public/learn/am/what-is-infrastructure-as-code.html
+  ­ƒöä Translating what-is-a-reverse-proxy.html... Ô£à saved to public/learn/am/what-is-a-reverse-proxy.html
+  ­ƒöä Translating what-is-edge-computing.html... Ô£à saved to public/learn/am/what-is-edge-computing.html
+  ­ƒöä Translating what-is-page-speed.html... Ô£à saved to public/learn/am/what-is-page-speed.html
+  ­ƒöä Translating what-are-core-web-vitals.html... Ô£à saved to public/learn/am/what-are-core-web-vitals.html
+  ­ƒöä Translating what-is-image-optimization.html... Ô£à saved to public/learn/am/what-is-image-optimization.html
+  ­ƒöä Translating what-is-browser-caching.html... Ô£à saved to public/learn/am/what-is-browser-caching.html
+  ­ƒöä Translating what-is-lazy-loading.html... Ô£à saved to public/learn/am/what-is-lazy-loading.html
+  ­ƒöä Translating what-is-minification.html... Ô£à saved to public/learn/am/what-is-minification.html
+  ­ƒöä Translating what-is-time-to-first-byte.html... Ô£à saved to public/learn/am/what-is-time-to-first-byte.html
+  ­ƒöä Translating why-website-performance-matters-explained.html... Ô£à saved to public/learn/am/why-website-performance-matters-explained.html
+  ­ƒöä Translating what-is-digital-transformation.html... Ô£à saved to public/learn/am/what-is-digital-transformation.html
+  ­ƒöä Translating what-is-erp.html... Ô£à saved to public/learn/am/what-is-erp.html
+  ­ƒöä Translating what-is-a-crm.html... Ô£à saved to public/learn/am/what-is-a-crm.html
+  ­ƒöä Translating what-is-a-cms.html... Ô£à saved to public/learn/am/what-is-a-cms.html
+  ­ƒöä Translating what-is-saas.html... Ô£à saved to public/learn/am/what-is-saas.html
+  ­ƒöä Translating what-is-a-tech-stack.html... Ô£à saved to public/learn/am/what-is-a-tech-stack.html
+  ­ƒöä Translating cloud-migration-explained.html... Ô£à saved to public/learn/am/cloud-migration-explained.html
+  ­ƒöä Translating legacy-systems-explained.html... Ô£à saved to public/learn/am/legacy-systems-explained.html
+  ­ƒöä Translating do-i-need-a-website-explained.html... Ô£à saved to public/learn/am/do-i-need-a-website-explained.html
+  ­ƒöä Translating how-much-does-a-website-cost-explained.html... Ô£à saved to public/learn/am/how-much-does-a-website-cost-explained.html
+  ­ƒöä Translating wordpress-vs-website-builder-explained.html... Ô£à saved to public/learn/am/wordpress-vs-website-builder-explained.html
+  ­ƒöä Translating do-i-need-a-developer-or-diy-explained.html... Ô£à saved to public/learn/am/do-i-need-a-developer-or-diy-explained.html
+  ­ƒöä Translating how-much-to-spend-on-marketing-explained.html... Ô£à saved to public/learn/am/how-much-to-spend-on-marketing-explained.html
+  ­ƒöä Translating is-my-business-ready-for-automation-explained.html... Ô£à saved to public/learn/am/is-my-business-ready-for-automation-explained.html
+  ­ƒöä Translating outsource-vs-hire-in-house-explained.html... Ô£à saved to public/learn/am/outsource-vs-hire-in-house-explained.html
+  ­ƒöä Translating how-long-does-seo-take-explained.html... Ô£à saved to public/learn/am/how-long-does-seo-take-explained.html
+  ­ƒöä Translating rest-vs-graphql-explained.html... Ô£à saved to public/learn/am/rest-vs-graphql-explained.html
+  ­ƒöä Translating sql-vs-nosql-explained.html... Ô£à saved to public/learn/am/sql-vs-nosql-explained.html
+  ­ƒöä Translating monolith-vs-microservices-explained.html... Ô£à saved to public/learn/am/monolith-vs-microservices-explained.html
+  ­ƒöä Translating shopify-vs-woocommerce-explained.html... Ô£à saved to public/learn/am/shopify-vs-woocommerce-explained.html
+  ­ƒöä Translating agile-vs-waterfall-explained.html... Ô£à saved to public/learn/am/agile-vs-waterfall-explained.html
+  ­ƒöä Translating saas-vs-custom-software-explained.html... Ô£à saved to public/learn/am/saas-vs-custom-software-explained.html
+  ­ƒöä Translating b2b-vs-b2c-explained.html... Ô£à saved to public/learn/am/b2b-vs-b2c-explained.html
+  ­ƒöä Translating cloud-vs-on-premises-explained.html... Ô£à saved to public/learn/am/cloud-vs-on-premises-explained.html
+  ­ƒöä Translating what-is-noxel360.html... Ô£à saved to public/learn/am/what-is-noxel360.html
+  ­ƒöä Translating what-is-noxel-seo.html... Ô£à saved to public/learn/am/what-is-noxel-seo.html
+  ­ƒöä Translating what-is-noxel-forge.html... Ô£à saved to public/learn/am/what-is-noxel-forge.html
+  ­ƒöä Translating what-is-nexus.html... Ô£à saved to public/learn/am/what-is-nexus.html
+  ­ƒöä Translating noxel-seo-features-explained.html... Ô£à saved to public/learn/am/noxel-seo-features-explained.html
+  ­ƒöä Translating what-is-trust-score-forge-explained.html... Ô£à saved to public/learn/am/what-is-trust-score-forge-explained.html
+  ­ƒöä Translating how-noxel-seo-and-forge-connect-explained.html... Ô£à saved to public/learn/am/how-noxel-seo-and-forge-connect-explained.html
+  ­ƒöä Translating noxel360-ai-copilot-explained.html... Ô£à saved to public/learn/am/noxel360-ai-copilot-explained.html
+
+­ƒîÉ Translating to Arabic (ar)...
+  ­ƒöä Translating index.html... Ô£à saved to public/learn/ar/index.html
+  ­ƒöä Translating development.html... Ô£à saved to public/learn/ar/development.html
+  ­ƒöä Translating web-foundations.html... Ô£à saved to public/learn/ar/web-foundations.html
+  ­ƒöä Translating artificial-intelligence.html... Ô£à saved to public/learn/ar/artificial-intelligence.html
+  ­ƒöä Translating automation.html... Ô£à saved to public/learn/ar/automation.html
+  ­ƒöä Translating security.html... Ô£à saved to public/learn/ar/security.html
+  ­ƒöä Translating digital-marketing.html... Ô£à saved to public/learn/ar/digital-marketing.html
+  ­ƒöä Translating ecommerce.html... Ô£à saved to public/learn/ar/ecommerce.html
+  ­ƒöä Translating data-analytics.html... Ô£à saved to public/learn/ar/data-analytics.html
+  ­ƒöä Translating infrastructure.html... Ô£à saved to public/learn/ar/infrastructure.html
+  ­ƒöä Translating performance.html... Ô£à saved to public/learn/ar/performance.html
+  ­ƒöä Translating digital-transformation.html... Ô£à saved to public/learn/ar/digital-transformation.html
+  ­ƒöä Translating business-questions.html... Ô£à saved to public/learn/ar/business-questions.html
+  ­ƒöä Translating comparisons.html... Ô£à saved to public/learn/ar/comparisons.html
+  ­ƒöä Translating noxel360-ecosystem.html... Ô£à saved to public/learn/ar/noxel360-ecosystem.html
+  ­ƒöä Translating what-is-an-api.html... Ô£à saved to public/learn/ar/what-is-an-api.html
+  ­ƒöä Translating what-is-front-end-development.html... Ô£à saved to public/learn/ar/what-is-front-end-development.html
+  ­ƒöä Translating what-is-back-end-development.html... Ô£à saved to public/learn/ar/what-is-back-end-development.html
+  ­ƒöä Translating what-is-full-stack-development.html... Ô£à saved to public/learn/ar/what-is-full-stack-development.html
+  ­ƒöä Translating what-is-a-database.html... Ô£à saved to public/learn/ar/what-is-a-database.html
+  ­ƒöä Translating what-is-devops.html... Ô£à saved to public/learn/ar/what-is-devops.html
+  ­ƒöä Translating what-are-microservices.html... Ô£à saved to public/learn/ar/what-are-microservices.html
+  ­ƒöä Translating what-is-version-control-git.html... Ô£à saved to public/learn/ar/what-is-version-control-git.html
+  ­ƒöä Translating what-is-continuous-integration.html... Ô£à saved to public/learn/ar/what-is-continuous-integration.html
+  ­ƒöä Translating what-is-a-website.html... Ô£à saved to public/learn/ar/what-is-a-website.html
+  ­ƒöä Translating what-is-a-domain-name.html... Ô£à saved to public/learn/ar/what-is-a-domain-name.html
+  ­ƒöä Translating what-is-dns.html... Ô£à saved to public/learn/ar/what-is-dns.html
+  ­ƒöä Translating what-is-an-ip-address.html... Ô£à saved to public/learn/ar/what-is-an-ip-address.html
+  ­ƒöä Translating http-vs-https.html... Ô£à saved to public/learn/ar/http-vs-https.html
+  ­ƒöä Translating what-is-ssl-tls.html... Ô£à saved to public/learn/ar/what-is-ssl-tls.html
+  ­ƒöä Translating what-is-web-hosting.html... Ô£à saved to public/learn/ar/what-is-web-hosting.html
+  ­ƒöä Translating what-is-cloud-computing.html... Ô£à saved to public/learn/ar/what-is-cloud-computing.html
+  ­ƒöä Translating what-is-a-cdn.html... Ô£à saved to public/learn/ar/what-is-a-cdn.html
+  ­ƒöä Translating what-is-bandwidth.html... Ô£à saved to public/learn/ar/what-is-bandwidth.html
+  ­ƒöä Translating what-is-uptime.html... Ô£à saved to public/learn/ar/what-is-uptime.html
+  ­ƒöä Translating what-is-artificial-intelligence.html... Ô£à saved to public/learn/ar/what-is-artificial-intelligence.html
+  ­ƒöä Translating what-is-machine-learning.html... Ô£à saved to public/learn/ar/what-is-machine-learning.html
+  ­ƒöä Translating what-is-generative-ai.html... Ô£à saved to public/learn/ar/what-is-generative-ai.html
+  ­ƒöä Translating what-are-ai-agents.html... Ô£à saved to public/learn/ar/what-are-ai-agents.html
+  ­ƒöä Translating what-is-prompt-engineering.html... Ô£à saved to public/learn/ar/what-is-prompt-engineering.html
+  ­ƒöä Translating what-is-rag.html... Ô£à saved to public/learn/ar/what-is-rag.html
+  ­ƒöä Translating ai-automation-vs-ai-agent.html... Ô£à saved to public/learn/ar/ai-automation-vs-ai-agent.html
+  ­ƒöä Translating how-businesses-use-ai.html... Ô£à saved to public/learn/ar/how-businesses-use-ai.html
+  ­ƒöä Translating ai-risks-and-limitations.html... Ô£à saved to public/learn/ar/ai-risks-and-limitations.html
+  ­ƒöä Translating what-is-business-automation.html... Ô£à saved to public/learn/ar/what-is-business-automation.html
+  ­ƒöä Translating what-is-workflow-automation.html... Ô£à saved to public/learn/ar/what-is-workflow-automation.html
+  ­ƒöä Translating what-is-process-automation.html... Ô£à saved to public/learn/ar/what-is-process-automation.html
+  ­ƒöä Translating what-is-rpa.html... Ô£à saved to public/learn/ar/what-is-rpa.html
+  ­ƒöä Translating what-is-event-driven-automation.html... Ô£à saved to public/learn/ar/what-is-event-driven-automation.html
+  ­ƒöä Translating what-is-api-integration.html... Ô£à saved to public/learn/ar/what-is-api-integration.html
+  ­ƒöä Translating what-are-webhooks.html... Ô£à saved to public/learn/ar/what-are-webhooks.html
+  ­ƒöä Translating what-is-cybersecurity.html... Ô£à saved to public/learn/ar/what-is-cybersecurity.html
+  ­ƒöä Translating common-cyber-threats.html... Ô£à saved to public/learn/ar/common-cyber-threats.html
+  ­ƒöä Translating what-is-mfa.html... Ô£à saved to public/learn/ar/what-is-mfa.html
+  ­ƒöä Translating password-managers-explained.html... Ô£à saved to public/learn/ar/password-managers-explained.html
+  ­ƒöä Translating what-is-data-encryption.html... Ô£à saved to public/learn/ar/what-is-data-encryption.html
+  ­ƒöä Translating firewalls-explained.html... Ô£à saved to public/learn/ar/firewalls-explained.html
+  ­ƒöä Translating backup-strategies.html... Ô£à saved to public/learn/ar/backup-strategies.html
+  ­ƒöä Translating what-is-disaster-recovery.html... Ô£à saved to public/learn/ar/what-is-disaster-recovery.html
+  ­ƒöä Translating what-is-zero-trust-security.html... Ô£à saved to public/learn/ar/what-is-zero-trust-security.html
+  ­ƒöä Translating what-is-seo.html... Ô£à saved to public/learn/ar/what-is-seo.html
+  ­ƒöä Translating what-is-local-seo.html... Ô£à saved to public/learn/ar/what-is-local-seo.html
+  ­ƒöä Translating what-is-technical-seo.html... Ô£à saved to public/learn/ar/what-is-technical-seo.html
+  ­ƒöä Translating what-is-geo.html... Ô£à saved to public/learn/ar/what-is-geo.html
+  ­ƒöä Translating what-is-sem.html... Ô£à saved to public/learn/ar/what-is-sem.html
+  ­ƒöä Translating what-is-ppc.html... Ô£à saved to public/learn/ar/what-is-ppc.html
+  ­ƒöä Translating what-is-content-marketing.html... Ô£à saved to public/learn/ar/what-is-content-marketing.html
+  ­ƒöä Translating what-is-email-marketing.html... Ô£à saved to public/learn/ar/what-is-email-marketing.html
+  ­ƒöä Translating what-is-cro.html... Ô£à saved to public/learn/ar/what-is-cro.html
+  ­ƒöä Translating what-is-ab-testing.html... Ô£à saved to public/learn/ar/what-is-ab-testing.html
+  ­ƒöä Translating what-is-ux.html... Ô£à saved to public/learn/ar/what-is-ux.html
+  ­ƒöä Translating what-is-ui.html... Ô£à saved to public/learn/ar/what-is-ui.html
+  ­ƒöä Translating responsive-design-explained.html...

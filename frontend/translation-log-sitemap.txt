@@ -1,0 +1,6 @@
+Ô£à Wrote 180 URLs to public/sitemap-learn-i18n.xml
+ÔÜá´©Å  Remember: add this as a second <sitemap> entry in a sitemap index,
+   or merge its <url> entries into the main sitemap.xml manually.
+   With 100+ languages this file can get large ÔÇö a sitemap INDEX
+   (pointing to sitemap.xml + sitemap-learn-i18n.xml) is the standard approach
+   once you're translating more than a handful of languages.
