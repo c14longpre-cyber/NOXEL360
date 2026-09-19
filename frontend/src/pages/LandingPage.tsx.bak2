@@ -1,13 +1,7 @@
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 import "./LandingPage.css";
 
 export default function LandingPage() {
-  useEffect(() => {
-    document.body.style.overflow = "auto";
-    return () => { document.body.style.overflow = ""; };
-  }, []);
-
   return (
     <div className="noxel-landing">
       <nav className="nl-nav">
@@ -134,30 +128,6 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="connected">
-          <div className="wrap">
-            <div className="section-tag">Built to Work Together</div>
-            <h2 className="section-title">Not three tools. One connected toolkit.</h2>
-            <p className="section-lead">
-              Each module solves a distinct problem, but they're designed to inform each other
-              instead of operating in isolation.
-            </p>
-            <p style={{ color: "var(--nl-muted)", fontSize: 16, lineHeight: 1.7, marginBottom: 16 }}>
-              A NOXEL SEO audit surfaces a site's visibility gaps — thin content, missing schema,
-              slow Core Web Vitals. NOXEL Forge helps close the authority gap those audits often
-              reveal, connecting a site with verified backlink partners instead of leaving link
-              building as a manual, cold-outreach grind. NOXEL Nexus sits underneath both, detecting
-              a visitor's language and region so the same underlying content and tooling adapt
-              automatically — no separate localization project required.
-            </p>
-            <p style={{ color: "var(--nl-muted)", fontSize: 16, lineHeight: 1.7 }}>
-              The result isn't three disconnected tools that happen to share a login. It's a single
-              account where an issue flagged in one module has a natural next step in another,
-              instead of exporting a report and starting over somewhere else.
-            </p>
-          </div>
-        </section>
-
         <section>
           <div className="wrap">
             <div className="split">
@@ -188,6 +158,7 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
+
 
         <section id="faq">
           <div className="wrap">

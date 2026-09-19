@@ -1,13 +1,7 @@
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 import "./LandingPage.css";
 
 export default function LandingPage() {
-  useEffect(() => {
-    document.body.style.overflow = "auto";
-    return () => { document.body.style.overflow = ""; };
-  }, []);
-
   return (
     <div className="noxel-landing">
       <nav className="nl-nav">
@@ -171,6 +165,7 @@ export default function LandingPage() {
                   NOXEL360 works whether it's just you, a small team, or an agency running it across
                   a dozen client sites — enterprise-grade capability, without the enterprise price tag
                   or the five separate logins.
+     
                 </p>
                 <ul className="checklist">
                   <li>One identity across every module — no context-switching between disconnected dashboards</li>
@@ -188,6 +183,7 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
+
 
         <section id="faq">
           <div className="wrap">
