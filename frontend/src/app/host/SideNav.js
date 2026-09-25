@@ -14,8 +14,10 @@ export function SideNav() {
                         ? "pill pill--live"
                         : badge === "CORE"
                             ? "pill pill--core"
-                            : "pill pill--pro";
-                    const pillLabel = badge === "READY" ? "LIVE" : badge === "CORE" ? "CORE" : "PRO";
+                            : badge === "SOON"
+                                ? "pill pill--soon"
+                                : "pill pill--pro";
+                    const pillLabel = badge === "READY" ? "LIVE" : badge === "CORE" ? "CORE" : badge === "SOON" ? "SOON" : "PRO";
                     const content = (_jsxs(_Fragment, { children: [_jsxs("div", { className: "nav-row", children: [_jsx("div", { className: "nav-title", children: m.name }), _jsx("span", { className: pillClass, children: pillLabel })] }), _jsx("div", { className: "nav-sub", children: m.promise })] }));
                     if (m.external) {
                         return (_jsx("a", { href: m.route, target: "_blank", rel: "noopener noreferrer", className: "nav-item", style: { display: "block", textDecoration: "none" }, children: content }, m.key));

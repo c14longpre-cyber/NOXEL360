@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-export type ModuleStatus = "ready" | "core" | "pro" | "missing";
+export type ModuleStatus = "ready" | "core" | "pro" | "soon" | "missing";
 
 export type ModuleIndexItem = {
   key: string;
@@ -48,6 +48,14 @@ const MODULE_ITEMS: ModuleIndexItem[] = [
     promise: "Language, region, and cultural intelligence engine.",
     status: "core",
     external: false,
+  },
+  {
+    key: "spectra",
+    name: "NOXEL SPECTRA",
+    route: "https://noxelspectra.com",
+    promise: "Image conversion, compression, and vectorization toolkit.",
+    status: "soon",
+    external: true,
   },
 ];
 

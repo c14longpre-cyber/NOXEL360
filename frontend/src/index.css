@@ -392,6 +392,12 @@ a {
   color: #d8b8ff;
 }
 
+.nx-badge--soon {
+  border-color: rgba(245, 166, 35, 0.45);
+  background: rgba(245, 166, 35, 0.14);
+  color: #ffd28a;
+}
+
 .nx-card__title {
   margin: 14px 0 8px;
   font-size: 22px;
@@ -482,6 +488,30 @@ a {
   border-radius: 999px;
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.055);
+}
+
+.pill--live {
+  border-color: rgba(60, 222, 106, 0.34);
+  background: rgba(60, 222, 106, 0.1);
+  color: #baffcb;
+}
+
+.pill--core {
+  border-color: rgba(112, 42, 165, 0.45);
+  background: rgba(112, 42, 165, 0.14);
+  color: #d8b8ff;
+}
+
+.pill--pro {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.pill--soon {
+  border-color: rgba(245, 166, 35, 0.45);
+  background: rgba(245, 166, 35, 0.14);
+  color: #ffd28a;
 }
 
 /* REFRESH BUTTON LIGHT */

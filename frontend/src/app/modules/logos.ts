@@ -9,6 +9,7 @@ export const LOGO_BY_ID: Record<string, string> = {
   seo: "/logos/NOXEL_SEO_LOGO.svg",
   forge,
   nexus: "/logos/NOXEL_NEXUS_LOGO.svg",
+  spectra: "/logos/NOXEL_SPECTRA_LOGO.svg",
 };
 
 export default LOGO_BY_ID;

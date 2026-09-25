@@ -95,6 +95,7 @@
 .noxel-landing .badge{font-size:11px;font-weight:800;letter-spacing:0.5px;padding:5px 12px;border-radius:100px}
 .noxel-landing .badge.live{color:var(--nl-g);background:var(--nl-g-dim);border:1px solid rgba(60,222,106,0.3)}
 .noxel-landing .badge.core{color:var(--nl-p);background:var(--nl-p-dim);border:1px solid rgba(139,92,246,0.3)}
+.noxel-landing .badge.soon{color:#ffd28a;background:rgba(245,166,35,0.14);border:1px solid rgba(245,166,35,0.35)}
 .noxel-landing .module-card h3{font-size:20px;font-weight:800;margin-bottom:10px}
 .noxel-landing .module-card p{color:var(--nl-muted);font-size:15px;line-height:1.65;margin-bottom:22px;flex-grow:1}
 .noxel-landing .module-card ul{list-style:none;margin-bottom:22px;padding:0}

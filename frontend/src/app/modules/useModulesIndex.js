@@ -36,6 +36,14 @@ const MODULE_ITEMS = [
         status: "core",
         external: false,
     },
+    {
+        key: "spectra",
+        name: "NOXEL SPECTRA",
+        route: "https://noxelspectra.com",
+        promise: "Image conversion, compression, and vectorization toolkit.",
+        status: "soon",
+        external: true,
+    },
 ];
 export function useModulesIndex() {
     return useMemo(() => MODULE_ITEMS, []);

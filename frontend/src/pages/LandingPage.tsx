@@ -115,6 +115,21 @@ export default function LandingPage() {
                 </ul>
                 <Link to="/dashboard" className="module-link">Included with your account <span className="arrow">→</span></Link>
               </div>
+
+              <div className="module-card">
+                <span className="icon">🎨</span>
+                <div className="module-top">
+                  <h3>NOXEL Spectra</h3>
+                  <span className="badge soon">SOON</span>
+                </div>
+                <p>An image conversion, compression, and vectorization toolkit — built for the web.</p>
+                <ul>
+                  <li>Format conversion and target-size compression</li>
+                  <li>Color palette extraction</li>
+                  <li>PNG/WebP to SVG vectorization</li>
+                </ul>
+                <a href="https://noxelspectra.com" className="module-link">Learn more <span className="arrow">→</span></a>
+              </div>
             </div>
           </div>
         </section>
