@@ -2,14 +2,13 @@ import { useAuthStore } from "../../auth/AuthStore";
 import { useI18n } from "@/useI18n";
 
 type ProviderItem = {
-  key: "google" | "microsoft" | "apple" | "facebook" | "linkedin";
+  key: "google" | "microsoft" | "facebook" | "linkedin";
   labelKey: string;
 };
 
 const PROVIDERS: ProviderItem[] = [
   { key: "google", labelKey: "provider.google" },
   { key: "microsoft", labelKey: "provider.microsoft" },
-  { key: "apple", labelKey: "provider.apple" },
   { key: "facebook", labelKey: "provider.facebook" },
   { key: "linkedin", labelKey: "provider.linkedin" },
 ];
