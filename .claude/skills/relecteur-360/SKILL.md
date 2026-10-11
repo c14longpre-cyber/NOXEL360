@@ -13,7 +13,7 @@ Lis d'abord `CLAUDE.md` à la racine du dépôt.
 
 - **Backend** (`backend/src/`)
   - Routes : validation des entrées, forme `{ ok, ..., error? }`, codes HTTP corrects, `try/catch` sur chaque appel réseau.
-  - Module SEO (`seo/`) : scans enregistrés dans `registry.ts`, types conformes à `scan.types.ts`, appels PageSpeed via `pagespeedService.ts` (clé `PAGESPEED_API_KEY` optionnelle).
+  - Module SEO (`seo/`) : scans enregistrés dans `registry.ts`, types conformes à `scan.types.ts`.
   - Auth : cookies `httpOnly`/`secure`/`sameSite`, vérification des tokens (`jose`, `jsonwebtoken`), secrets lus depuis l'environnement et jamais codés en dur, CORS cohérent avec les cookies.
   - Code non branché : une route ou un service qui n'est pas atteignable depuis `server.ts` est du code mort. Le signaler, ne pas le présenter comme fonctionnel.
 - **Frontend** (`frontend/src/`)

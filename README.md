@@ -29,7 +29,6 @@ Ouvrir http://localhost:5173
 # Variables d'environnement à configurer dans Railway :
 PORT=4000
 NODE_ENV=production
-PAGESPEED_API_KEY=your_key   # optionnel
 ```
 
 Start command: `npm run start`
