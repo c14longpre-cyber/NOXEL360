@@ -1,3 +1,4 @@
+import { randomBytes } from "crypto";
 export type UserRecord = {
   id: string;
   emailPrimary: string | null;
@@ -13,7 +14,7 @@ export type UserRecord = {
 const users = new Map<string, UserRecord>();
 
 function randomId(prefix: string): string {
-  return `${prefix}_${Math.random().toString(36).slice(2, 12)}`;
+  return `${prefix}_${randomBytes(16).toString("base64url")}`;
 }
 
 function normalizeEmail(email: string | null | undefined): string | null {

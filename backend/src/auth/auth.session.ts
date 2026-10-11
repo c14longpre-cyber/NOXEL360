@@ -1,3 +1,4 @@
+import { randomBytes } from "crypto";
 import type { Request } from "express";
 import { SESSION_COOKIE_NAME } from "./auth.cookies";
 
@@ -11,7 +12,7 @@ export type SessionRecord = {
 const sessions = new Map<string, SessionRecord>();
 
 function randomId(prefix: string): string {
-  return `${prefix}_${Math.random().toString(36).slice(2, 18)}`;
+  return `${prefix}_${randomBytes(32).toString("base64url")}`;
 }
 
 export async function createSession(userId: string): Promise<SessionRecord> {

@@ -1,3 +1,4 @@
+import { randomBytes } from "crypto";
 import type { AuthIntent, AuthProvider, NormalizedOAuthIdentity } from "../auth.types";
 
 export type AuthTicketRecord = {
@@ -14,7 +15,7 @@ export type AuthTicketRecord = {
 const tickets = new Map<string, AuthTicketRecord>();
 
 function randomId(prefix: string): string {
-  return `${prefix}_${Math.random().toString(36).slice(2, 12)}`;
+  return `${prefix}_${randomBytes(24).toString("base64url")}`;
 }
 
 export async function createLinkExistingEmailTicket(input: {
