@@ -53,7 +53,7 @@ Paliers : Bronze / Silver / Gold / Platinum / Diamond.
 5. **Couleurs officielles** : vert #3ddc84, violet #A855F7. L'ancien vert #3cde6a subsiste dans `frontend/src/styles` et doit être remplacé.
 6. **vercel.json** : le rewrite `/api/:path*` doit précéder le catch-all SPA `/((?!api/).*)`.
 7. **Contrat API** : réponses `{ ok: boolean, ... , error?: string }`. Codes 400 / 401 / 403 / 500 cohérents.
-8. **CORS** : `server.ts` utilise `credentials: true` ; vercel.json renvoie `Access-Control-Allow-Origin: *` sur /api. Les deux sont incompatibles pour les cookies : à surveiller.
+8. **CORS** : géré uniquement par `server.ts` (liste blanche `allowedOrigins` + `credentials: true`). Ne jamais ajouter d'en-tête `Access-Control-Allow-Origin` dans `vercel.json` : un `*` est incompatible avec les cookies de session.
 9. **Placeholders** : `routes/assistant.routes.ts` renvoie des données démo (`demo-assistant-1`). Ne pas les présenter comme fonctionnels.
 
 ## Assistants
