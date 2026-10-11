@@ -24,7 +24,7 @@ Lis d'abord `CLAUDE.md` à la racine du dépôt.
 2. **Backend et API**
    - Lance `npm run backend:dev` en arrière-plan, puis interroge `GET /api/seo/health`, `GET /api/seo/vm/summary?url=https://example.com` et `GET /api/seo/issues?url=https://example.com`.
    - Vérifie la forme `{ ok, ... }` et les codes HTTP (400 sur URL invalide).
-   - Vérifie que chaque scan de `backend/src/seo/scans/` est enregistré dans `registry.ts` et renvoie la forme attendue par `scan.types.ts`.
+   - Vérifie que chaque scan de `backend/src/seo/scans/plugins/` est enregistré dans `registry.ts` et renvoie la forme attendue par `scan.types.ts`.
 3. **Modules**
    - Référence : `frontend/src/app/modules/useModulesIndex.ts` (SEO, Forge, Nexus, Spectra). `module-pricing.json` et `landing/` sont hérités : ne pas les utiliser comme référence.
    - Cherche les mentions de modules abandonnés (MAESTRO, ATLAS, LINKS, SERP, VITALS, OPTIMA, FLOW, MORPH, Analytics, CRM, Social, Core) dans `frontend/src/` (hors `modules/nexus/*.md`, connus), `frontend/public/pricing/` et les dictionnaires `locales/*.ts`.

@@ -9,9 +9,9 @@ noxel360/
 ├── backend/            Node.js + Express + TypeScript sur Railway (noxel360-production-aa57.up.railway.app)
 │   └── src/
 │       ├── server.ts   Point d'entrée (CORS credentials: true)
-│       ├── seo/        Module SEO : scans/ (architecture, backlinks, lighthouse, perf, structured-data), runs, issues, viewmodels
+│       ├── seo/        Module SEO : seo.module.ts, scans/plugins/ (content, images, links, performance, render-delta, tech, ux), runs, issues, viewmodels
 │       ├── auth/       Contrôleur, sessions, cookies + providers/ (Google, Apple, Microsoft, GitHub, Facebook, LinkedIn, TikTok)
-│       └── services/   pagespeedService, analyzePerformance, userStore, session (non branchés : aucun n'est importé par server.ts)
+│       └── utils/      http.ts (HttpError, asyncRoute, errorHandler)
 ├── frontend/           React 18 + Vite + TypeScript + Tailwind 4 sur Vercel (noxel360.com)
 │   ├── src/
 │   │   ├── App.tsx, pages/, app/ (host, modules, pages), nexus/
