@@ -12,7 +12,6 @@ const AppShell = lazy(() =>
 );
 const DashboardHome = lazy(() => import("./app/pages/DashboardHome"));
 const AccountPage = lazy(() => import("./app/pages/AccountPage"));
-const ModuleRoute = lazy(() => import("./app/pages/ModuleRoute"));
 const LinkAccountPage = lazy(() => import("./auth/LinkAccountPage"));
 const OAuthCallbackPage = lazy(() => import("./auth/OAuthCallbackPage"));
 const PrivacyPage = lazy(() => import("./legal/PrivacyPage"));
@@ -65,8 +64,6 @@ export default function App() {
         <Route path="/app" element={<AppShell />}>
           <Route index element={<Navigate to="/dashboard" replace />} />
           <Route path="account" element={<AccountProvider><AccountPage /></AccountProvider>} />
-          {/* AppRoute de module-pricing.json : redirection ou page « bientôt disponible » */}
-          <Route path="*" element={<ModuleRoute />} />
         </Route>
 
         <Route path="/privacy" element={<PrivacyPage />} />

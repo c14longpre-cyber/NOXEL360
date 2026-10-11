@@ -10,7 +10,6 @@ import { AccountProvider } from "./account/AccountStore";
 const AppShell = lazy(() => import("./app/host/AppShell").then((m) => ({ default: m.AppShell })));
 const DashboardHome = lazy(() => import("./app/pages/DashboardHome"));
 const AccountPage = lazy(() => import("./app/pages/AccountPage"));
-const ModuleRoute = lazy(() => import("./app/pages/ModuleRoute"));
 const LinkAccountPage = lazy(() => import("./auth/LinkAccountPage"));
 const OAuthCallbackPage = lazy(() => import("./auth/OAuthCallbackPage"));
 const PrivacyPage = lazy(() => import("./legal/PrivacyPage"));
@@ -42,5 +41,5 @@ function RouteLoadingFallback() {
         }, children: "Loading\u2026" }));
 }
 export default function App() {
-    return (_jsx(Suspense, { fallback: _jsx(RouteLoadingFallback, {}), children: _jsxs(Routes, { children: [_jsx(Route, { path: "/", element: _jsx(RootRoute, {}) }), _jsx(Route, { path: "/dashboard", element: _jsx(DashboardHome, {}) }), _jsx(Route, { path: "/nexus", element: _jsx(NexusPage, {}) }), _jsxs(Route, { path: "/app", element: _jsx(AppShell, {}), children: [_jsx(Route, { index: true, element: _jsx(Navigate, { to: "/dashboard", replace: true }) }), _jsx(Route, { path: "account", element: _jsx(AccountProvider, { children: _jsx(AccountPage, {}) }) }), _jsx(Route, { path: "*", element: _jsx(ModuleRoute, {}) })] }), _jsx(Route, { path: "/privacy", element: _jsx(PrivacyPage, {}) }), _jsx(Route, { path: "/terms", element: _jsx(TermsPage, {}) }), _jsx(Route, { path: "/auth/link-account", element: _jsx(LinkAccountPage, {}) }), _jsx(Route, { path: "/auth/callback", element: _jsx(OAuthCallbackPage, {}) }), _jsx(Route, { path: "/pricing", element: _jsx(PricingRedirect, {}) }), _jsx(Route, { path: "/pricing/*", element: _jsx(PricingRedirect, {}) }), _jsx(Route, { path: "*", element: _jsx("div", { style: { padding: 24 }, children: "404" }) })] }) }));
+    return (_jsx(Suspense, { fallback: _jsx(RouteLoadingFallback, {}), children: _jsxs(Routes, { children: [_jsx(Route, { path: "/", element: _jsx(RootRoute, {}) }), _jsx(Route, { path: "/dashboard", element: _jsx(DashboardHome, {}) }), _jsx(Route, { path: "/nexus", element: _jsx(NexusPage, {}) }), _jsxs(Route, { path: "/app", element: _jsx(AppShell, {}), children: [_jsx(Route, { index: true, element: _jsx(Navigate, { to: "/dashboard", replace: true }) }), _jsx(Route, { path: "account", element: _jsx(AccountProvider, { children: _jsx(AccountPage, {}) }) })] }), _jsx(Route, { path: "/privacy", element: _jsx(PrivacyPage, {}) }), _jsx(Route, { path: "/terms", element: _jsx(TermsPage, {}) }), _jsx(Route, { path: "/auth/link-account", element: _jsx(LinkAccountPage, {}) }), _jsx(Route, { path: "/auth/callback", element: _jsx(OAuthCallbackPage, {}) }), _jsx(Route, { path: "/pricing", element: _jsx(PricingRedirect, {}) }), _jsx(Route, { path: "/pricing/*", element: _jsx(PricingRedirect, {}) }), _jsx(Route, { path: "*", element: _jsx("div", { style: { padding: 24 }, children: "404" }) })] }) }));
 }
