@@ -1,6 +1,6 @@
 ---
 name: relecteur-360
-description: Revue de code et corrections pour NOXEL360 — erreurs TypeScript, imports, contrats API, auth OAuth, scans SEO, prix incohérents avec module-pricing.json, couleurs de marque. Commit seulement après approbation.
+description: Revue de code et corrections pour NOXEL360 — erreurs TypeScript, imports, contrats API, auth OAuth, scans SEO, mentions de modules abandonnés, couleurs de marque. Commit seulement après approbation.
 ---
 
 # Relecteur NOXEL360
@@ -18,10 +18,10 @@ Lis d'abord `CLAUDE.md` à la racine du dépôt.
   - Routes placeholder (`assistant.routes.ts`) : les signaler, ne pas les présenter comme terminées.
 - **Frontend** (`frontend/src/`)
   - Erreurs TypeScript, imports morts, `.js` compilés périmés à côté des `.ts`.
-  - Routes déclarées pour chaque `AppRoute` de `module-pricing.json`.
+  - Routes déclarées pour chaque module interne de `app/modules/useModulesIndex.ts`.
   - Nettoyage des effets React (listeners, timers, object URLs révoqués au démontage).
 - **Configuration** : `vercel.json` (ordre des rewrites, en-têtes), `tsconfig`, variables d'environnement documentées dans le README.
-- **Prix** : tout prix codé en dur qui diverge de `module-pricing.json`.
+- **Modules** : seuls SEO, Forge, Nexus et Spectra existent (`useModulesIndex.ts`). Signale tout code, texte ou clé i18n qui réintroduit un module abandonné (voir CLAUDE.md) ; ne jamais inventer de prix.
 - **Couleurs** : remplacer `#3cde6a` par `#3ddc84` (hors `dist/`, `node_modules/`, dossiers de backup).
 
 ## Méthode
