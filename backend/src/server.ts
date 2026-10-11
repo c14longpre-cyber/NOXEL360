@@ -56,15 +56,12 @@ app.get("/api/health", (_req, res) => {
   });
 });
 
-// Auth — Google/Microsoft/Facebook/LinkedIn/TikTok OAuth (redirect-based)
+// Auth — Google/Microsoft/Facebook/LinkedIn/TikTok/GitHub OAuth (redirect-based)
 // GET  /api/auth/:provider/start
 // GET  /api/auth/:provider/callback
 // GET  /api/auth/session (also aliased as /api/auth/me)
 // POST /api/auth/logout
 // POST /api/auth/resolve-existing-email
-app.use("/api/auth", authRouter);
-
-// Auth — Google/Microsoft/Facebook/LinkedIn/TikTok OAuth (redirect-based)
 app.use("/api/auth", authRouter);
 
 // NOXEL SEO — vrai moteur (seo.module.ts)
