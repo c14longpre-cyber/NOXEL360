@@ -9,10 +9,9 @@ noxel360/
 ├── backend/            Node.js + Express + TypeScript sur Railway (noxel360-production-aa57.up.railway.app)
 │   └── src/
 │       ├── server.ts   Point d'entrée (CORS credentials: true)
-│       ├── routes/     account, ads, assistant, market, performance, scripts, seo, training
 │       ├── seo/        Module SEO : scans/ (architecture, backlinks, lighthouse, perf, structured-data), runs, issues, viewmodels
 │       ├── auth/       Contrôleur, sessions, cookies + providers/ (Google, Apple, Microsoft, GitHub, Facebook, LinkedIn, TikTok)
-│       └── services/   pagespeedService, analyzePerformance, userStore, session
+│       └── services/   pagespeedService, analyzePerformance, userStore, session (non branchés : aucun n'est importé par server.ts)
 ├── frontend/           React 18 + Vite + TypeScript + Tailwind 4 sur Vercel (noxel360.com)
 │   ├── src/
 │   │   ├── App.tsx, pages/, app/ (host, modules, pages), nexus/
@@ -54,7 +53,7 @@ Paliers : Bronze / Silver / Gold / Platinum / Diamond.
 6. **vercel.json** : le rewrite `/api/:path*` doit précéder le catch-all SPA `/((?!api/).*)`.
 7. **Contrat API** : réponses `{ ok: boolean, ... , error?: string }`. Codes 400 / 401 / 403 / 500 cohérents.
 8. **CORS** : géré uniquement par `server.ts` (liste blanche `allowedOrigins` + `credentials: true`). Ne jamais ajouter d'en-tête `Access-Control-Allow-Origin` dans `vercel.json` : un `*` est incompatible avec les cookies de session.
-9. **Placeholders** : `routes/assistant.routes.ts` renvoie des données démo (`demo-assistant-1`). Ne pas les présenter comme fonctionnels.
+9. **Routes actives** : seules les routes montées dans `server.ts` existent en production : `/health`, `/api/health`, `/api/auth/*` et `/api/seo/*`. Un fichier de route non monté est du code mort : ne pas le présenter comme fonctionnel.
 
 ## Assistants
 
