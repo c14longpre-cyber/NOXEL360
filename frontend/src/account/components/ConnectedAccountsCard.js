@@ -4,7 +4,6 @@ import { useI18n } from "@/useI18n";
 const PROVIDERS = [
     { key: "google", labelKey: "provider.google" },
     { key: "microsoft", labelKey: "provider.microsoft" },
-    { key: "apple", labelKey: "provider.apple" },
     { key: "facebook", labelKey: "provider.facebook" },
     { key: "linkedin", labelKey: "provider.linkedin" },
 ];

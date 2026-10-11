@@ -20,14 +20,6 @@ export default function NoxelAccessModal({ open, onClose }) {
             accent: "green",
         },
         {
-            key: "apple",
-            label: "Apple",
-            icon: "",
-            enabled: false,
-            accent: "neutral",
-            note: "Coming soon",
-        },
-        {
             key: "facebook",
             label: "Facebook",
             icon: "f",
@@ -80,11 +72,6 @@ export default function NoxelAccessModal({ open, onClose }) {
         }
         if (provider.key === "linkedin") {
             loginWithProvider("linkedin", "signin");
-            onClose();
-            return;
-        }
-        if (provider.key === "apple") {
-            loginWithProvider("apple", "signin");
             onClose();
             return;
         }
