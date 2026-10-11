@@ -59,7 +59,7 @@ export default function ConnectedAccountsCard() {
                 <span
                   style={{
                     fontSize: 12,
-                    color: "#3CDE6A",
+                    color: "#3DDC84",
                     fontWeight: 600,
                   }}
                 >

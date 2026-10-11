@@ -35,7 +35,7 @@ export default function TranslationStatusBanner() {
         borderRadius: 12,
         border: "1px solid rgba(112,42,165,0.35)",
         background:
-          "linear-gradient(90deg, rgba(112,42,165,0.12) 0%, rgba(60,222,106,0.08) 100%)",
+          "linear-gradient(90deg, rgba(112,42,165,0.12) 0%, rgba(61,220,132,0.08) 100%)",
         color: "white",
         fontSize: 13,
       }}
@@ -55,7 +55,7 @@ export default function TranslationStatusBanner() {
             href="https://github.com/"
             target="_blank"
             rel="noreferrer"
-            style={{ color: "rgb(60,222,106)", textDecoration: "underline" }}
+            style={{ color: "rgb(61,220,132)", textDecoration: "underline" }}
           >
             Contribute a translation →
           </a>

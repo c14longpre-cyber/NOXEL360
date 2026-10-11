@@ -27,7 +27,7 @@ export default function PrivacyPage() {
           <a
             href="/dashboard"
             style={{
-              color: "#3CDE6A",
+              color: "#3DDC84",
               textDecoration: "none",
               fontWeight: 700,
             }}

@@ -190,8 +190,8 @@ export default function NexusPage() {
                             gap: 10,
                             padding: "8px 14px",
                             borderRadius: 999,
-                            border: "1px solid rgba(60,222,106,0.5)",
-                            background: "rgba(60,222,106,0.08)",
+                            border: "1px solid rgba(61,220,132,0.5)",
+                            background: "rgba(61,220,132,0.08)",
                             marginBottom: 20,
                         }, children: [_jsx("span", { style: { fontSize: 18 }, children: currentLanguage.flag }), _jsxs("span", { style: { fontWeight: 600 }, children: [t("language.selector.current"), ": ", currentLanguage.label] }), _jsxs("span", { style: { opacity: 0.7 }, children: ["(", currentLanguage.nativeLabel, ")"] }), currentLanguage.indigenous && (_jsx("span", { style: {
                                     fontSize: 11,
@@ -221,10 +221,10 @@ export default function NexusPage() {
                                             padding: "10px 14px",
                                             borderRadius: 999,
                                             border: active
-                                                ? "1px solid rgba(60,222,106,0.9)"
+                                                ? "1px solid rgba(61,220,132,0.9)"
                                                 : "1px solid rgba(255,255,255,0.14)",
                                             background: active
-                                                ? "rgba(60,222,106,0.14)"
+                                                ? "rgba(61,220,132,0.14)"
                                                 : "rgba(255,255,255,0.04)",
                                             color: "white",
                                             cursor: "pointer",
@@ -261,7 +261,7 @@ export default function NexusPage() {
                                                 padding: "10px 12px",
                                                 borderRadius: 10,
                                                 border: "none",
-                                                background: active ? "rgba(60,222,106,0.14)" : "transparent",
+                                                background: active ? "rgba(61,220,132,0.14)" : "transparent",
                                                 color: "white",
                                                 cursor: "pointer",
                                             }, onMouseEnter: (e) => {
@@ -297,7 +297,7 @@ export default function NexusPage() {
                                                         border: "1px solid rgba(112,42,165,0.55)",
                                                         flex: "0 0 auto",
                                                     }, children: "\u2605" })), active && (_jsx("span", { style: {
-                                                        color: "rgb(60,222,106)",
+                                                        color: "rgb(61,220,132)",
                                                         fontWeight: 700,
                                                         fontSize: 16,
                                                     }, children: "\u2713" }))] }, c.iso2));
@@ -327,7 +327,7 @@ export default function NexusPage() {
                                                 marginBottom: 18,
                                             }, children: [_jsx(InfoRow, { label: t("language.selector.capital"), value: selectedCountry.capital }), _jsx(InfoRow, { label: t("language.selector.subregion"), value: selectedCountry.subregion }), _jsx(InfoRow, { label: t("language.selector.domain"), value: selectedCountry.domain }), _jsx(InfoRow, { label: t("language.selector.currency"), value: selectedCountry.currencyCode
                                                         ? `${selectedCountry.currencySymbol || ""} ${selectedCountry.currencyCode}`.trim()
-                                                        : undefined })] }), _jsx(LanguageSection, { title: t("language.selector.officialLanguages"), emptyLabel: "\u2014", choices: officialChoices, activeCode: language, onPick: setLanguage, accentColor: "rgba(60,222,106,0.9)", accentBg: "rgba(60,222,106,0.14)" }), indigenousChoices.length > 0 && (_jsx("div", { style: { marginTop: 18 }, children: _jsx(LanguageSection, { title: t("language.selector.indigenousLanguages"), subtitle: t("nexus.indigenousRespect", undefined, "Languages of First Peoples and ancestral communities. Click any to set it as your interface language."), emptyLabel: "\u2014", choices: indigenousChoices, activeCode: language, onPick: setLanguage, accentColor: "rgba(112,42,165,0.9)", accentBg: "rgba(112,42,165,0.18)", showNation: true }) }))] })) })] }), _jsxs("div", { style: {
+                                                        : undefined })] }), _jsx(LanguageSection, { title: t("language.selector.officialLanguages"), emptyLabel: "\u2014", choices: officialChoices, activeCode: language, onPick: setLanguage, accentColor: "rgba(61,220,132,0.9)", accentBg: "rgba(61,220,132,0.14)" }), indigenousChoices.length > 0 && (_jsx("div", { style: { marginTop: 18 }, children: _jsx(LanguageSection, { title: t("language.selector.indigenousLanguages"), subtitle: t("nexus.indigenousRespect", undefined, "Languages of First Peoples and ancestral communities. Click any to set it as your interface language."), emptyLabel: "\u2014", choices: indigenousChoices, activeCode: language, onPick: setLanguage, accentColor: "rgba(112,42,165,0.9)", accentBg: "rgba(112,42,165,0.18)", showNation: true }) }))] })) })] }), _jsxs("div", { style: {
                             borderRadius: 20,
                             border: "1px solid rgba(255,255,255,0.1)",
                             background: "rgba(255,255,255,0.03)",
@@ -387,6 +387,6 @@ function LanguageSection({ title, subtitle, emptyLabel, choices, activeCode, onP
                                     background: "rgba(255,200,60,0.15)",
                                     border: "1px solid rgba(255,200,60,0.4)",
                                     color: "rgb(255,220,130)",
-                                }, title: "Interface translation in progress", children: "\u27F3" })), active && _jsx("span", { style: { color: "rgb(60,222,106)" }, children: "\u2713" })] }, opt.code));
+                                }, title: "Interface translation in progress", children: "\u27F3" })), active && _jsx("span", { style: { color: "rgb(61,220,132)" }, children: "\u2713" })] }, opt.code));
                 }) }))] }));
 }

@@ -47,8 +47,8 @@ export default function RegionMap({
             style={{
               padding: "16px 18px",
               borderRadius: 14,
-              border: active ? "2px solid #3CDE6A" : "1px solid rgba(255,255,255,0.18)",
-              background: active ? "rgba(60, 222, 106, 0.14)" : "rgba(255,255,255,0.04)",
+              border: active ? "2px solid #3DDC84" : "1px solid rgba(255,255,255,0.18)",
+              background: active ? "rgba(61, 220, 132, 0.14)" : "rgba(255,255,255,0.04)",
               color: "#fff",
               cursor: "pointer",
               fontSize: "0.98rem",

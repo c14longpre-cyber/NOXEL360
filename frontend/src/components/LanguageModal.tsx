@@ -52,7 +52,7 @@ function LanguageWorldMap({
         borderRadius: 20,
         border: "1px solid rgba(255,255,255,0.1)",
         background:
-          "radial-gradient(circle at 20% 20%, rgba(60,222,106,0.10), transparent 28%), radial-gradient(circle at 80% 30%, rgba(112,42,165,0.12), transparent 30%), rgba(255,255,255,0.03)",
+          "radial-gradient(circle at 20% 20%, rgba(61,220,132,0.10), transparent 28%), radial-gradient(circle at 80% 30%, rgba(112,42,165,0.12), transparent 30%), rgba(255,255,255,0.03)",
         padding: 16,
       }}
     >
@@ -100,7 +100,7 @@ function LanguageWorldMap({
                 cx={cx}
                 cy={cy}
                 r={active ? 16 : 11}
-                fill={active ? "rgba(60,222,106,0.95)" : "rgba(255,255,255,0.9)"}
+                fill={active ? "rgba(61,220,132,0.95)" : "rgba(255,255,255,0.9)"}
                 stroke={active ? "rgba(112,42,165,0.95)" : "rgba(0,0,0,0.35)"}
                 strokeWidth={active ? 5 : 3}
               />
@@ -109,7 +109,7 @@ function LanguageWorldMap({
                 cy={cy}
                 r={active ? 28 : 22}
                 fill="transparent"
-                stroke={active ? "rgba(60,222,106,0.35)" : "rgba(255,255,255,0.12)"}
+                stroke={active ? "rgba(61,220,132,0.35)" : "rgba(255,255,255,0.12)"}
                 strokeWidth="2"
               />
             </g>
@@ -233,11 +233,11 @@ padding: 32,
                   padding: "10px 14px",
                   border:
                     viewMode === "list"
-                      ? "1px solid rgba(60,222,106,0.9)"
+                      ? "1px solid rgba(61,220,132,0.9)"
                       : "1px solid rgba(255,255,255,0.14)",
                   background:
                     viewMode === "list"
-                      ? "rgba(60,222,106,0.14)"
+                      ? "rgba(61,220,132,0.14)"
                       : "rgba(255,255,255,0.04)",
                   color: "white",
                   cursor: "pointer",
@@ -254,11 +254,11 @@ padding: 32,
                   padding: "10px 14px",
                   border:
                     viewMode === "map"
-                      ? "1px solid rgba(60,222,106,0.9)"
+                      ? "1px solid rgba(61,220,132,0.9)"
                       : "1px solid rgba(255,255,255,0.14)",
                   background:
                     viewMode === "map"
-                      ? "rgba(60,222,106,0.14)"
+                      ? "rgba(61,220,132,0.14)"
                       : "rgba(255,255,255,0.04)",
                   color: "white",
                   cursor: "pointer",
@@ -308,10 +308,10 @@ padding: 32,
                     padding: "16px 18px",
                     cursor: "pointer",
                     border: active
-                      ? "1px solid rgba(60,222,106,0.9)"
+                      ? "1px solid rgba(61,220,132,0.9)"
                       : "1px solid rgba(255,255,255,0.10)",
                     background: active
-                      ? "linear-gradient(180deg, rgba(60,222,106,0.16), rgba(112,42,165,0.16))"
+                      ? "linear-gradient(180deg, rgba(61,220,132,0.16), rgba(112,42,165,0.16))"
                       : "rgba(255,255,255,0.04)",
                     color: "white",
                   }}

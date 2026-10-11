@@ -146,7 +146,7 @@ export default function HeaderLanguage() {
                                         padding: "9px 12px",
                                         borderRadius: 10,
                                         border: "none",
-                                        background: active ? "rgba(60,222,106,0.14)" : "transparent",
+                                        background: active ? "rgba(61,220,132,0.14)" : "transparent",
                                         color: "white",
                                         cursor: "pointer",
                                         fontSize: 14,
@@ -172,7 +172,7 @@ export default function HeaderLanguage() {
                                                 opacity: 0.55,
                                                 textTransform: "uppercase",
                                                 fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
-                                            }, children: item.code }), active && (_jsx("span", { style: { color: "rgb(60,222,106)", fontWeight: 700 }, children: "\u2713" }))] }, item.code));
+                                            }, children: item.code }), active && (_jsx("span", { style: { color: "rgb(61,220,132)", fontWeight: 700 }, children: "\u2713" }))] }, item.code));
                             })] }), _jsx("div", { style: {
                             height: 1,
                             background: "rgba(255,255,255,0.08)",

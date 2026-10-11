@@ -4,7 +4,7 @@
    ====================================================== */
 
 :root {
-  --g: #3cde6a;
+  --g: #3ddc84;
   --p: #702aa5;
   --bg: #05070d;
   --surface: #0b1018;
@@ -62,7 +62,7 @@ a {
   height: 100%;
   min-height: 100%;
   background:
-    linear-gradient(135deg, rgba(60, 222, 106, 0.06), transparent 34%),
+    linear-gradient(135deg, rgba(61, 220, 132, 0.06), transparent 34%),
     linear-gradient(220deg, rgba(112, 42, 165, 0.07), transparent 38%),
     var(--bg);
 }
@@ -131,7 +131,7 @@ a {
 .account-btn:hover,
 .nx-pill:hover {
   background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(60, 222, 106, 0.45);
+  border-color: rgba(61, 220, 132, 0.45);
 }
 
 /* BODY */
@@ -183,13 +183,13 @@ a {
 }
 
 .nav-item:hover {
-  background: rgba(60, 222, 106, 0.07);
-  border-color: rgba(60, 222, 106, 0.42);
+  background: rgba(61, 220, 132, 0.07);
+  border-color: rgba(61, 220, 132, 0.42);
 }
 
 .nav-item.is-active {
-  background: rgba(60, 222, 106, 0.12);
-  border-color: rgba(60, 222, 106, 0.5);
+  background: rgba(61, 220, 132, 0.12);
+  border-color: rgba(61, 220, 132, 0.5);
 }
 
 .nav-row {
@@ -355,12 +355,12 @@ a {
 
 .nx-card:hover {
   background: rgba(255, 255, 255, 0.065);
-  border-color: rgba(60, 222, 106, 0.42);
+  border-color: rgba(61, 220, 132, 0.42);
 }
 
 .nx-card--highlight {
   background:
-    linear-gradient(135deg, rgba(60, 222, 106, 0.09), rgba(112, 42, 165, 0.07)),
+    linear-gradient(135deg, rgba(61, 220, 132, 0.09), rgba(112, 42, 165, 0.07)),
     rgba(255, 255, 255, 0.04);
 }
 
@@ -381,8 +381,8 @@ a {
 }
 
 .nx-badge--live {
-  border-color: rgba(60, 222, 106, 0.65);
-  background: rgba(60, 222, 106, 0.12);
+  border-color: rgba(61, 220, 132, 0.65);
+  background: rgba(61, 220, 132, 0.12);
   color: var(--g);
 }
 
@@ -491,8 +491,8 @@ a {
 }
 
 .pill--live {
-  border-color: rgba(60, 222, 106, 0.34);
-  background: rgba(60, 222, 106, 0.1);
+  border-color: rgba(61, 220, 132, 0.34);
+  background: rgba(61, 220, 132, 0.1);
   color: #baffcb;
 }
 
@@ -519,7 +519,7 @@ a {
   width: 64px;
   height: 64px;
   border-radius: 999px;
-  border: 1px solid rgba(60, 222, 106, 0.55);
+  border: 1px solid rgba(61, 220, 132, 0.55);
   background: linear-gradient(180deg, #52ff8a, #1b8c3f);
   color: white;
   display: flex;

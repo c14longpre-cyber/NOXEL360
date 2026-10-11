@@ -16,9 +16,9 @@ function hashString(value) {
 }
 function getGradient(name) {
     const variants = [
-        "linear-gradient(135deg,#3CDE6A,#702AA5)",
-        "linear-gradient(135deg,#702AA5,#3CDE6A)",
-        "linear-gradient(135deg,#3CDE6A,#1f9d57)",
+        "linear-gradient(135deg,#3DDC84,#702AA5)",
+        "linear-gradient(135deg,#702AA5,#3DDC84)",
+        "linear-gradient(135deg,#3DDC84,#1f9d57)",
         "linear-gradient(135deg,#702AA5,#9b5de5)"
     ];
     return variants[hashString(name) % variants.length];

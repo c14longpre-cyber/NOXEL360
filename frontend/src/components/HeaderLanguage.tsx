@@ -236,7 +236,7 @@ export default function HeaderLanguage() {
                     padding: "9px 12px",
                     borderRadius: 10,
                     border: "none",
-                    background: active ? "rgba(60,222,106,0.14)" : "transparent",
+                    background: active ? "rgba(61,220,132,0.14)" : "transparent",
                     color: "white",
                     cursor: "pointer",
                     fontSize: 14,
@@ -286,7 +286,7 @@ export default function HeaderLanguage() {
                     {item.code}
                   </span>
                   {active && (
-                    <span style={{ color: "rgb(60,222,106)", fontWeight: 700 }}>
+                    <span style={{ color: "rgb(61,220,132)", fontWeight: 700 }}>
                       ✓
                     </span>
                   )}

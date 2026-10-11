@@ -269,11 +269,11 @@ export default function NexusLanguageMap({
       node.style.pointerEvents = "auto";
 
       if (isSelected) {
-        node.style.fill = "#3CDE6A";
+        node.style.fill = "#3DDC84";
         node.style.stroke = "#702AA5";
         node.style.strokeWidth = "1.2";
         node.style.opacity = "1";
-        node.style.filter = "drop-shadow(0 0 4px rgba(60,222,106,0.55))";
+        node.style.filter = "drop-shadow(0 0 4px rgba(61,220,132,0.55))";
       } else if (isHovered) {
         node.style.fill = "#8ae7a8";
         node.style.stroke = "#702AA5";
@@ -464,8 +464,8 @@ export default function NexusLanguageMap({
             style={{
               borderRadius: 999,
               padding: "10px 14px",
-              border: "1px solid rgba(60,222,106,0.9)",
-              background: "rgba(60,222,106,0.14)",
+              border: "1px solid rgba(61,220,132,0.9)",
+              background: "rgba(61,220,132,0.14)",
               color: "white",
               cursor: "pointer",
             }}

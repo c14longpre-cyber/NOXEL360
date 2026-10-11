@@ -115,7 +115,7 @@ if (provider.key === "linkedin") {
 
   function cardGlow(accent?: ProviderItem["accent"]) {
     if (accent === "green") {
-      return "0 0 0 1px rgba(60,222,106,0.22), 0 0 24px rgba(60,222,106,0.12)";
+      return "0 0 0 1px rgba(61,220,132,0.22), 0 0 24px rgba(61,220,132,0.12)";
     }
     if (accent === "purple") {
       return "0 0 0 1px rgba(112,42,165,0.22), 0 0 24px rgba(112,42,165,0.12)";
@@ -131,7 +131,7 @@ if (provider.key === "linkedin") {
         inset: 0,
         zIndex: 2147483647,
         background:
-          "radial-gradient(circle at 30% 20%, rgba(60,222,106,0.10), transparent 30%), radial-gradient(circle at 75% 30%, rgba(112,42,165,0.10), transparent 30%), rgba(2,6,15,0.78)",
+          "radial-gradient(circle at 30% 20%, rgba(61,220,132,0.10), transparent 30%), radial-gradient(circle at 75% 30%, rgba(112,42,165,0.10), transparent 30%), rgba(2,6,15,0.78)",
         backdropFilter: "blur(10px)",
         display: "grid",
         placeItems: "center",
@@ -149,7 +149,7 @@ if (provider.key === "linkedin") {
           background:
             "linear-gradient(180deg, rgba(10,16,26,0.92), rgba(6,10,18,0.96))",
           boxShadow:
-            "0 0 0 1px rgba(60,222,106,0.20), 0 0 40px rgba(60,222,106,0.10), inset 0 0 30px rgba(255,255,255,0.03)",
+            "0 0 0 1px rgba(61,220,132,0.20), 0 0 40px rgba(61,220,132,0.10), inset 0 0 30px rgba(255,255,255,0.03)",
           position: "relative",
           overflow: "hidden",
         }}
@@ -160,8 +160,8 @@ if (provider.key === "linkedin") {
             width: "100%",
             marginBottom: 18,
             background:
-              "linear-gradient(90deg, transparent, rgba(60,222,106,0.75), transparent)",
-            boxShadow: "0 0 14px rgba(60,222,106,0.42)",
+              "linear-gradient(90deg, transparent, rgba(61,220,132,0.75), transparent)",
+            boxShadow: "0 0 14px rgba(61,220,132,0.42)",
           }}
         />
 
@@ -262,7 +262,7 @@ if (provider.key === "linkedin") {
                         : "#eef2ff",
                   textShadow:
                     provider.accent === "green"
-                      ? "0 0 12px rgba(60,222,106,0.22)"
+                      ? "0 0 12px rgba(61,220,132,0.22)"
                       : "none",
                 }}
               >

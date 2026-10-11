@@ -241,8 +241,8 @@ export default function NexusPage() {
           gap: 10,
           padding: "8px 14px",
           borderRadius: 999,
-          border: "1px solid rgba(60,222,106,0.5)",
-          background: "rgba(60,222,106,0.08)",
+          border: "1px solid rgba(61,220,132,0.5)",
+          background: "rgba(61,220,132,0.08)",
           marginBottom: 20,
         }}
       >
@@ -306,10 +306,10 @@ export default function NexusPage() {
                   padding: "10px 14px",
                   borderRadius: 999,
                   border: active
-                    ? "1px solid rgba(60,222,106,0.9)"
+                    ? "1px solid rgba(61,220,132,0.9)"
                     : "1px solid rgba(255,255,255,0.14)",
                   background: active
-                    ? "rgba(60,222,106,0.14)"
+                    ? "rgba(61,220,132,0.14)"
                     : "rgba(255,255,255,0.04)",
                   color: "white",
                   cursor: "pointer",
@@ -381,7 +381,7 @@ export default function NexusPage() {
                   padding: "10px 12px",
                   borderRadius: 10,
                   border: "none",
-                  background: active ? "rgba(60,222,106,0.14)" : "transparent",
+                  background: active ? "rgba(61,220,132,0.14)" : "transparent",
                   color: "white",
                   cursor: "pointer",
                 }}
@@ -450,7 +450,7 @@ export default function NexusPage() {
                 {active && (
                   <span
                     style={{
-                      color: "rgb(60,222,106)",
+                      color: "rgb(61,220,132)",
                       fontWeight: 700,
                       fontSize: 16,
                     }}
@@ -539,8 +539,8 @@ export default function NexusPage() {
                 choices={officialChoices}
                 activeCode={language}
                 onPick={setLanguage}
-                accentColor="rgba(60,222,106,0.9)"
-                accentBg="rgba(60,222,106,0.14)"
+                accentColor="rgba(61,220,132,0.9)"
+                accentBg="rgba(61,220,132,0.14)"
               />
 
               {/* Indigenous languages — bloc dédié, pas sous-catégorie */}
@@ -724,7 +724,7 @@ function LanguageSection({
                     ⟳
                   </span>
                 )}
-                {active && <span style={{ color: "rgb(60,222,106)" }}>✓</span>}
+                {active && <span style={{ color: "rgb(61,220,132)" }}>✓</span>}
               </button>
             );
           })}
