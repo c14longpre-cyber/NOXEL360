@@ -50,7 +50,7 @@ Paliers : Bronze / Silver / Gold / Platinum / Diamond.
 2. **Fichiers .js compilés à côté des .ts** (frontend/src, i18n/locales) : modifier le `.ts` seulement, puis vérifier qu'un `.js` périmé ne masque pas le changement à l'import. Ne jamais éditer uniquement le `.js`.
 3. **i18n** : `FULLY_TRANSLATED_CODES` (languageCatalog.ts) liste les langues complètes (26 aujourd'hui). Ajouter une langue = `locales/XX.ts` + entrée dans `translate.ts` + code dans `FULLY_TRANSLATED_CODES`. Clés identiques à `en.ts`.
 4. **Langues autochtones** : jamais de traduction automatique publiée. Seuls des locuteurs natifs ou traducteurs approuvés par la communauté (voir CONTRIBUTING_LANGUAGES.md).
-5. **Couleurs officielles** : vert #3ddc84, violet #A855F7. L'ancien vert #3cde6a subsiste dans `frontend/src/styles` et doit être remplacé.
+5. **Couleurs officielles** : vert #3ddc84, violet #A855F7. L'ancien vert #3cde6a (et `rgba(60,222,106,…)`) a été remplacé partout ; il ne doit pas revenir.
 6. **vercel.json** : le rewrite `/api/:path*` doit précéder le catch-all SPA `/((?!api/).*)`.
 7. **Contrat API** : réponses `{ ok: boolean, ... , error?: string }`. Codes 400 / 401 / 403 / 500 cohérents.
 8. **CORS** : géré uniquement par `server.ts` (liste blanche `allowedOrigins` + `credentials: true`). Ne jamais ajouter d'en-tête `Access-Control-Allow-Origin` dans `vercel.json` : un `*` est incompatible avec les cookies de session.

@@ -22,7 +22,7 @@ export default function NexusButton() {
         padding: "8px 14px",
         borderRadius: 999,
         border: "1px solid rgba(255,255,255,0.14)",
-        background: "rgba(60,222,106,0.10)",
+        background: "rgba(61,220,132,0.10)",
         color: "inherit",
         cursor: "pointer"
       }}

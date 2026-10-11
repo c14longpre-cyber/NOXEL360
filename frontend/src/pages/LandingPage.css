@@ -4,12 +4,12 @@
   --nl-bg:#07090a;
   --nl-surface:#0d1017;
   --nl-border:rgba(255,255,255,0.08);
-  --nl-border-hover:rgba(60,222,106,0.4);
+  --nl-border-hover:rgba(61,220,132,0.4);
   --nl-text:#eef1f0;
   --nl-muted:rgba(255,255,255,0.55);
   --nl-muted-2:rgba(255,255,255,0.35);
-  --nl-g:#3cde6a;
-  --nl-g-dim:rgba(60,222,106,0.12);
+  --nl-g:#3ddc84;
+  --nl-g-dim:rgba(61,220,132,0.12);
   --nl-p:#8b5cf6;
   --nl-p-dim:rgba(139,92,246,0.12);
 
@@ -47,13 +47,13 @@
 .noxel-landing .hero::before{
   content:"";position:absolute;top:-200px;left:50%;transform:translateX(-50%);
   width:900px;height:500px;
-  background:radial-gradient(ellipse at center, rgba(60,222,106,0.10) 0%, rgba(139,92,246,0.06) 45%, transparent 70%);
+  background:radial-gradient(ellipse at center, rgba(61,220,132,0.10) 0%, rgba(139,92,246,0.06) 45%, transparent 70%);
   filter:blur(40px);pointer-events:none;
 }
 .noxel-landing .eyebrow{
   display:inline-flex;align-items:center;gap:8px;
   font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;
-  color:var(--nl-g);background:var(--nl-g-dim);border:1px solid rgba(60,222,106,0.25);
+  color:var(--nl-g);background:var(--nl-g-dim);border:1px solid rgba(61,220,132,0.25);
   padding:8px 16px;border-radius:100px;margin-bottom:28px;
 }
 .noxel-landing .hero h1{
@@ -93,7 +93,7 @@
 .noxel-landing .module-card .icon{font-size:32px;margin-bottom:20px;display:block}
 .noxel-landing .module-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:20px}
 .noxel-landing .badge{font-size:11px;font-weight:800;letter-spacing:0.5px;padding:5px 12px;border-radius:100px}
-.noxel-landing .badge.live{color:var(--nl-g);background:var(--nl-g-dim);border:1px solid rgba(60,222,106,0.3)}
+.noxel-landing .badge.live{color:var(--nl-g);background:var(--nl-g-dim);border:1px solid rgba(61,220,132,0.3)}
 .noxel-landing .badge.core{color:var(--nl-p);background:var(--nl-p-dim);border:1px solid rgba(139,92,246,0.3)}
 .noxel-landing .badge.soon{color:#ffd28a;background:rgba(245,166,35,0.14);border:1px solid rgba(245,166,35,0.35)}
 .noxel-landing .module-card h3{font-size:20px;font-weight:800;margin-bottom:10px}

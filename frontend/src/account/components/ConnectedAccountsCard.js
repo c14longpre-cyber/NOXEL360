@@ -26,7 +26,7 @@ export default function ConnectedAccountsCard() {
                                             ? t("connectedAccounts.status.connected")
                                             : t("connectedAccounts.status.notConnected") })] }), connected ? (_jsx("span", { style: {
                                     fontSize: 12,
-                                    color: "#3CDE6A",
+                                    color: "#3DDC84",
                                     fontWeight: 600,
                                 }, children: t("connectedAccounts.linked") })) : (_jsx("button", { className: "nx-btn", type: "button", onClick: () => loginWithProvider(p.key, "link"), style: {
                                     padding: "6px 12px",

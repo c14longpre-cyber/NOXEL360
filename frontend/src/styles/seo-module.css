@@ -4,7 +4,7 @@
    ====================================================== */
 
 :root {
-  --g: #3cde6a;
+  --g: #3ddc84;
   --p: #702aa5;
 
   --bg: #05070d;
@@ -19,7 +19,7 @@
   --line: rgba(14, 171, 142, 0.46);
   --line-soft: rgba(255, 255, 255, 0.1);
 
-  --ok: #3cde6a;
+  --ok: #3ddc84;
   --info: #79caff;
   --warn: #ffcc66;
   --danger: #ff7f96;
@@ -33,7 +33,7 @@
   --shadow-md: 0 14px 40px rgba(0, 0, 0, 0.24);
   --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.32);
 
-  --glow-g: rgba(60, 222, 106, 0.16);
+  --glow-g: rgba(61, 220, 132, 0.16);
   --glow-p: rgba(112, 42, 165, 0.16);
   --glow-b: rgba(121, 202, 255, 0.1);
 
@@ -123,9 +123,9 @@ button {
 }
 
 button:hover {
-  border-color: rgba(60, 222, 106, 0.35);
+  border-color: rgba(61, 220, 132, 0.35);
   background: linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
-  box-shadow: 0 0 18px rgba(60, 222, 106, 0.1);
+  box-shadow: 0 0 18px rgba(61, 220, 132, 0.1);
   transform: translateY(-1px);
 }
 
@@ -136,9 +136,9 @@ select:focus,
 textarea:focus {
   outline: none;
   box-shadow:
-    0 0 0 1px rgba(60, 222, 106, 0.28),
-    0 0 0 4px rgba(60, 222, 106, 0.08);
-  border-color: rgba(60, 222, 106, 0.42);
+    0 0 0 1px rgba(61, 220, 132, 0.28),
+    0 0 0 4px rgba(61, 220, 132, 0.08);
+  border-color: rgba(61, 220, 132, 0.42);
 }
 
 input,
@@ -167,7 +167,7 @@ textarea::placeholder {
   min-height: 100vh;
   width: 100%;
   background:
-    radial-gradient(900px 600px at 12% 10%, rgba(60, 222, 106, 0.12), transparent 60%),
+    radial-gradient(900px 600px at 12% 10%, rgba(61, 220, 132, 0.12), transparent 60%),
     radial-gradient(900px 600px at 80% 20%, rgba(112, 42, 165, 0.12), transparent 58%),
     var(--bg);
 }
@@ -211,7 +211,7 @@ textarea::placeholder {
   background: linear-gradient(
     135deg,
     rgba(185, 242, 255, 0.22),
-    rgba(60, 222, 106, 0.16),
+    rgba(61, 220, 132, 0.16),
     rgba(112, 42, 165, 0.16),
     transparent 70%
   );
@@ -310,10 +310,10 @@ textarea::placeholder {
 }
 
 .nx-pill--live {
-  border-color: rgba(60, 222, 106, 0.34);
-  background: rgba(60, 222, 106, 0.1);
+  border-color: rgba(61, 220, 132, 0.34);
+  background: rgba(61, 220, 132, 0.1);
   color: #baffcb;
-  box-shadow: 0 0 16px rgba(60, 222, 106, 0.1);
+  box-shadow: 0 0 16px rgba(61, 220, 132, 0.1);
 }
 
 .nx-pill--intel {
@@ -330,7 +330,7 @@ textarea::placeholder {
   overflow: hidden;
   border: 1px solid var(--line-soft);
   background:
-    radial-gradient(circle at 50% 50%, rgba(60, 222, 106, 0.08), transparent 55%),
+    radial-gradient(circle at 50% 50%, rgba(61, 220, 132, 0.08), transparent 55%),
     linear-gradient(180deg, rgba(8, 12, 20, 0.9), rgba(10, 15, 24, 0.82));
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.04),

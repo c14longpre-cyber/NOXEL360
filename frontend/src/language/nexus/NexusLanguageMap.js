@@ -214,11 +214,11 @@ export default function NexusLanguageMap({ currentLanguage, onSelectLanguage, })
                 "fill 0.18s ease, opacity 0.18s ease, stroke 0.18s ease, filter 0.18s ease";
             node.style.pointerEvents = "auto";
             if (isSelected) {
-                node.style.fill = "#3CDE6A";
+                node.style.fill = "#3DDC84";
                 node.style.stroke = "#702AA5";
                 node.style.strokeWidth = "1.2";
                 node.style.opacity = "1";
-                node.style.filter = "drop-shadow(0 0 4px rgba(60,222,106,0.55))";
+                node.style.filter = "drop-shadow(0 0 4px rgba(61,220,132,0.55))";
             }
             else if (isHovered) {
                 node.style.fill = "#8ae7a8";
@@ -320,8 +320,8 @@ export default function NexusLanguageMap({ currentLanguage, onSelectLanguage, })
                         } })) : null, _jsxs("div", { style: { display: "grid", gap: 8, fontSize: 14 }, children: [_jsxs("div", { children: [_jsx("strong", { children: "ISO2:" }), " ", selectedIso || "—"] }), _jsxs("div", { children: [_jsx("strong", { children: "ISO3:" }), " ", selectedCountry?.iso3 || selectedMeta?.iso3 || "—"] }), _jsxs("div", { children: [_jsxs("strong", { children: [t("language.selector.capital"), ":"] }), " ", selectedCountry?.capital || selectedMeta?.capital || "—"] }), _jsxs("div", { children: [_jsxs("strong", { children: [t("language.selector.region"), ":"] }), " ", selectedCountry?.region || "—"] }), _jsxs("div", { children: [_jsxs("strong", { children: [t("language.selector.subregion"), ":"] }), " ", selectedCountry?.subregion || "—"] }), _jsxs("div", { children: [_jsxs("strong", { children: [t("language.selector.domain"), ":"] }), " ", selectedCountry?.domain || selectedMeta?.domain || "—"] }), _jsxs("div", { children: [_jsxs("strong", { children: [t("language.selector.currency"), ":"] }), " ", selectedCountry?.currency || selectedMeta?.currencyCode || "—"] }), _jsxs("div", { children: [_jsxs("strong", { children: [t("language.selector.officialLanguages"), ":"] }), " ", selectedCountry?.officialLanguages?.join(", ") || "—"] }), _jsxs("div", { children: [_jsxs("strong", { children: [t("language.selector.indigenousLanguages"), ":"] }), " ", selectedCountry?.indigenousLanguages?.join(", ") || "—"] }), _jsxs("div", { children: [_jsxs("strong", { children: [t("language.selector.mappedLanguage"), ":"] }), " ", LANGUAGE_BY_ISO2[selectedIso] || "not mapped yet"] })] }), _jsx("div", { style: { marginTop: 16 }, children: _jsx("button", { type: "button", onClick: applySelectedCountryLanguage, style: {
                                 borderRadius: 999,
                                 padding: "10px 14px",
-                                border: "1px solid rgba(60,222,106,0.9)",
-                                background: "rgba(60,222,106,0.14)",
+                                border: "1px solid rgba(61,220,132,0.9)",
+                                background: "rgba(61,220,132,0.14)",
                                 color: "white",
                                 cursor: "pointer",
                             }, children: t("language.selector.apply") }) }), _jsxs("p", { style: { marginTop: 16, fontSize: 12, opacity: 0.65 }, children: [t("language.selector.current"), ": ", currentLanguage.toUpperCase()] })] })] }));

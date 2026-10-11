@@ -47,7 +47,7 @@ export default function NoxelAccountIcon({
         <defs>
           <linearGradient id="noxelRefreshGradient" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#702AA5" />
-            <stop offset="100%" stopColor="#3CDE6A" />
+            <stop offset="100%" stopColor="#3DDC84" />
           </linearGradient>
         </defs>
 
