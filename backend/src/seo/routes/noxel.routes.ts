@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { requireHttpUrl } from "../shared/url";
+import { asyncRoute } from "../../utils/http";
 import { startRun } from "../services/runEngine";
 import { getRun, listRuns } from "../runs/run.store";
 
@@ -9,12 +10,12 @@ const router = Router();
 router.get("/health", (_req, res) => res.json({ ok: true, service: "noxel-core", ts: new Date().toISOString() }));
 
 // POST /api/noxel/run  { url, mode? }
-router.post("/run", async (req, res) => {
+router.post("/run", asyncRoute(async (req, res) => {
   const url = requireHttpUrl(req.body?.url);
   const mode = (String(req.body?.mode || "quick") as any);
   const out = await startRun(url, mode);
   res.json(out);
-});
+}));
 
 // GET /api/noxel/run/:runId
 router.get("/run/:runId", (req, res) => {

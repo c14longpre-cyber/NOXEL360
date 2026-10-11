@@ -3,6 +3,7 @@ import { authRouter } from "./auth/auth.routes";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import { seoModuleRouter } from "./seo/seo.module";
+import { errorHandler } from "./utils/http";
 
 const app = express();
 const PORT = Number(process.env.PORT || 4000);
@@ -80,6 +81,8 @@ app.use((req, res) => {
     path: req.originalUrl,
   });
 });
+
+app.use(errorHandler);
 
 app.listen(PORT, () => {
   console.log(`NOXEL360 backend running on port ${PORT}`);

@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { requireHttpUrl } from "../shared/url";
+import { asyncRoute } from "../../utils/http";
 import { startRun } from "../services/runEngine";
 import { getLatestRunByUrl, listRunsByUrl } from "../runs/run.store";
 import { toWebsiteVM } from "../viewmodels/website.vm";
@@ -14,7 +15,7 @@ const router = Router();
  * Note: We keep legacy /api/seo/summary and /api/seo/issues as-is.
  */
 
-router.get("/summary", async (req, res) => {
+router.get("/summary", asyncRoute(async (req, res) => {
   const url = requireHttpUrl(req.query.url);
   await startRun(url, "quick");
 
@@ -24,9 +25,9 @@ router.get("/summary", async (req, res) => {
   }
 
   return res.json({ ok: true, website: toWebsiteVM(run) });
-});
+}));
 
-router.get("/versions", async (req, res) => {
+router.get("/versions", asyncRoute(async (req, res) => {
   const url = requireHttpUrl(req.query.url);
 
   await startRun(url, "quick");
@@ -43,6 +44,6 @@ router.get("/versions", async (req, res) => {
   });
 
   return res.json({ ok: true, versions });
-});
+}));
 
 export default router;
