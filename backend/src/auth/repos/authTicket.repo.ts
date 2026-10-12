@@ -1,5 +1,6 @@
 import { randomBytes } from "crypto";
 import type { AuthIntent, AuthProvider, NormalizedOAuthIdentity } from "../auth.types";
+import { db, toIso } from "../../db/pool";
 
 export type AuthTicketRecord = {
   id: string;
@@ -12,10 +13,24 @@ export type AuthTicketRecord = {
   expiresAt: string;
 };
 
+// Repli en mémoire quand DATABASE_URL est absent (développement local).
 const tickets = new Map<string, AuthTicketRecord>();
 
 function randomId(prefix: string): string {
   return `${prefix}_${randomBytes(24).toString("base64url")}`;
+}
+
+function fromRow(row: any): AuthTicketRecord {
+  return {
+    id: row.id,
+    type: row.type,
+    provider: row.provider,
+    intent: row.intent,
+    existingUserId: row.existing_user_id,
+    identity: row.identity,
+    createdAt: toIso(row.created_at) as string,
+    expiresAt: toIso(row.expires_at) as string,
+  };
 }
 
 export async function createLinkExistingEmailTicket(input: {
@@ -39,16 +54,44 @@ export async function createLinkExistingEmailTicket(input: {
     expiresAt: new Date(now + ttlMinutes * 60 * 1000).toISOString(),
   };
 
-  tickets.set(record.id, record);
+  if (!db) {
+    tickets.set(record.id, record);
+    return record;
+  }
+
+  // Ménage opportuniste des tickets expirés.
+  await db.query("DELETE FROM auth_tickets WHERE expires_at < now()");
+  await db.query(
+    `INSERT INTO auth_tickets (id, type, provider, intent, existing_user_id, identity, created_at, expires_at)
+     VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`,
+    [
+      record.id,
+      record.type,
+      record.provider,
+      record.intent,
+      record.existingUserId,
+      JSON.stringify(record.identity),
+      record.createdAt,
+      record.expiresAt,
+    ]
+  );
   return record;
 }
 
 export async function findTicketById(ticketId: string): Promise<AuthTicketRecord | null> {
-  const ticket = tickets.get(ticketId) || null;
+  let ticket: AuthTicketRecord | null;
+
+  if (!db) {
+    ticket = tickets.get(ticketId) || null;
+  } else {
+    const { rows } = await db.query("SELECT * FROM auth_tickets WHERE id = $1", [ticketId]);
+    ticket = rows[0] ? fromRow(rows[0]) : null;
+  }
+
   if (!ticket) return null;
 
   if (Date.now() > Date.parse(ticket.expiresAt)) {
-    tickets.delete(ticketId);
+    await deleteTicket(ticketId);
     return null;
   }
 
@@ -56,5 +99,8 @@ export async function findTicketById(ticketId: string): Promise<AuthTicketRecord
 }
 
 export async function deleteTicket(ticketId: string): Promise<boolean> {
-  return tickets.delete(ticketId);
+  if (!db) return tickets.delete(ticketId);
+
+  const result = await db.query("DELETE FROM auth_tickets WHERE id = $1", [ticketId]);
+  return (result.rowCount ?? 0) > 0;
 }

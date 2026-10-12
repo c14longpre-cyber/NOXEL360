@@ -3,6 +3,7 @@ import { authRouter } from "./auth/auth.routes";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import { errorHandler } from "./utils/http";
+import { ensureSchema } from "./db/pool";
 
 const app = express();
 const PORT = Number(process.env.PORT || 4000);
@@ -81,6 +82,15 @@ app.use((req, res) => {
 
 app.use(errorHandler);
 
-app.listen(PORT, () => {
-  console.log(`NOXEL360 backend running on port ${PORT}`);
-});
+// Le schéma Postgres doit exister avant la première requête d'auth.
+// En cas d'échec (base injoignable), on arrête : Railway redémarre le service.
+ensureSchema()
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`NOXEL360 backend running on port ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error("[db] Impossible d'initialiser Postgres :", err);
+    process.exit(1);
+  });

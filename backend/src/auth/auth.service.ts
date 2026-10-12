@@ -254,6 +254,18 @@ export async function resolveExistingEmailLink(input: {
   };
 }
 
+/**
+ * Identités renvoyées au navigateur (/api/auth/session) : jamais de jetons
+ * OAuth ni de profil brut. Les champs restent présents (à null) pour garder
+ * la forme attendue par le frontend.
+ */
 export async function listConnectedProviders(userId: string) {
-  return findIdentitiesByUserId(userId);
+  const identities = await findIdentitiesByUserId(userId);
+  return identities.map((identity) => ({
+    ...identity,
+    accessToken: null,
+    refreshToken: null,
+    expiresAt: null,
+    rawProfileJson: null,
+  }));
 }
