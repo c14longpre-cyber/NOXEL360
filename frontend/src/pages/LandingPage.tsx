@@ -16,6 +16,7 @@ export default function LandingPage() {
         </Link>
         <div className="nav-links">
           <a href="#modules">Modules</a>
+          <a href="#whats-next">What's Next</a>
           <a href="#how-it-works">How It Works</a>
           <a href="/learn">Learn</a>
           <Link to="/pricing">Pricing</Link>
@@ -34,8 +35,8 @@ export default function LandingPage() {
             </h1>
             <p className="lead">
               NOXEL360 is the modular suite for anyone building online — solopreneurs, small teams,
-              and agencies managing clients — who need search visibility, verified backlinks, and
-              language intelligence without stitching together five separate subscriptions to get it.
+              and agencies managing clients. Search visibility, verified backlinks, and language
+              intelligence today, with web-ready image tools on the way. One login for all of it.
             </p>
             <div className="hero-ctas">
               <Link to="/dashboard" className="btn-primary">Open Your Dashboard →</Link>
@@ -63,11 +64,11 @@ export default function LandingPage() {
 
         <section id="modules">
           <div className="wrap">
-            <div className="section-tag">NOXEL Modules</div>
+            <div className="section-tag">Live Today</div>
             <h2 className="section-title">Specialized tools, built to ship one by one.</h2>
             <p className="section-lead">
-              Each module stands completely on its own. Enable only what you need today — the rest
-              plugs in later without refactoring anything.
+              Each module stands on its own. Enable only what you need today — the next ones plug
+              into the same account when they launch.
             </p>
 
             <div className="modules-grid">
@@ -113,23 +114,43 @@ export default function LandingPage() {
                   <li>Adapts content automatically</li>
                   <li>Runs quietly under every module</li>
                 </ul>
-                <Link to="/dashboard" className="module-link">Included with your account <span className="arrow">→</span></Link>
+                <Link to="/nexus" className="module-link">Included with your account <span className="arrow">→</span></Link>
               </div>
+            </div>
+          </div>
+        </section>
 
-              <div className="module-card">
-                <span className="icon">🎨</span>
-                <div className="module-top">
-                  <h3>NOXEL Spectra</h3>
-                  <span className="badge soon">SOON</span>
-                </div>
-                <p>An image conversion, compression, and vectorization toolkit — built for the web.</p>
-                <ul>
-                  <li>Format conversion and target-size compression</li>
-                  <li>Color palette extraction</li>
-                  <li>PNG/WebP to SVG vectorization</li>
-                </ul>
-                <a href="https://noxelspectra.com" className="module-link">Learn more <span className="arrow">→</span></a>
+        <section id="whats-next">
+          <div className="wrap">
+            <div className="section-tag">What's Next</div>
+            <h2 className="section-title">The next module is taking shape.</h2>
+            <p className="section-lead">
+              NOXEL360 grows one focused module at a time. Here's what's coming to your account next.
+            </p>
+
+            <div className="teaser">
+              <div>
+                <span className="badge soon-p">COMING SOON</span>
+                <h3>NOXEL Spectra — every image, web-ready.</h3>
+                <p>
+                  Heavy images slow sites down, and fixing them usually means juggling a converter,
+                  a compressor, and a vector tool. Spectra brings them into one place, built
+                  specifically for the web.
+                </p>
+                <p>
+                  It will plug into the same NOXEL360 account as everything else — no new login,
+                  nothing to migrate.
+                </p>
+                <a href="https://noxelspectra.com" className="module-link">
+                  Get a first look at NOXEL Spectra <span className="arrow">→</span>
+                </a>
               </div>
+              <ul className="teaser-list">
+                <li><strong>Convert</strong><span>Switch between image formats without leaving your workflow.</span></li>
+                <li><strong>Compress to size</strong><span>Set the file size you need and let Spectra hit it.</span></li>
+                <li><strong>Extract palettes</strong><span>Pull a clean color palette from any image.</span></li>
+                <li><strong>Vectorize</strong><span>Turn PNG or WebP artwork into crisp SVG.</span></li>
+              </ul>
             </div>
           </div>
         </section>
@@ -212,6 +233,7 @@ export default function LandingPage() {
                 />
                 <div className="stat-row"><span className="label">Modules live today</span><span className="val">2 (SEO, Forge)</span></div>
                 <div className="stat-row"><span className="label">Core intelligence layer</span><span className="val">Nexus</span></div>
+                <div className="stat-row"><span className="label">Coming next</span><span className="val">Spectra</span></div>
                 <div className="stat-row"><span className="label">Accounts required</span><span className="val">1</span></div>
                 <div className="stat-row"><span className="label">Languages supported</span><span className="val">115</span></div>
                 <div className="stat-row"><span className="label">Built for</span><span className="val">Everyone</span></div>
@@ -278,6 +300,15 @@ export default function LandingPage() {
               </dd>
 
               <dt style={{ fontWeight: 700, color: "var(--nl-text, #eef1f0)", marginBottom: 6 }}>
+                What's coming next?
+              </dt>
+              <dd style={{ margin: "0 0 20px" }}>
+                NOXEL Spectra, a web-focused image toolkit: format conversion, target-size
+                compression, color palette extraction, and PNG/WebP to SVG vectorization. It will
+                connect to your existing NOXEL360 account, and its pricing will be announced at launch.
+              </dd>
+
+              <dt style={{ fontWeight: 700, color: "var(--nl-text, #eef1f0)", marginBottom: 6 }}>
                 Is my data shared between modules?
               </dt>
               <dd style={{ margin: 0 }}>
@@ -303,12 +334,15 @@ export default function LandingPage() {
           <div className="footer-top">
             <p className="footer-desc">
               NOXEL360 connects NOXEL SEO, NOXEL Forge, and Nexus in one dashboard for search
-              visibility, verified backlinks, and language intelligence.
+              visibility, verified backlinks, and language intelligence — with NOXEL Spectra
+              coming next.
             </p>
             <div className="footer-links">
               <a href="https://noxelseo.com">NOXEL SEO</a>
               <a href="https://noxelforge.com">NOXEL Forge</a>
-              <Link to="/dashboard">NOXEL Nexus</Link>
+              <Link to="/nexus">NOXEL Nexus</Link>
+              <a href="https://noxelspectra.com">NOXEL Spectra</a>
+              <Link to="/pricing">Pricing</Link>
               <a href="/learn">Learn</a>
               <Link to="/app/account">Account</Link>
               <Link to="/privacy">Privacy</Link>
