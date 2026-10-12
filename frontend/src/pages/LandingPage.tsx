@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import HeaderLanguage from "../components/HeaderLanguage";
+import UserMenu from "../components/UserMenu";
+import NoxelAccessButton from "../auth/NoxelAccessButton";
+import { useAuthStore } from "../auth/AuthStore";
 import "./LandingPage.css";
 
 export default function LandingPage() {
+  const { isAuthenticated } = useAuthStore();
+
   useEffect(() => {
     document.body.style.overflow = "auto";
     return () => { document.body.style.overflow = "hidden"; };
@@ -21,7 +27,11 @@ export default function LandingPage() {
           <a href="/learn">Learn</a>
           <Link to="/pricing">Pricing</Link>
         </div>
-        <Link to="/dashboard" className="nav-cta">Open Dashboard</Link>
+        <div className="nav-right">
+          <HeaderLanguage />
+          {isAuthenticated ? <UserMenu /> : <NoxelAccessButton />}
+          <Link to="/dashboard" className="nav-cta">Open Dashboard</Link>
+        </div>
       </nav>
 
       <main>
