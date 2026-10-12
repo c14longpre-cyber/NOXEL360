@@ -1,3 +1,4 @@
+import { randomBytes, timingSafeEqual } from "crypto";
 import type { Request, Response } from "express";
 import type { AuthIntent, AuthProvider } from "./auth.types";
 import { getProviderAdapter } from "./providers/provider.registry";
@@ -6,7 +7,14 @@ import {
   listConnectedProviders,
   resolveExistingEmailLink,
 } from "./auth.service";
-import { clearSessionCookie, setSessionCookie } from "./auth.cookies";
+import {
+  OAUTH_STATE_COOKIE_NAME,
+  OAUTH_STATE_MAX_AGE_MS,
+  clearOAuthStateCookie,
+  clearSessionCookie,
+  setOAuthStateCookie,
+  setSessionCookie,
+} from "./auth.cookies";
 import {
   deleteSession,
   findSessionById,
@@ -81,9 +89,41 @@ function encodeState(payload: Record<string, string>): string {
   return Buffer.from(JSON.stringify(payload), "utf8").toString("base64url");
 }
 
-function decodeState(state: string): Record<string, string> {
-  const json = Buffer.from(state, "base64url").toString("utf8");
-  return JSON.parse(json) as Record<string, string>;
+function decodeState(state: string): Record<string, string> | null {
+  try {
+    const parsed = JSON.parse(Buffer.from(state, "base64url").toString("utf8"));
+    return parsed && typeof parsed === "object" ? (parsed as Record<string, string>) : null;
+  } catch {
+    return null;
+  }
+}
+
+function safeEqual(a: string, b: string): boolean {
+  const bufA = Buffer.from(a);
+  const bufB = Buffer.from(b);
+  return bufA.length === bufB.length && timingSafeEqual(bufA, bufB);
+}
+
+/**
+ * Le `state` n'est fiable que s'il porte le nonce posé en cookie au démarrage
+ * du flux (protection CSRF), pour le même provider, et qu'il n'a pas expiré.
+ */
+function verifyState(
+  req: Request,
+  state: string,
+  provider: AuthProvider
+): Record<string, string> | null {
+  const payload = decodeState(state);
+  const cookieNonce = req.cookies?.[OAUTH_STATE_COOKIE_NAME];
+
+  if (!payload || typeof cookieNonce !== "string" || !cookieNonce) return null;
+  if (typeof payload.nonce !== "string" || !safeEqual(payload.nonce, cookieNonce)) return null;
+  if (payload.provider !== provider) return null;
+
+  const age = Date.now() - Number(payload.ts);
+  if (!Number.isFinite(age) || age < 0 || age > OAUTH_STATE_MAX_AGE_MS) return null;
+
+  return payload;
 }
 
 async function getCurrentUser(req: Request) {
@@ -128,17 +168,17 @@ export async function startOAuth(req: Request, res: Response) {
     const adapter = getProviderAdapter(provider);
     const redirectUri = buildRedirectUri(req, provider);
 
-    const statePayload: Record<string, string> = {
+    // Le state ne porte plus l'identité de l'utilisateur : au callback, elle
+    // est relue depuis la session. Le nonce est vérifié contre le cookie.
+    const nonce = randomBytes(32).toString("base64url");
+    const state = encodeState({
       provider,
       intent,
+      nonce,
       ts: String(Date.now()),
-    };
+    });
 
-    if (current?.user?.id) {
-      statePayload.userId = current.user.id;
-    }
-
-    const state = encodeState(statePayload);
+    setOAuthStateCookie(res, nonce);
 
     const authorizationUrl = adapter.getAuthorizationUrl({
       intent,
@@ -172,8 +212,14 @@ export async function handleOAuthCallback(req: Request, res: Response) {
       return res.status(400).json({ ok: false, error: "Missing state" });
     }
 
-    const statePayload = decodeState(state);
     const provider: AuthProvider = providerRaw;
+    const statePayload = verifyState(req, state, provider);
+    // Usage unique : le nonce est effacé, que la vérification réussisse ou non.
+    clearOAuthStateCookie(res);
+
+    if (!statePayload) {
+      return res.status(400).json({ ok: false, error: "Invalid or expired OAuth state" });
+    }
 
     const rawIntent = String(statePayload.intent || "");
     const intent: AuthIntent = isAuthIntent(rawIntent) ? rawIntent : "signin";
@@ -186,9 +232,11 @@ export async function handleOAuthCallback(req: Request, res: Response) {
       redirectUri,
     });
 
+    const current = await getCurrentUser(req);
+
     const result = await authenticateWithOAuthIdentity({
       intent,
-      currentUserId: statePayload.userId || null,
+      currentUserId: current?.user.id ?? null,
       identity,
     });
 

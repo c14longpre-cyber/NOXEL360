@@ -1,3 +1,4 @@
+import { randomBytes } from "crypto";
 import type { AuthProvider } from "../auth.types";
 
 export type UserIdentityRecord = {
@@ -20,7 +21,7 @@ export type UserIdentityRecord = {
 const identities = new Map<string, UserIdentityRecord>();
 
 function randomId(prefix: string): string {
-  return `${prefix}_${Math.random().toString(36).slice(2, 12)}`;
+  return `${prefix}_${randomBytes(16).toString("base64url")}`;
 }
 
 function makeKey(provider: AuthProvider, providerUserId: string): string {
