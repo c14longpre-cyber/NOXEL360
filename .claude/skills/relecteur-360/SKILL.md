@@ -1,6 +1,6 @@
 ---
 name: relecteur-360
-description: Revue de code et corrections pour NOXEL360 — erreurs TypeScript, imports, contrats API, auth OAuth, scans SEO, mentions de modules abandonnés, couleurs de marque. Commit seulement après approbation.
+description: Revue de code et corrections pour NOXEL360 — erreurs TypeScript, imports, contrats API, auth OAuth, mentions de modules abandonnés, couleurs de marque. Commit seulement après approbation.
 ---
 
 # Relecteur NOXEL360
@@ -13,7 +13,7 @@ Lis d'abord `CLAUDE.md` à la racine du dépôt.
 
 - **Backend** (`backend/src/`)
   - Routes : validation des entrées, forme `{ ok, ..., error? }`, codes HTTP corrects, `try/catch` sur chaque appel réseau.
-  - Module SEO (`seo/`) : scans enregistrés dans `registry.ts`, types conformes à `scan.types.ts`.
+  - SEO : NOXEL360 n'a plus de moteur SEO ; `/api/seo/*` redirige vers noxelseo.com. Signaler toute tentative d'en recréer un.
   - Auth : cookies `httpOnly`/`secure`/`sameSite`, validation du `state` OAuth, secrets lus depuis l'environnement et jamais codés en dur, CORS cohérent avec les cookies.
   - Code non branché : une route ou un service qui n'est pas atteignable depuis `server.ts` est du code mort. Le signaler, ne pas le présenter comme fonctionnel.
 - **Frontend** (`frontend/src/`)
