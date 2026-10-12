@@ -29,7 +29,14 @@ Ouvrir http://localhost:5173
 # Variables d'environnement à configurer dans Railway :
 PORT=4000
 NODE_ENV=production
+DATABASE_URL=${{Postgres.DATABASE_URL}}   # référence au service Postgres Railway
 ```
+
+Base de données : un service **Postgres** Railway, relié au backend par `DATABASE_URL`.
+Les tables (users, user_identities, sessions, auth_tickets) sont créées automatiquement
+au démarrage. Sans `DATABASE_URL`, le backend stocke comptes et sessions en mémoire
+(perdus à chaque redémarrage) : réservé au développement local.
+`PGSSL=true` seulement si la connexion passe par le proxy public de Railway.
 
 Start command: `npm run start`
 Build command: `npm install && npm run build`

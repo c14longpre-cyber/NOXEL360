@@ -10,6 +10,7 @@ noxel360/
 │   └── src/
 │       ├── server.ts   Point d'entrée (CORS credentials: true) ; /api/seo/* redirige vers noxelseo.com
 │       ├── auth/       Contrôleur, sessions, cookies + providers/ (Google, Apple, Microsoft, GitHub, Facebook, LinkedIn, TikTok)
+│       ├── db/         pool.ts : Postgres (DATABASE_URL), schéma créé au démarrage
 │       └── utils/      http.ts (HttpError, asyncRoute, errorHandler)
 ├── frontend/           React 18 + Vite + TypeScript + Tailwind 4 sur Vercel (noxel360.com)
 │   ├── src/
@@ -53,6 +54,7 @@ Paliers : Bronze / Silver / Gold / Platinum / Diamond.
 7. **Contrat API** : réponses `{ ok: boolean, ... , error?: string }`. Codes 400 / 401 / 403 / 500 cohérents.
 8. **CORS** : géré uniquement par `server.ts` (liste blanche `allowedOrigins` + `credentials: true`). Ne jamais ajouter d'en-tête `Access-Control-Allow-Origin` dans `vercel.json` : un `*` est incompatible avec les cookies de session.
 9. **Routes actives** : seules les routes montées dans `server.ts` existent en production : `/health`, `/api/health` et `/api/auth/*`. `/api/seo/*` n'est qu'une redirection 301 vers https://noxelseo.com : NOXEL360 n'a plus de moteur SEO interne, ne pas en recréer un. Un fichier de route non monté est du code mort : ne pas le présenter comme fonctionnel.
+10. **Comptes et sessions** : stockés dans Postgres (`backend/src/db/pool.ts`, `DATABASE_URL`). En production, `DATABASE_URL` doit toujours être définie : sans elle, tout est perdu au redémarrage. Ne jamais renvoyer au navigateur les jetons OAuth (`accessToken`, `refreshToken`) ni le profil brut : `listConnectedProviders` les met à null.
 
 ## Assistants
 
