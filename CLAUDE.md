@@ -8,8 +8,7 @@ Plateforme modulaire NOXEL (noxel360.com). Ce fichier définit les 3 assistants 
 noxel360/
 ├── backend/            Node.js + Express + TypeScript sur Railway (noxel360-production-aa57.up.railway.app)
 │   └── src/
-│       ├── server.ts   Point d'entrée (CORS credentials: true)
-│       ├── seo/        Module SEO : seo.module.ts, scans/plugins/ (content, images, links, performance, render-delta, tech, ux), runs, issues, viewmodels
+│       ├── server.ts   Point d'entrée (CORS credentials: true) ; /api/seo/* redirige vers noxelseo.com
 │       ├── auth/       Contrôleur, sessions, cookies + providers/ (Google, Apple, Microsoft, GitHub, Facebook, LinkedIn, TikTok)
 │       └── utils/      http.ts (HttpError, asyncRoute, errorHandler)
 ├── frontend/           React 18 + Vite + TypeScript + Tailwind 4 sur Vercel (noxel360.com)
@@ -53,7 +52,7 @@ Paliers : Bronze / Silver / Gold / Platinum / Diamond.
 6. **vercel.json** : le rewrite `/api/:path*` doit précéder le catch-all SPA `/((?!api/).*)`.
 7. **Contrat API** : réponses `{ ok: boolean, ... , error?: string }`. Codes 400 / 401 / 403 / 500 cohérents.
 8. **CORS** : géré uniquement par `server.ts` (liste blanche `allowedOrigins` + `credentials: true`). Ne jamais ajouter d'en-tête `Access-Control-Allow-Origin` dans `vercel.json` : un `*` est incompatible avec les cookies de session.
-9. **Routes actives** : seules les routes montées dans `server.ts` existent en production : `/health`, `/api/health`, `/api/auth/*` et `/api/seo/*`. Un fichier de route non monté est du code mort : ne pas le présenter comme fonctionnel.
+9. **Routes actives** : seules les routes montées dans `server.ts` existent en production : `/health`, `/api/health` et `/api/auth/*`. `/api/seo/*` n'est qu'une redirection 301 vers https://noxelseo.com : NOXEL360 n'a plus de moteur SEO interne, ne pas en recréer un. Un fichier de route non monté est du code mort : ne pas le présenter comme fonctionnel.
 
 ## Assistants
 
@@ -61,7 +60,7 @@ Chaque assistant est une skill dans `.claude/skills/` et s'invoque par `/nom` (o
 
 ### 🧪 `/testeur-360` — Tests et validation
 Lecture du code, build, type-check, appels API locaux. Aucun déploiement, aucun commit.
-Vérifie : build frontend/backend, scans SEO, auth OAuth, cohérence des modules, i18n, routes, vercel.json.
+Vérifie : build frontend/backend, API backend, auth OAuth, cohérence des modules, i18n, routes, vercel.json.
 
 ### 🔍 `/relecteur-360` — Revue de code et corrections
 Lecture et écriture. Corrige les erreurs de type, imports, contrats API, mentions de modules abandonnés, couleurs. Commit seulement avec l'approbation de l'utilisateur.

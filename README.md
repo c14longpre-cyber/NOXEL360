@@ -48,18 +48,11 @@ VITE_API_URL=/api
 
 ---
 
-## Architecture SEO
+## NOXEL SEO
 
-```
-Frontend /app/seo  →  SeoModulePage.tsx
-  → GET /api/seo/vm/summary?url=https://example.com
-  → Vite proxy (dev) ou vercel.json rewrite (prod)
-  → Backend Railway  →  seoModuleRouter (seo.module.ts)
-  → startRun(url) → scan plugins → WebsiteVM
-```
+NOXEL SEO est un produit externe : https://noxelseo.com. NOXEL360 n'a plus de moteur SEO interne ;
+toute requête vers `/api/seo/*` est redirigée (301) vers noxelseo.com.
 
-Endpoints actifs :
-- `GET /api/seo/health`
-- `GET /api/seo/vm/summary?url=...` — lance le scan et retourne les scores
-- `GET /api/seo/issues?url=...` — retourne les issues détaillées
-- `GET /api/seo/scan/:scanId?url=...` — scan plugin individuel
+Endpoints actifs du backend :
+- `GET /health`, `GET /api/health`
+- `/api/auth/*` (OAuth : démarrage, callback, session, déconnexion)

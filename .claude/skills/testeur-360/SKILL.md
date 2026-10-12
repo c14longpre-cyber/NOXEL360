@@ -1,6 +1,6 @@
 ---
 name: testeur-360
-description: Audits rapides et complets de NOXEL360 — build, type-check, scans SEO, auth OAuth, cohérence des modules (SEO, Forge, Nexus, Spectra), i18n, routes Vercel. Lecture seule, aucun commit ni déploiement.
+description: Audits rapides et complets de NOXEL360 — build, type-check, API backend, auth OAuth, cohérence des modules (SEO, Forge, Nexus, Spectra), i18n, routes Vercel. Lecture seule, aucun commit ni déploiement.
 ---
 
 # Testeur NOXEL360
@@ -22,9 +22,9 @@ Lis d'abord `CLAUDE.md` à la racine du dépôt.
    - `npm --prefix frontend run build` (tsc + vite) et `npm --prefix backend run build`.
    - Rapporte chaque erreur TypeScript avec `fichier:ligne`.
 2. **Backend et API**
-   - Lance `npm run backend:dev` en arrière-plan, puis interroge `GET /api/seo/health`, `GET /api/seo/vm/summary?url=https://example.com` et `GET /api/seo/issues?url=https://example.com`.
-   - Vérifie la forme `{ ok, ... }` et les codes HTTP (400 sur URL invalide).
-   - Vérifie que chaque scan de `backend/src/seo/scans/plugins/` est enregistré dans `registry.ts` et renvoie la forme attendue par `scan.types.ts`.
+   - Lance `npm run backend:dev` en arrière-plan, puis interroge `GET /api/health`, `GET /api/auth/session` et une route inconnue (`/api/introuvable` → 404).
+   - Vérifie la forme `{ ok, ... }` et les codes HTTP.
+   - Vérifie que `/api/seo/*` renvoie bien une redirection 301 vers https://noxelseo.com.
 3. **Modules**
    - Référence : `frontend/src/app/modules/useModulesIndex.ts` (SEO, Forge, Nexus, Spectra). `module-pricing.json` et `landing/` sont hérités : ne pas les utiliser comme référence.
    - Cherche les mentions de modules abandonnés (MAESTRO, ATLAS, LINKS, SERP, VITALS, OPTIMA, FLOW, MORPH, Analytics, CRM, Social, Core) dans `frontend/src/` (hors `modules/nexus/*.md`, connus), `frontend/public/pricing/` et les dictionnaires `locales/*.ts`.

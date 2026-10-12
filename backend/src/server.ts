@@ -2,7 +2,6 @@ import express from "express";
 import { authRouter } from "./auth/auth.routes";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import { seoModuleRouter } from "./seo/seo.module";
 import { errorHandler } from "./utils/http";
 
 const app = express();
@@ -64,11 +63,12 @@ app.get("/api/health", (_req, res) => {
 // POST /api/auth/resolve-existing-email
 app.use("/api/auth", authRouter);
 
-// NOXEL SEO — vrai moteur (seo.module.ts)
-// GET /api/seo/health
-// GET /api/seo/vm/summary?url=https://example.com
-// GET /api/seo/issues?url=https://example.com
-app.use("/api/seo", seoModuleRouter);
+// NOXEL SEO est un produit externe : l'ancien moteur SEO de NOXEL360 est
+// retiré et tout /api/seo/* renvoie de façon permanente vers noxelseo.com.
+const NOXEL_SEO_URL = "https://noxelseo.com";
+app.use("/api/seo", (_req, res) => {
+  res.redirect(301, NOXEL_SEO_URL);
+});
 
 // 404 fallback
 app.use((req, res) => {
