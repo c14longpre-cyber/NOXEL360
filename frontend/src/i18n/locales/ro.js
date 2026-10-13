@@ -296,4 +296,5 @@ export const ro = {
     "landing.footer.privacy": "Confidențialitate",
     "landing.footer.terms": "Termeni",
     "landing.footer.rights": "© 2026 NOXEL360. Toate drepturile rezervate.",
+    "auth.access": "Conectare",
 };

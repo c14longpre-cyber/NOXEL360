@@ -5,6 +5,8 @@ import UserMenu from "@/components/UserMenu";
 import HeaderLanguage from "@/components/HeaderLanguage";
 import TranslationStatusBanner from "@/components/TranslationStatusBanner";
 import { useI18n } from "@/useI18n";
+import { HudButton } from "@/components/hud/HudButton";
+import { hudLabel } from "@/components/hud/hudLabel";
 
 /**
  * NOXEL360 — Module Host (AppShell)
@@ -78,18 +80,13 @@ export function AppShell() {
             <div className="tag">{t("module.host.title")}</div>
 
             {!isDashboard && (
-              <button
-                className="nav-cta"
-                style={{
-                  marginTop: 8,
-                  width: "fit-content",
-                  padding: "8px 16px",
-                }}
+              <HudButton
+                action="undo"
+                compact
+                label={hudLabel(t("module.host.previous"))}
+                style={{ marginTop: 8, width: "fit-content" }}
                 onClick={() => navigate(-1)}
-                type="button"
-              >
-                {t("module.host.previous")}
-              </button>
+              />
             )}
           </div>
         </div>

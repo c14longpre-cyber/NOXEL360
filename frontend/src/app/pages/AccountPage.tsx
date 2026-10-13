@@ -5,6 +5,7 @@ import NoxelAccessButton from "../../auth/NoxelAccessButton";
 import UserMenu from "../../components/UserMenu";
 import NoxelAccountIcon from "../../components/NoxelAccountIcon";
 import { useI18n } from "@/useI18n";
+import { HudButton } from "@/components/hud/HudButton";
 
 function normalizeTier(
   tier?: string
@@ -62,30 +63,14 @@ export default function AccountPage() {
                   size={78}
                 />
 
-                <button
-                  className={`nx-btn refresh-btn ${loading ? "loading" : ""}`}
+                <HudButton
+                  action="reload-page"
+                  iconOnly
+                  label={t("account.refresh")}
+                  busy={loading}
+                  busyLabel={t("account.refresh")}
                   onClick={refreshAccount}
-                  type="button"
-                  title={t("account.refresh")}
-                  aria-label={t("account.refresh")}
-                  disabled={loading}
-                >
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path
-                      d="M21 12a9 9 0 1 1-2.64-6.36"
-                      stroke="currentColor"
-                      strokeWidth="2.4"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M21 4v6h-6"
-                      stroke="currentColor"
-                      strokeWidth="2.4"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </button>
+                />
 
                 {!isAuthenticated ? <NoxelAccessButton /> : <UserMenu />}
               </div>

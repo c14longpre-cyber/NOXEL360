@@ -296,4 +296,5 @@ export const ar = {
     "landing.footer.privacy": "الخصوصية",
     "landing.footer.terms": "الشروط",
     "landing.footer.rights": "© 2026 NOXEL360. جميع الحقوق محفوظة.",
+    "auth.access": "دخول",
 };

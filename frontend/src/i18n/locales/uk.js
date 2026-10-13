@@ -296,4 +296,5 @@ export const uk = {
     "landing.footer.privacy": "Конфіденційність",
     "landing.footer.terms": "Умови",
     "landing.footer.rights": "© 2026 NOXEL360. Усі права захищено.",
+    "auth.access": "Увійти",
 };

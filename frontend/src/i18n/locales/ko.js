@@ -296,4 +296,5 @@ export const ko = {
     "landing.footer.privacy": "개인정보 보호",
     "landing.footer.terms": "이용약관",
     "landing.footer.rights": "© 2026 NOXEL360. All rights reserved.",
+    "auth.access": "로그인",
 };

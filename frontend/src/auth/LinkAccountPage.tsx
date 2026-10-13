@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuthStore } from "./AuthStore";
+import { HudButton } from "../components/hud/HudButton";
 
 const API_BASE = import.meta.env.VITE_API_URL;
 
@@ -125,21 +126,19 @@ export default function LinkAccountPage() {
             </div>
 
             <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-              <button
-                className="nx-btn"
-                type="button"
+              <HudButton
+                action="continue"
+                compact
+                label="Sign in with Google"
                 onClick={() => loginWithProvider("google", "signin")}
-              >
-                Sign in with Google
-              </button>
+              />
 
-              <button
-                className="nx-btn"
-                type="button"
+              <HudButton
+                action="continue"
+                compact
+                label="Sign in with Microsoft"
                 onClick={() => loginWithProvider("microsoft", "signin")}
-              >
-                Sign in with Microsoft
-              </button>
+              />
             </div>
           </div>
         ) : (
@@ -150,22 +149,21 @@ export default function LinkAccountPage() {
             </div>
 
             <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-              <button
-                className="nx-btn"
-                type="button"
+              <HudButton
+                action="ok"
+                compact
+                label="Confirm link"
+                busy={loading}
+                busyLabel="Linking..."
                 onClick={handleConfirmLink}
-                disabled={loading}
-              >
-                {loading ? "Linking..." : "Confirm link"}
-              </button>
+              />
 
-              <button
-                className="nx-btn"
-                type="button"
+              <HudButton
+                action="cancel"
+                compact
+                label="Cancel"
                 onClick={() => navigate("/app/account")}
-              >
-                Cancel
-              </button>
+              />
             </div>
           </div>
         )}

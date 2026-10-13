@@ -298,5 +298,6 @@ export const sv: TranslationDictionary = {
   "landing.footer.privacy": "Integritet",
   "landing.footer.terms": "Villkor",
   "landing.footer.rights": "© 2026 NOXEL360. Alla rättigheter förbehållna.",
+  "auth.access": "Logga in",
 };
 

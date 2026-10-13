@@ -296,4 +296,5 @@ export const nl = {
     "landing.footer.privacy": "Privacy",
     "landing.footer.terms": "Voorwaarden",
     "landing.footer.rights": "© 2026 NOXEL360. Alle rechten voorbehouden.",
+    "auth.access": "Inloggen",
 };

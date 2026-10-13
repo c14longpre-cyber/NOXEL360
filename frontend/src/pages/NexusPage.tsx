@@ -2,6 +2,8 @@ import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLanguage, type AppLanguage } from "../language/LanguageStore";
 import { useI18n } from "../useI18n";
+import { HudButton } from "../components/hud/HudButton";
+import { hudLabel } from "../components/hud/hudLabel";
 import NexusLanguageMap from "../language/nexus/NexusLanguageMap";
 import { ALL_COUNTRIES, type CountryInfo } from "../language/nexus/countryData";
 import { INDIGENOUS_BY_ISO2 } from "../language/nexus/indigenous";
@@ -214,21 +216,13 @@ export default function NexusPage() {
           </p>
         </div>
 
-        <button
-          type="button"
+        <HudButton
+          action="undo"
+          compact
+          label={hudLabel(t("nexus.back"))}
+          style={{ color: "white" }}
           onClick={() => nav("/dashboard")}
-          style={{
-            padding: "10px 16px",
-            borderRadius: 999,
-            border: "1px solid rgba(255,255,255,0.14)",
-            background: "rgba(255,255,255,0.05)",
-            color: "white",
-            cursor: "pointer",
-            fontWeight: 600,
-          }}
-        >
-          ← {t("nexus.back")}
-        </button>
+        />
       </header>
 
       <div style={{ flex: 1, overflowY: "auto", padding: "0 24px 24px 24px" }}>
