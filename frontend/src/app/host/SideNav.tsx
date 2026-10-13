@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useModulesIndex } from "../modules/useModulesIndex";
+import { HudButton } from "@/components/hud/HudButton";
 
 /**
  * NOXEL360 — SideNav (Module Host)
@@ -65,15 +66,15 @@ export function SideNav() {
         })}
       </div>
 
-      <button
-        className="nav-cta"
+      <HudButton
+        action="continue"
+        compact
+        label="Upgrade"
         style={{ marginTop: 12 }}
         onClick={() => {
           window.location.href = "/pricing/index.html";
         }}
-      >
-        Upgrade
-      </button>
+      />
     </nav>
   );
 }

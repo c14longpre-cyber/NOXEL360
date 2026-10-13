@@ -1,6 +1,7 @@
 import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
 import { NavLink } from "react-router-dom";
 import { useModulesIndex } from "../modules/useModulesIndex";
+import { HudButton } from "@/components/hud/HudButton";
 /**
  * NOXEL360 — SideNav (Module Host)
  * External modules (NOXEL SEO, NOXEL Forge) open their real domain in a new
@@ -23,7 +24,7 @@ export function SideNav() {
                         return (_jsx("a", { href: m.route, target: "_blank", rel: "noopener noreferrer", className: "nav-item", style: { display: "block", textDecoration: "none" }, children: content }, m.key));
                     }
                     return (_jsx(NavLink, { to: m.route, className: ({ isActive }) => `nav-item ${isActive ? "is-active" : ""}`, style: { display: "block", textDecoration: "none" }, children: content }, m.key));
-                }) }), _jsx("button", { className: "nav-cta", style: { marginTop: 12 }, onClick: () => {
+                }) }), _jsx(HudButton, { action: "continue", compact: true, label: "Upgrade", style: { marginTop: 12 }, onClick: () => {
                     window.location.href = "/pricing/index.html";
-                }, children: "Upgrade" })] }));
+                } })] }));
 }

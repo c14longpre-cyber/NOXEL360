@@ -6,6 +6,7 @@ import NoxelAccessButton from "../../auth/NoxelAccessButton";
 import UserMenu from "../../components/UserMenu";
 import NoxelAccountIcon from "../../components/NoxelAccountIcon";
 import { useI18n } from "@/useI18n";
+import { HudButton } from "@/components/hud/HudButton";
 function normalizeTier(tier) {
     const value = (tier || "").toLowerCase();
     if (value === "bronze")
@@ -29,7 +30,7 @@ export default function AccountPage() {
                                             gap: 12,
                                             flexWrap: "wrap",
                                             justifyContent: "flex-end",
-                                        }, children: [_jsx(NoxelAccountIcon, { connected: isAuthenticated, tier: currentTier, size: 78 }), _jsx("button", { className: `nx-btn refresh-btn ${loading ? "loading" : ""}`, onClick: refreshAccount, type: "button", title: t("account.refresh"), "aria-label": t("account.refresh"), disabled: loading, children: _jsxs("svg", { viewBox: "0 0 24 24", fill: "none", "aria-hidden": "true", children: [_jsx("path", { d: "M21 12a9 9 0 1 1-2.64-6.36", stroke: "currentColor", strokeWidth: "2.4", strokeLinecap: "round" }), _jsx("path", { d: "M21 4v6h-6", stroke: "currentColor", strokeWidth: "2.4", strokeLinecap: "round", strokeLinejoin: "round" })] }) }), !isAuthenticated ? _jsx(NoxelAccessButton, {}) : _jsx(UserMenu, {})] }), _jsxs("div", { className: "account-hero-meta", style: {
+                                        }, children: [_jsx(NoxelAccountIcon, { connected: isAuthenticated, tier: currentTier, size: 78 }), _jsx(HudButton, { action: "reload-page", iconOnly: true, label: t("account.refresh"), busy: loading, busyLabel: t("account.refresh"), onClick: refreshAccount }), !isAuthenticated ? _jsx(NoxelAccessButton, {}) : _jsx(UserMenu, {})] }), _jsxs("div", { className: "account-hero-meta", style: {
                                             display: "flex",
                                             gap: 8,
                                             flexWrap: "wrap",

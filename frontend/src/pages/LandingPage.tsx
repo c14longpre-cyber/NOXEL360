@@ -5,6 +5,8 @@ import UserMenu from "../components/UserMenu";
 import NoxelAccessButton from "../auth/NoxelAccessButton";
 import { useAuthStore } from "../auth/AuthStore";
 import { useI18n } from "../useI18n";
+import { HudLink } from "../components/hud/HudButton";
+import { HudRouteLink } from "../components/hud/HudRouteLink";
 import "./LandingPage.css";
 
 // Textes : clés `landing.*` des dictionnaires (frontend/src/i18n/locales).
@@ -38,7 +40,7 @@ export default function LandingPage() {
         <div className="nav-right">
           <HeaderLanguage />
           {isAuthenticated ? <UserMenu /> : <NoxelAccessButton />}
-          <Link to="/dashboard" className="nav-cta">{t("landing.nav.openDashboard")}</Link>
+          <HudRouteLink to="/dashboard" action="open-project" compact className="nav-hud" label={t("landing.nav.openDashboard")} />
         </div>
       </nav>
 
@@ -53,8 +55,8 @@ export default function LandingPage() {
             </h1>
             <p className="lead">{t("landing.hero.lead")}</p>
             <div className="hero-ctas">
-              <Link to="/dashboard" className="btn-primary">{t("landing.hero.ctaPrimary")} →</Link>
-              <a href="#modules" className="btn-secondary">{t("landing.hero.ctaSecondary")}</a>
+              <HudRouteLink to="/dashboard" action="open-project" label={t("landing.hero.ctaPrimary")} />
+              <HudLink href="#modules" action="layer-down" label={t("landing.hero.ctaSecondary")} />
             </div>
             <div className="trust-row">
               <div><strong>3</strong> {t("landing.hero.trustModules")}</div>
@@ -95,7 +97,7 @@ export default function LandingPage() {
                   <li>{t("landing.seo.b2")}</li>
                   <li>{t("landing.seo.b3")}</li>
                 </ul>
-                <a href="https://noxelseo.com" className="module-link">{t("landing.seo.cta")} <span className="arrow">→</span></a>
+                <HudLink href="https://noxelseo.com" action="open-project" compact className="module-hud" label={t("landing.seo.cta")} />
               </div>
 
               <div className="module-card">
@@ -110,7 +112,7 @@ export default function LandingPage() {
                   <li>{t("landing.forge.b2")}</li>
                   <li>{t("landing.forge.b3")}</li>
                 </ul>
-                <a href="https://noxelforge.com" className="module-link">{t("landing.forge.cta")} <span className="arrow">→</span></a>
+                <HudLink href="https://noxelforge.com" action="open-project" compact className="module-hud" label={t("landing.forge.cta")} />
               </div>
 
               <div className="module-card">
@@ -125,7 +127,7 @@ export default function LandingPage() {
                   <li>{t("landing.nexus.b2")}</li>
                   <li>{t("landing.nexus.b3")}</li>
                 </ul>
-                <Link to="/nexus" className="module-link">{t("landing.nexus.cta")} <span className="arrow">→</span></Link>
+                <HudRouteLink to="/nexus" action="open-project" compact className="module-hud" label={t("landing.nexus.cta")} />
               </div>
             </div>
           </div>
@@ -143,9 +145,7 @@ export default function LandingPage() {
                 <h3>{t("landing.spectra.title")}</h3>
                 <p>{t("landing.spectra.p1")}</p>
                 <p>{t("landing.spectra.p2")}</p>
-                <a href="https://noxelspectra.com" className="module-link">
-                  {t("landing.spectra.cta")} <span className="arrow">→</span>
-                </a>
+                <HudLink href="https://noxelspectra.com" action="continue" compact className="module-hud" label={t("landing.spectra.cta")} />
               </div>
               <ul className="teaser-list">
                 <li><strong>{t("landing.spectra.convertTitle")}</strong><span>{t("landing.spectra.convertText")}</span></li>
@@ -242,7 +242,7 @@ export default function LandingPage() {
           <div className="wrap">
             <h2>{t("landing.cta.title")}</h2>
             <p>{t("landing.cta.text")}</p>
-            <Link to="/dashboard" className="btn-primary">{t("landing.hero.ctaPrimary")} →</Link>
+            <HudRouteLink to="/dashboard" action="open-project" label={t("landing.hero.ctaPrimary")} />
           </div>
         </div>
       </main>

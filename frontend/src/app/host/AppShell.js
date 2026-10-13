@@ -5,6 +5,8 @@ import UserMenu from "@/components/UserMenu";
 import HeaderLanguage from "@/components/HeaderLanguage";
 import TranslationStatusBanner from "@/components/TranslationStatusBanner";
 import { useI18n } from "@/useI18n";
+import { HudButton } from "@/components/hud/HudButton";
+import { hudLabel } from "@/components/hud/hudLabel";
 /**
  * NOXEL360 — Module Host (AppShell)
  * Keeps all /app/* pages visually aligned with dashboard tokens.
@@ -43,11 +45,7 @@ export function AppShell() {
                                     flexDirection: "column",
                                     gap: 8,
                                     minWidth: 0,
-                                }, children: [_jsx("div", { className: "brand", children: "NOXEL360" }), _jsx("div", { className: "tag", children: t("module.host.title") }), !isDashboard && (_jsx("button", { className: "nav-cta", style: {
-                                            marginTop: 8,
-                                            width: "fit-content",
-                                            padding: "8px 16px",
-                                        }, onClick: () => navigate(-1), type: "button", children: t("module.host.previous") }))] })] }), _jsxs("div", { className: "hdr-right", style: {
+                                }, children: [_jsx("div", { className: "brand", children: "NOXEL360" }), _jsx("div", { className: "tag", children: t("module.host.title") }), !isDashboard && (_jsx(HudButton, { action: "undo", compact: true, label: hudLabel(t("module.host.previous")), style: { marginTop: 8, width: "fit-content" }, onClick: () => navigate(-1) }))] })] }), _jsxs("div", { className: "hdr-right", style: {
                             display: "flex",
                             alignItems: "center",
                             gap: 12,

@@ -6,6 +6,9 @@ import UserMenu from "@/components/UserMenu";
 import HeaderLanguage from "@/components/HeaderLanguage";
 import TranslationStatusBanner from "@/components/TranslationStatusBanner";
 import { useI18n } from "@/useI18n";
+import { HudLink } from "@/components/hud/HudButton";
+import { HudRouteLink } from "@/components/hud/HudRouteLink";
+import { hudLabel } from "@/components/hud/hudLabel";
 
 export default function DashboardHome() {
   const tier: "bronze" | "silver" | "gold" | "platinum" | "diamond" = "diamond";
@@ -107,9 +110,7 @@ export default function DashboardHome() {
             ))}
           </div>
 
-          <Link className="nav-cta" to="/pricing">
-            {t("dashboard.sidenav.upgrade")}
-          </Link>
+          <HudRouteLink to="/pricing" action="continue" compact className="sidenav-hud" label={hudLabel(t("dashboard.sidenav.upgrade"))} />
         </aside>
 
         <main className="noxel-main">
@@ -214,23 +215,25 @@ export default function DashboardHome() {
                     <p className="nx-card__text">{m.promise}</p>
 
                     {m.external ? (
-                      <a
-                        className="nx-card__link"
+                      <HudLink
+                        action="open-project"
+                        compact
+                        className="nx-card__hud"
+                        label={hudLabel(t("dashboard.card.open"))}
                         href={m.route}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                      >
-                        {t("dashboard.card.open")} ↗
-                      </a>
+                      />
                     ) : (
-                      <Link
-                        className="nx-card__link"
+                      <HudRouteLink
+                        action="open-project"
+                        compact
+                        className="nx-card__hud"
+                        label={hudLabel(t("dashboard.card.open"))}
                         to={m.route}
                         onClick={(e) => e.stopPropagation()}
-                      >
-                        {t("dashboard.card.open")}
-                      </Link>
+                      />
                     )}
                   </article>
                 ))}
