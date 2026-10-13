@@ -72,7 +72,7 @@ export default function HeaderLanguage() {
         setLanguage(code);
         setMenuOpen(false);
     };
-    return (_jsxs("div", { ref: containerRef, style: { position: "relative" }, children: [_jsxs("button", { type: "button", onClick: () => setMenuOpen((v) => !v), "aria-label": t("header.language.open"), "aria-haspopup": "listbox", "aria-expanded": menuOpen, title: t("header.language.open"), style: {
+    return (_jsxs("div", { ref: containerRef, style: { position: "relative" }, children: [_jsxs("button", { type: "button", className: "header-lang-btn", onClick: () => setMenuOpen((v) => !v), "aria-label": t("header.language.open"), "aria-haspopup": "listbox", "aria-expanded": menuOpen, title: t("header.language.open"), style: {
                     display: "inline-flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -92,7 +92,7 @@ export default function HeaderLanguage() {
                     backdropFilter: "blur(8px)",
                     WebkitBackdropFilter: "blur(8px)",
                     transition: "background 120ms ease",
-                }, children: [_jsx("span", { style: { fontSize: 18 }, children: currentLanguage.flag }), _jsx("span", { children: currentLanguage.code.toUpperCase() }), _jsx("span", { style: { opacity: 0.72, fontWeight: 500 }, children: currentLanguage.nativeLabel }), _jsx("span", { "aria-hidden": "true", style: {
+                }, children: [_jsx("span", { style: { fontSize: 18 }, children: currentLanguage.flag }), _jsx("span", { children: currentLanguage.code.toUpperCase() }), _jsx("span", { className: "header-lang-native", style: { opacity: 0.72, fontWeight: 500 }, children: currentLanguage.nativeLabel }), _jsx("span", { "aria-hidden": "true", style: {
                             opacity: 0.6,
                             fontSize: 11,
                             marginLeft: 2,

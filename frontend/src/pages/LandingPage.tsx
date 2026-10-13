@@ -4,10 +4,18 @@ import HeaderLanguage from "../components/HeaderLanguage";
 import UserMenu from "../components/UserMenu";
 import NoxelAccessButton from "../auth/NoxelAccessButton";
 import { useAuthStore } from "../auth/AuthStore";
+import { useI18n } from "../useI18n";
 import "./LandingPage.css";
+
+// Textes : clés `landing.*` des dictionnaires (frontend/src/i18n/locales).
+// Les noms de produits (NOXEL SEO, NOXEL Forge, NOXEL Nexus, NOXEL Spectra) ne se traduisent pas.
+
+const FAQ_COUNT = 8;
+const dtStyle = { fontWeight: 700, color: "var(--nl-text, #eef1f0)", marginBottom: 6 } as const;
 
 export default function LandingPage() {
   const { isAuthenticated } = useAuthStore();
+  const { t } = useI18n();
 
   useEffect(() => {
     document.body.style.overflow = "auto";
@@ -21,110 +29,103 @@ export default function LandingPage() {
           <img src="/logos/NOXEL_360_LOGO.svg" alt="NOXEL360" width="150" height="150" style={{ borderRadius: 8, objectFit: "contain" }} />
         </Link>
         <div className="nav-links">
-          <a href="#modules">Modules</a>
-          <a href="#whats-next">What's Next</a>
-          <a href="#how-it-works">How It Works</a>
-          <a href="/learn">Learn</a>
-          <Link to="/pricing">Pricing</Link>
+          <a href="#modules">{t("landing.nav.modules")}</a>
+          <a href="#whats-next">{t("landing.nav.whatsNext")}</a>
+          <a href="#how-it-works">{t("landing.nav.howItWorks")}</a>
+          <a href="/learn">{t("landing.nav.learn")}</a>
+          <Link to="/pricing">{t("landing.nav.pricing")}</Link>
         </div>
         <div className="nav-right">
           <HeaderLanguage />
           {isAuthenticated ? <UserMenu /> : <NoxelAccessButton />}
-          <Link to="/dashboard" className="nav-cta">Open Dashboard</Link>
+          <Link to="/dashboard" className="nav-cta">{t("landing.nav.openDashboard")}</Link>
         </div>
       </nav>
 
       <main>
         <div className="hero">
           <div className="wrap">
-            <div className="eyebrow">🧩 Built Beyond.</div>
+            <div className="eyebrow">🧩 {t("landing.hero.eyebrow")}</div>
             <h1>
-              One account.<br />
-              Three connected modules.<br />
-              <span className="accent">Zero juggling tools.</span>
+              {t("landing.hero.line1")}<br />
+              {t("landing.hero.line2")}<br />
+              <span className="accent">{t("landing.hero.accent")}</span>
             </h1>
-            <p className="lead">
-              NOXEL360 is the modular suite for anyone building online — solopreneurs, small teams,
-              and agencies managing clients. Search visibility, verified backlinks, and language
-              intelligence today, with web-ready image tools on the way. One login for all of it.
-            </p>
+            <p className="lead">{t("landing.hero.lead")}</p>
             <div className="hero-ctas">
-              <Link to="/dashboard" className="btn-primary">Open Your Dashboard →</Link>
-              <a href="#modules" className="btn-secondary">See the Modules</a>
+              <Link to="/dashboard" className="btn-primary">{t("landing.hero.ctaPrimary")} →</Link>
+              <a href="#modules" className="btn-secondary">{t("landing.hero.ctaSecondary")}</a>
             </div>
-                     <div className="trust-row">
-              <div><strong>3</strong> connected modules</div>
-              <div><strong>1</strong> shared account, one login</div>
-              <div><strong>115</strong> languages supported across the ecosystem</div>
+            <div className="trust-row">
+              <div><strong>3</strong> {t("landing.hero.trustModules")}</div>
+              <div><strong>1</strong> {t("landing.hero.trustAccount")}</div>
+              <div><strong>115</strong> {t("landing.hero.trustLanguages")}</div>
             </div>
           </div>
-         <img
-  src="/NX360-transparent.avif"
-  alt="NX360, your NOXEL360 companion"
-  loading="lazy"
-  style={{
-    width: 280,
-    marginLeft: "auto",
-    flexShrink: 0,
-    opacity: 0.95,
-    alignSelf: "flex-end",
-  }}
-/>
+          <img
+            src="/NX360-transparent.avif"
+            alt={t("landing.hero.imageAlt")}
+            loading="lazy"
+            style={{
+              width: 280,
+              marginLeft: "auto",
+              flexShrink: 0,
+              opacity: 0.95,
+              alignSelf: "flex-end",
+            }}
+          />
         </div>
 
         <section id="modules">
           <div className="wrap">
-            <div className="section-tag">Live Today</div>
-            <h2 className="section-title">Specialized tools, built to ship one by one.</h2>
-            <p className="section-lead">
-              Each module stands on its own. Enable only what you need today — the next ones plug
-              into the same account when they launch.
-            </p>
+            <div className="section-tag">{t("landing.modules.tag")}</div>
+            <h2 className="section-title">{t("landing.modules.title")}</h2>
+            <p className="section-lead">{t("landing.modules.lead")}</p>
 
             <div className="modules-grid">
               <div className="module-card">
                 <span className="icon">🔍</span>
                 <div className="module-top">
                   <h3>NOXEL SEO</h3>
-                  <span className="badge live">LIVE</span>
+                  <span className="badge live">{t("landing.badge.live")}</span>
                 </div>
-                <p>Search visibility, technical audits, and AI-powered optimization intelligence.</p>
+                <p>{t("landing.seo.desc")}</p>
                 <ul>
-                  <li>Automated site audits, 50+ signals</li>
-                  <li>AI Copilot for plain-language fixes</li>
-                  <li>Google Search Console integration</li>
+                  <li>{t("landing.seo.b1")}</li>
+                  <li>{t("landing.seo.b2")}</li>
+                  <li>{t("landing.seo.b3")}</li>
                 </ul>
-                <a href="https://noxelseo.com" className="module-link">Open NOXEL SEO <span className="arrow">→</span></a>
+                <a href="https://noxelseo.com" className="module-link">{t("landing.seo.cta")} <span className="arrow">→</span></a>
               </div>
 
               <div className="module-card">
                 <span className="icon">🔗</span>
                 <div className="module-top">
                   <h3>NOXEL Forge</h3>
-                  <span className="badge live">LIVE</span>
+                  <span className="badge live">{t("landing.badge.live")}</span>
                 </div>
-                <p>A verified backlink exchange network for real, trusted sites — not a link farm.</p>
+                <p>{t("landing.forge.desc")}</p>
                 <ul>
-                  <li>AI-reviewed submissions, every time</li>
-                  <li>Trust-scored member network</li>
-                  <li>Screened against spam and thin content</li>
+                  <li>{t("landing.forge.b1")}</li>
+                  <li>{t("landing.forge.b2")}</li>
+                  <li>{t("landing.forge.b3")}</li>
                 </ul>
-                <a href="https://noxelforge.com" className="module-link">Open NOXEL Forge <span className="arrow">→</span></a>
+                <a href="https://noxelforge.com" className="module-link">{t("landing.forge.cta")} <span className="arrow">→</span></a>
               </div>
 
               <div className="module-card">
                 <span className="icon">🌐</span>
                 <div className="module-top">
                   <h3>NOXEL Nexus</h3>
-                  <span className="badge core">CORE</span>
+                  <span className="badge core">{t("landing.badge.core")}</span>
                 </div>
-                <p>The language, region, and cultural intelligence engine underneath the ecosystem.</p>
+                <p>{t("landing.nexus.desc")}</p>
                 <ul>
-                  <li>Detects visitor language & region</li>
-                  <li>Adapts content automatically</li>
-                  <li>Runs quietly under every module</li>
+                  <li>{t("landing.nexus.b1")}</li>
+                  <li>{t("landing.nexus.b2")}</li>
+                  <li>{t("landing.nexus.b3")}</li>
                 </ul>
-                <Link to="/nexus" className="module-link">Included with your account <span className="arrow">→</span></Link>
+                <Link to="/nexus" className="module-link">{t("landing.nexus.cta")} <span className="arrow">→</span></Link>
               </div>
             </div>
           </div>
@@ -132,34 +133,25 @@ export default function LandingPage() {
 
         <section id="whats-next">
           <div className="wrap">
-            <div className="section-tag">What's Next</div>
-            <h2 className="section-title">The next module is taking shape.</h2>
-            <p className="section-lead">
-              NOXEL360 grows one focused module at a time. Here's what's coming to your account next.
-            </p>
+            <div className="section-tag">{t("landing.next.tag")}</div>
+            <h2 className="section-title">{t("landing.next.title")}</h2>
+            <p className="section-lead">{t("landing.next.lead")}</p>
 
             <div className="teaser">
               <div>
-                <span className="badge soon-p">COMING SOON</span>
-                <h3>NOXEL Spectra — every image, web-ready.</h3>
-                <p>
-                  Heavy images slow sites down, and fixing them usually means juggling a converter,
-                  a compressor, and a vector tool. Spectra brings them into one place, built
-                  specifically for the web.
-                </p>
-                <p>
-                  It will plug into the same NOXEL360 account as everything else — no new login,
-                  nothing to migrate.
-                </p>
+                <span className="badge soon-p">{t("landing.badge.soon")}</span>
+                <h3>{t("landing.spectra.title")}</h3>
+                <p>{t("landing.spectra.p1")}</p>
+                <p>{t("landing.spectra.p2")}</p>
                 <a href="https://noxelspectra.com" className="module-link">
-                  Get a first look at NOXEL Spectra <span className="arrow">→</span>
+                  {t("landing.spectra.cta")} <span className="arrow">→</span>
                 </a>
               </div>
               <ul className="teaser-list">
-                <li><strong>Convert</strong><span>Switch between image formats without leaving your workflow.</span></li>
-                <li><strong>Compress to size</strong><span>Set the file size you need and let Spectra hit it.</span></li>
-                <li><strong>Extract palettes</strong><span>Pull a clean color palette from any image.</span></li>
-                <li><strong>Vectorize</strong><span>Turn PNG or WebP artwork into crisp SVG.</span></li>
+                <li><strong>{t("landing.spectra.convertTitle")}</strong><span>{t("landing.spectra.convertText")}</span></li>
+                <li><strong>{t("landing.spectra.compressTitle")}</strong><span>{t("landing.spectra.compressText")}</span></li>
+                <li><strong>{t("landing.spectra.paletteTitle")}</strong><span>{t("landing.spectra.paletteText")}</span></li>
+                <li><strong>{t("landing.spectra.vectorTitle")}</strong><span>{t("landing.spectra.vectorText")}</span></li>
               </ul>
             </div>
           </div>
@@ -167,50 +159,32 @@ export default function LandingPage() {
 
         <section id="how-it-works">
           <div className="wrap">
-            <div className="section-tag">How It Works</div>
-            <h2 className="section-title">Sign in once. Use what you need.</h2>
-            <p className="section-lead">No separate billing relationships, no re-entering your business details three times over.</p>
+            <div className="section-tag">{t("landing.how.tag")}</div>
+            <h2 className="section-title">{t("landing.how.title")}</h2>
+            <p className="section-lead">{t("landing.how.lead")}</p>
 
             <div className="how-grid">
-              <div className="how-step">
-                <span className="num">STEP 1</span>
-                <h4>Create one account</h4>
-                <p>Your NOXEL360 account is the single login for every module in the ecosystem — present and future.</p>
-              </div>
-              <div className="how-step">
-                <span className="num">STEP 2</span>
-                <h4>Enable what you need</h4>
-                <p>Start with NOXEL SEO, add NOXEL Forge when you're ready to build backlinks — activate modules on your own timeline.</p>
-              </div>
-              <div className="how-step">
-                <span className="num">STEP 3</span>
-                <h4>Everything stays connected</h4>
-                <p>Nexus quietly adapts language and region across every module, so the experience stays consistent no matter which tool you're in.</p>
-              </div>
+              {[1, 2, 3].map((n) => (
+                <div className="how-step" key={n}>
+                  <span className="num">{t("landing.how.step", { n })}</span>
+                  <h4>{t(`landing.how.s${n}Title`)}</h4>
+                  <p>{t(`landing.how.s${n}Text`)}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         <section id="connected">
           <div className="wrap">
-            <div className="section-tag">Built to Work Together</div>
-            <h2 className="section-title">Not three tools. One connected toolkit.</h2>
-            <p className="section-lead">
-              Each module solves a distinct problem, but they're designed to inform each other
-              instead of operating in isolation.
-            </p>
+            <div className="section-tag">{t("landing.connected.tag")}</div>
+            <h2 className="section-title">{t("landing.connected.title")}</h2>
+            <p className="section-lead">{t("landing.connected.lead")}</p>
             <p style={{ color: "var(--nl-muted)", fontSize: 16, lineHeight: 1.7, marginBottom: 16 }}>
-              A NOXEL SEO audit surfaces a site's visibility gaps — thin content, missing schema,
-              slow Core Web Vitals. NOXEL Forge helps close the authority gap those audits often
-              reveal, connecting a site with verified backlink partners instead of leaving link
-              building as a manual, cold-outreach grind. NOXEL Nexus sits underneath both, detecting
-              a visitor's language and region so the same underlying content and tooling adapt
-              automatically — no separate localization project required.
+              {t("landing.connected.p1")}
             </p>
             <p style={{ color: "var(--nl-muted)", fontSize: 16, lineHeight: 1.7 }}>
-              The result isn't three disconnected tools that happen to share a login. It's a single
-              account where an issue flagged in one module has a natural next step in another,
-              instead of exporting a report and starting over somewhere else.
+              {t("landing.connected.p2")}
             </p>
           </div>
         </section>
@@ -219,34 +193,31 @@ export default function LandingPage() {
           <div className="wrap">
             <div className="split">
               <div>
-                <div className="section-tag">Why One Ecosystem</div>
+                <div className="section-tag">{t("landing.why.tag")}</div>
                 <h2 className="section-title" style={{ marginBottom: 16 }}>
-                  Built for everyone doing this without a five-figure budget.
+                  {t("landing.why.title")}
                 </h2>
                 <p style={{ color: "var(--nl-muted)", fontSize: 16, lineHeight: 1.7 }}>
-                  Most tools in this space are priced and built for marketing teams with headcount.
-                  NOXEL360 works whether it's just you, a small team, or an agency running it across
-                  a dozen client sites — enterprise-grade capability, without the enterprise price tag
-                  or the five separate logins.
+                  {t("landing.why.text")}
                 </p>
                 <ul className="checklist">
-                  <li>One identity across every module — no context-switching between disconnected dashboards</li>
-                  <li>Pay for what you actually use, module by module</li>
-                  <li>New modules plug in without disrupting what already works</li>
+                  <li>{t("landing.why.c1")}</li>
+                  <li>{t("landing.why.c2")}</li>
+                  <li>{t("landing.why.c3")}</li>
                 </ul>
               </div>
-                            <div className="split-visual" style={{ position: "relative" }}>
+              <div className="split-visual" style={{ position: "relative" }}>
                 <img
                   src="/NX360-transparent.avif"
                   alt="NX360"
                   style={{ width: 120, marginBottom: 16, opacity: 0.95 }}
                 />
-                <div className="stat-row"><span className="label">Modules live today</span><span className="val">2 (SEO, Forge)</span></div>
-                <div className="stat-row"><span className="label">Core intelligence layer</span><span className="val">Nexus</span></div>
-                <div className="stat-row"><span className="label">Coming next</span><span className="val">Spectra</span></div>
-                <div className="stat-row"><span className="label">Accounts required</span><span className="val">1</span></div>
-                <div className="stat-row"><span className="label">Languages supported</span><span className="val">115</span></div>
-                <div className="stat-row"><span className="label">Built for</span><span className="val">Everyone</span></div>
+                <div className="stat-row"><span className="label">{t("landing.stats.live")}</span><span className="val">2 (SEO, Forge)</span></div>
+                <div className="stat-row"><span className="label">{t("landing.stats.core")}</span><span className="val">Nexus</span></div>
+                <div className="stat-row"><span className="label">{t("landing.stats.next")}</span><span className="val">Spectra</span></div>
+                <div className="stat-row"><span className="label">{t("landing.stats.accounts")}</span><span className="val">1</span></div>
+                <div className="stat-row"><span className="label">{t("landing.stats.languages")}</span><span className="val">115</span></div>
+                <div className="stat-row"><span className="label">{t("landing.stats.builtFor")}</span><span className="val">{t("landing.stats.builtForValue")}</span></div>
               </div>
             </div>
           </div>
@@ -254,87 +225,24 @@ export default function LandingPage() {
 
         <section id="faq">
           <div className="wrap">
-            <div className="section-tag">Frequently Asked Questions</div>
-            <h2 className="section-title">Common questions</h2>
+            <div className="section-tag">{t("landing.faq.tag")}</div>
+            <h2 className="section-title">{t("landing.faq.title")}</h2>
             <dl style={{ fontSize: 16, lineHeight: 1.7, color: "var(--nl-muted)" }}>
-              <dt style={{ fontWeight: 700, color: "var(--nl-text, #eef1f0)", marginBottom: 6 }}>
-                Do I need separate accounts for NOXEL SEO, NOXEL Forge, and Nexus?
-              </dt>
-              <dd style={{ margin: "0 0 20px" }}>
-                No. All three connect to one shared NOXEL360 account, so you sign in once and move
-                between modules without separate logins or billing relationships.
-              </dd>
-
-              <dt style={{ fontWeight: 700, color: "var(--nl-text, #eef1f0)", marginBottom: 6 }}>
-                Is NOXEL SEO free to start?
-              </dt>
-              <dd style={{ margin: "0 0 20px" }}>
-                Yes. NOXEL SEO is free to start, with paid tiers unlocking the AI Copilot, unlimited
-                scans, PDF reports, and advanced intelligence modules.
-              </dd>
-
-              <dt style={{ fontWeight: 700, color: "var(--nl-text, #eef1f0)", marginBottom: 6 }}>
-                What does NOXEL Forge actually do?
-              </dt>
-              <dd style={{ margin: "0 0 20px" }}>
-                NOXEL Forge is a verified backlink exchange network. Members submit real sites in
-                exchange for reviewed backlinks, and every submission is screened by an AI reviewer
-                against spam and thin content before approval.
-              </dd>
-
-              <dt style={{ fontWeight: 700, color: "var(--nl-text, #eef1f0)", marginBottom: 6 }}>
-                What is NOXEL Nexus?
-              </dt>
-              <dd style={{ margin: "0 0 20px" }}>
-                NOXEL Nexus is the language, region, and cultural intelligence engine underneath the
-                ecosystem. It detects a visitor's language and region to adapt content automatically
-                across NOXEL360's products.
-              </dd>
-
-              <dt style={{ fontWeight: 700, color: "var(--nl-text, #eef1f0)", marginBottom: 6 }}>
-                Can I use just one module instead of the whole suite?
-              </dt>
-              <dd style={{ margin: "0 0 20px" }}>
-                Yes. Each module stands on its own and can be enabled individually — you're not
-                required to activate every module to use NOXEL360.
-              </dd>
-
-              <dt style={{ fontWeight: 700, color: "var(--nl-text, #eef1f0)", marginBottom: 6 }}>
-                How long does it take to see results?
-              </dt>
-              <dd style={{ margin: "0 0 20px" }}>
-                NOXEL SEO's free audit returns results in seconds — you'll see your visibility score
-                and top issues immediately. NOXEL Forge backlink placements and ranking improvements
-                from fixed technical issues typically show measurable movement within 4–8 weeks,
-                consistent with normal search engine re-crawling and re-indexing timelines.
-              </dd>
-
-              <dt style={{ fontWeight: 700, color: "var(--nl-text, #eef1f0)", marginBottom: 6 }}>
-                What's coming next?
-              </dt>
-              <dd style={{ margin: "0 0 20px" }}>
-                NOXEL Spectra, a web-focused image toolkit: format conversion, target-size
-                compression, color palette extraction, and PNG/WebP to SVG vectorization. It will
-                connect to your existing NOXEL360 account, and its pricing will be announced at launch.
-              </dd>
-
-              <dt style={{ fontWeight: 700, color: "var(--nl-text, #eef1f0)", marginBottom: 6 }}>
-                Is my data shared between modules?
-              </dt>
-              <dd style={{ margin: 0 }}>
-                Only what's needed to make the modules useful together — for example, a site you've
-                added to NOXEL SEO is available to reference in NOXEL Forge without re-entering it.
-                NOXEL360 doesn't sell or share account data with third parties.
-              </dd>
+              {Array.from({ length: FAQ_COUNT }, (_, i) => i + 1).map((n) => (
+                <div key={n}>
+                  <dt style={dtStyle}>{t(`landing.faq.q${n}`)}</dt>
+                  <dd style={{ margin: n === FAQ_COUNT ? 0 : "0 0 20px" }}>{t(`landing.faq.a${n}`)}</dd>
+                </div>
+              ))}
             </dl>
           </div>
         </section>
 
         <div className="final-cta">
           <div className="wrap">
-            <h2>Ready to stop juggling tools?</h2>
-            <p>Open your NOXEL360 dashboard and activate the modules you actually need — today.</p>
-            <Link to="/dashboard" className="btn-primary">Open Your Dashboard →</Link>
+            <h2>{t("landing.cta.title")}</h2>
+            <p>{t("landing.cta.text")}</p>
+            <Link to="/dashboard" className="btn-primary">{t("landing.hero.ctaPrimary")} →</Link>
           </div>
         </div>
       </main>
@@ -342,24 +250,20 @@ export default function LandingPage() {
       <footer>
         <div className="wrap">
           <div className="footer-top">
-            <p className="footer-desc">
-              NOXEL360 connects NOXEL SEO, NOXEL Forge, and Nexus in one dashboard for search
-              visibility, verified backlinks, and language intelligence — with NOXEL Spectra
-              coming next.
-            </p>
+            <p className="footer-desc">{t("landing.footer.desc")}</p>
             <div className="footer-links">
               <a href="https://noxelseo.com">NOXEL SEO</a>
               <a href="https://noxelforge.com">NOXEL Forge</a>
               <Link to="/nexus">NOXEL Nexus</Link>
               <a href="https://noxelspectra.com">NOXEL Spectra</a>
-              <Link to="/pricing">Pricing</Link>
-              <a href="/learn">Learn</a>
-              <Link to="/app/account">Account</Link>
-              <Link to="/privacy">Privacy</Link>
-              <Link to="/terms">Terms</Link>
+              <Link to="/pricing">{t("landing.nav.pricing")}</Link>
+              <a href="/learn">{t("landing.nav.learn")}</a>
+              <Link to="/app/account">{t("landing.footer.account")}</Link>
+              <Link to="/privacy">{t("landing.footer.privacy")}</Link>
+              <Link to="/terms">{t("landing.footer.terms")}</Link>
             </div>
           </div>
-          <div className="footer-bottom">© 2026 NOXEL360. All rights reserved.</div>
+          <div className="footer-bottom">{t("landing.footer.rights")}</div>
         </div>
       </footer>
     </div>
