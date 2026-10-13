@@ -164,3 +164,13 @@
 .noxel-landing .nav-right{display:flex;align-items:center;gap:12px;flex-shrink:0}
 .noxel-landing .nav-right .account-btn{font-size:14px;font-weight:700;padding:9px 18px}
 @media(max-width:640px){.noxel-landing .nav-right .nav-cta{display:none}}
+/* Mobile : logo réduit et sélecteur de langue compact (drapeau + code) pour que le header tienne
+   sur 360px, même avec un nom de langue long (中文 (Zhōngwén), 汉语, 漢語…). */
+.noxel-landing .nl-nav .logo{flex-shrink:0}
+@media(max-width:640px){
+  .noxel-landing .nl-nav .logo img{width:96px;height:auto}
+  .noxel-landing .nav-right{gap:8px}
+  .noxel-landing .nav-right .account-btn{padding:8px 12px}
+  .noxel-landing .nav-right .header-lang-native{display:none}
+  .noxel-landing .nav-right .header-lang-btn{min-width:0 !important;padding:8px 12px !important;gap:6px !important}
+}
