@@ -261,6 +261,7 @@ export default function LandingPage() {
               <Link to="/app/account">{t("landing.footer.account")}</Link>
               <Link to="/privacy">{t("landing.footer.privacy")}</Link>
               <Link to="/terms">{t("landing.footer.terms")}</Link>
+              <button type="button" data-noxel-consent-settings className="footer-consent">{t("consent.settings")}</button>
             </div>
           </div>
           <div className="footer-bottom">{t("landing.footer.rights")}</div>
