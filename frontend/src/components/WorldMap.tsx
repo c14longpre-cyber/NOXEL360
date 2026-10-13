@@ -424,7 +424,7 @@ useEffect(() => {
           font-size: 24px;
           font-weight: 400;
           margin: 0 0 16px 0;
-          color: #B5E551;
+          color: #3ddc84;
           word-break: break-word;
           font-family: Georgia, serif;
           line-height: 1.2;
@@ -470,7 +470,7 @@ useEffect(() => {
 
         .noxel-subSummaryValue {
           font-size: 22px;
-          color: #B5E551;
+          color: #3ddc84;
           font-family: Georgia, serif;
         }
 
