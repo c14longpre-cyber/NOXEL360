@@ -20,11 +20,9 @@ noxel360/
 │   │   ├── i18n/       languageCatalog.ts (230+ langues), locales/*.ts, translate.ts
 │   │   └── language/   LanguageStore.tsx (RTL auto)
 │   ├── public/learn/   Pages éducatives statiques (~150 fichiers + dossiers de langue)
-│   ├── public/pricing/ Page de prix déployée (noxel360.com/pricing) + tiers/
+│   ├── public/pricing/ Page d'offre déployée (noxel360.com/pricing) : modules live + teaser Spectra, sans prix
 │   └── scripts/        validate-locales.cjs, auto-detect-translated-languages.cjs, CSV d'inventaire i18n
-├── landing/            HÉRITÉ, non déployé : ancien site de prix des modules abandonnés
 ├── noxel-library/      Sous-projet bibliothèque
-├── module-pricing.json HÉRITÉ : 10 anciens modules, ne fait plus foi
 └── vercel.json         Build frontend + rewrite /api/* → Railway + catch-all SPA
 ```
 
@@ -39,13 +37,13 @@ NOXEL360 ne compte que quatre modules :
 | nexus | NOXEL NEXUS | `/nexus` (seul module interne) | core |
 | spectra | NOXEL SPECTRA | https://noxelspectra.com | « coming soon » |
 
-Paliers : Bronze / Silver / Gold / Platinum / Diamond.
+Prix : chaque module garde ses prix et paliers sur son propre site (noxelseo.com, noxelforge.com). NOXEL360 n'affiche aucun prix ; Nexus est inclus avec le compte, Spectra sera annoncé au lancement.
 
-**Modules abandonnés** : Core, MAESTRO, ATLAS, LINKS, SERP, VITALS, OPTIMA (webp), FLOW, MORPH, ainsi qu'Analytics, CRM et Social. Ce sont des idées écartées en cours de route. Ne pas les réintroduire, ni dans le code, ni dans les textes, ni dans les dictionnaires, sans demande explicite de l'utilisateur. Leurs traces restantes (`landing/`, `module-pricing.json`, `frontend/src/modules/nexus/*.md`, champ `morphProfile` du compte) sont connues et volontairement laissées en place pour l'instant.
+**Modules abandonnés** : Core, MAESTRO, ATLAS, LINKS, SERP, VITALS, OPTIMA (webp), FLOW, MORPH, ainsi qu'Analytics, CRM et Social. Ce sont des idées écartées en cours de route. Ne pas les réintroduire, ni dans le code, ni dans les textes, ni dans les dictionnaires, sans demande explicite de l'utilisateur. Leurs traces restantes (`frontend/src/modules/nexus/*.md`, champ `morphProfile` du compte) sont connues et volontairement laissées en place pour l'instant.
 
 ## Règles critiques
 
-1. **Modules et prix** : seuls SEO, Forge, Nexus et Spectra existent. Le dashboard, la navigation et la page `frontend/public/pricing/` ne doivent mentionner qu'eux. Ne jamais inventer un prix : `module-pricing.json` et `landing/` ne sont plus des références.
+1. **Modules et prix** : seuls SEO, Forge, Nexus et Spectra existent. Le dashboard, la navigation et la page `frontend/public/pricing/` ne doivent mentionner qu'eux. Ne jamais inventer un prix : les prix vivent sur le site de chaque module.
 2. **Fichiers .js compilés à côté des .ts** (frontend/src, i18n/locales) : modifier le `.ts` seulement, puis vérifier qu'un `.js` périmé ne masque pas le changement à l'import. Ne jamais éditer uniquement le `.js`.
 3. **i18n** : `FULLY_TRANSLATED_CODES` (languageCatalog.ts) liste les langues complètes (26 aujourd'hui). Ajouter une langue = `locales/XX.ts` + entrée dans `translate.ts` + code dans `FULLY_TRANSLATED_CODES`. Clés identiques à `en.ts`.
 4. **Langues autochtones** : jamais de traduction automatique publiée. Seuls des locuteurs natifs ou traducteurs approuvés par la communauté (voir CONTRIBUTING_LANGUAGES.md).

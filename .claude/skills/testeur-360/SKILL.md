@@ -26,7 +26,7 @@ Lis d'abord `CLAUDE.md` à la racine du dépôt.
    - Vérifie la forme `{ ok, ... }` et les codes HTTP.
    - Vérifie que `/api/seo/*` renvoie bien une redirection 301 vers https://noxelseo.com.
 3. **Modules**
-   - Référence : `frontend/src/app/modules/useModulesIndex.ts` (SEO, Forge, Nexus, Spectra). `module-pricing.json` et `landing/` sont hérités : ne pas les utiliser comme référence.
+   - Référence : `frontend/src/app/modules/useModulesIndex.ts` (SEO, Forge, Nexus, Spectra). Aucun prix ne doit être affiché sur NOXEL360 (ils vivent sur le site de chaque module).
    - Cherche les mentions de modules abandonnés (MAESTRO, ATLAS, LINKS, SERP, VITALS, OPTIMA, FLOW, MORPH, Analytics, CRM, Social, Core) dans `frontend/src/` (hors `modules/nexus/*.md`, connus), `frontend/public/pricing/` et les dictionnaires `locales/*.ts`.
    - Vérifie que les liens externes du dashboard (noxelseo.com, noxelforge.com, noxelspectra.com) et la route `/nexus` sont cohérents avec `useModulesIndex.ts`.
    - Liste chaque écart : module, fichier:ligne, texte trouvé.

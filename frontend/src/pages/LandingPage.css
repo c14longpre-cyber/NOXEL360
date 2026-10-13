@@ -10,8 +10,8 @@
   --nl-muted-2:rgba(255,255,255,0.35);
   --nl-g:#3ddc84;
   --nl-g-dim:rgba(61,220,132,0.12);
-  --nl-p:#8b5cf6;
-  --nl-p-dim:rgba(139,92,246,0.12);
+  --nl-p:#A855F7;
+  --nl-p-dim:rgba(168,85,247,0.12);
 
   font-family:"Segoe UI",system-ui,-apple-system,sans-serif;
   background:var(--nl-bg);
@@ -47,7 +47,7 @@
 .noxel-landing .hero::before{
   content:"";position:absolute;top:-200px;left:50%;transform:translateX(-50%);
   width:900px;height:500px;
-  background:radial-gradient(ellipse at center, rgba(61,220,132,0.10) 0%, rgba(139,92,246,0.06) 45%, transparent 70%);
+  background:radial-gradient(ellipse at center, rgba(61,220,132,0.10) 0%, rgba(168,85,247,0.06) 45%, transparent 70%);
   filter:blur(40px);pointer-events:none;
 }
 .noxel-landing .eyebrow{
@@ -94,7 +94,7 @@
 .noxel-landing .module-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:20px}
 .noxel-landing .badge{font-size:11px;font-weight:800;letter-spacing:0.5px;padding:5px 12px;border-radius:100px}
 .noxel-landing .badge.live{color:var(--nl-g);background:var(--nl-g-dim);border:1px solid rgba(61,220,132,0.3)}
-.noxel-landing .badge.core{color:var(--nl-p);background:var(--nl-p-dim);border:1px solid rgba(139,92,246,0.3)}
+.noxel-landing .badge.core{color:var(--nl-p);background:var(--nl-p-dim);border:1px solid rgba(168,85,247,0.3)}
 .noxel-landing .badge.soon{color:#ffd28a;background:rgba(245,166,35,0.14);border:1px solid rgba(245,166,35,0.35)}
 .noxel-landing .module-card h3{font-size:20px;font-weight:800;margin-bottom:10px}
 .noxel-landing .module-card p{color:var(--nl-muted);font-size:15px;line-height:1.65;margin-bottom:22px;flex-grow:1}
@@ -142,3 +142,25 @@
     display: none;
   }
 }
+
+/* What's next : teaser NOXEL Spectra */
+.noxel-landing .teaser{
+  display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;
+  padding:48px;border-radius:24px;border:1px dashed rgba(168,85,247,0.45);
+  background:linear-gradient(135deg,rgba(168,85,247,0.14),rgba(61,220,132,0.05)),var(--nl-surface);
+}
+@media(max-width:900px){.noxel-landing .teaser{grid-template-columns:1fr;padding:28px}}
+.noxel-landing .teaser .badge.soon-p{color:var(--nl-p);background:var(--nl-p-dim);border:1px solid rgba(168,85,247,0.35)}
+.noxel-landing .teaser h3{font-size:30px;line-height:1.2;margin:16px 0 14px}
+.noxel-landing .teaser p{color:var(--nl-muted);font-size:16px;line-height:1.7;margin-bottom:16px}
+.noxel-landing .teaser-list{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.noxel-landing .teaser-list li{
+  padding:16px 18px;border-radius:12px;border:1px solid var(--nl-border);background:rgba(7,9,10,0.45);font-size:15px;
+}
+.noxel-landing .teaser-list li strong{display:block;color:var(--nl-text);margin-bottom:4px}
+.noxel-landing .teaser-list li span{color:var(--nl-muted);font-size:14px}
+
+/* Header : langue + connexion */
+.noxel-landing .nav-right{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.noxel-landing .nav-right .account-btn{font-size:14px;font-weight:700;padding:9px 18px}
+@media(max-width:640px){.noxel-landing .nav-right .nav-cta{display:none}}

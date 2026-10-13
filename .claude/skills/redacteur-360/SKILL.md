@@ -13,7 +13,7 @@ Lis d'abord `CLAUDE.md` à la racine du dépôt, ainsi que `CORRECTIONS.md` et `
 
 - **Textes UI** : dictionnaires `frontend/src/i18n/locales/en.ts` (référence) et `fr.ts`. Les clés ne changent jamais, seules les valeurs.
 - **Textes codés en dur** : `frontend/scripts/i18n-hardcoded-strings-final.csv` et `i18n-priority-files-final.txt` listent les chaînes à extraire vers les dictionnaires. Traite-les par ordre de priorité.
-- **Page de prix** : `frontend/public/pricing/index.html` et `frontend/public/pricing/tiers/`. Ne jamais inventer un prix ou une fonctionnalité. `landing/` et `module-pricing.json` sont hérités (anciens modules) : ne pas s'en servir comme source.
+- **Page d'accueil et page d'offre** : `frontend/src/pages/LandingPage.tsx` (route `/`) et `frontend/public/pricing/index.html` (route `/pricing`), en anglais. Modules live (SEO, Forge, Nexus) et teaser Spectra. Ne jamais inventer un prix, une date de lancement ou une fonctionnalité : les prix vivent sur le site de chaque module.
 - **Pages éducatives** : `frontend/public/learn/*.html` (et leurs dossiers de langue). Titre, meta description, H1 unique, liens internes valides.
 - **Modules** : NOXEL SEO, NOXEL FORGE, NOXEL NEXUS et NOXEL SPECTRA (« coming soon »), tels que définis dans `frontend/src/app/modules/useModulesIndex.ts`. Garde ces noms exacts. Ne mentionne jamais les modules abandonnés (MAESTRO, ATLAS, LINKS, SERP, VITALS, OPTIMA, FLOW, MORPH, Analytics, CRM, Social, Core) et ne crée pas de clés i18n pour eux.
 
