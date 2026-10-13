@@ -298,5 +298,6 @@ export const da: TranslationDictionary = {
   "landing.footer.privacy": "Privatliv",
   "landing.footer.terms": "Vilkår",
   "landing.footer.rights": "© 2026 NOXEL360. Alle rettigheder forbeholdes.",
+  "auth.access": "Log ind",
 };
 

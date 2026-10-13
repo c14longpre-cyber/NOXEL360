@@ -296,4 +296,5 @@ export const vi = {
     "landing.footer.privacy": "Quyền riêng tư",
     "landing.footer.terms": "Điều khoản",
     "landing.footer.rights": "© 2026 NOXEL360. Bảo lưu mọi quyền.",
+    "auth.access": "Đăng nhập",
 };

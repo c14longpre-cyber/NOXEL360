@@ -296,4 +296,5 @@ export const ru = {
     "landing.footer.privacy": "Конфиденциальность",
     "landing.footer.terms": "Условия",
     "landing.footer.rights": "© 2026 NOXEL360. Все права защищены.",
+    "auth.access": "Войти",
 };

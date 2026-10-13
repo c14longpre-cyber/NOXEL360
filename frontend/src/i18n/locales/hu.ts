@@ -298,5 +298,6 @@ export const hu: TranslationDictionary = {
   "landing.footer.privacy": "Adatvédelem",
   "landing.footer.terms": "Feltételek",
   "landing.footer.rights": "© 2026 NOXEL360. Minden jog fenntartva.",
+  "auth.access": "Belépés",
 };
 

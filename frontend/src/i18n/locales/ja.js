@@ -296,4 +296,5 @@ export const ja = {
     "landing.footer.privacy": "プライバシー",
     "landing.footer.terms": "利用規約",
     "landing.footer.rights": "© 2026 NOXEL360. All rights reserved.",
+    "auth.access": "ログイン",
 };

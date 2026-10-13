@@ -1,8 +1,10 @@
 import { useState } from "react";
 import NoxelAccessModal from "./NoxelAccessModal";
+import { useI18n } from "../useI18n";
 
 export default function NoxelAccessButton() {
   const [open, setOpen] = useState(false);
+  const { t } = useI18n();
 
   return (
     <>
@@ -11,7 +13,7 @@ export default function NoxelAccessButton() {
         className="account-btn"
         onClick={() => setOpen(true)}
       >
-        Access
+        {t("auth.access")}
       </button>
 
       <NoxelAccessModal

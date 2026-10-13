@@ -296,4 +296,5 @@ export const fi = {
     "landing.footer.privacy": "Tietosuoja",
     "landing.footer.terms": "Ehdot",
     "landing.footer.rights": "© 2026 NOXEL360. Kaikki oikeudet pidätetään.",
+    "auth.access": "Kirjaudu",
 };

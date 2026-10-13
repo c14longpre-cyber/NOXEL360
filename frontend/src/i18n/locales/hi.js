@@ -296,4 +296,5 @@ export const hi = {
     "landing.footer.privacy": "गोपनीयता",
     "landing.footer.terms": "शर्तें",
     "landing.footer.rights": "© 2026 NOXEL360. सर्वाधिकार सुरक्षित।",
+    "auth.access": "लॉग इन",
 };

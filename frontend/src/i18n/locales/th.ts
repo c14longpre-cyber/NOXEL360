@@ -298,5 +298,6 @@ export const th: TranslationDictionary = {
   "landing.footer.privacy": "ความเป็นส่วนตัว",
   "landing.footer.terms": "ข้อกำหนด",
   "landing.footer.rights": "© 2026 NOXEL360 สงวนลิขสิทธิ์",
+  "auth.access": "เข้าสู่ระบบ",
 };
 

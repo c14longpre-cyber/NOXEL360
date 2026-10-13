@@ -296,4 +296,5 @@ export const id = {
     "landing.footer.privacy": "Privasi",
     "landing.footer.terms": "Ketentuan",
     "landing.footer.rights": "© 2026 NOXEL360. Semua hak dilindungi.",
+    "auth.access": "Masuk",
 };
