@@ -26,7 +26,8 @@ export default function DashboardHome() {
   function openModule(key: string, route: string, external?: boolean) {
     setActiveKey(key);
     if (external) {
-      window.open(route, "_blank", "noopener,noreferrer");
+      // Sans noreferrer : le relais du choix de confidentialité a besoin de la page d’origine (NOXEL Consent).
+      window.open(window.NoxelConsent?.relayUrl?.(route) ?? route, "_blank", "noopener");
     } else {
       nav(route);
     }
@@ -222,7 +223,7 @@ export default function DashboardHome() {
                         label={hudLabel(t("dashboard.card.open"))}
                         href={m.route}
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="noopener"
                         onClick={(e) => e.stopPropagation()}
                       />
                     ) : (
@@ -253,6 +254,7 @@ export default function DashboardHome() {
               <Link to="/app/account" style={{ color: "rgba(255,255,255,0.55)", textDecoration: "none" }}>Account</Link>
               <Link to="/privacy" style={{ color: "rgba(255,255,255,0.55)", textDecoration: "none" }}>Privacy</Link>
               <Link to="/terms" style={{ color: "rgba(255,255,255,0.55)", textDecoration: "none" }}>Terms</Link>
+              <button type="button" data-noxel-consent-settings style={{ background: "none", border: 0, padding: 0, font: "inherit", cursor: "pointer", color: "rgba(255,255,255,0.55)" }}>{t("consent.settings")}</button>
             </nav>
             <p style={{ margin: 0 }}>© 2026 NOXEL360. All rights reserved.</p>
           </footer>

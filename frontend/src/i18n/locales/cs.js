@@ -297,4 +297,5 @@ export const cs = {
     "landing.footer.terms": "Podmínky",
     "landing.footer.rights": "© 2026 NOXEL360. Všechna práva vyhrazena.",
     "auth.access": "Přihlásit se",
+    "consent.settings": "Nastavení soukromí",
 };

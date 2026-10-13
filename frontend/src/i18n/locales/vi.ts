@@ -299,5 +299,6 @@ export const vi: TranslationDictionary = {
   "landing.footer.terms": "Điều khoản",
   "landing.footer.rights": "© 2026 NOXEL360. Bảo lưu mọi quyền.",
   "auth.access": "Đăng nhập",
+  "consent.settings": "Tùy chọn quyền riêng tư",
 };
 

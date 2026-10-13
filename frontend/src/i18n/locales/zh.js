@@ -297,4 +297,5 @@ export const zh = {
     "landing.footer.terms": "条款",
     "landing.footer.rights": "© 2026 NOXEL360。保留所有权利。",
     "auth.access": "登录",
+    "consent.settings": "隐私偏好设置",
 };

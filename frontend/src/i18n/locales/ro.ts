@@ -299,5 +299,6 @@ export const ro: TranslationDictionary = {
   "landing.footer.terms": "Termeni",
   "landing.footer.rights": "© 2026 NOXEL360. Toate drepturile rezervate.",
   "auth.access": "Conectare",
+  "consent.settings": "Preferințe de confidențialitate",
 };
 

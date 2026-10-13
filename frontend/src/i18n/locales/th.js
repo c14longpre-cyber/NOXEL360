@@ -297,4 +297,5 @@ export const th = {
     "landing.footer.terms": "ข้อกำหนด",
     "landing.footer.rights": "© 2026 NOXEL360 สงวนลิขสิทธิ์",
     "auth.access": "เข้าสู่ระบบ",
+    "consent.settings": "การตั้งค่าความเป็นส่วนตัว",
 };

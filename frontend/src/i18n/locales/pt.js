@@ -297,4 +297,5 @@ export const pt = {
     "landing.footer.terms": "Termos",
     "landing.footer.rights": "© 2026 NOXEL360. Todos os direitos reservados.",
     "auth.access": "Entrar",
+    "consent.settings": "Preferências de privacidade",
 };

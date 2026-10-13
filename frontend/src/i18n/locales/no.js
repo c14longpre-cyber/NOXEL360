@@ -297,4 +297,5 @@ export const no = {
     "landing.footer.terms": "Vilkår",
     "landing.footer.rights": "© 2026 NOXEL360. Alle rettigheter forbeholdt.",
     "auth.access": "Logg inn",
+    "consent.settings": "Personverninnstillinger",
 };

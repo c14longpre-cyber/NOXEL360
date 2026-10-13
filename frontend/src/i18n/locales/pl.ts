@@ -299,5 +299,6 @@ export const pl: TranslationDictionary = {
   "landing.footer.terms": "Regulamin",
   "landing.footer.rights": "© 2026 NOXEL360. Wszelkie prawa zastrzeżone.",
   "auth.access": "Zaloguj się",
+  "consent.settings": "Ustawienia prywatności",
 };
 

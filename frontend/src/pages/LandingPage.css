@@ -171,3 +171,15 @@
 .noxel-landing .noxel-hud:not(.noxel-hud--compact) .noxel-hud__label{font-size:15px;font-weight:800}
 .noxel-landing .module-hud{margin-left:-4px}
 .noxel-landing .final-cta .noxel-hud{margin:0 auto}
+.noxel-landing .footer-consent{background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer}
+/* Écrans intermédiaires : Open Dashboard en icône seule (nom accessible conservé) et langue en drapeau + code,
+   pour que la barre tienne quelle que soit la langue (fr, de, ru… plus longues que l'anglais). */
+@media(max-width:1360px){
+  .noxel-landing .nav-right .nav-hud .noxel-hud__label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  .noxel-landing .nav-right .header-lang-native{display:none}
+}
+@media(max-width:1100px){
+  .noxel-landing .nav-links{gap:18px}
+  .noxel-landing .nl-nav{padding:16px 24px}
+}
+@media(max-width:1023px){.noxel-landing .nav-links{display:none}}

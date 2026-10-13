@@ -299,5 +299,6 @@ export const hi: TranslationDictionary = {
   "landing.footer.terms": "शर्तें",
   "landing.footer.rights": "© 2026 NOXEL360. सर्वाधिकार सुरक्षित।",
   "auth.access": "लॉग इन",
+  "consent.settings": "गोपनीयता प्राथमिकताएँ",
 };
 

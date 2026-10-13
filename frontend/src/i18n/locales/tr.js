@@ -297,4 +297,5 @@ export const tr = {
     "landing.footer.terms": "Koşullar",
     "landing.footer.rights": "© 2026 NOXEL360. Tüm hakları saklıdır.",
     "auth.access": "Giriş",
+    "consent.settings": "Gizlilik tercihleri",
 };
