@@ -84,6 +84,7 @@ export default function HeaderLanguage() {
     <div ref={containerRef} style={{ position: "relative" }}>
       <button
         type="button"
+        className="header-lang-btn"
         onClick={() => setMenuOpen((v) => !v)}
         aria-label={t("header.language.open")}
         aria-haspopup="listbox"
@@ -113,7 +114,7 @@ export default function HeaderLanguage() {
       >
         <span style={{ fontSize: 18 }}>{currentLanguage.flag}</span>
         <span>{currentLanguage.code.toUpperCase()}</span>
-        <span style={{ opacity: 0.72, fontWeight: 500 }}>
+        <span className="header-lang-native" style={{ opacity: 0.72, fontWeight: 500 }}>
           {currentLanguage.nativeLabel}
         </span>
         <span

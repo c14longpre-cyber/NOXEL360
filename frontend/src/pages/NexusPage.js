@@ -3,6 +3,8 @@ import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLanguage } from "../language/LanguageStore";
 import { useI18n } from "../useI18n";
+import { HudButton } from "../components/hud/HudButton";
+import { hudLabel } from "../components/hud/hudLabel";
 import NexusLanguageMap from "../language/nexus/NexusLanguageMap";
 import { ALL_COUNTRIES } from "../language/nexus/countryData";
 import { INDIGENOUS_BY_ISO2 } from "../language/nexus/indigenous";
@@ -176,15 +178,7 @@ export default function NexusPage() {
                                     opacity: 0.7,
                                     letterSpacing: "0.18em",
                                     textTransform: "uppercase",
-                                }, children: "NOXEL360 \u00B7 NEXUS" }), _jsx("h1", { style: { margin: "6px 0 0", fontSize: 32, lineHeight: 1.15 }, children: t("nexus.page.title") }), _jsx("p", { style: { margin: "6px 0 0", opacity: 0.72, maxWidth: 640 }, children: t("nexus.page.subtitle") })] }), _jsxs("button", { type: "button", onClick: () => nav("/dashboard"), style: {
-                            padding: "10px 16px",
-                            borderRadius: 999,
-                            border: "1px solid rgba(255,255,255,0.14)",
-                            background: "rgba(255,255,255,0.05)",
-                            color: "white",
-                            cursor: "pointer",
-                            fontWeight: 600,
-                        }, children: ["\u2190 ", t("nexus.back")] })] }), _jsxs("div", { style: { flex: 1, overflowY: "auto", padding: "0 24px 24px 24px" }, children: [_jsxs("div", { style: {
+                                }, children: "NOXEL360 \u00B7 NEXUS" }), _jsx("h1", { style: { margin: "6px 0 0", fontSize: 32, lineHeight: 1.15 }, children: t("nexus.page.title") }), _jsx("p", { style: { margin: "6px 0 0", opacity: 0.72, maxWidth: 640 }, children: t("nexus.page.subtitle") })] }), _jsx(HudButton, { action: "undo", compact: true, label: hudLabel(t("nexus.back")), style: { color: "white" }, onClick: () => nav("/dashboard") })] }), _jsxs("div", { style: { flex: 1, overflowY: "auto", padding: "0 24px 24px 24px" }, children: [_jsxs("div", { style: {
                             display: "inline-flex",
                             alignItems: "center",
                             gap: 10,

@@ -1,5 +1,6 @@
 import { useAuthStore } from "../../auth/AuthStore";
 import { useI18n } from "@/useI18n";
+import { HudButton } from "@/components/hud/HudButton";
 
 type ProviderItem = {
   key: "google" | "microsoft" | "facebook" | "linkedin";
@@ -66,17 +67,12 @@ export default function ConnectedAccountsCard() {
                   {t("connectedAccounts.linked")}
                 </span>
               ) : (
-                <button
-                  className="nx-btn"
-                  type="button"
+                <HudButton
+                  action="new-project"
+                  compact
+                  label={t("connectedAccounts.connect")}
                   onClick={() => loginWithProvider(p.key as any, "link")}
-                  style={{
-                    padding: "6px 12px",
-                    fontSize: 13,
-                  }}
-                >
-                  {t("connectedAccounts.connect")}
-                </button>
+                />
               )}
             </div>
           );

@@ -1,6 +1,7 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useAuthStore } from "../../auth/AuthStore";
 import { useI18n } from "@/useI18n";
+import { HudButton } from "@/components/hud/HudButton";
 const PROVIDERS = [
     { key: "google", labelKey: "provider.google" },
     { key: "microsoft", labelKey: "provider.microsoft" },
@@ -28,9 +29,6 @@ export default function ConnectedAccountsCard() {
                                     fontSize: 12,
                                     color: "#3DDC84",
                                     fontWeight: 600,
-                                }, children: t("connectedAccounts.linked") })) : (_jsx("button", { className: "nx-btn", type: "button", onClick: () => loginWithProvider(p.key, "link"), style: {
-                                    padding: "6px 12px",
-                                    fontSize: 13,
-                                }, children: t("connectedAccounts.connect") }))] }, p.key));
+                                }, children: t("connectedAccounts.linked") })) : (_jsx(HudButton, { action: "new-project", compact: true, label: t("connectedAccounts.connect"), onClick: () => loginWithProvider(p.key, "link") }))] }, p.key));
                 }) })] }));
 }

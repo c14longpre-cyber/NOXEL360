@@ -7,6 +7,16 @@
       "source": "/learn/technologies.html",
       "destination": "/learn/development.html",
       "permanent": true
+    },
+    {
+      "source": "/pricing.html",
+      "destination": "/pricing/",
+      "permanent": true
+    },
+    {
+      "source": "/pricing/tiers/:path*",
+      "destination": "/pricing/",
+      "permanent": true
     }
   ],
   "rewrites": [

@@ -6,6 +6,9 @@ import UserMenu from "@/components/UserMenu";
 import HeaderLanguage from "@/components/HeaderLanguage";
 import TranslationStatusBanner from "@/components/TranslationStatusBanner";
 import { useI18n } from "@/useI18n";
+import { HudLink } from "@/components/hud/HudButton";
+import { HudRouteLink } from "@/components/hud/HudRouteLink";
+import { hudLabel } from "@/components/hud/hudLabel";
 
 export default function DashboardHome() {
   const tier: "bronze" | "silver" | "gold" | "platinum" | "diamond" = "diamond";
@@ -23,7 +26,8 @@ export default function DashboardHome() {
   function openModule(key: string, route: string, external?: boolean) {
     setActiveKey(key);
     if (external) {
-      window.open(route, "_blank", "noopener,noreferrer");
+      // Sans noreferrer : le relais du choix de confidentialité a besoin de la page d’origine (NOXEL Consent).
+      window.open(window.NoxelConsent?.relayUrl?.(route) ?? route, "_blank", "noopener");
     } else {
       nav(route);
     }
@@ -107,9 +111,7 @@ export default function DashboardHome() {
             ))}
           </div>
 
-          <Link className="nav-cta" to="/pricing">
-            {t("dashboard.sidenav.upgrade")}
-          </Link>
+          <HudRouteLink to="/pricing" action="continue" compact className="sidenav-hud" label={hudLabel(t("dashboard.sidenav.upgrade"))} />
         </aside>
 
         <main className="noxel-main">
@@ -214,23 +216,25 @@ export default function DashboardHome() {
                     <p className="nx-card__text">{m.promise}</p>
 
                     {m.external ? (
-                      <a
-                        className="nx-card__link"
+                      <HudLink
+                        action="open-project"
+                        compact
+                        className="nx-card__hud"
+                        label={hudLabel(t("dashboard.card.open"))}
                         href={m.route}
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="noopener"
                         onClick={(e) => e.stopPropagation()}
-                      >
-                        {t("dashboard.card.open")} ↗
-                      </a>
+                      />
                     ) : (
-                      <Link
-                        className="nx-card__link"
+                      <HudRouteLink
+                        action="open-project"
+                        compact
+                        className="nx-card__hud"
+                        label={hudLabel(t("dashboard.card.open"))}
                         to={m.route}
                         onClick={(e) => e.stopPropagation()}
-                      >
-                        {t("dashboard.card.open")}
-                      </Link>
+                      />
                     )}
                   </article>
                 ))}
@@ -250,6 +254,7 @@ export default function DashboardHome() {
               <Link to="/app/account" style={{ color: "rgba(255,255,255,0.55)", textDecoration: "none" }}>Account</Link>
               <Link to="/privacy" style={{ color: "rgba(255,255,255,0.55)", textDecoration: "none" }}>Privacy</Link>
               <Link to="/terms" style={{ color: "rgba(255,255,255,0.55)", textDecoration: "none" }}>Terms</Link>
+              <button type="button" data-noxel-consent-settings style={{ background: "none", border: 0, padding: 0, font: "inherit", cursor: "pointer", color: "rgba(255,255,255,0.55)" }}>{t("consent.settings")}</button>
             </nav>
             <p style={{ margin: 0 }}>© 2026 NOXEL360. All rights reserved.</p>
           </footer>
