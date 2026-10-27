@@ -11,6 +11,9 @@ const COOKIE_DOMAIN = isProd ? ".noxel360.com" : undefined;
 const COOKIE_SECURE = isProd;
 const COOKIE_SAMESITE = "none";
 
+/** Durée de vie d'une session : celle du cookie, et le serveur refuse au-delà. */
+export const SESSION_MAX_AGE_MS = 1000 * 60 * 60 * 24 * 7; // 7 jours
+
 export function setSessionCookie(res: Response, sessionId: string) {
   res.cookie(SESSION_COOKIE_NAME, sessionId, {
     httpOnly: true,
@@ -18,7 +21,7 @@ export function setSessionCookie(res: Response, sessionId: string) {
     sameSite: COOKIE_SAMESITE,
     domain: COOKIE_DOMAIN,
     path: "/",
-    maxAge: 1000 * 60 * 60 * 24 * 7, // 7 days
+    maxAge: SESSION_MAX_AGE_MS,
   });
 }
 

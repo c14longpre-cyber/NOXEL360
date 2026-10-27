@@ -49,7 +49,14 @@ export async function createLinkExistingEmailTicket(input: {
     provider: input.provider,
     intent: input.intent,
     existingUserId: input.existingUserId,
-    identity: input.identity,
+    // Le ticket ne garde que ce qu'il faut pour relier le compte : pas de jetons.
+    identity: {
+      ...input.identity,
+      accessToken: null,
+      refreshToken: null,
+      expiresAt: null,
+      rawProfile: null,
+    },
     createdAt: new Date(now).toISOString(),
     expiresAt: new Date(now + ttlMinutes * 60 * 1000).toISOString(),
   };

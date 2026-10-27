@@ -8,7 +8,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "generate:languages": "node ./scripts/generateCountryLanguages.cjs"
+    "generate:languages": "node ./scripts/generateCountryLanguages.cjs",
+    "test": "node --test test/*.test.mjs",
+    "seo:pages": "node scripts/build-learn-hreflang.mjs && node scripts/build-sitemap.mjs"
   },
   "dependencies": {
     "@react-oauth/google": "^0.13.4",

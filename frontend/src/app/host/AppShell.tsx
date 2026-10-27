@@ -103,7 +103,6 @@ export function AppShell() {
           }}
         >
           <HeaderLanguage />
-          <span className="tier">{tier.toUpperCase()}</span>
           <UserMenu />
         </div>
       </header>

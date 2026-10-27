@@ -83,7 +83,7 @@ export async function findUserByEmail(email: string | null | undefined): Promise
 
   if (!db) {
     for (const user of users.values()) {
-      if (user.emailNormalized === normalized) {
+      if (user.emailNormalized === normalized && user.emailVerified) {
         return user;
       }
     }
@@ -91,7 +91,7 @@ export async function findUserByEmail(email: string | null | undefined): Promise
   }
 
   const { rows } = await db.query(
-    "SELECT * FROM users WHERE email_normalized = $1 ORDER BY created_at LIMIT 1",
+    "SELECT * FROM users WHERE email_normalized = $1 AND email_verified = TRUE ORDER BY created_at LIMIT 1",
     [normalized]
   );
   return rows[0] ? fromRow(rows[0]) : null;

@@ -1,6 +1,6 @@
 import { randomBytes } from "crypto";
 import type { Request } from "express";
-import { SESSION_COOKIE_NAME } from "./auth.cookies";
+import { SESSION_COOKIE_NAME, SESSION_MAX_AGE_MS } from "./auth.cookies";
 import { db, toIso } from "../db/pool";
 
 export type SessionRecord = {
@@ -48,14 +48,33 @@ export async function createSession(userId: string): Promise<SessionRecord> {
   return record;
 }
 
-export async function findSessionById(sessionId: string): Promise<SessionRecord | null> {
-  if (!db) return sessions.get(sessionId) || null;
-
-  const { rows } = await db.query("SELECT * FROM sessions WHERE id = $1", [sessionId]);
-  return rows[0] ? fromRow(rows[0]) : null;
+/** Une session expire 7 jours après sa création, comme son cookie. */
+export function isSessionExpired(session: SessionRecord, now = Date.now()): boolean {
+  const created = Date.parse(session.createdAt);
+  return !Number.isFinite(created) || now - created > SESSION_MAX_AGE_MS;
 }
 
-export async function touchSession(sessionId: string): Promise<void> {
+export async function findSessionById(sessionId: string): Promise<SessionRecord | null> {
+  let session: SessionRecord | null;
+  if (!db) {
+    session = sessions.get(sessionId) || null;
+  } else {
+    const { rows } = await db.query("SELECT * FROM sessions WHERE id = $1", [sessionId]);
+    session = rows[0] ? fromRow(rows[0]) : null;
+  }
+  if (session && isSessionExpired(session)) {
+    // Un cookie volé ou conservé au-delà de sa durée ne rouvre plus rien.
+    await deleteSession(session.id);
+    return null;
+  }
+  return session;
+}
+
+const TOUCH_INTERVAL_MS = 5 * 60 * 1000;
+
+export async function touchSession(sessionId: string, lastSeenAt?: string): Promise<void> {
+  // Une écriture au plus toutes les 5 minutes par session, pas à chaque appel.
+  if (lastSeenAt && Date.now() - Date.parse(lastSeenAt) < TOUCH_INTERVAL_MS) return;
   const now = new Date().toISOString();
 
   if (!db) {

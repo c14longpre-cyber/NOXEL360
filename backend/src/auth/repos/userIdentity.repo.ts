@@ -49,7 +49,17 @@ function fromRow(row: any): UserIdentityRecord {
   };
 }
 
-async function upsert(record: UserIdentityRecord): Promise<void> {
+async function upsert(input: UserIdentityRecord): Promise<void> {
+  // Les jetons OAuth et le profil brut ne servent qu'à la connexion : on ne les
+  // garde jamais (Loi 25 : ne conserver que le nécessaire ; une fuite de la base
+  // ne doit pas donner accès aux comptes Google, GitHub… des membres).
+  const record: UserIdentityRecord = {
+    ...input,
+    accessToken: null,
+    refreshToken: null,
+    expiresAt: null,
+    rawProfileJson: null,
+  };
   if (!db) {
     identities.set(makeKey(record.provider, record.providerUserId), record);
     return;

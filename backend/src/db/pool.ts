@@ -75,6 +75,18 @@ export async function ensureSchema(): Promise<void> {
     return;
   }
   await db.query(SCHEMA);
+  // Jetons OAuth et profils bruts : plus jamais conservés, on vide ceux d'avant.
+  const tokens = await db.query(
+    `UPDATE user_identities
+        SET access_token = NULL, refresh_token = NULL, expires_at = NULL, raw_profile_json = NULL
+      WHERE access_token IS NOT NULL OR refresh_token IS NOT NULL
+         OR (raw_profile_json IS NOT NULL AND raw_profile_json <> 'null'::jsonb)`
+  );
+  if (tokens.rowCount) console.log(`[db] Jetons OAuth effacés : ${tokens.rowCount} identité(s).`);
+  // Sessions de plus de 7 jours (durée du cookie) : supprimées.
+  const sessions = await db.query("DELETE FROM sessions WHERE created_at < now() - interval '7 days'");
+  if (sessions.rowCount) console.log(`[db] Sessions expirées supprimées : ${sessions.rowCount}.`);
+  await db.query("DELETE FROM auth_tickets WHERE expires_at < now()");
   console.log("[db] Postgres prêt.");
 }
 

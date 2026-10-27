@@ -1,32 +1,34 @@
-import { useAccountStore } from "../../account/AccountStore";
 import ConnectedAccountsCard from "../../account/components/ConnectedAccountsCard";
 import { useAuthStore } from "../../auth/AuthStore";
 import NoxelAccessButton from "../../auth/NoxelAccessButton";
 import UserMenu from "../../components/UserMenu";
 import NoxelAccountIcon from "../../components/NoxelAccountIcon";
+import { useModulesIndex } from "../modules/useModulesIndex";
 import { useI18n } from "@/useI18n";
 import { HudButton } from "@/components/hud/HudButton";
 
-function normalizeTier(
-  tier?: string
-): "bronze" | "silver" | "gold" | "platinum" | "diamond" {
-  const value = (tier || "").toLowerCase();
-
-  if (value === "bronze") return "bronze";
-  if (value === "silver") return "silver";
-  if (value === "gold") return "gold";
-  if (value === "platinum") return "platinum";
-  return "diamond";
+/**
+ * Page Compte : n'affiche que ce que le backend connaît vraiment, c'est-à-dire
+ * la session (/api/auth/session : utilisateur + fournisseurs reliés).
+ * NOXEL360 ne vend rien : pas de palier ni de facturation ici, chaque module
+ * (NOXEL SEO, NOXEL Forge) garde son compte et ses prix sur son propre site.
+ * Jamais de compte de démonstration à la place d'un vrai.
+ */
+function formatDate(value: string | null | undefined, locale: string): string {
+  if (!value) return "—";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "—";
+  try {
+    return date.toLocaleString(locale || undefined, { dateStyle: "medium", timeStyle: "short" });
+  } catch {
+    return date.toLocaleString();
+  }
 }
 
 export default function AccountPage() {
-  const { account, loading, error, backendSource, refreshAccount } =
-    useAccountStore();
-
-  const { user, isAuthenticated, loading: authLoading } = useAuthStore();
-  const { t } = useI18n();
-
-  const currentTier = normalizeTier(account?.billing.tier);
+  const { user, isAuthenticated, loading, refreshAuth } = useAuthStore();
+  const { t, language } = useI18n();
+  const modules = useModulesIndex();
 
   return (
     <div className="noxel-landing">
@@ -34,34 +36,19 @@ export default function AccountPage() {
         <header className="nx-hero">
           <div className="account-hero-layout">
             <div className="account-hero-left">
-              <img
-                src="/logos/NOXEL_360_LOGO.svg"
-                alt="NOXEL360"
-                style={{ height: 150 }}
-              />
+              <img src="/logos/NOXEL_360_LOGO.svg" alt="NOXEL360" style={{ height: 150 }} />
             </div>
 
             <div className="account-hero-center">
               <h1 className="nx-title">{t("account.title")}</h1>
-              <p className="nx-subtitle">{t("account.subtitle")}</p>
             </div>
 
             <div className="account-hero-right">
               <div
                 className="account-hero-top"
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 12,
-                  flexWrap: "wrap",
-                  justifyContent: "flex-end",
-                }}
+                style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap", justifyContent: "flex-end" }}
               >
-                <NoxelAccountIcon
-                  connected={isAuthenticated}
-                  tier={currentTier}
-                  size={78}
-                />
+                <NoxelAccountIcon connected={isAuthenticated} size={78} />
 
                 <HudButton
                   action="reload-page"
@@ -69,7 +56,7 @@ export default function AccountPage() {
                   label={t("account.refresh")}
                   busy={loading}
                   busyLabel={t("account.refresh")}
-                  onClick={refreshAccount}
+                  onClick={refreshAuth}
                 />
 
                 {!isAuthenticated ? <NoxelAccessButton /> : <UserMenu />}
@@ -77,46 +64,15 @@ export default function AccountPage() {
 
               <div
                 className="account-hero-meta"
-                style={{
-                  display: "flex",
-                  gap: 8,
-                  flexWrap: "wrap",
-                  justifyContent: "flex-end",
-                  marginTop: 10,
-                }}
+                style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "flex-end", marginTop: 10 }}
               >
                 <span className="pill">
-                  {t("account.source")}:{" "}
-                  {backendSource === "backend"
-                    ? t("account.source.live")
-                    : t("account.source.fallback")}
-                </span>
-
-                <span className="pill">
-                  {t("account.status")}:{" "}
-                  {loading ? t("common.loading") : t("account.ready")}
-                </span>
-
-                <span className="pill">
                   {t("account.auth")}:{" "}
-                  {authLoading
-                    ? t("account.checking")
-                    : isAuthenticated
-                    ? t("account.connected")
-                    : t("account.guest")}
+                  {loading ? t("account.checking") : isAuthenticated ? t("account.connected") : t("account.guest")}
                 </span>
-
                 {user?.name && (
                   <span className="pill">
                     {t("account.signedInAs")}: {user.name}
-                  </span>
-                )}
-
-                {user?.email && <span className="pill">{user.email}</span>}
-
-                {error && (
-                  <span className="pill">
-                    {t("account.error")}: {error}
                   </span>
                 )}
               </div>
@@ -124,84 +80,49 @@ export default function AccountPage() {
           </div>
         </header>
 
-        <div
-          className="nx-grid"
-          style={{ gridTemplateColumns: "repeat(2, minmax(0, 1fr))" }}
-        >
+        <div className="nx-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
           <article className="nx-card">
             <div className="nx-card__title">{t("account.profile")}</div>
-            <p className="nx-card__text">
-              <strong>{t("account.name")}:</strong>{" "}
-              {account?.profile.name ?? user?.name ?? "—"}
-              <br />
-              <strong>{t("account.email")}:</strong>{" "}
-              {account?.profile.email ?? user?.email ?? "—"}
-              <br />
-              <strong>{t("account.language")}:</strong>{" "}
-              {account?.profile.language ?? "—"}
-              <br />
-              <strong>{t("account.workspace")}:</strong>{" "}
-              {account?.profile.workspace ?? "—"}
-            </p>
+            {isAuthenticated && user ? (
+              <p className="nx-card__text">
+                <strong>{t("account.name")}:</strong> {user.name ?? "—"}
+                <br />
+                <strong>{t("account.email")}:</strong> {user.email ?? "—"}
+                <br />
+                <strong>{t("account.lastLogin")}:</strong> {formatDate(user.lastLoginAt, language)}
+              </p>
+            ) : (
+              <div className="nx-card__text" style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                <span>{loading ? t("account.checking") : t("account.guest")}</span>
+                {!loading && <NoxelAccessButton />}
+              </div>
+            )}
           </article>
 
           <article className="nx-card">
-            <div className="nx-card__title">{t("account.billing")}</div>
-            <p className="nx-card__text">
-              <strong>{t("account.tier")}:</strong>{" "}
-              {account?.billing.tier ?? "—"}
-              <br />
-              <strong>{t("account.status")}:</strong>{" "}
-              {account?.billing.status ?? "—"}
-              <br />
-              <strong>{t("account.renewal")}:</strong>{" "}
-              {account?.billing.renewalDate ?? "—"}
-              <br />
-              <strong>{t("account.plan")}:</strong>{" "}
-              {account?.billing.plan ?? "—"}
-            </p>
-          </article>
-
-          <article className="nx-card">
-            <div className="nx-card__title">{t("account.preferences")}</div>
-            <p className="nx-card__text">
-              <strong>{t("account.theme")}:</strong>{" "}
-              {account?.preferences.theme ?? "—"}
-              <br />
-              <strong>{t("account.notifications")}:</strong>{" "}
-              {account?.preferences.notifications ?? "—"}
-              <br />
-              <strong>{t("account.interfaceMode")}:</strong>{" "}
-              {account?.preferences.interfaceMode ?? "—"}
-              <br />
-              <strong>{t("account.morphProfile")}:</strong>{" "}
-              {account?.preferences.morphProfile ?? "—"}
-            </p>
-          </article>
-
-          <article className="nx-card">
-            <div className="nx-card__title">{t("account.security")}</div>
-            <p className="nx-card__text">
-              <strong>{t("account.password")}:</strong>{" "}
-              {account?.security.password ?? "—"}
-              <br />
-              <strong>{t("account.twoFactor")}:</strong>{" "}
-              {account?.security.twoFactor ?? "—"}
-              <br />
-              <strong>{t("account.lastLogin")}:</strong>{" "}
-              {account?.security.lastLogin ?? "—"}
-              <br />
-              <strong>{t("account.sessionProtection")}:</strong>{" "}
-              {account?.security.sessionProtection ?? "—"}
-            </p>
+            <div className="nx-card__title">{t("dashboard.modules")}</div>
+            <ul className="nx-card__text" style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 8 }}>
+              {modules.map((m) => (
+                <li key={m.key}>
+                  <a
+                    href={m.route}
+                    {...(m.external ? { target: "_blank", rel: "noopener" } : {})}
+                    style={{ color: "#3ddc84", textDecoration: "none" }}
+                  >
+                    {m.name} — {t("dashboard.card.open")}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </article>
         </div>
 
-        <div style={{ marginTop: 20 }}>
-          <ConnectedAccountsCard />
-        </div>
+        {isAuthenticated && (
+          <div style={{ marginTop: 20 }}>
+            <ConnectedAccountsCard />
+          </div>
+        )}
       </div>
     </div>
   );
 }
-

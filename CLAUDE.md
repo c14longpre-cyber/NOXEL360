@@ -21,9 +21,11 @@ noxel360/
 │   │   └── language/   LanguageStore.tsx (RTL auto)
 │   ├── public/learn/   Pages éducatives statiques (~150 fichiers + dossiers de langue)
 │   ├── public/pricing/ Page d'offre déployée (noxel360.com/pricing) : modules live + teaser Spectra, sans prix
-│   └── scripts/        validate-locales.cjs, auto-detect-translated-languages.cjs, CSV d'inventaire i18n
+│   ├── public/404.html Vraie page 404 (servie par Vercel pour toute adresse inconnue)
+│   ├── vercel.json     Configuration Vercel EN SERVICE (le projet Vercel a frontend/ comme racine)
+│   ├── scripts/        validate-locales.cjs, build-learn-hreflang.mjs, build-sitemap.mjs, CSV d'inventaire i18n
+│   └── test/           npm test : canonical/hreflang/sitemaps à jour, rewrites, images de partage
 ├── noxel-library/      Sous-projet bibliothèque
-└── vercel.json         Build frontend + rewrite /api/* → Railway + catch-all SPA
 ```
 
 ## Modules (`frontend/src/app/modules/useModulesIndex.ts`)
@@ -48,11 +50,14 @@ Prix : chaque module garde ses prix et paliers sur son propre site (noxelseo.com
 3. **i18n** : `FULLY_TRANSLATED_CODES` (languageCatalog.ts) liste les langues complètes (26 aujourd'hui). Ajouter une langue = `locales/XX.ts` + entrée dans `translate.ts` + code dans `FULLY_TRANSLATED_CODES`. Clés identiques à `en.ts`.
 4. **Langues autochtones** : jamais de traduction automatique publiée. Seuls des locuteurs natifs ou traducteurs approuvés par la communauté (voir CONTRIBUTING_LANGUAGES.md).
 5. **Couleurs officielles** : vert #3ddc84, violet #A855F7. L'ancien vert #3cde6a (et `rgba(60,222,106,…)`) a été remplacé partout ; il ne doit pas revenir.
-6. **vercel.json** : le rewrite `/api/:path*` doit précéder le catch-all SPA `/((?!api/).*)`.
+6. **vercel.json** : seul `frontend/vercel.json` est lu (racine du projet Vercel = frontend/). Le site appelle l'API directement sur https://api.noxel360.com (`VITE_API_URL`), pas de proxy /api. Les rewrites vers index.html ne listent que les routes de App.tsx (/dashboard, /nexus, /privacy, /terms, /app/*, /auth/*) : pas de catch-all, une adresse inconnue répond 404 (public/404.html). Nouvelle route React = l'ajouter aux rewrites.
 7. **Contrat API** : réponses `{ ok: boolean, ... , error?: string }`. Codes 400 / 401 / 403 / 500 cohérents.
 8. **CORS** : géré uniquement par `server.ts` (liste blanche `allowedOrigins` + `credentials: true`). Ne jamais ajouter d'en-tête `Access-Control-Allow-Origin` dans `vercel.json` : un `*` est incompatible avec les cookies de session.
 9. **Routes actives** : seules les routes montées dans `server.ts` existent en production : `/health`, `/api/health` et `/api/auth/*`. `/api/seo/*` n'est qu'une redirection 301 vers https://noxelseo.com : NOXEL360 n'a plus de moteur SEO interne, ne pas en recréer un. Un fichier de route non monté est du code mort : ne pas le présenter comme fonctionnel.
-10. **Comptes et sessions** : stockés dans Postgres (`backend/src/db/pool.ts`, `DATABASE_URL`). En production, `DATABASE_URL` doit toujours être définie : sans elle, tout est perdu au redémarrage. Ne jamais renvoyer au navigateur les jetons OAuth (`accessToken`, `refreshToken`) ni le profil brut : `listConnectedProviders` les met à null.
+10. **Comptes et sessions** : stockés dans Postgres (`backend/src/db/pool.ts`, `DATABASE_URL`). En production, `DATABASE_URL` doit toujours être définie : sans elle, tout est perdu au redémarrage. Les jetons OAuth (`accessToken`, `refreshToken`) et le profil brut ne sont jamais stockés (`userIdentity.repo.ts` les met à null, `ensureSchema` vide les anciens). Une session expire 7 jours après sa création, comme son cookie (`SESSION_MAX_AGE_MS`). Un e-mail non garanti par le fournisseur (Microsoft, Facebook, TikTok) est gardé mais `email_verified = false` : il ne sert jamais à retrouver un compte existant. Routes /api/auth/* limitées par adresse IP (`middleware/authLimiter.ts`). Tests : `npm test` dans backend/.
+11. **Comptes des modules** : NOXEL SEO et NOXEL Forge ont leur propre connexion et leurs propres forfaits sur leur site ; le compte NOXEL360 couvre le tableau de bord, Nexus et Learn. Ne jamais écrire « un seul compte / une seule connexion pour tous les modules » tant que ce n'est pas vrai dans le code.
+12. **Page Compte** (`app/pages/AccountPage.tsx`) : n'affiche que la session réelle (`/api/auth/session`). Jamais de compte de démonstration, de palier ou de facturation à la place.
+13. **Pages Learn et sitemaps** : `npm run seo:pages` (frontend/) régénère canonical + hreflang des pages Learn (chaque page traduite est sa propre canonical ; seules les versions présentes sur le disque sont listées) puis les sitemaps (index sitemap.xml → sitemap-core, sitemap-learn, sitemap-learn-i18n). Ne jamais les écrire à la main ; `npm test` échoue s'ils sont périmés.
 
 ## Assistants
 

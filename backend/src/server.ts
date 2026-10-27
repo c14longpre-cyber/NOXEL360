@@ -33,7 +33,7 @@ app.use(
   })
 );
 
-app.use(express.json());
+app.use(express.json({ limit: "20kb" }));
 app.use(cookieParser());
 
 // Health checks
@@ -43,7 +43,6 @@ app.get("/health", (_req, res) => {
     service: "noxel360-backend",
     status: "online",
     uptimeSec: Math.floor(process.uptime()),
-    allowedOrigins,
   });
 });
 

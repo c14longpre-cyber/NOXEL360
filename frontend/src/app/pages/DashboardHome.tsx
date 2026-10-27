@@ -79,7 +79,6 @@ export default function DashboardHome() {
 
         <div className="hdr-right">
           <HeaderLanguage />
-          <span className="tier">{tier.toUpperCase()}</span>
           <UserMenu />
         </div>
       </header>
@@ -173,7 +172,7 @@ export default function DashboardHome() {
                 <p><strong style={{ color: "#fff" }}>NOXEL SEO</strong> provides automated site audits, technical and content scoring, AI-powered fix suggestions, and search visibility tracking — including integration with Google Search Console for real impressions, clicks, and query data. It&apos;s built for solopreneurs and small teams who need enterprise-grade SEO tooling without the enterprise price tag.</p>
                 <p><strong style={{ color: "#fff" }}>NOXEL Forge</strong> is a verified backlink exchange network. Members submit real sites in exchange for reviewed, quality backlinks — every submission is screened by an AI reviewer against spam, thin content, and off-niche criteria before approval, keeping the network free of low-quality link farms.</p>
                 <p><strong style={{ color: "#fff" }}>NOXEL Nexus</strong> is the language and region intelligence engine underneath the ecosystem — detecting a visitor&apos;s language, region, and cultural context to adapt content and experience automatically across NOXEL360&apos;s products.</p>
-                <p>Together, these three products form a connected toolkit: sign in once, and move between search optimization, link building, and localization without juggling separate accounts or tools.</p>
+                <p>Together, these three products form a connected toolkit: search optimization, link building, and localization, each on its own site and linked from this dashboard.</p>
               </section>
 
               </header>

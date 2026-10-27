@@ -132,7 +132,8 @@ export const facebookProvider: OAuthProviderAdapter = {
       provider: "facebook",
       providerUserId,
       email: me.email || null,
-      emailVerified: me.email ? true : null,
+      // Facebook ne garantit pas que l'adresse renvoyée a été confirmée.
+      emailVerified: null,
       displayName: me.name || null,
       givenName: me.first_name || null,
       familyName: me.last_name || null,
