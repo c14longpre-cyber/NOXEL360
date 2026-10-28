@@ -23,6 +23,20 @@ import {
 } from "./auth.session";
 import { findUserById } from "./repos/user.repo";
 import { getFrontendUrl } from "./auth.frontend-url";
+import { HttpError } from "../utils/http";
+
+/**
+ * Réponse d'erreur : le message n'est montré que pour les erreurs prévues
+ * (HttpError). Les autres (configuration, base, fournisseur) restent dans les
+ * journaux du serveur et le navigateur reçoit un message générique.
+ */
+function sendError(res: Response, error: unknown, context: string) {
+  if (error instanceof HttpError) {
+    return res.status(error.status).json({ ok: false, error: error.message });
+  }
+  console.error(`[auth] ${context}:`, error);
+  return res.status(500).json({ ok: false, error: `${context} failed` });
+}
 
 function isAuthIntent(value: string): value is AuthIntent {
   return value === "signin" || value === "link";
@@ -133,7 +147,7 @@ async function getCurrentUser(req: Request) {
   const session = await findSessionById(sessionId);
   if (!session) return null;
 
-  await touchSession(session.id);
+  await touchSession(session.id, session.lastSeenAt);
 
   const user = await findUserById(session.userId);
   if (!user) return null;
@@ -188,9 +202,7 @@ export async function startOAuth(req: Request, res: Response) {
 
     return res.redirect(authorizationUrl);
   } catch (error) {
-    const message =
-      error instanceof Error ? error.message : "Failed to start OAuth";
-    return res.status(500).json({ ok: false, error: message });
+    return sendError(res, error, "OAuth start");
   }
 }
 
@@ -260,9 +272,7 @@ export async function handleOAuthCallback(req: Request, res: Response) {
 
     return res.redirect(302, `${frontendUrl}/app/account`);
   } catch (error) {
-    const message =
-      error instanceof Error ? error.message : "OAuth callback failed";
-    return res.status(500).json({ ok: false, error: message });
+    return sendError(res, error, "OAuth callback");
   }
 }
 
@@ -287,9 +297,7 @@ export async function getSession(req: Request, res: Response) {
       providers,
     });
   } catch (error) {
-    const message =
-      error instanceof Error ? error.message : "Failed to load session";
-    return res.status(500).json({ ok: false, error: message });
+    return sendError(res, error, "Session");
   }
 }
 
@@ -320,11 +328,7 @@ export async function postResolveExistingEmail(req: Request, res: Response) {
       user: result.user,
     });
   } catch (error) {
-    const message =
-      error instanceof Error
-        ? error.message
-        : "Failed to resolve existing email link";
-    return res.status(500).json({ ok: false, error: message });
+    return sendError(res, error, "Account linking");
   }
 }
 
@@ -342,7 +346,6 @@ export async function postLogout(req: Request, res: Response) {
       loggedOut: true,
     });
   } catch (error) {
-    const message = error instanceof Error ? error.message : "Failed to logout";
-    return res.status(500).json({ ok: false, error: message });
+    return sendError(res, error, "Logout");
   }
 }

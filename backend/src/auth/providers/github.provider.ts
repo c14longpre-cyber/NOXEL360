@@ -82,7 +82,10 @@ export const githubProvider: OAuthProviderAdapter = {
       throw new Error("GitHub profile missing id");
     }
 
+    // GitHub n'accepte comme e-mail public qu'une adresse vérifiée. Sinon, on ne
+    // retient que l'adresse principale ET vérifiée : jamais une adresse au hasard.
     let email = me.email || null;
+    let emailVerified: boolean | null = email ? true : null;
     if (!email) {
       const emailRes = await fetch("https://api.github.com/user/emails", {
         headers: { Authorization: `Bearer ${accessToken}`, Accept: "application/json" },
@@ -91,7 +94,8 @@ export const githubProvider: OAuthProviderAdapter = {
         const emails = await emailRes.json() as Array<{ email: string; primary: boolean; verified: boolean }>;
         if (Array.isArray(emails)) {
           const primary = emails.find((e) => e.primary && e.verified);
-          email = primary?.email || emails[0]?.email || null;
+          email = primary?.email || null;
+          emailVerified = primary ? true : null;
         }
       }
     }
@@ -100,7 +104,7 @@ export const githubProvider: OAuthProviderAdapter = {
       provider: "github",
       providerUserId,
       email,
-      emailVerified: null,
+      emailVerified,
       displayName: me.name || me.login || null,
       givenName: null,
       familyName: null,

@@ -215,7 +215,6 @@ export default function LandingPage() {
                 <div className="stat-row"><span className="label">{t("landing.stats.live")}</span><span className="val">2 (SEO, Forge)</span></div>
                 <div className="stat-row"><span className="label">{t("landing.stats.core")}</span><span className="val">Nexus</span></div>
                 <div className="stat-row"><span className="label">{t("landing.stats.next")}</span><span className="val">Spectra</span></div>
-                <div className="stat-row"><span className="label">{t("landing.stats.accounts")}</span><span className="val">1</span></div>
                 <div className="stat-row"><span className="label">{t("landing.stats.languages")}</span><span className="val">115</span></div>
                 <div className="stat-row"><span className="label">{t("landing.stats.builtFor")}</span><span className="val">{t("landing.stats.builtForValue")}</span></div>
               </div>

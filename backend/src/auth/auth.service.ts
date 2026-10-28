@@ -1,4 +1,5 @@
 import type { AuthIntent, NormalizedOAuthIdentity } from "./auth.types";
+import { HttpError } from "../utils/http";
 import { createLinkExistingEmailTicket } from "./repos/authTicket.repo";
 import {
   createUser,
@@ -47,7 +48,7 @@ export async function authenticateWithOAuthIdentity(input: {
 
   if (intent === "link") {
     if (!currentUserId) {
-      throw new Error("Cannot link provider without active user session");
+      throw new HttpError(401, "Cannot link provider without active user session");
     }
 
     const currentUser = await findUserById(currentUserId);
@@ -56,7 +57,7 @@ export async function authenticateWithOAuthIdentity(input: {
     }
 
     if (existingIdentity && existingIdentity.userId !== currentUserId) {
-      throw new Error("This provider account is already linked to another user");
+      throw new HttpError(409, "This provider account is already linked to another user");
     }
 
     if (!existingIdentity) {
@@ -204,11 +205,11 @@ export async function resolveExistingEmailLink(input: {
   const ticket = await findTicketById(input.ticketId);
 
   if (!ticket) {
-    throw new Error("Link ticket expired or not found");
+    throw new HttpError(410, "Link ticket expired or not found");
   }
 
   if (ticket.existingUserId !== input.userId) {
-    throw new Error("This link ticket does not belong to the current user");
+    throw new HttpError(403, "This link ticket does not belong to the current user");
   }
 
   const existingIdentity = await findIdentityByProvider(
@@ -217,7 +218,7 @@ export async function resolveExistingEmailLink(input: {
   );
 
   if (existingIdentity && existingIdentity.userId !== input.userId) {
-    throw new Error("This provider account is already linked to another user");
+    throw new HttpError(409, "This provider account is already linked to another user");
   }
 
   if (!existingIdentity) {

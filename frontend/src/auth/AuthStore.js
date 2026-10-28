@@ -23,38 +23,6 @@ function mapBackendUser(user) {
         lastLoginAt: user.lastLoginAt,
     };
 }
-function mapOAuthUserToAuthUser(oauthUser) {
-    const now = new Date().toISOString();
-    return {
-        id: `${oauthUser.provider}:${oauthUser.providerUserId}`,
-        email: oauthUser.email || null,
-        name: oauthUser.name || null,
-        avatarUrl: oauthUser.avatarUrl || null,
-        emailVerified: Boolean(oauthUser.email),
-        createdAt: now,
-        updatedAt: now,
-        lastLoginAt: now,
-    };
-}
-function mapOAuthUserToConnectedProvider(oauthUser, userId) {
-    const now = new Date().toISOString();
-    return {
-        id: `${oauthUser.provider}:${oauthUser.providerUserId}`,
-        userId,
-        provider: oauthUser.provider,
-        providerUserId: oauthUser.providerUserId,
-        providerEmail: oauthUser.email || null,
-        providerEmailVerified: Boolean(oauthUser.email),
-        providerDisplayName: oauthUser.name || null,
-        providerAvatarUrl: oauthUser.avatarUrl || null,
-        accessToken: null,
-        refreshToken: null,
-        expiresAt: null,
-        rawProfileJson: oauthUser,
-        linkedAt: now,
-        lastUsedAt: now,
-    };
-}
 function readStoredOAuthUser() {
     try {
         const raw = localStorage.getItem(OAUTH_USER_STORAGE_KEY);
@@ -183,6 +151,15 @@ export function AuthProvider({ children }) {
                 writeStoredOAuthProviders(mergedProviders);
                 return;
             }
+            if (json?.ok && !json.authenticated) {
+                // Le serveur répond « pas connecté » (session expirée, déconnexion
+                // ailleurs) : on oublie la copie locale au lieu de la réafficher.
+                clearStoredOAuthUser();
+                clearStoredOAuthProviders();
+                setUser(null);
+                setProviders([]);
+                return;
+            }
             const { storedUser, storedProviders } = restoreLocalAuth();
             setUser(storedUser);
             setProviders(storedProviders);
@@ -203,18 +180,6 @@ export function AuthProvider({ children }) {
             return;
         }
         window.location.href = `${API_BASE}/api/auth/${provider}/start?intent=${intent}`;
-    }
-    function setOAuthUser(oauthUser) {
-        const normalizedUser = mapOAuthUserToAuthUser(oauthUser);
-        const normalizedProvider = mapOAuthUserToConnectedProvider(oauthUser, normalizedUser.id);
-        setUser(normalizedUser);
-        setProviders((prev) => {
-            const merged = mergeProviders(prev, [normalizedProvider]);
-            writeStoredOAuthProviders(merged);
-            return merged;
-        });
-        writeStoredOAuthUser(normalizedUser);
-        setLoading(false);
     }
     async function logout() {
         try {
@@ -250,7 +215,6 @@ export function AuthProvider({ children }) {
         loginWithProvider,
         logout,
         refreshAuth,
-        setOAuthUser,
     }), [user, providers, loading]);
     return _jsx(AuthContext.Provider, { value: value, children: children });
 }

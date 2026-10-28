@@ -52,7 +52,7 @@ export function AppShell() {
                             flex: "0 0 auto",
                             position: "relative",
                             zIndex: 20,
-                        }, children: [_jsx(HeaderLanguage, {}), _jsx("span", { className: "tier", children: tier.toUpperCase() }), _jsx(UserMenu, {})] })] }), _jsx(TranslationStatusBanner, {}), _jsxs("div", { className: "noxel-body", children: [_jsx("aside", { className: "noxel-sidenav", children: _jsx("div", { style: {
+                        }, children: [_jsx(HeaderLanguage, {}), _jsx(UserMenu, {})] })] }), _jsx(TranslationStatusBanner, {}), _jsxs("div", { className: "noxel-body", children: [_jsx("aside", { className: "noxel-sidenav", children: _jsx("div", { style: {
                                 minHeight: 0,
                                 display: "flex",
                                 flexDirection: "column",

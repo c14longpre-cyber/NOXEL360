@@ -1,7 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { Suspense, lazy, useEffect } from "react";
 import { useAuthStore } from "./auth/AuthStore";
-import { AccountProvider } from "./account/AccountStore";
 
 // Route-level code splitting: each page's JS is only downloaded and executed
 // when that route is actually visited, instead of all bundled into the main
@@ -63,7 +62,7 @@ export default function App() {
 
         <Route path="/app" element={<AppShell />}>
           <Route index element={<Navigate to="/dashboard" replace />} />
-          <Route path="account" element={<AccountProvider><AccountPage /></AccountProvider>} />
+          <Route path="account" element={<AccountPage />} />
         </Route>
 
         <Route path="/privacy" element={<PrivacyPage />} />

@@ -6,14 +6,15 @@ import {
   postResolveExistingEmail,
   startOAuth,
 } from "./auth.controller";
+import { linkLimiter, oauthLimiter, sessionLimiter } from "../middleware/authLimiter";
 
 export const authRouter = Router();
 
-authRouter.get("/session", getSession);
-authRouter.get("/me", getSession);
-authRouter.post("/logout", postLogout);
-authRouter.post("/resolve-existing-email", postResolveExistingEmail);
+authRouter.get("/session", sessionLimiter, getSession);
+authRouter.get("/me", sessionLimiter, getSession);
+authRouter.post("/logout", sessionLimiter, postLogout);
+authRouter.post("/resolve-existing-email", linkLimiter, postResolveExistingEmail);
 
-authRouter.get("/:provider/start", startOAuth);
-authRouter.get("/:provider/callback", handleOAuthCallback);
+authRouter.get("/:provider/start", oauthLimiter, startOAuth);
+authRouter.get("/:provider/callback", oauthLimiter, handleOAuthCallback);
 

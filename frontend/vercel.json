@@ -1,7 +1,60 @@
 {
+  "redirects": [
+    {
+      "source": "/learn/technologies.html",
+      "destination": "/learn/development.html",
+      "permanent": true
+    },
+    {
+      "source": "/pricing.html",
+      "destination": "/pricing/",
+      "permanent": true
+    },
+    {
+      "source": "/pricing/tiers/:path*",
+      "destination": "/pricing/",
+      "permanent": true
+    },
+    {
+      "source": "/account",
+      "destination": "/app/account",
+      "permanent": true
+    },
+    {
+      "source": "/learn/uxui-hub-updated.html",
+      "destination": "/learn/uxui.html",
+      "permanent": true
+    },
+    {
+      "source": "/learn/shopify-vs-woocommerce.html",
+      "destination": "/learn/shopify-vs-woocommerce-explained.html",
+      "permanent": true
+    },
+    {
+      "source": "/learn/shopping-cart-abandonment.html",
+      "destination": "/learn/cart-abandonment-explained.html",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
-      "source": "/((?!assets/|logos/|pricing/|robots.txt|sitemap.xml|favicon.ico).*)",
+      "source": "/(dashboard|nexus|privacy|terms)",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/nexus/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/app",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/app/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/auth/:path*",
       "destination": "/index.html"
     }
   ],
@@ -11,7 +64,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://accounts.google.com https://apis.google.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https://api.noxel360.com https://noxel360-production.up.railway.app https://accounts.google.com; frame-src https://accounts.google.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://accounts.google.com https://apis.google.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https://api.noxel360.com https://accounts.google.com; frame-src https://accounts.google.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
         },
         {
           "key": "X-Frame-Options",
