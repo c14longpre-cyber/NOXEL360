@@ -1,22 +1,18 @@
-import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import HeaderLanguage from "../components/HeaderLanguage";
-import UserMenu from "../components/UserMenu";
-import NoxelAccessButton from "../auth/NoxelAccessButton";
-import { useAuthStore } from "../auth/AuthStore";
+import NoxelTopbar from "../components/NoxelTopbar";
+import Footer from "../components/Footer";
 import { useI18n } from "../useI18n";
 import { HudLink } from "../components/hud/HudButton";
 import { HudRouteLink } from "../components/hud/HudRouteLink";
 import "./LandingPage.css";
 
 // Textes : clés `landing.*` des dictionnaires (frontend/src/i18n/locales).
-// Les noms de produits (NOXEL SEO, NOXEL Forge, NOXEL Nexus, NOXEL Spectra) ne se traduisent pas.
+// Les noms de produits (NOXEL SEO, NOXEL FORGE, NOXEL NEXUS, NOXEL SPECTRA) ne se traduisent pas.
 
 const FAQ_COUNT = 8;
 const dtStyle = { fontWeight: 700, color: "var(--nl-text, #eef1f0)", marginBottom: 6 } as const;
 
 export default function LandingPage() {
-  const { isAuthenticated } = useAuthStore();
   const { t } = useI18n();
 
   useEffect(() => {
@@ -26,23 +22,7 @@ export default function LandingPage() {
 
   return (
     <div className="noxel-landing">
-      <nav className="nl-nav">
-        <Link to="/" className="logo">
-          <img src="/logos/NOXEL_360_LOGO.svg" alt="NOXEL360" width="150" height="150" style={{ borderRadius: 8, objectFit: "contain" }} />
-        </Link>
-        <div className="nav-links">
-          <a href="#modules">{t("landing.nav.modules")}</a>
-          <a href="#whats-next">{t("landing.nav.whatsNext")}</a>
-          <a href="#how-it-works">{t("landing.nav.howItWorks")}</a>
-          <a href="/learn">{t("landing.nav.learn")}</a>
-          <Link to="/pricing">{t("landing.nav.pricing")}</Link>
-        </div>
-        <div className="nav-right">
-          <HeaderLanguage />
-          {isAuthenticated ? <UserMenu /> : <NoxelAccessButton />}
-          <HudRouteLink to="/dashboard" action="open-project" compact className="nav-hud" label={t("landing.nav.openDashboard")} />
-        </div>
-      </nav>
+      <NoxelTopbar />
 
       <main>
         <div className="hero">
@@ -103,7 +83,7 @@ export default function LandingPage() {
               <div className="module-card">
                 <span className="icon">🔗</span>
                 <div className="module-top">
-                  <h3>NOXEL Forge</h3>
+                  <h3>NOXEL FORGE</h3>
                   <span className="badge live">{t("landing.badge.live")}</span>
                 </div>
                 <p>{t("landing.forge.desc")}</p>
@@ -118,7 +98,7 @@ export default function LandingPage() {
               <div className="module-card">
                 <span className="icon">🌐</span>
                 <div className="module-top">
-                  <h3>NOXEL Nexus</h3>
+                  <h3>NOXEL NEXUS</h3>
                   <span className="badge core">{t("landing.badge.core")}</span>
                 </div>
                 <p>{t("landing.nexus.desc")}</p>
@@ -246,26 +226,23 @@ export default function LandingPage() {
         </div>
       </main>
 
-      <footer>
-        <div className="wrap">
-          <div className="footer-top">
-            <p className="footer-desc">{t("landing.footer.desc")}</p>
-            <div className="footer-links">
-              <a href="https://noxelseo.com">NOXEL SEO</a>
-              <a href="https://noxelforge.com">NOXEL Forge</a>
-              <Link to="/nexus">NOXEL Nexus</Link>
-              <a href="https://noxelspectra.com">NOXEL Spectra</a>
-              <Link to="/pricing">{t("landing.nav.pricing")}</Link>
-              <a href="/learn">{t("landing.nav.learn")}</a>
-              <Link to="/app/account">{t("landing.footer.account")}</Link>
-              <Link to="/privacy">{t("landing.footer.privacy")}</Link>
-              <Link to="/terms">{t("landing.footer.terms")}</Link>
-              <button type="button" data-noxel-consent-settings className="footer-consent">{t("consent.settings")}</button>
-            </div>
-          </div>
-          <div className="footer-bottom">{t("landing.footer.rights")}</div>
-        </div>
-      </footer>
+      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 20px" }}>
+        <Footer
+          brand="NOXEL360"
+          siteUrl="https://noxel360.com"
+          contactEmail="founder@noxel360.com"
+          links={[
+            { label: "NOXEL SEO", href: "https://noxelseo.com", external: true },
+            { label: "NOXEL FORGE", href: "https://noxelforge.com", external: true },
+            { label: "NOXEL NEXUS", href: "/nexus" },
+            { label: "NOXEL SPECTRA", href: "https://noxelspectra.com", external: true },
+            { label: t("landing.nav.pricing"), href: "/pricing/" },
+            { label: t("landing.nav.learn"), href: "/learn/" },
+            { label: t("landing.footer.privacy"), href: "/privacy" },
+            { label: t("landing.footer.terms"), href: "/terms" },
+          ]}
+        />
+      </div>
     </div>
   );
 }

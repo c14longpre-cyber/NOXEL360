@@ -84,51 +84,17 @@ export default function HeaderLanguage() {
     <div ref={containerRef} style={{ position: "relative" }}>
       <button
         type="button"
-        className="header-lang-btn"
+        className="nx-pill header-lang-btn"
         onClick={() => setMenuOpen((v) => !v)}
         aria-label={t("header.language.open")}
         aria-haspopup="listbox"
         aria-expanded={menuOpen}
         title={t("header.language.open")}
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: 10,
-          minWidth: 140,
-          minHeight: 46,
-          padding: "10px 16px",
-          borderRadius: 999,
-          border: "1px solid rgba(255,255,255,0.14)",
-          background: menuOpen ? "rgba(255,255,255,0.10)" : "rgba(255,255,255,0.05)",
-          color: "white",
-          fontWeight: 700,
-          fontSize: 15,
-          cursor: "pointer",
-          position: "relative",
-          zIndex: 30,
-          backdropFilter: "blur(8px)",
-          WebkitBackdropFilter: "blur(8px)",
-          transition: "background 120ms ease",
-        }}
       >
-        <span style={{ fontSize: 18 }}>{currentLanguage.flag}</span>
-        <span>{currentLanguage.code.toUpperCase()}</span>
-        <span className="header-lang-native" style={{ opacity: 0.72, fontWeight: 500 }}>
-          {currentLanguage.nativeLabel}
-        </span>
-        <span
-          aria-hidden="true"
-          style={{
-            opacity: 0.6,
-            fontSize: 11,
-            marginLeft: 2,
-            transform: menuOpen ? "rotate(180deg)" : "rotate(0deg)",
-            transition: "transform 150ms ease",
-          }}
-        >
-          ▼
-        </span>
+        <span aria-hidden="true">{currentLanguage.flag}</span>
+        <span className="nx-pill__code">{currentLanguage.code.toUpperCase()}</span>
+        <span className="nx-pill__muted header-lang-native">{currentLanguage.nativeLabel}</span>
+        <span className="nx-caret" aria-hidden="true">▼</span>
       </button>
 
       {menuOpen && (

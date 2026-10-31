@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { HudLink } from "./HudButton";
 import type { HudAction } from "./hud-data";
 
-// Kit HUD copié tel quel depuis NOXEL Spectra (HudButton.tsx, hud-buttons.css, hud-data.ts) :
+// Kit HUD copié tel quel depuis NOXEL SPECTRA (HudButton.tsx, hud-buttons.css, hud-data.ts) :
 // ne pas le modifier ici, le resynchroniser depuis Spectra. Ce fichier ajoute seulement
 // une variante pour les routes internes (navigation SPA sans rechargement).
 type Props = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "children" | "href"> & {

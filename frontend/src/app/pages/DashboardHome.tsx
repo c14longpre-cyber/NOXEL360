@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { LOGO_BY_ID } from "@/app/modules/logos";
 import { useModulesIndex } from "../modules/useModulesIndex";
-import UserMenu from "@/components/UserMenu";
-import HeaderLanguage from "@/components/HeaderLanguage";
+import NoxelTopbar from "@/components/NoxelTopbar";
 import TranslationStatusBanner from "@/components/TranslationStatusBanner";
 import { useI18n } from "@/useI18n";
 import { HudLink } from "@/components/hud/HudButton";
@@ -47,41 +46,7 @@ export default function DashboardHome() {
 
   return (
     <div className="noxel-app" data-tier={tier}>
-      <header className="noxel-header">
-        <div className="hdr-left">
-          <Link
-            to="/dashboard"
-            aria-label={t("dashboard.title")}
-            style={{
-              display: "inline-flex",
-              width: 200,
-              height: 200,
-              alignItems: "center",
-              justifyContent: "center",
-              textDecoration: "none",
-              marginRight: 10,
-              flex: "0 0 auto",
-            }}
-          >
-            <img
-              src={LOGO_BY_ID["360"]}
-              alt="Noxel360"
-              loading="eager"
-              style={{ width: "100%", height: "100%", objectFit: "contain" }}
-            />
-          </Link>
-
-          <div>
-            <div className="brand">NOXEL360</div>
-            <div className="tag">{t("dashboard.tagline")}</div>
-          </div>
-        </div>
-
-        <div className="hdr-right">
-          <HeaderLanguage />
-          <UserMenu />
-        </div>
-      </header>
+      <NoxelTopbar />
 
       <TranslationStatusBanner />
 
@@ -170,8 +135,8 @@ export default function DashboardHome() {
               <section aria-label="About NOXEL360" style={{ maxWidth: 760, margin: "0 auto 32px", color: "rgba(255,255,255,0.7)", fontSize: 15, lineHeight: 1.7 }}>
                 <p>NOXEL360 is a modular platform built around three functional products.</p>
                 <p><strong style={{ color: "#fff" }}>NOXEL SEO</strong> provides automated site audits, technical and content scoring, AI-powered fix suggestions, and search visibility tracking — including integration with Google Search Console for real impressions, clicks, and query data. It&apos;s built for solopreneurs and small teams who need enterprise-grade SEO tooling without the enterprise price tag.</p>
-                <p><strong style={{ color: "#fff" }}>NOXEL Forge</strong> is a verified backlink exchange network. Members submit real sites in exchange for reviewed, quality backlinks — every submission is screened by an AI reviewer against spam, thin content, and off-niche criteria before approval, keeping the network free of low-quality link farms.</p>
-                <p><strong style={{ color: "#fff" }}>NOXEL Nexus</strong> is the language and region intelligence engine underneath the ecosystem — detecting a visitor&apos;s language, region, and cultural context to adapt content and experience automatically across NOXEL360&apos;s products.</p>
+                <p><strong style={{ color: "#fff" }}>NOXEL FORGE</strong> is a verified backlink exchange network. Members submit real sites in exchange for reviewed, quality backlinks — every submission is screened by an AI reviewer against spam, thin content, and off-niche criteria before approval, keeping the network free of low-quality link farms.</p>
+                <p><strong style={{ color: "#fff" }}>NOXEL NEXUS</strong> is the language and region intelligence engine underneath the ecosystem — detecting a visitor&apos;s language, region, and cultural context to adapt content and experience automatically across NOXEL360&apos;s products.</p>
                 <p>Together, these three products form a connected toolkit: search optimization, link building, and localization, each on its own site and linked from this dashboard.</p>
               </section>
 
@@ -242,13 +207,13 @@ export default function DashboardHome() {
           </section>
                     <footer style={{ borderTop: "1px solid rgba(255,255,255,0.08)", marginTop: 48, padding: "32px 0", textAlign: "center", fontSize: 13, color: "rgba(255,255,255,0.55)" }}>
             <p style={{ maxWidth: 720, margin: "0 auto 16px", lineHeight: 1.6 }}>
-              NOXEL360 connects NOXEL SEO, NOXEL Forge, and Nexus in one dashboard for search
+              NOXEL360 connects NOXEL SEO, NOXEL FORGE, and Nexus in one dashboard for search
               visibility, verified backlinks, and language intelligence.
             </p>
             <nav aria-label="Site links" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 16, marginBottom: 14 }}>
               <a href="https://noxelseo.com" style={{ color: "#3ddc84", textDecoration: "none" }}>NOXEL SEO</a>
-              <a href="https://noxelforge.com" style={{ color: "#3ddc84", textDecoration: "none" }}>NOXEL Forge</a>
-              <Link to="/nexus" style={{ color: "#3ddc84", textDecoration: "none" }}>NOXEL Nexus</Link>
+              <a href="https://noxelforge.com" style={{ color: "#3ddc84", textDecoration: "none" }}>NOXEL FORGE</a>
+              <Link to="/nexus" style={{ color: "#3ddc84", textDecoration: "none" }}>NOXEL NEXUS</Link>
               <a href="/learn" style={{ color: "#3ddc84", textDecoration: "none" }}>Learn</a>
               <Link to="/app/account" style={{ color: "rgba(255,255,255,0.55)", textDecoration: "none" }}>Account</Link>
               <Link to="/privacy" style={{ color: "rgba(255,255,255,0.55)", textDecoration: "none" }}>Privacy</Link>

@@ -4,154 +4,133 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>NOXEL360 — Pricing</title>
-  <meta name="description" content="One NOXEL360 hub, independent modules. See what's live today — NOXEL SEO, NOXEL Forge, NOXEL Nexus — and what's coming next with NOXEL Spectra." />
+  <meta name="description" content="NOXEL360 links independent modules: NOXEL SEO, NOXEL FORGE, NOXEL NEXUS and NOXEL SPECTRA. Each module keeps its own plans and prices on its own site." />
   <link rel="canonical" href="https://noxel360.com/pricing/" />
   <link rel="alternate" hreflang="en" href="https://noxel360.com/pricing/" />
   <link rel="alternate" hreflang="x-default" href="https://noxel360.com/pricing/" />
-  <link rel="stylesheet" href="./assets/styles.css" />
-    <!-- NOXEL Consent 1.4.0 : aucun outil facultatif sur NOXEL360 pour l’instant ; préférences + relais du choix entre les sites NOXEL -->
-    <link rel="stylesheet" href="/consent/noxel-consent.css">
-    <script src="/consent/sites.js"></script>
-    <script src="/consent/noxel-consent.js"></script>
+  <link rel="icon" href="/favicon.ico" />
+  <!-- NOXEL Consent 1.4.0 : aucun outil facultatif sur NOXEL360 pour l’instant ; préférences + relais du choix entre les sites NOXEL -->
+  <link rel="stylesheet" href="/consent/noxel-consent.css">
+  <script src="/consent/sites.js"></script>
+  <script src="/consent/noxel-consent.js"></script>
+  <!-- NOXEL Shell 1.0 : même en-tête, mêmes cartes et même pied de page que NOXEL SEO, FORGE et SPECTRA -->
+  <link rel="stylesheet" href="/noxel-shell.css" />
+  <style>
+    :root { --border: #10dada59; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #07090f; color: rgba(255,255,255,0.93); font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    .nx-pcard .nx-pcard__cta { display: inline-flex; padding: 8px 16px; border-radius: 99px; border: 1px solid rgba(61,220,132,0.45); color: #3ddc84; font-size: 12px; font-weight: 700; text-decoration: none; }
+    .nx-pcard .nx-pcard__cta:hover { background: rgba(61,220,132,0.08); }
+    .nx-faq { display: grid; gap: 14px; }
+    .nx-faq dt { font-size: 13px; font-weight: 800; }
+    .nx-faq dd { font-size: 12px; color: rgba(255,255,255,0.58); line-height: 1.6; }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <div class="topbar">
-      <div class="brand">
-        <span style="display:inline-block;width:12px;height:12px;border-radius:4px;background:var(--green);box-shadow:0 0 18px rgba(61,220,132,.35)"></span>
-        <span>NOXEL360</span>
-        <span class="badge">Pricing</span>
+  <header class="nx-bar">
+    <a href="/dashboard" class="nx-bar__brand" aria-label="NOXEL360"><img src="/logos/NOXEL_360_LOGO.svg" alt="NOXEL360" class="nx-bar__logo" width="69" height="58" /></a>
+    <nav class="nx-bar__nav nx-bar__nav--static" aria-label="NOXEL360" style="display:flex;position:static;flex-direction:row;padding:0;background:none;border:0;margin-left:12px">
+      <a href="/dashboard" class="nx-nav">Dashboard</a>
+      <a href="/nexus" class="nx-nav">NOXEL NEXUS</a>
+      <a href="/learn/" class="nx-nav">Learn</a>
+      <a href="/pricing/" class="nx-nav" aria-current="page">Pricing</a>
+    </nav>
+    <div class="nx-bar__right">
+      <a href="/app/account" class="nx-pill" style="text-decoration:none">Account</a>
+    </div>
+  </header>
+
+  <main class="nx-page">
+    <div class="nx-page-header">
+      <h1 class="nx-page-title">Pricing</h1>
+      <span class="nx-page-subtitle">NOXEL360 isn't one bundled plan: it links independent modules. Each module keeps its plans and prices on its own site, so what you see there is always current.</span>
+    </div>
+
+    <div class="nx-pricing-grid nx-pricing-grid--4">
+      <div class="nx-pcard">
+        <div class="nx-pcard__head"><img src="/logos/NOXEL_SEO_LOGO.svg" alt="" width="48" height="48" /><div class="nx-pcard__name">NOXEL SEO</div><span class="nx-pcard__status">LIVE</span></div>
+        <div class="nx-pcard__price nx-pcard__price--text">Free to start</div>
+        <div class="nx-pcard__note">Search visibility &amp; AI-powered audits</div>
+        <ul class="nx-pcard__items">
+          <li><span style="color:#3ddc84">✓</span>Deep technical audits, 50+ signals</li>
+          <li><span style="color:#3ddc84">✓</span>AI Copilot for plain-language fixes</li>
+          <li><span style="color:#3ddc84">✓</span>Google Search Console integration</li>
+        </ul>
+        <a class="nx-pcard__cta" href="https://www.noxelseo.com/pricing" rel="noopener">→ See NOXEL SEO pricing</a>
       </div>
-      <div style="display:flex; gap:10px; flex-wrap:wrap">
-        <a class="btn" href="#plans">Modules</a>
-        <a class="btn" href="#next">What's next</a>
-        <a class="btn" href="#faq">FAQ</a>
-        <a class="btn" href="/dashboard">Dashboard</a>
+
+      <div class="nx-pcard">
+        <div class="nx-pcard__head"><img src="/logos/NOXEL_FORGE_LOGO.svg" alt="" width="48" height="48" /><div class="nx-pcard__name">NOXEL FORGE</div><span class="nx-pcard__status">LIVE</span></div>
+        <div class="nx-pcard__price nx-pcard__price--text">Free to start</div>
+        <div class="nx-pcard__note">Verified backlink exchange network</div>
+        <ul class="nx-pcard__items">
+          <li><span style="color:#3ddc84">✓</span>AI-reviewed submissions, every time</li>
+          <li><span style="color:#3ddc84">✓</span>Trust Score on every member site</li>
+          <li><span style="color:#3ddc84">✓</span>Real sites only, not a link farm</li>
+        </ul>
+        <a class="nx-pcard__cta" href="https://noxelforge.com/forge/pricing" rel="noopener">→ See NOXEL FORGE pricing</a>
+      </div>
+
+      <div class="nx-pcard nx-pcard--featured">
+        <div class="nx-pcard__head"><img src="/logos/NOXEL_NEXUS_LOGO.svg" alt="" width="48" height="48" /><div class="nx-pcard__name">NOXEL NEXUS</div><span class="nx-pcard__status nx-pcard__status--core">CORE</span></div>
+        <div class="nx-pcard__price nx-pcard__price--text">Included</div>
+        <div class="nx-pcard__note">Language &amp; region intelligence</div>
+        <ul class="nx-pcard__items">
+          <li><span style="color:#3ddc84">✓</span>Included with every NOXEL360 account</li>
+          <li><span style="color:#3ddc84">✓</span>Not sold separately, no plan to choose</li>
+          <li><span style="color:#3ddc84">✓</span>250+ countries and their languages</li>
+        </ul>
+        <a class="nx-pcard__cta" href="/nexus">→ Explore NOXEL NEXUS</a>
+      </div>
+
+      <div class="nx-pcard">
+        <div class="nx-pcard__head"><img src="/logos/NOXEL_SPECTRA_LOGO.svg" alt="" width="48" height="48" /><div class="nx-pcard__name">NOXEL SPECTRA</div><span class="nx-pcard__status">LIVE</span></div>
+        <div class="nx-pcard__price nx-pcard__price--text">Free to use</div>
+        <div class="nx-pcard__note">Image and video tools for the web</div>
+        <ul class="nx-pcard__items">
+          <li><span style="color:#3ddc84">✓</span>Convert, compress, resize, crop</li>
+          <li><span style="color:#3ddc84">✓</span>Background removal and SVG vectorization</li>
+          <li><span style="color:#3ddc84">✓</span>Video tools (beta), right in your browser</li>
+        </ul>
+        <a class="nx-pcard__cta" href="https://www.noxelspectra.com/" rel="noopener">→ Open NOXEL SPECTRA</a>
       </div>
     </div>
 
-    <div class="hero">
-      <h1>Simple pricing. Pay for what you actually use.</h1>
-      <p>
-        NOXEL360 isn't one bundled plan — it's a hub for independent modules.
-        Enable NOXEL SEO, NOXEL Forge, or both. Each module keeps its pricing on its own site,
-        so what you see is always current.
-      </p>
+    <div class="nx-info">
+      <div class="nx-info__title">Why no prices here?</div>
+      <div class="nx-info__desc">Each module's pricing lives on its own site (noxelseo.com, noxelforge.com), so you always see the current plans, not a copy that can go stale. NOXEL SEO and NOXEL FORGE each have their own sign-in and their own plans; your NOXEL360 account covers the dashboard, NOXEL NEXUS and the Learn library.</div>
     </div>
 
-    <div id="plans" class="grid">
-      <div class="card">
-        <div class="tier">
-          <h3>NOXEL SEO</h3>
-          <span class="badge badgeLive">LIVE</span>
-        </div>
-        <div class="small" style="margin-top:8px">Search visibility &amp; AI-powered audits</div>
-        <ul>
-          <li>Free to start — no credit card required</li>
-          <li>Deep technical audits, 50+ signals</li>
-          <li>AI Copilot for plain-language fixes</li>
-          <li>Google Search Console integration</li>
-        </ul>
-        <div class="ctaRow">
-          <a class="btn btnPrimary" href="https://noxelseo.com" target="_blank" rel="noopener">See NOXEL SEO pricing →</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="tier">
-          <h3>NOXEL Forge</h3>
-          <span class="badge badgeLive">LIVE</span>
-        </div>
-        <div class="small" style="margin-top:8px">Verified backlink exchange network</div>
-        <ul>
-          <li>Tiered access as your trust score grows</li>
-          <li>AI-reviewed submissions, every time</li>
-          <li>Screened against spam and thin content</li>
-          <li>Real sites only — not a link farm</li>
-        </ul>
-        <div class="ctaRow">
-          <a class="btn btnPrimary" href="https://noxelforge.com" target="_blank" rel="noopener">See NOXEL Forge pricing →</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="tier">
-          <h3>NOXEL Nexus</h3>
-          <span class="badge badgeCore">CORE</span>
-        </div>
-        <div class="small" style="margin-top:8px">Language &amp; region intelligence</div>
-        <ul>
-          <li>Included with every NOXEL360 account</li>
-          <li>Not sold separately — no plan to choose</li>
-          <li>Runs quietly under every module you enable</li>
-        </ul>
-        <div class="ctaRow">
-          <a class="btn" href="/nexus">Explore NOXEL Nexus →</a>
-        </div>
-      </div>
-
-      <div class="card soon">
-        <div class="tier">
-          <h3>NOXEL Spectra</h3>
-          <span class="badge badgeSoon">COMING SOON</span>
-        </div>
-        <div class="small" style="margin-top:8px">Image toolkit for the web</div>
-        <ul>
-          <li>Format conversion</li>
-          <li>Target-size compression</li>
-          <li>Color palette extraction</li>
-          <li>PNG/WebP to SVG vectorization</li>
-        </ul>
-        <div class="ctaRow">
-          <a class="btn" href="#next">See what's coming →</a>
-        </div>
-      </div>
-    </div>
-
-    <div id="next" class="teaser">
-      <p class="kicker">What's next</p>
-      <h2 class="h2">NOXEL Spectra — every image, web-ready.</h2>
-      <p>
-        Heavy images slow sites down, and fixing them usually means juggling a converter,
-        a compressor, and a vector tool. NOXEL Spectra brings them into one place: convert
-        formats, compress to the size you need, pull a site's color palette, and turn
-        PNG or WebP artwork into clean SVG.
-      </p>
-      <p>
-        Its features and pricing will be announced at launch.
-      </p>
-      <div class="ctaRow">
-        <a class="btn btnPrimary" href="https://noxelspectra.com" target="_blank" rel="noopener">Get a first look at NOXEL Spectra →</a>
-      </div>
-    </div>
-
-    <div id="faq" class="section">
-      <p class="kicker">FAQ</p>
-      <h2 class="h2">Common questions</h2>
-      <dl class="faq">
+    <section aria-labelledby="faq-title" style="margin-top:14px">
+      <h2 id="faq-title" class="nx-page-title" style="margin-bottom:12px">Common questions</h2>
+      <dl class="nx-faq">
         <dt>Do I need separate accounts for each module?</dt>
-        <dd>Yes, for now. NOXEL SEO and NOXEL Forge each have their own sign-in and their own plans on their own sites. Your NOXEL360 account covers the dashboard, Nexus and the Learn library.</dd>
-
+        <dd>Yes, for now. NOXEL SEO and NOXEL FORGE each have their own sign-in and their own plans on their own sites. Your NOXEL360 account covers the dashboard, NOXEL NEXUS and the Learn library.</dd>
         <dt>Can I use just one module?</dt>
-        <dd>Yes. Each module stands on its own — enabling NOXEL Forge doesn't require NOXEL SEO, and vice versa.</dd>
-
-        <dt>Why don't you list exact prices here?</dt>
-        <dd>Each module's pricing lives on its own site (noxelseo.com, noxelforge.com), so you always see the current plan — not a copy that can go stale.</dd>
-
-        <dt>Is NOXEL Nexus a paid add-on?</dt>
+        <dd>Yes. Each module stands on its own: using NOXEL FORGE doesn't require NOXEL SEO, and vice versa.</dd>
+        <dt>Is NOXEL NEXUS a paid add-on?</dt>
         <dd>No. It's included with your NOXEL360 account at no extra cost.</dd>
-
-        <dt>When is NOXEL Spectra launching?</dt>
-        <dd>Spectra is in development. Its features and pricing will be published on noxelspectra.com when it launches.</dd>
+        <dt>Is NOXEL SPECTRA free?</dt>
+        <dd>Yes, today. Its image tools are online at app.noxelspectra.com and its video tools are in beta. Paid plans will be announced on noxelspectra.com before they start.</dd>
       </dl>
-    </div>
+    </section>
+  </main>
 
-    <div class="footer">
-      <span>© <span data-year></span> NOXEL360</span>
-      <span>NOXEL SEO • NOXEL Forge • NOXEL Nexus • NOXEL Spectra (coming soon)</span>
-    </div>
-  </div>
-
+  <footer class="nx-foot">
+    <nav class="nx-foot__links" aria-label="NOXEL">
+      <a href="https://noxelseo.com" rel="noopener">NOXEL SEO</a>
+      <a href="https://noxelforge.com" rel="noopener">NOXEL FORGE</a>
+      <a href="/nexus">NOXEL NEXUS</a>
+      <a href="https://noxelspectra.com" rel="noopener">NOXEL SPECTRA</a>
+      <a href="/learn/">Learn</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="mailto:founder@noxel360.com">Contact</a>
+      <button type="button" data-noxel-consent-settings>Privacy preferences</button>
+    </nav>
+    <div class="nx-foot__copy">© <span data-year>2026</span> NOXEL360</div>
+  </footer>
   <script src="./assets/app.js"></script>
 </body>
 </html>

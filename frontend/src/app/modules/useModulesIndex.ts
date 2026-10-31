@@ -16,7 +16,7 @@ export type ModuleIndexItem = {
  * NOXEL360 — Module Index
  *
  * Simplified on purpose: NOXEL360 now links out to the real, live products
- * (NOXEL SEO, NOXEL Forge) instead of hosting internal duplicate clones.
+ * (NOXEL SEO, NOXEL FORGE) instead of hosting internal duplicate clones.
  * NOXEL NEXUS is the only module with real functional code still living
  * inside this app, so it stays as an internal route.
  *
@@ -54,7 +54,7 @@ const MODULE_ITEMS: ModuleIndexItem[] = [
     name: "NOXEL SPECTRA",
     route: "https://noxelspectra.com",
     promise: "Image conversion, compression, and vectorization toolkit.",
-    status: "soon",
+    status: "ready",
     external: true,
   },
 ];

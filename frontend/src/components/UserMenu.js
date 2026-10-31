@@ -57,7 +57,7 @@ export default function UserMenu() {
     }, [open]);
     // 🔒 NOT AUTHENTICATED
     if (!isAuthenticated || !user) {
-        return (_jsx(Link, { to: "/app/account", className: "account-btn", children: t("userMenu.account") }));
+        return (_jsx(Link, { to: "/app/account", className: "nx-pill", style: { textDecoration: "none" }, children: t("userMenu.account") }));
     }
     async function handleLogout() {
         setOpen(false);
@@ -80,7 +80,7 @@ export default function UserMenu() {
                 gap: 8,
                 zIndex: 2147483647,
                 borderRadius: 24,
-            }, children: [_jsxs("div", { style: { padding: "2px 4px 10px" }, children: [_jsx("div", { style: { fontSize: 14, opacity: 0.82 }, children: t("userMenu.signedInAs") }), _jsx("div", { style: { fontSize: 15, fontWeight: 700 }, children: user.name || user.email || t("userMenu.defaultUser") }), _jsx("div", { style: { fontSize: 12, opacity: 0.7 }, children: user.email || t("userMenu.noEmail") }), _jsxs("div", { style: { fontSize: 12, opacity: 0.58, marginTop: 2 }, children: [t("userMenu.providers"), ": ", providerLabel] })] }), _jsx(Link, { className: "nx-btn", to: "/app/account", onClick: () => setOpen(false), children: t("userMenu.workspace") }), _jsx(Link, { className: "nx-btn", to: "/app/account?tab=accounts", onClick: () => setOpen(false), children: t("userMenu.connectedAccounts") }), _jsx("button", { className: "nx-btn", onClick: () => setOpen(false), children: t("userMenu.security") }), _jsx("button", { className: "nx-btn", onClick: () => setOpen(false), children: t("userMenu.billing") }), _jsx("button", { className: "nx-btn", onClick: handleLogout, children: t("userMenu.logout") })] }), overlayRoot)
+            }, children: [_jsxs("div", { style: { padding: "2px 4px 10px" }, children: [_jsx("div", { style: { fontSize: 14, opacity: 0.82 }, children: t("userMenu.signedInAs") }), _jsx("div", { style: { fontSize: 15, fontWeight: 700 }, children: user.name || user.email || t("userMenu.defaultUser") }), _jsx("div", { style: { fontSize: 12, opacity: 0.7 }, children: user.email || t("userMenu.noEmail") }), _jsxs("div", { style: { fontSize: 12, opacity: 0.58, marginTop: 2 }, children: [t("userMenu.providers"), ": ", providerLabel] })] }), _jsx(Link, { className: "nx-btn", to: "/app/account", onClick: () => setOpen(false), children: t("userMenu.workspace") }), _jsx(Link, { className: "nx-btn", to: "/app/account?tab=accounts", onClick: () => setOpen(false), children: t("userMenu.connectedAccounts") }), _jsx("button", { className: "nx-btn", onClick: handleLogout, children: t("userMenu.logout") })] }), overlayRoot)
         : null;
-    return (_jsxs(_Fragment, { children: [_jsx("div", { ref: wrapRef, className: "account-menu-wrap", children: _jsxs("button", { ref: buttonRef, className: "account-btn", onClick: () => setOpen((prev) => !prev), children: [_jsx(UserAvatar, { name: user.name || user.email || "User", size: 30 }), _jsx("span", { children: user.name || user.email || t("userMenu.account") })] }) }), menu] }));
+    return (_jsxs(_Fragment, { children: [_jsx("div", { ref: wrapRef, className: "account-menu-wrap", children: _jsxs("button", { ref: buttonRef, className: "nx-pill nx-user", "aria-haspopup": "menu", "aria-expanded": open, onClick: () => setOpen((prev) => !prev), children: [_jsx(UserAvatar, { name: user.name || user.email || "User", size: 28 }), _jsx("span", { className: "nx-user__name", children: (user.name || user.email || t("userMenu.account")).split(" ")[0] }), _jsx("span", { className: "nx-caret", "aria-hidden": "true", children: "\u25BC" })] }) }), menu] }));
 }

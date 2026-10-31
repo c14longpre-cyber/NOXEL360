@@ -4,8 +4,8 @@ import { HudButton } from "@/components/hud/HudButton";
 
 /**
  * NOXEL360 — SideNav (Module Host)
- * External modules (NOXEL SEO, NOXEL Forge) open their real domain in a new
- * tab. Internal modules (NOXEL Nexus) use React Router navigation.
+ * External modules (NOXEL SEO, NOXEL FORGE) open their real domain in a new
+ * tab. Internal modules (NOXEL NEXUS) use React Router navigation.
  */
 export function SideNav() {
   const items = useModulesIndex();
