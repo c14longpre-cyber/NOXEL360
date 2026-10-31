@@ -15,6 +15,7 @@ import {
 import type { LanguageOption } from "../i18n/types";
 import TranslationStatusBanner from "../components/TranslationStatusBanner";
 
+import NoxelTopbar from "../components/NoxelTopbar";
 /**
  * NexusPage — Page complète de sélection langue / pays.
  *
@@ -182,6 +183,7 @@ export default function NexusPage() {
         color: "white",
       }}
     >
+      <NoxelTopbar />
       <TranslationStatusBanner />
 
       {/* Header */}

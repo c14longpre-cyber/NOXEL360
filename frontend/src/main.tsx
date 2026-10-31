@@ -7,6 +7,7 @@ import { LanguageProvider } from "./language/LanguageStore";
 import { RegionProvider } from "./region/RegionStore";
 import "./index.css";
 import "./styles/noxel-standard.css";
+import "./noxel-shell.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

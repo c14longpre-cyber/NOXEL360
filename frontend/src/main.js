@@ -8,4 +8,5 @@ import { LanguageProvider } from "./language/LanguageStore";
 import { RegionProvider } from "./region/RegionStore";
 import "./index.css";
 import "./styles/noxel-standard.css";
+import "./noxel-shell.css";
 ReactDOM.createRoot(document.getElementById("root")).render(_jsx(React.StrictMode, { children: _jsx(BrowserRouter, { children: _jsx(AuthProvider, { children: _jsx(LanguageProvider, { children: _jsx(RegionProvider, { children: _jsx(App, {}) }) }) }) }) }));

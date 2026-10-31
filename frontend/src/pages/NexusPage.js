@@ -10,6 +10,7 @@ import { ALL_COUNTRIES } from "../language/nexus/countryData";
 import { INDIGENOUS_BY_ISO2 } from "../language/nexus/indigenous";
 import { LANGUAGE_CATALOG, getLanguageOption, hasFullTranslation, } from "../i18n/languageCatalog";
 import TranslationStatusBanner from "../components/TranslationStatusBanner";
+import NoxelTopbar from "../components/NoxelTopbar";
 /**
  * NexusPage — Page complète de sélection langue / pays.
  *
@@ -164,7 +165,7 @@ export default function NexusPage() {
             overflow: "hidden",
             background: "linear-gradient(180deg, #060810 0%, #0A0D18 100%)",
             color: "white",
-        }, children: [_jsx(TranslationStatusBanner, {}), _jsxs("header", { style: {
+        }, children: [_jsx(NoxelTopbar, {}), _jsx(TranslationStatusBanner, {}), _jsxs("header", { style: {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "space-between",

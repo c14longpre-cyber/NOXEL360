@@ -79,7 +79,7 @@ export default function UserMenu() {
   // 🔒 NOT AUTHENTICATED
   if (!isAuthenticated || !user) {
     return (
-      <Link to="/app/account" className="account-btn">
+      <Link to="/app/account" className="nx-pill" style={{ textDecoration: "none" }}>
         {t("userMenu.account")}
       </Link>
     );
@@ -146,14 +146,6 @@ export default function UserMenu() {
               {t("userMenu.connectedAccounts")}
             </Link>
 
-            <button className="nx-btn" onClick={() => setOpen(false)}>
-              {t("userMenu.security")}
-            </button>
-
-            <button className="nx-btn" onClick={() => setOpen(false)}>
-              {t("userMenu.billing")}
-            </button>
-
             <button className="nx-btn" onClick={handleLogout}>
               {t("userMenu.logout")}
             </button>
@@ -167,11 +159,14 @@ export default function UserMenu() {
       <div ref={wrapRef} className="account-menu-wrap">
         <button
           ref={buttonRef}
-          className="account-btn"
+          className="nx-pill nx-user"
+          aria-haspopup="menu"
+          aria-expanded={open}
           onClick={() => setOpen((prev) => !prev)}
         >
-          <UserAvatar name={user.name || user.email || "User"} size={30} />
-          <span>{user.name || user.email || t("userMenu.account")}</span>
+          <UserAvatar name={user.name || user.email || "User"} size={28} />
+          <span className="nx-user__name">{(user.name || user.email || t("userMenu.account")).split(" ")[0]}</span>
+          <span className="nx-caret" aria-hidden="true">▼</span>
         </button>
       </div>
 

@@ -11,7 +11,7 @@ import { HudButton } from "@/components/hud/HudButton";
  * Page Compte : n'affiche que ce que le backend connaît vraiment, c'est-à-dire
  * la session (/api/auth/session : utilisateur + fournisseurs reliés).
  * NOXEL360 ne vend rien : pas de palier ni de facturation ici, chaque module
- * (NOXEL SEO, NOXEL Forge) garde son compte et ses prix sur son propre site.
+ * (NOXEL SEO, NOXEL FORGE) garde son compte et ses prix sur son propre site.
  * Jamais de compte de démonstration à la place d'un vrai.
  */
 function formatDate(value, locale) {

@@ -70,7 +70,7 @@ export default function App() {
         <Route path="/auth/link-account" element={<LinkAccountPage />} />
         <Route path="/auth/callback" element={<OAuthCallbackPage />} />
 
-        {/* NOXEL SEO and NOXEL Forge are external products (noxelseo.com,
+        {/* NOXEL SEO and NOXEL FORGE are external products (noxelseo.com,
             noxelforge.com) — see DashboardHome / SideNav for outbound links.
             No internal /app/* routes needed for them anymore. */}
 

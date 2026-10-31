@@ -37,9 +37,9 @@ NOXEL360 ne compte que quatre modules :
 | seo | NOXEL SEO | https://noxelseo.com (produit externe) | ready |
 | forge | NOXEL FORGE | https://noxelforge.com (produit externe) | ready |
 | nexus | NOXEL NEXUS | `/nexus` (seul module interne) | core |
-| spectra | NOXEL SPECTRA | https://noxelspectra.com | « coming soon » |
+| spectra | NOXEL SPECTRA | https://noxelspectra.com | ready (images en ligne, vidéo en test) |
 
-Prix : chaque module garde ses prix et paliers sur son propre site (noxelseo.com, noxelforge.com). NOXEL360 n'affiche aucun prix ; Nexus est inclus avec le compte, Spectra sera annoncé au lancement.
+Prix : chaque module garde ses prix et paliers sur son propre site (noxelseo.com, noxelforge.com). NOXEL360 n'affiche aucun prix ; Nexus est inclus avec le compte, Spectra est gratuit pour l'instant (ses forfaits seront annoncés sur noxelspectra.com).
 
 **Modules abandonnés** : Core, MAESTRO, ATLAS, LINKS, SERP, VITALS, OPTIMA (webp), FLOW, MORPH, ainsi qu'Analytics, CRM et Social. Ce sont des idées écartées en cours de route. Ne pas les réintroduire, ni dans le code, ni dans les textes, ni dans les dictionnaires, sans demande explicite de l'utilisateur. Leurs traces restantes (`frontend/src/modules/nexus/*.md`, champ `morphProfile` du compte) sont connues et volontairement laissées en place pour l'instant.
 
@@ -57,6 +57,7 @@ Prix : chaque module garde ses prix et paliers sur son propre site (noxelseo.com
 10. **Comptes et sessions** : stockés dans Postgres (`backend/src/db/pool.ts`, `DATABASE_URL`). En production, `DATABASE_URL` doit toujours être définie : sans elle, tout est perdu au redémarrage. Les jetons OAuth (`accessToken`, `refreshToken`) et le profil brut ne sont jamais stockés (`userIdentity.repo.ts` les met à null, `ensureSchema` vide les anciens). Une session expire 7 jours après sa création, comme son cookie (`SESSION_MAX_AGE_MS`). Un e-mail non garanti par le fournisseur (Microsoft, Facebook, TikTok) est gardé mais `email_verified = false` : il ne sert jamais à retrouver un compte existant. Routes /api/auth/* limitées par adresse IP (`middleware/authLimiter.ts`). Tests : `npm test` dans backend/.
 11. **Comptes des modules** : NOXEL SEO et NOXEL Forge ont leur propre connexion et leurs propres forfaits sur leur site ; le compte NOXEL360 couvre le tableau de bord, Nexus et Learn. Ne jamais écrire « un seul compte / une seule connexion pour tous les modules » tant que ce n'est pas vrai dans le code.
 12. **Page Compte** (`app/pages/AccountPage.tsx`) : n'affiche que la session réelle (`/api/auth/session`). Jamais de compte de démonstration, de palier ou de facturation à la place.
+14. **Look commun NOXEL Shell 1.0** : `src/noxel-shell.css` (copie servie aussi en `public/noxel-shell.css` pour les pages statiques) est copié à l'identique dans noxelforge et noxelspectra ; modèle NOXEL SEO. En-tête unique `components/NoxelTopbar.tsx` (logo · menu · langue · compte) sur toutes les pages React ; pied de page `components/Footer.tsx` (même fichier que Forge et Spectra). Noms des modules toujours en majuscules : NOXEL360, NOXEL SEO, NOXEL FORGE, NOXEL NEXUS, NOXEL SPECTRA.
 13. **Pages Learn et sitemaps** : `npm run seo:pages` (frontend/) régénère canonical + hreflang des pages Learn (chaque page traduite est sa propre canonical ; seules les versions présentes sur le disque sont listées) puis les sitemaps (index sitemap.xml → sitemap-core, sitemap-learn, sitemap-learn-i18n). Ne jamais les écrire à la main ; `npm test` échoue s'ils sont périmés.
 
 ## Assistants

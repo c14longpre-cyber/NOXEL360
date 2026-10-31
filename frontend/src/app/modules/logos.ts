@@ -1,5 +1,5 @@
 
-// TODO(Christian): drop a real NOXEL Forge logo file in
+// TODO(Christian): drop a real NOXEL FORGE logo file in
 // @/assets/logos/webp/noxel-forge.avif and swap this import.
 // Using the NOXEL360 mark as a placeholder for now.
 const forge = "/logos/NOXEL_FORGE_LOGO.svg";
