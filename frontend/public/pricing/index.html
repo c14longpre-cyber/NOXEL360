@@ -22,20 +22,15 @@
     a { color: inherit; }
     .nx-pcard .nx-pcard__cta { display: inline-flex; padding: 8px 16px; border-radius: 99px; border: 1px solid rgba(61,220,132,0.45); color: #3ddc84; font-size: 12px; font-weight: 700; text-decoration: none; }
     .nx-pcard .nx-pcard__cta:hover { background: rgba(61,220,132,0.08); }
-    @media (max-width: 600px) { .nx-bar__nav { display: none !important; } }
     .nx-faq { display: grid; gap: 14px; }
     .nx-faq dt { font-size: 13px; font-weight: 800; }
     .nx-faq dd { font-size: 12px; color: rgba(255,255,255,0.58); line-height: 1.6; }
-    .nx-foot { max-width: 1400px; margin: 32px auto 0; padding: 24px 24px 20px; border-top: 1px solid rgba(255,255,255,0.07); display: flex; flex-direction: column; gap: 16px; }
-    .nx-foot__links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; align-items: center; }
-    .nx-foot__links a, .nx-foot__links button { font: inherit; font-size: 14px; font-weight: 700; color: #3ddc84; text-decoration: none; background: none; border: 0; cursor: pointer; }
-    .nx-foot__copy { font-size: 13px; color: rgba(255,255,255,0.4); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 16px; }
   </style>
 </head>
 <body>
   <header class="nx-bar">
     <a href="/dashboard" class="nx-bar__brand" aria-label="NOXEL360"><img src="/logos/NOXEL_360_LOGO.svg" alt="NOXEL360" class="nx-bar__logo" width="69" height="58" /></a>
-    <nav class="nx-bar__nav" aria-label="NOXEL360" style="display:flex;position:static;flex-direction:row;padding:0;background:none;border:0;margin-left:12px">
+    <nav class="nx-bar__nav nx-bar__nav--static" aria-label="NOXEL360" style="display:flex;position:static;flex-direction:row;padding:0;background:none;border:0;margin-left:12px">
       <a href="/dashboard" class="nx-nav">Dashboard</a>
       <a href="/nexus" class="nx-nav">NOXEL NEXUS</a>
       <a href="/learn/" class="nx-nav">Learn</a>
