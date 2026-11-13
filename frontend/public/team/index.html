@@ -9,6 +9,7 @@
   <link rel="alternate" hreflang="en" href="https://noxel360.com/team/" />
   <link rel="alternate" hreflang="x-default" href="https://noxel360.com/team/" />
   <link rel="icon" href="/favicon.ico" />
+  <link rel="preload" as="image" href="/team/noxel-team-1200.webp" imagesrcset="/team/noxel-team-800.webp 800w, /team/noxel-team-1200.webp 1200w, /team/noxel-team-1600.webp 1600w, /team/noxel-team-2560.webp 2560w" imagesizes="(max-width: 1400px) calc(100vw - 48px), 1352px" fetchpriority="high" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="NOXEL360" />
   <meta property="og:title" content="The NOXEL team — one character per module" />
@@ -21,13 +22,35 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Organization",
+        "@id": "https://noxel360.com/#organization",
+        "name": "NOXEL360",
+        "url": "https://noxel360.com/",
+        "logo": "https://noxel360.com/favicon-512x512.png",
+        "sameAs": [
+          "https://www.facebook.com/NOXEL360/",
+          "https://www.linkedin.com/company/119803940/",
+          "https://www.tiktok.com/@noxel360",
+          "https://www.instagram.com/noxel360/",
+          "https://x.com/NOXEL360"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://noxel360.com/#website",
+        "name": "NOXEL360",
+        "url": "https://noxel360.com/",
+        "publisher": { "@id": "https://noxel360.com/#organization" }
+      },
+      {
         "@type": "AboutPage",
         "name": "The NOXEL team",
         "url": "https://noxel360.com/team/",
         "inLanguage": "en",
         "description": "The characters of the NOXEL360 ecosystem, one per module.",
         "primaryImageOfPage": { "@type": "ImageObject", "url": "https://noxel360.com/team/noxel-team-2560.webp", "width": 2560, "height": 1440 },
-        "publisher": { "@type": "Organization", "name": "NOXEL360", "url": "https://noxel360.com/" }
+        "isPartOf": { "@id": "https://noxel360.com/#website" },
+        "publisher": { "@id": "https://noxel360.com/#organization" }
       },
       {
         "@type": "BreadcrumbList",
@@ -62,6 +85,10 @@
     .nx-member p { font-size: 13px; color: rgba(255,255,255,0.62); line-height: 1.6; }
     .nx-member a { margin-top: auto; color: #3ddc84; font-size: 12px; font-weight: 700; text-decoration: none; }
     .nx-member a:hover { text-decoration: underline; }
+    .nx-team-more { margin-top: 18px; max-width: 900px; display: grid; gap: 10px; }
+    .nx-team-more h2 { font-size: 20px; font-weight: 900; }
+    .nx-team-more p { font-size: 14px; color: rgba(255,255,255,0.68); line-height: 1.7; }
+    .nx-team-more a { color: #3ddc84; }
     @media (max-width: 1100px) { .nx-team-grid { grid-template-columns: repeat(3, 1fr); } }
     @media (max-width: 700px) { .nx-team-grid { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 460px) { .nx-team-grid { grid-template-columns: 1fr; } }
@@ -89,9 +116,9 @@
       <span class="nx-page-subtitle">One character per module. Built Beyond.</span>
     </div>
 
-    <img class="nx-team-banner" src="/team/noxel-team-1600.webp" srcset="/team/noxel-team-1600.webp 1600w, /team/noxel-team-2560.webp 2560w" sizes="(max-width: 1400px) 100vw, 1352px" width="2560" height="1440" alt="The NOXEL team in a neon city: Alfred, Noxel, Jordan Roastme, the robot dog NX360 and Chroma the rainbow chameleon, next to the NOXEL360 logo." />
+    <img class="nx-team-banner" src="/team/noxel-team-1200.webp" srcset="/team/noxel-team-800.webp 800w, /team/noxel-team-1200.webp 1200w, /team/noxel-team-1600.webp 1600w, /team/noxel-team-2560.webp 2560w" sizes="(max-width: 1400px) calc(100vw - 48px), 1352px" fetchpriority="high" decoding="async" width="2560" height="1440" alt="The NOXEL team in a neon city: Alfred, Noxel, Jordan Roastme, the robot dog NX360 and Chroma the rainbow chameleon, next to the NOXEL360 logo." />
 
-    <p class="nx-team-lead">Every NOXEL module has its own character. They share one look, the green and violet of the NOXEL “N”, because the modules work together inside NOXEL360. Here is who does what.</p>
+    <p class="nx-team-lead">The NOXEL team is the cast of NOXEL360: every NOXEL module has its own character. They share one look, the green and violet of the NOXEL “N”, because the modules work together inside NOXEL360. Here is who does what.</p>
 
     <div class="nx-team-grid">
       <article class="nx-member">
@@ -130,6 +157,12 @@
         <a href="https://www.noxelspectra.com/" rel="noopener">Visit NOXEL SPECTRA →</a>
       </article>
     </div>
+
+    <section class="nx-team-more" aria-labelledby="team-together">
+      <h2 id="team-together">How the NOXEL team works together</h2>
+      <p>A typical path through NOXEL360 follows the family. Noxel and the NOXEL SEO audit show what holds a site back: slow pages, missing structured data, thin content or pages that AI search engines cannot read. Jordan Roastme says the same thing louder when a site needs a wake-up call. Once the fixes are in place, Alfred and NOXEL FORGE help the site earn authority with verified backlink exchanges between real, proven domains, never link farms. Chroma and NOXEL SPECTRA keep images and videos light, which helps the speed scores the audit measures. NX360 ties it all together on the NOXEL360 dashboard, next to NOXEL NEXUS for languages and regions.</p>
+      <p>Each character speaks for one module, and each module keeps its own site and its own plans. See <a href="/pricing/">NOXEL360 pricing</a>, open the <a href="/dashboard">dashboard</a> or browse the <a href="/learn/">Learn library</a> to go further.</p>
+    </section>
   </main>
 
   <footer class="nx-foot">

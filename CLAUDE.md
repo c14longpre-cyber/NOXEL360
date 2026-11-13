@@ -37,7 +37,7 @@ NOXEL360 ne compte que quatre modules :
 | seo | NOXEL SEO | https://noxelseo.com (produit externe) | ready |
 | forge | NOXEL FORGE | https://noxelforge.com (produit externe) | ready |
 | nexus | NOXEL NEXUS | `/nexus` (seul module interne) | core |
-| spectra | NOXEL SPECTRA | https://noxelspectra.com | ready (images en ligne, vidéo en test) |
+| spectra | NOXEL SPECTRA | https://noxelspectra.com | ready (images et vidéo en ligne) |
 
 Prix : chaque module garde ses prix et paliers sur son propre site (noxelseo.com, noxelforge.com). NOXEL360 n'affiche aucun prix ; Nexus est inclus avec le compte, Spectra est gratuit pour l'instant (ses forfaits seront annoncés sur noxelspectra.com).
 
@@ -50,7 +50,7 @@ Prix : chaque module garde ses prix et paliers sur son propre site (noxelseo.com
 3. **i18n** : `FULLY_TRANSLATED_CODES` (languageCatalog.ts) liste les langues complètes (26 aujourd'hui). Ajouter une langue = `locales/XX.ts` + entrée dans `translate.ts` + code dans `FULLY_TRANSLATED_CODES`. Clés identiques à `en.ts`.
 4. **Langues autochtones** : jamais de traduction automatique publiée. Seuls des locuteurs natifs ou traducteurs approuvés par la communauté (voir CONTRIBUTING_LANGUAGES.md).
 5. **Couleurs officielles** : vert #3ddc84, violet #A855F7. L'ancien vert #3cde6a (et `rgba(60,222,106,…)`) a été remplacé partout ; il ne doit pas revenir.
-6. **vercel.json** : seul `frontend/vercel.json` est lu (racine du projet Vercel = frontend/). Le site appelle l'API directement sur https://api.noxel360.com (`VITE_API_URL`), pas de proxy /api. Les rewrites vers index.html ne listent que les routes de App.tsx (/dashboard, /nexus, /privacy, /terms, /app/*, /auth/*) : pas de catch-all, une adresse inconnue répond 404 (public/404.html). Nouvelle route React = l'ajouter aux rewrites.
+6. **vercel.json** : seul `frontend/vercel.json` est lu (racine du projet Vercel = frontend/). Le site appelle l'API directement sur https://api.noxel360.com (`VITE_API_URL`), pas de proxy /api. Les rewrites vers index.html ne listent que les routes de App.tsx (/dashboard, /nexus, /privacy, /terms, /app/*, /auth/*) : pas de catch-all, une adresse inconnue répond 404 (public/404.html). Nouvelle route React = l'ajouter aux rewrites. `/dashboard` et `/nexus` ont leur propre page (`scripts/route-pages.mjs`, lancé après `vite build` : titre, canonique, og:*, fil d'Ariane et texte de secours propres, réécriture vers `/dashboard.html` / `/nexus.html`, listées dans sitemap-core) ; une nouvelle route indexable s'y ajoute.
 7. **Contrat API** : réponses `{ ok: boolean, ... , error?: string }`. Codes 400 / 401 / 403 / 500 cohérents.
 8. **CORS** : géré uniquement par `server.ts` (liste blanche `allowedOrigins` + `credentials: true`). Ne jamais ajouter d'en-tête `Access-Control-Allow-Origin` dans `vercel.json` : un `*` est incompatible avec les cookies de session.
 9. **Routes actives** : seules les routes montées dans `server.ts` existent en production : `/health`, `/api/health` et `/api/auth/*`. `/api/seo/*` n'est qu'une redirection 301 vers https://noxelseo.com : NOXEL360 n'a plus de moteur SEO interne, ne pas en recréer un. Un fichier de route non monté est du code mort : ne pas le présenter comme fonctionnel.

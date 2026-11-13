@@ -20,6 +20,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { ROUTE_PAGES } from "./route-pages.mjs";
 
 const ORIGIN = "https://noxel360.com";
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -96,6 +97,8 @@ export function build() {
 
   // Accueil : la page servie à / est frontend/index.html (entrée Vite)
   core.push({ loc: `${ORIGIN}/`, lastmod: lastmodOf("index.html") });
+  // Routes React servies avec leur propre page (scripts/route-pages.mjs)
+  for (const p of ROUTE_PAGES) core.push({ loc: `${ORIGIN}/${p.route}`, lastmod: lastmodOf("scripts/route-pages.mjs") });
 
   for (const file of walk(PUBLIC).sort()) {
     const url = urlOf(file);
