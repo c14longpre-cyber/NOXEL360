@@ -83,7 +83,7 @@ export function renderRoute(indexHtml, page) {
   // Contenu de secours propre à la route (remplacé par React au démarrage)
   const mainRe = /(<div id="root">[\s\S]*?<main[^>]*>)[\s\S]*?(<\/main>)/;
   if (!mainRe.test(html)) throw new Error("route-pages: <main> de secours introuvable");
-  html = html.replace(mainRe, `$1${page.body}\n      $2`);
+  html = html.replace(mainRe, (_m, a, b) => `${a}${page.body}\n      ${b}`);
   return html;
 }
 
