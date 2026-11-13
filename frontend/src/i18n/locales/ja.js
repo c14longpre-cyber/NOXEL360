@@ -195,6 +195,7 @@ export const ja = {
     "landing.nav.howItWorks": "使い方",
     "landing.nav.learn": "学ぶ",
     "landing.nav.pricing": "料金",
+    "landing.nav.team": "チーム",
     "landing.nav.openDashboard": "ダッシュボードを開く",
     "landing.hero.eyebrow": "Built Beyond.",
     "landing.hero.line1": "入口はひとつ。",

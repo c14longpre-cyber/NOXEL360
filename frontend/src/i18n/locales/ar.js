@@ -195,6 +195,7 @@ export const ar = {
     "landing.nav.howItWorks": "كيف يعمل",
     "landing.nav.learn": "تعلّم",
     "landing.nav.pricing": "الأسعار",
+    "landing.nav.team": "الفريق",
     "landing.nav.openDashboard": "افتح لوحة التحكم",
     "landing.hero.eyebrow": "Built Beyond.",
     "landing.hero.line1": "نقطة انطلاق واحدة.",

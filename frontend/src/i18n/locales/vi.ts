@@ -197,6 +197,7 @@ export const vi: TranslationDictionary = {
   "landing.nav.howItWorks": "Cách hoạt động",
   "landing.nav.learn": "Tìm hiểu",
   "landing.nav.pricing": "Bảng giá",
+  "landing.nav.team": "Đội ngũ",
   "landing.nav.openDashboard": "Mở bảng điều khiển",
   "landing.hero.eyebrow": "Built Beyond.",
   "landing.hero.line1": "Một điểm khởi đầu.",

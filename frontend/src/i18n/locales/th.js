@@ -195,6 +195,7 @@ export const th = {
     "landing.nav.howItWorks": "วิธีการทำงาน",
     "landing.nav.learn": "เรียนรู้",
     "landing.nav.pricing": "ราคา",
+    "landing.nav.team": "ทีม",
     "landing.nav.openDashboard": "เปิดแดชบอร์ด",
     "landing.hero.eyebrow": "Built Beyond.",
     "landing.hero.line1": "ศูนย์กลางเดียว",

@@ -197,6 +197,7 @@ export const de: TranslationDictionary = {
   "landing.nav.howItWorks": "So funktioniert's",
   "landing.nav.learn": "Lernen",
   "landing.nav.pricing": "Preise",
+  "landing.nav.team": "Team",
   "landing.nav.openDashboard": "Dashboard öffnen",
   "landing.hero.eyebrow": "Built Beyond.",
   "landing.hero.line1": "Ein zentraler Einstieg.",

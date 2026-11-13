@@ -197,6 +197,7 @@ export const hi: TranslationDictionary = {
   "landing.nav.howItWorks": "यह कैसे काम करता है",
   "landing.nav.learn": "सीखें",
   "landing.nav.pricing": "कीमतें",
+  "landing.nav.team": "टीम",
   "landing.nav.openDashboard": "डैशबोर्ड खोलें",
   "landing.hero.eyebrow": "Built Beyond.",
   "landing.hero.line1": "एक ही केंद्र।",

@@ -195,6 +195,7 @@ export const ko = {
     "landing.nav.howItWorks": "이용 방법",
     "landing.nav.learn": "학습",
     "landing.nav.pricing": "요금",
+    "landing.nav.team": "팀",
     "landing.nav.openDashboard": "대시보드 열기",
     "landing.hero.eyebrow": "Built Beyond.",
     "landing.hero.line1": "하나의 허브.",

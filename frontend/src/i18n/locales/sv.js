@@ -195,6 +195,7 @@ export const sv = {
     "landing.nav.howItWorks": "Så fungerar det",
     "landing.nav.learn": "Lär dig",
     "landing.nav.pricing": "Priser",
+    "landing.nav.team": "Team",
     "landing.nav.openDashboard": "Öppna instrumentpanelen",
     "landing.hero.eyebrow": "Built Beyond.",
     "landing.hero.line1": "En samlad startpunkt.",

@@ -195,6 +195,7 @@ export const uk = {
     "landing.nav.howItWorks": "Як це працює",
     "landing.nav.learn": "Навчання",
     "landing.nav.pricing": "Ціни",
+    "landing.nav.team": "Команда",
     "landing.nav.openDashboard": "Відкрити панель",
     "landing.hero.eyebrow": "Built Beyond.",
     "landing.hero.line1": "Єдина точка входу.",

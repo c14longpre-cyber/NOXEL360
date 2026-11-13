@@ -195,6 +195,7 @@ export const tr = {
     "landing.nav.howItWorks": "Nasıl çalışır",
     "landing.nav.learn": "Öğren",
     "landing.nav.pricing": "Fiyatlandırma",
+    "landing.nav.team": "Ekip",
     "landing.nav.openDashboard": "Paneli aç",
     "landing.hero.eyebrow": "Built Beyond.",
     "landing.hero.line1": "Tek bir merkez.",
