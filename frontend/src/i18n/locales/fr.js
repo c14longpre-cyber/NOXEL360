@@ -195,6 +195,7 @@ export const fr = {
     "landing.nav.howItWorks": "Fonctionnement",
     "landing.nav.learn": "Apprendre",
     "landing.nav.pricing": "Tarifs",
+    "landing.nav.team": "Équipe",
     "landing.nav.openDashboard": "Ouvrir le tableau de bord",
     "landing.hero.eyebrow": "Built Beyond.",
     "landing.hero.line1": "Un seul point d'entrée.",

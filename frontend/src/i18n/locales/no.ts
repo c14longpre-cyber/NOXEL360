@@ -197,6 +197,7 @@ export const no: TranslationDictionary = {
   "landing.nav.howItWorks": "Slik fungerer det",
   "landing.nav.learn": "Lær",
   "landing.nav.pricing": "Priser",
+  "landing.nav.team": "Team",
   "landing.nav.openDashboard": "Åpne dashbordet",
   "landing.hero.eyebrow": "Built Beyond.",
   "landing.hero.line1": "Ett samlet startpunkt.",

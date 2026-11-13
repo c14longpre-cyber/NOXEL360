@@ -195,6 +195,7 @@ export const ro = {
     "landing.nav.howItWorks": "Cum funcționează",
     "landing.nav.learn": "Învață",
     "landing.nav.pricing": "Prețuri",
+    "landing.nav.team": "Echipa",
     "landing.nav.openDashboard": "Deschide panoul",
     "landing.hero.eyebrow": "Built Beyond.",
     "landing.hero.line1": "Un singur punct de pornire.",

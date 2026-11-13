@@ -195,6 +195,7 @@ export const na = {
     "landing.nav.howItWorks": "How It Works",
     "landing.nav.learn": "Learn",
     "landing.nav.pricing": "Pricing",
+    "landing.nav.team": "Team",
     "landing.nav.openDashboard": "Open Dashboard",
     "landing.hero.eyebrow": "Built Beyond.",
     "landing.hero.line1": "One hub.",

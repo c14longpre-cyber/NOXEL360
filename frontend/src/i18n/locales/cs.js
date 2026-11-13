@@ -195,6 +195,7 @@ export const cs = {
     "landing.nav.howItWorks": "Jak to funguje",
     "landing.nav.learn": "Vzdělávání",
     "landing.nav.pricing": "Ceník",
+    "landing.nav.team": "Tým",
     "landing.nav.openDashboard": "Otevřít přehled",
     "landing.hero.eyebrow": "Built Beyond.",
     "landing.hero.line1": "Jedno centrum.",

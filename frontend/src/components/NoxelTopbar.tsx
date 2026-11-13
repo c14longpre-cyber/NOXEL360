@@ -38,6 +38,7 @@ export default function NoxelTopbar() {
         <Link to="/nexus" className="nx-nav" aria-current={current("/nexus")} onClick={() => setNavOpen(false)}>NOXEL NEXUS</Link>
         <a href="/learn/" className="nx-nav">{t("landing.nav.learn")}</a>
         <a href="/pricing/" className="nx-nav">{t("landing.nav.pricing")}</a>
+        <a href="/team/" className="nx-nav">{t("landing.nav.team")}</a>
       </nav>
 
       <div className="nx-bar__right">

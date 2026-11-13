@@ -197,6 +197,7 @@ export const nl: TranslationDictionary = {
   "landing.nav.howItWorks": "Hoe het werkt",
   "landing.nav.learn": "Leren",
   "landing.nav.pricing": "Prijzen",
+  "landing.nav.team": "Team",
   "landing.nav.openDashboard": "Dashboard openen",
   "landing.hero.eyebrow": "Built Beyond.",
   "landing.hero.line1": "Eén centraal startpunt.",

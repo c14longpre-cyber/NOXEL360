@@ -197,6 +197,7 @@ export const zh: TranslationDictionary = {
   "landing.nav.howItWorks": "使用方式",
   "landing.nav.learn": "学习",
   "landing.nav.pricing": "价格",
+  "landing.nav.team": "团队",
   "landing.nav.openDashboard": "打开控制台",
   "landing.hero.eyebrow": "Built Beyond.",
   "landing.hero.line1": "一个统一入口。",

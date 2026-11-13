@@ -195,6 +195,7 @@ export const ru = {
     "landing.nav.howItWorks": "Как это работает",
     "landing.nav.learn": "Обучение",
     "landing.nav.pricing": "Цены",
+    "landing.nav.team": "Команда",
     "landing.nav.openDashboard": "Открыть панель",
     "landing.hero.eyebrow": "Built Beyond.",
     "landing.hero.line1": "Единая точка входа.",

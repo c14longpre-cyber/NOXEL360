@@ -197,6 +197,7 @@ export const id: TranslationDictionary = {
   "landing.nav.howItWorks": "Cara kerja",
   "landing.nav.learn": "Belajar",
   "landing.nav.pricing": "Harga",
+  "landing.nav.team": "Tim",
   "landing.nav.openDashboard": "Buka dasbor",
   "landing.hero.eyebrow": "Built Beyond.",
   "landing.hero.line1": "Satu pusat.",

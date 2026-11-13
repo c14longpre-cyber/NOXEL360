@@ -195,6 +195,7 @@ export const fi = {
     "landing.nav.howItWorks": "Näin se toimii",
     "landing.nav.learn": "Opi",
     "landing.nav.pricing": "Hinnoittelu",
+    "landing.nav.team": "Tiimi",
     "landing.nav.openDashboard": "Avaa hallintapaneeli",
     "landing.hero.eyebrow": "Built Beyond.",
     "landing.hero.line1": "Yksi keskus.",

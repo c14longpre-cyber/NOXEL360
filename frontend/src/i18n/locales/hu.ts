@@ -197,6 +197,7 @@ export const hu: TranslationDictionary = {
   "landing.nav.howItWorks": "Hogyan működik",
   "landing.nav.learn": "Tanulás",
   "landing.nav.pricing": "Árak",
+  "landing.nav.team": "Csapat",
   "landing.nav.openDashboard": "Irányítópult megnyitása",
   "landing.hero.eyebrow": "Built Beyond.",
   "landing.hero.line1": "Egyetlen központ.",
