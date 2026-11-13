@@ -41,6 +41,9 @@ export default function NoxelTopbar() {
         <a href="/team/" className="nx-nav">{t("landing.nav.team")}</a>
       </nav>
 
+      {/* NX360, personnage de NOXEL360 (comme Noxel, Alfred et Chroma sur les autres sites) */}
+      <img src="/nx360-header.webp" alt="NX360, NOXEL360" className="nx-bar__mascot" width={166} height={300} />
+
       <div className="nx-bar__right">
         <HeaderLanguage />
         <UserMenu />
