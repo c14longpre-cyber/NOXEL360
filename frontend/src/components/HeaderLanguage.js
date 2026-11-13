@@ -1,6 +1,7 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { useEffect, useMemo, useRef, useState } from "react";
-import LanguageModal from "./LanguageModal";
+import { lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
+// Le grand sélecteur (carte du monde, 230+ langues) ne se charge qu'à l'ouverture
+const LanguageModal = lazy(() => import("./LanguageModal"));
 import { useLanguage } from "../language/LanguageStore";
 import { useI18n } from "../useI18n";
 import { getFullyTranslatedLanguages } from "../i18n/languageCatalog";
@@ -171,5 +172,5 @@ export default function HeaderLanguage() {
                             e.currentTarget.style.background = "rgba(255,255,255,0.06)";
                         }, onMouseLeave: (e) => {
                             e.currentTarget.style.background = "transparent";
-                        }, children: [_jsx("span", { children: t("header.language.allLanguages", undefined, "All 230+ languages") }), _jsx("span", { "aria-hidden": "true", style: { opacity: 0.6 }, children: "\u2192" })] })] })), _jsx(LanguageModal, { open: modalOpen, onClose: () => setModalOpen(false) })] }));
+                        }, children: [_jsx("span", { children: t("header.language.allLanguages", undefined, "All 230+ languages") }), _jsx("span", { "aria-hidden": "true", style: { opacity: 0.6 }, children: "\u2192" })] })] })), modalOpen && (_jsx(Suspense, { fallback: null, children: _jsx(LanguageModal, { open: modalOpen, onClose: () => setModalOpen(false) }) }))] }));
 }

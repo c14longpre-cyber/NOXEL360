@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useRef, useState } from "react";
-import LanguageModal from "./LanguageModal";
+import { lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
+// Le grand sélecteur (carte du monde, 230+ langues) ne se charge qu'à l'ouverture
+const LanguageModal = lazy(() => import("./LanguageModal"));
 import { useLanguage, type AppLanguage } from "../language/LanguageStore";
 import { useI18n } from "../useI18n";
 import { getFullyTranslatedLanguages } from "../i18n/languageCatalog";
@@ -311,7 +312,11 @@ export default function HeaderLanguage() {
         </div>
       )}
 
-      <LanguageModal open={modalOpen} onClose={() => setModalOpen(false)} />
+      {modalOpen && (
+        <Suspense fallback={null}>
+          <LanguageModal open={modalOpen} onClose={() => setModalOpen(false)} />
+        </Suspense>
+      )}
     </div>
   );
 }
