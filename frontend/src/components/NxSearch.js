@@ -4,7 +4,7 @@ import "../nx-search.js";
 export default function NxSearch({ navigate, index, lang }) {
     const ref = useRef(null);
     const nav = useRef(navigate);
-    nav.current = navigate;
+    useEffect(() => { nav.current = navigate; });
     useEffect(() => {
         if (!ref.current)
             return;
