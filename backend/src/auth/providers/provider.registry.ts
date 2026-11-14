@@ -3,7 +3,6 @@ import type { OAuthProviderAdapter } from "./provider.types";
 
 import { googleProvider } from "./google.provider";
 import { microsoftProvider } from "./microsoft.provider";
-import { facebookProvider } from "./facebook.provider";
 import { linkedinProvider } from "./linkedin.provider";
 import { tiktokProvider } from "./tiktok.provider";
 import { githubProvider } from "./github.provider";
@@ -13,7 +12,6 @@ export const providerRegistry: Partial<
 > = {
   google: googleProvider,
   microsoft: microsoftProvider,
-  facebook: facebookProvider,
   linkedin: linkedinProvider,
   tiktok: tiktokProvider,
   github: githubProvider,
