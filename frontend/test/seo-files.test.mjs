@@ -44,3 +44,8 @@ test("every SPA route in App.tsx is rewritten to index.html, and nothing else is
 test("share image and logo exist", () => {
   for (const f of ["og-image.png", "favicon-512x512.png", "apple-touch-icon.png"]) assert.ok(fs.existsSync(`public/${f}`), f);
 });
+
+test("search index of the top bar is up to date (node scripts/build-search-index.mjs)", async () => {
+  const { buildIndex } = await import("../scripts/build-search-index.mjs");
+  assert.equal(fs.readFileSync("public/search-index.json", "utf8"), buildIndex());
+});

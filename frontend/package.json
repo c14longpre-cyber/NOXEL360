@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "generate:languages": "node ./scripts/generateCountryLanguages.cjs",
     "test": "node --test test/*.test.mjs",
-    "seo:pages": "node scripts/build-learn-hreflang.mjs && node scripts/build-sitemap.mjs"
+    "seo:pages": "node scripts/build-learn-hreflang.mjs && node scripts/build-sitemap.mjs && node scripts/build-search-index.mjs"
   },
   "dependencies": {
     "@react-oauth/google": "^0.13.4",

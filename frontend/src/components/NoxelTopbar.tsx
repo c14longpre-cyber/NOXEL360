@@ -1,16 +1,24 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import HeaderLanguage from "./HeaderLanguage";
 import UserMenu from "./UserMenu";
+import NxSearch from "./NxSearch";
 import { useI18n } from "../useI18n";
 
 /**
  * En-tête commun NOXEL (noxel-shell.css), sur le modèle de NOXEL SEO :
- * logo · menu · langue · compte. Même barre que NOXEL FORGE et NOXEL SPECTRA.
+ * logo · menu · personnage · recherche · langue · compte. Même barre que NOXEL FORGE et NOXEL SPECTRA.
  */
 export default function NoxelTopbar() {
-  const { t } = useI18n();
+  const { t, language } = useI18n();
   const { pathname } = useLocation();
+  const go = useNavigate();
+  // Pages de l'app ouvertes sans recharger ; /learn, /pricing et /team sont des pages statiques
+  const openInApp = (url: string) => {
+    if (!/^\/(dashboard|nexus|privacy|terms|app)(\/|$|\?)/.test(url)) return false;
+    go(url);
+    return true;
+  };
   const [navOpen, setNavOpen] = useState(false);
   const barRef = useRef<HTMLElement>(null);
 
@@ -45,6 +53,7 @@ export default function NoxelTopbar() {
       <img src="/nx360-header.webp" alt="NX360, NOXEL360" className="nx-bar__mascot" width={166} height={300} />
 
       <div className="nx-bar__right">
+        <NxSearch lang={language} navigate={openInApp} />
         <HeaderLanguage />
         <UserMenu />
         <button type="button" className="nx-bar__burger" aria-label="Menu" aria-expanded={navOpen} aria-controls="nx-360-nav" onClick={() => setNavOpen(o => !o)}>
