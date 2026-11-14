@@ -44,27 +44,12 @@ export default function NoxelAccessModal({ open, onClose }: Props) {
         enabled: true,
         accent: "green",
       },
-      {
-        key: "facebook",
-        label: "Facebook",
-        icon: "f",
-        enabled: true,
-        accent: "green",
-      },
     {
   key: "linkedin",
   label: "LinkedIn",
   icon: "in",
   enabled: true,
   accent: "green",
-},
-    {
-  key: "tiktok",
-  label: "TikTok",
-  icon: "♪",
-  enabled: false,
-  accent: "neutral",
-  note: "Coming soon",
 },
 {
   key: "github",
@@ -96,11 +81,6 @@ export default function NoxelAccessModal({ open, onClose }: Props) {
       return;
     }
 
-    if (provider.key === "facebook") {
-      loginWithProvider("facebook", "signin");
-      onClose();
-      return;
-    }
 if (provider.key === "linkedin") {
   loginWithProvider("linkedin", "signin");
   onClose();

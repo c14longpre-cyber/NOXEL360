@@ -3,15 +3,17 @@ import { useI18n } from "@/useI18n";
 import { HudButton } from "@/components/hud/HudButton";
 
 type ProviderItem = {
-  key: "google" | "microsoft" | "facebook" | "linkedin";
+  key: "google" | "microsoft" | "linkedin" | "github";
   labelKey: string;
+  /** Nom propre affiché tel quel (pas de clé de traduction) */
+  label?: string;
 };
 
 const PROVIDERS: ProviderItem[] = [
   { key: "google", labelKey: "provider.google" },
   { key: "microsoft", labelKey: "provider.microsoft" },
-  { key: "facebook", labelKey: "provider.facebook" },
   { key: "linkedin", labelKey: "provider.linkedin" },
+  { key: "github", labelKey: "provider.github", label: "GitHub" },
 ];
 
 export default function ConnectedAccountsCard() {
@@ -47,7 +49,7 @@ export default function ConnectedAccountsCard() {
             >
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <span style={{ fontSize: 15, fontWeight: 600 }}>
-                  {t(p.labelKey)}
+                  {p.label ?? t(p.labelKey)}
                 </span>
                 <span style={{ fontSize: 12, opacity: 0.65 }}>
                   {connected

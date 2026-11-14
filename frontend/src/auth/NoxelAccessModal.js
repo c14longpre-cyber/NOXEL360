@@ -20,26 +20,11 @@ export default function NoxelAccessModal({ open, onClose }) {
             accent: "green",
         },
         {
-            key: "facebook",
-            label: "Facebook",
-            icon: "f",
-            enabled: true,
-            accent: "green",
-        },
-        {
             key: "linkedin",
             label: "LinkedIn",
             icon: "in",
             enabled: true,
             accent: "green",
-        },
-        {
-            key: "tiktok",
-            label: "TikTok",
-            icon: "♪",
-            enabled: false,
-            accent: "neutral",
-            note: "Coming soon",
         },
         {
             key: "github",
@@ -62,11 +47,6 @@ export default function NoxelAccessModal({ open, onClose }) {
         }
         if (provider.key === "microsoft") {
             loginWithProvider("microsoft", "signin");
-            onClose();
-            return;
-        }
-        if (provider.key === "facebook") {
-            loginWithProvider("facebook", "signin");
             onClose();
             return;
         }

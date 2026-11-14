@@ -5,8 +5,8 @@ import { HudButton } from "@/components/hud/HudButton";
 const PROVIDERS = [
     { key: "google", labelKey: "provider.google" },
     { key: "microsoft", labelKey: "provider.microsoft" },
-    { key: "facebook", labelKey: "provider.facebook" },
     { key: "linkedin", labelKey: "provider.linkedin" },
+    { key: "github", labelKey: "provider.github", label: "GitHub" },
 ];
 export default function ConnectedAccountsCard() {
     const { providers, loginWithProvider } = useAuthStore();
@@ -23,7 +23,7 @@ export default function ConnectedAccountsCard() {
                             padding: "10px 12px",
                             borderRadius: 12,
                             border: "1px solid #10dada6e",
-                        }, children: [_jsxs("div", { style: { display: "flex", flexDirection: "column" }, children: [_jsx("span", { style: { fontSize: 15, fontWeight: 600 }, children: t(p.labelKey) }), _jsx("span", { style: { fontSize: 12, opacity: 0.65 }, children: connected
+                        }, children: [_jsxs("div", { style: { display: "flex", flexDirection: "column" }, children: [_jsx("span", { style: { fontSize: 15, fontWeight: 600 }, children: p.label ?? t(p.labelKey) }), _jsx("span", { style: { fontSize: 12, opacity: 0.65 }, children: connected
                                             ? t("connectedAccounts.status.connected")
                                             : t("connectedAccounts.status.notConnected") })] }), connected ? (_jsx("span", { style: {
                                     fontSize: 12,
