@@ -17,7 +17,7 @@ export default function PrivacyPage() {
           maxWidth: 960,
           margin: "0 auto",
           background: "rgba(11,18,32,.88)",
-          border: "1px solid rgba(14,171,142,.46)",
+          border: "1px solid rgba(61, 220, 132,.46)",
           borderRadius: 24,
           padding: 32,
           boxShadow: "0 18px 60px rgba(0,0,0,.35)",
