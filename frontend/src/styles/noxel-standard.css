@@ -16,7 +16,7 @@
   --muted: rgba(238, 242, 255, 0.68);
   --soft: rgba(238, 242, 255, 0.46);
 
-  --line: rgba(14, 171, 142, 0.46);
+  --line: rgba(61, 220, 132, 0.46);
   --line-soft: rgba(255, 255, 255, 0.1);
 
   --ok: #3ddc84;
@@ -237,7 +237,7 @@ textarea::placeholder {
   position: absolute;
   inset: -12px;
   border-radius: inherit;
-  background: radial-gradient(60% 60% at 20% 10%, rgba(29, 209, 191, 0.14), transparent 70%);
+  background: radial-gradient(60% 60% at 20% 10%, rgba(61, 220, 132, 0.14), transparent 70%);
   opacity: 0.16;
   filter: blur(12px);
   pointer-events: none;

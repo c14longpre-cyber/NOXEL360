@@ -11,11 +11,11 @@
   --surface2: #101722;
   --text: #eef2ff;
   --muted: rgba(238, 242, 255, 0.68);
-  --line: rgba(14, 171, 142, 0.38);
+  --line: rgba(61, 220, 132, 0.38);
   --line-soft: rgba(255, 255, 255, 0.08);
   --r: 18px;
 
-  --tier: #6bd2c8;
+  --tier: #3ddc84;
   --tier2: #b9f2ff;
 }
 
@@ -122,7 +122,7 @@ a {
   font-size: 18px;
   padding: 8px 22px;
   border-radius: 999px;
-  border: 1px solid rgba(16, 218, 218, 0.35);
+  border: 1px solid rgba(61, 220, 132, 0.35);
   background: rgba(255, 255, 255, 0.045);
   color: var(--text);
   cursor: pointer;
@@ -217,7 +217,7 @@ a {
   padding: 14px;
   border-radius: 16px;
   background: var(--g);
-  border: 1px solid rgba(16, 218, 218, 0.65);
+  border: 1px solid rgba(61, 220, 132, 0.65);
   color: #07110b;
   font-weight: 900;
   cursor: pointer;
@@ -376,9 +376,9 @@ a {
   font-size: 15px;
   padding: 3px 9px;
   border-radius: 999px;
-  border: 1px solid rgba(16, 218, 218, 0.65);
+  border: 1px solid rgba(61, 220, 132, 0.65);
   background: rgba(0, 0, 0, 0.2);
-  color: #10dadadd;
+  color: #3ddc84dd;
 }
 
 .nx-badge--live {
@@ -452,7 +452,7 @@ a {
 
 .account-menu-popover {
   background: rgba(10, 15, 24, 0.96);
-  border: 1px solid rgba(16, 218, 218, 0.22);
+  border: 1px solid rgba(61, 220, 132, 0.22);
   border-radius: 18px;
 }
 

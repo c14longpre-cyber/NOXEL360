@@ -44,7 +44,7 @@ export default function ConnectedAccountsCard() {
                 justifyContent: "space-between",
                 padding: "10px 12px",
                 borderRadius: 12,
-                border: "1px solid #10dada6e",
+                border: "1px solid #3ddc846e",
               }}
             >
               <div style={{ display: "flex", flexDirection: "column" }}>
