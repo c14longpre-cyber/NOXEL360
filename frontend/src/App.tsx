@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { Suspense, lazy, useEffect } from "react";
 import { useAuthStore } from "./auth/AuthStore";
+import SiteNivo from "./components/SiteNivo";
 
 // Route-level code splitting: each page's JS is only downloaded and executed
 // when that route is actually visited, instead of all bundled into the main
@@ -53,6 +54,8 @@ function RouteLoadingFallback() {
 
 export default function App() {
   return (
+    <>
+    <SiteNivo />
     <Suspense fallback={<RouteLoadingFallback />}>
       <Routes>
         <Route path="/" element={<RootRoute />} />
@@ -79,5 +82,6 @@ export default function App() {
         <Route path="*" element={<div style={{ padding: 24 }}>404</div>} />
       </Routes>
     </Suspense>
+    </>
   );
 }
