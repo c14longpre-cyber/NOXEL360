@@ -39,7 +39,7 @@ NOXEL360 ne compte que quatre modules :
 | nexus | NOXEL NEXUS | `/nexus` (seul module interne) | core |
 | spectra | NOXEL SPECTRA | https://noxelspectra.com | ready (images et vidéo en ligne) |
 
-Prix : chaque module garde ses prix et paliers sur son propre site (noxelseo.com, noxelforge.com). NOXEL360 n'affiche aucun prix ; Nexus est inclus avec le compte, Spectra est gratuit pour l'instant (ses forfaits seront annoncés sur noxelspectra.com).
+Prix : chaque module garde ses prix et paliers sur son propre site (noxelseo.com, noxelforge.com). NOXEL360 n'affiche aucun prix ; Nexus est inclus avec le compte, Spectra est gratuit pour commencer (Bronze sans compte), ses forfaits payants sont sur noxelspectra.com.
 
 **Modules abandonnés** : Core, MAESTRO, ATLAS, LINKS, SERP, VITALS, OPTIMA (webp), FLOW, MORPH, ainsi qu'Analytics, CRM et Social. Ce sont des idées écartées en cours de route. Ne pas les réintroduire, ni dans le code, ni dans les textes, ni dans les dictionnaires, sans demande explicite de l'utilisateur. Leurs traces restantes (`frontend/src/modules/nexus/*.md`, champ `morphProfile` du compte) sont connues et volontairement laissées en place pour l'instant.
 
