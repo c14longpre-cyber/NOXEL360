@@ -121,7 +121,7 @@ export default function LandingPage() {
 
             <div className="teaser">
               <div>
-                <span className="badge soon-p">{t("landing.badge.soon")}</span>
+                <span className="badge live">{t("landing.badge.live")}</span>
                 <h3>{t("landing.spectra.title")}</h3>
                 <p>{t("landing.spectra.p1")}</p>
                 <p>{t("landing.spectra.p2")}</p>
@@ -192,9 +192,8 @@ export default function LandingPage() {
                   alt="NX360"
                   style={{ width: 120, marginBottom: 16, opacity: 0.95 }}
                 />
-                <div className="stat-row"><span className="label">{t("landing.stats.live")}</span><span className="val">2 (SEO, Forge)</span></div>
+                <div className="stat-row"><span className="label">{t("landing.stats.live")}</span><span className="val">3 (SEO, Forge, Spectra)</span></div>
                 <div className="stat-row"><span className="label">{t("landing.stats.core")}</span><span className="val">Nexus</span></div>
-                <div className="stat-row"><span className="label">{t("landing.stats.next")}</span><span className="val">Spectra</span></div>
                 <div className="stat-row"><span className="label">{t("landing.stats.languages")}</span><span className="val">115</span></div>
                 <div className="stat-row"><span className="label">{t("landing.stats.builtFor")}</span><span className="val">{t("landing.stats.builtForValue")}</span></div>
               </div>
