@@ -23,10 +23,12 @@ export function SideNav() {
               ? "pill pill--core"
               : badge === "SOON"
               ? "pill pill--soon"
+              : badge === "BETA"
+              ? "pill pill--beta"
               : "pill pill--pro";
 
           const pillLabel =
-            badge === "READY" ? "LIVE" : badge === "CORE" ? "CORE" : badge === "SOON" ? "SOON" : "PRO";
+            badge === "READY" ? "LIVE" : badge === "CORE" ? "CORE" : badge === "SOON" ? "SOON" : badge === "BETA" ? "BETA" : "PRO";
 
           const content = (
             <>

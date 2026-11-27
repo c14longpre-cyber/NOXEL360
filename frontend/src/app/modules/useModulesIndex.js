@@ -49,7 +49,7 @@ const MODULE_ITEMS = [
         name: "NOXEL MARKETING",
         route: "https://noxelmarketing.com",
         promise: "A practical 30-day marketing plan built from your real website.",
-        status: "ready",
+        status: "beta",
         external: true,
     },
 ];
