@@ -134,6 +134,22 @@ export default function LandingPage() {
                 <li><strong>{t("landing.spectra.vectorTitle")}</strong><span>{t("landing.spectra.vectorText")}</span></li>
               </ul>
             </div>
+
+            <div className="teaser">
+              <div>
+                <span className="badge live">{t("landing.badge.live")}</span>
+                <h3>{t("landing.marketing.title")}</h3>
+                <p>{t("landing.marketing.p1")}</p>
+                <p>{t("landing.marketing.p2")}</p>
+                <HudLink href="https://noxelmarketing.com" action="continue" compact className="module-hud" label={t("landing.marketing.cta")} />
+              </div>
+              <ul className="teaser-list">
+                <li><strong>{t("landing.marketing.customerTitle")}</strong><span>{t("landing.marketing.customerText")}</span></li>
+                <li><strong>{t("landing.marketing.channelsTitle")}</strong><span>{t("landing.marketing.channelsText")}</span></li>
+                <li><strong>{t("landing.marketing.planTitle")}</strong><span>{t("landing.marketing.planText")}</span></li>
+                <li><strong>{t("landing.marketing.pdfTitle")}</strong><span>{t("landing.marketing.pdfText")}</span></li>
+              </ul>
+            </div>
           </div>
         </section>
 
@@ -192,7 +208,7 @@ export default function LandingPage() {
                   alt="NX360"
                   style={{ width: 120, marginBottom: 16, opacity: 0.95 }}
                 />
-                <div className="stat-row"><span className="label">{t("landing.stats.live")}</span><span className="val">3 (SEO, Forge, Spectra)</span></div>
+                <div className="stat-row"><span className="label">{t("landing.stats.live")}</span><span className="val">4 (SEO, Forge, Spectra, Marketing)</span></div>
                 <div className="stat-row"><span className="label">{t("landing.stats.core")}</span><span className="val">Nexus</span></div>
                 <div className="stat-row"><span className="label">{t("landing.stats.languages")}</span><span className="val">115</span></div>
                 <div className="stat-row"><span className="label">{t("landing.stats.builtFor")}</span><span className="val">{t("landing.stats.builtForValue")}</span></div>
