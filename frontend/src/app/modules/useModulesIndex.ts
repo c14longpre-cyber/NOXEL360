@@ -57,6 +57,14 @@ const MODULE_ITEMS: ModuleIndexItem[] = [
     status: "ready",
     external: true,
   },
+  {
+    key: "marketing",
+    name: "NOXEL MARKETING",
+    route: "https://noxelmarketing.com",
+    promise: "A practical 30-day marketing plan built from your real website.",
+    status: "ready",
+    external: true,
+  },
 ];
 
 export function useModulesIndex(): ModuleIndexItem[] {

@@ -30,7 +30,7 @@ noxel360/
 
 ## Modules (`frontend/src/app/modules/useModulesIndex.ts`)
 
-NOXEL360 ne compte que quatre modules :
+NOXEL360 compte cinq modules (NOXEL MARKETING ajouté le 27 novembre 2026, décision de Christian) :
 
 | Clé | Nom | Destination | Statut |
 |-----|-----|-------------|--------|
@@ -38,6 +38,7 @@ NOXEL360 ne compte que quatre modules :
 | forge | NOXEL FORGE | https://noxelforge.com (produit externe) | ready |
 | nexus | NOXEL NEXUS | `/nexus` (seul module interne) | core |
 | spectra | NOXEL SPECTRA | https://noxelspectra.com | ready (images et vidéo en ligne) |
+| marketing | NOXEL MARKETING | https://noxelmarketing.com (produit externe) | ready (plan marketing de 30 jours) |
 
 Prix : chaque module garde ses prix et paliers sur son propre site (noxelseo.com, noxelforge.com). NOXEL360 n'affiche aucun prix ; Nexus est inclus avec le compte, Spectra est gratuit pour commencer (Bronze sans compte), ses forfaits payants sont sur noxelspectra.com.
 
@@ -45,7 +46,7 @@ Prix : chaque module garde ses prix et paliers sur son propre site (noxelseo.com
 
 ## Règles critiques
 
-1. **Modules et prix** : seuls SEO, Forge, Nexus et Spectra existent. Le dashboard, la navigation et la page `frontend/public/pricing/` ne doivent mentionner qu'eux. Ne jamais inventer un prix : les prix vivent sur le site de chaque module.
+1. **Modules et prix** : seuls SEO, Forge, Nexus, Spectra et Marketing existent. Le dashboard, la navigation et la page `frontend/public/pricing/` ne doivent mentionner qu'eux. Ne jamais inventer un prix : les prix vivent sur le site de chaque module.
 2. **Fichiers .js compilés à côté des .ts** (frontend/src, i18n/locales) : modifier le `.ts` seulement, puis vérifier qu'un `.js` périmé ne masque pas le changement à l'import. Ne jamais éditer uniquement le `.js`.
 3. **i18n** : `FULLY_TRANSLATED_CODES` (languageCatalog.ts) liste les langues complètes (26 aujourd'hui). Ajouter une langue = `locales/XX.ts` + entrée dans `translate.ts` + code dans `FULLY_TRANSLATED_CODES`. Clés identiques à `en.ts`.
 4. **Langues autochtones** : jamais de traduction automatique publiée. Seuls des locuteurs natifs ou traducteurs approuvés par la communauté (voir CONTRIBUTING_LANGUAGES.md).
