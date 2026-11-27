@@ -48,7 +48,7 @@ const SOCIAL_LINKS = [
 ];
 export default function Footer({ brand, siteUrl, contactEmail, links, copyrightText, accentColor = "#3ddc84", showForgePartnerBadges = false, locale = 'en', }) {
     // Liens vers les autres sites NOXEL : pas de noreferrer (le choix de consentement voyage dans le lien)
-    const isNoxel = (href) => /^https:\/\/(www\.)?(noxel360|noxelseo|noxelforge|noxelspectra)\.com/.test(href);
+    const isNoxel = (href) => /^https:\/\/(www\.)?(noxel360|noxelseo|noxelforge|noxelspectra|noxelmarketing)\.com/.test(href);
     const localizeHref = (href) => href;
     void locale;
     const year = new Date().getFullYear();
