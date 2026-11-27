@@ -8,5 +8,6 @@ export const LOGO_BY_ID = {
     forge,
     nexus: "/logos/NOXEL_NEXUS_LOGO.svg",
     spectra: "/logos/NOXEL_SPECTRA_LOGO.svg",
+    marketing: "/logos/NOXEL_MARKETING_LOGO.webp",
 };
 export default LOGO_BY_ID;
