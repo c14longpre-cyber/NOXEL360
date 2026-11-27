@@ -137,7 +137,7 @@ export default function LandingPage() {
 
             <div className="teaser">
               <div>
-                <span className="badge live">{t("landing.badge.live")}</span>
+                <span className="badge beta">{t("landing.badge.beta")}</span>
                 <h3>{t("landing.marketing.title")}</h3>
                 <p>{t("landing.marketing.p1")}</p>
                 <p>{t("landing.marketing.p2")}</p>

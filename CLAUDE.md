@@ -38,7 +38,7 @@ NOXEL360 compte cinq modules (NOXEL MARKETING ajouté le 27 novembre 2026, déci
 | forge | NOXEL FORGE | https://noxelforge.com (produit externe) | ready |
 | nexus | NOXEL NEXUS | `/nexus` (seul module interne) | core |
 | spectra | NOXEL SPECTRA | https://noxelspectra.com | ready (images et vidéo en ligne) |
-| marketing | NOXEL MARKETING | https://noxelmarketing.com (produit externe) | ready (plan marketing de 30 jours) |
+| marketing | NOXEL MARKETING | https://noxelmarketing.com (produit externe) | beta (plan marketing de 30 jours, gratuit pendant la bêta ; pastille BETA violette `nx-badge--beta` / `pill--beta` / `.badge.beta`) |
 
 Prix : chaque module garde ses prix et paliers sur son propre site (noxelseo.com, noxelforge.com). NOXEL360 n'affiche aucun prix ; Nexus est inclus avec le compte, Spectra est gratuit pour commencer (Bronze sans compte), ses forfaits payants sont sur noxelspectra.com.
 

@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-export type ModuleStatus = "ready" | "core" | "pro" | "soon" | "missing";
+export type ModuleStatus = "ready" | "beta" | "core" | "pro" | "soon" | "missing";
 
 export type ModuleIndexItem = {
   key: string;
@@ -62,7 +62,7 @@ const MODULE_ITEMS: ModuleIndexItem[] = [
     name: "NOXEL MARKETING",
     route: "https://noxelmarketing.com",
     promise: "A practical 30-day marketing plan built from your real website.",
-    status: "ready",
+    status: "beta",
     external: true,
   },
 ];
