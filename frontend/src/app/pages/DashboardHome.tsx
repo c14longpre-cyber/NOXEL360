@@ -170,6 +170,7 @@ export default function DashboardHome() {
                           m.status === "ready" ? "nx-badge--live" : "",
                           m.status === "core" ? "nx-badge--core" : "",
                           m.status === "soon" ? "nx-badge--soon" : "",
+                          m.status === "beta" ? "nx-badge--beta" : "",
                         ].join(" ")}
                       >
                         {m.status === "ready" ? "LIVE" : m.status.toUpperCase()}

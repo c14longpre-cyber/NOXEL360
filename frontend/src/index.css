@@ -515,6 +515,13 @@ a {
   color: #ffd28a;
 }
 
+/* BETA: module open to test before it becomes paid (NOXEL MARKETING) */
+.nx-badge--beta, .pill--beta {
+  border-color: rgba(168, 85, 247, 0.6);
+  background: rgba(168, 85, 247, 0.16);
+  color: #e2c6ff;
+}
+
 /* REFRESH BUTTON LIGHT */
 .refresh-btn {
   width: 64px;
