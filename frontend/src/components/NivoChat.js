@@ -1,12 +1,12 @@
 import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
 import { useEffect, useRef, useState } from "react";
 import "./nivo.css";
-// Nivo 1.0 — support assistant of the NOXEL sites. Same file in noxelseo, noxelforge, noxelspectra and noxel360
+// Nivo 1.1 — support assistant of the NOXEL sites. Same file in noxelseo, noxelforge, noxelspectra, noxel360 and noxelmarketing
 // (frontend/src/components/NivoChat.tsx + nivo.css). It always talks to the NOXEL SEO API (routes/nivo.routes.ts),
 // with `site` so it answers from that site's facts; when a person must answer, it offers to pass the question to the
 // team (reply within 24 business hours). Conversations are kept 12 months only when a NOXEL SEO session exists.
 const NIVO_API = "https://noxelseo-production.up.railway.app";
-const SITE_NAME = { seo: "NOXEL SEO", forge: "NOXEL FORGE", spectra: "NOXEL SPECTRA", "360": "NOXEL360" };
+const SITE_NAME = { seo: "NOXEL SEO", forge: "NOXEL FORGE", spectra: "NOXEL SPECTRA", "360": "NOXEL360", marketing: "NOXEL MARKETING" };
 const TEXT = {
     fr: {
         open: "Ouvrir l'aide de Nivo", help: "Besoin d'aide ?", chat: "Clavardez avec Nivo", close: "Fermer", title: "Nivo", subtitle: "Assistant IA",
